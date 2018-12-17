@@ -1,0 +1,293 @@
+[
+  {
+    "tribos":
+    [
+      {
+        "id": 1,
+        "nome": "Produtos",
+        "squads": [
+          {
+            "id": 1,
+            "nome": "CDP Efinance",
+            "pessoas":
+            [
+              { "nome": "Felipe Pereira Colaneri", "cargo": "Analista de sistemas", "nivel": "Sênior" },
+              { "nome": "Rafael Lino dos Santos", "cargo": "Programador", "nivel": "Trainee" }
+            ]
+          },
+          {
+            "id": 2,
+            "nome": "CDP RDV",
+            "pessoas":
+            [
+              { "nome": "Pablo Zampa", "cargo": "Analista de Sistemas", "nivel": "Pleno" },
+              { "nome": "Ednei Betti", "cargo": "Analista de Negócio", "nivel": "Pelno"  },
+              { "nome": "Gessiane da Silvia Martinelle", "cargo": "Analista de Qualidade", "nivel": "Pleno"  },
+              { "nome": "Amanda Mayara de Araujo", "cargo": "Analista Programador", "nivel": "Pleno"  },
+              { "nome": "Filipe de Oliveira Ribeiro", "cargo": "Estágiario de Programação", "nivel": "Júnior"  }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "nome": "CDS Brinks",
+        "squads": [
+          {
+            "id": 1,
+            "nome": "Thiago Mansonetto",
+            "pessoas":
+            [
+              { "nome": "Thiago Mansonetto", "cargo": "Analista de Sistemas", "nivel": "Sênior" },
+              { "nome": "Sérgio do Carmo Torres", "cargo": "Analista Programador", "nivel": "Júnior"  },
+              { "nome": "Rodrigo Britto", "cargo": "Analista Programador", "nivel": "Sênior"  },
+              { "nome": "Marco Aurelio de Souza", "cargo": "Analista Programador", "nivel": "Pleno"  }
+            ]
+          },
+          {
+            "id": 2,
+            "nome": "Daniela Oliveira Francisco Teixeira",
+            "pessoas":
+            [
+              { "nome": "Daniela Oliveira Francisco Teixeira", "cargo": "Analista de Sistemas", "nivel": "Sênior" },
+              { "nome": "Julio César Montalvão", "cargo": "Analista Programador", "nivel": "Júnior"  },
+              { "nome": "Italo Biguzi Duarte", "cargo": "Analista Programador", "nivel": "Sênior"  },
+              { "nome": "Danilo Cesar de Souza Ferreira", "cargo": "Analista Programador", "nivel": "Sênior"  },
+              { "nome": "Stephanie Bianca Brescancin", "cargo": "Estafiario de Programação", "nivel": "Júnior"  }
+            ]
+          },
+          {
+            "id": 3,
+            "nome": "Mara Cristina da Rosa",
+            "pessoas":
+            [
+              { "nome": "Mara Cristina da Rosa", "cargo": "Analista de Qualidade", "nivel": "Sênior"  },
+              { "nome": "Pedro Octavio Rodrigues de Andrade", "cargo": "Analista de Qualidade", "nivel": "Pleno" },
+              { "nome": "Evandro Ribeiro", "cargo": "Analista Programador", "nivel": "Sênior"  },
+              { "nome": "Lucio Flavio Fransoia", "cargo": "Analista Programador", "nivel": "Sênior"  },
+              { "nome": "Murilo Eduardo Bacagini Santos", "cargo": "Analista Programador", "nivel": "Pleno"  },
+              { "nome": "Guilherme Bordallo de Almeida", "cargo": "Estagiario de Programação", "nivel": "Júnior"  }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "nome": "CDS Evolutivas MAPFRE",
+        "squads": [
+          {
+            "id": 1,
+            "nome": "Gustavo Serracchini Ferrari",
+            "pessoas":
+            [
+              { "nome": "Gustavo Serracchini Ferrari", "cargo": "Analista de Sistemas", "nivel": "Pleno" },
+              { "nome": "Luiz Carlos Cecatti Júnior", "cargo": "Analista Programador", "nivel": "Sênior"  },
+              { "nome": "Fabio Massaretto", "cargo": "Analista de Programador", "nivel": "Júnior"  },
+              { "nome": "Tiago de Oliveira Teixeira ", "cargo": "Analista Programador", "nivel": "Júnior"  }
+            ]
+          },
+          {
+            "id": 2,
+            "nome": "Ricardo Marcel Giaretta",
+            "pessoas":
+            [
+              { "nome": "Ricardo Marcel Giaretta", "cargo": "Analista de Sistemas", "nivel": "Sênior" },
+              { "nome": "Evair Pereira Sousa", "cargo": "Analista Programador", "nivel": "Pleno"  },
+              { "nome": "Kaique Gustavo Ribeiro do Prado", "cargo": "Analista de Qualidade", "nivel": "Júnior"  },
+              { "nome": "Tiago de Oliveira Teixeira ", "cargo": "Analista Programador", "nivel": "Júnior"  }
+            ]
+          },
+          {
+            "id": 3,
+            "nome": "Fernando Berstecher Ajlune",
+            "pessoas":
+            [
+              { "nome": "Fernando Berstecher Ajlune", "cargo": "Analista de Sistemas", "nivel": "Sênior" },
+              { "nome": "William Hartung", "cargo": "Analista Programador", "nivel": "Pleno"  },
+              { "nome": "Deleon Henrique da Silva Pinto", "cargo": "Analista de Qualidade", "nivel": "Sênior"  },
+              { "nome": "Geovani Lima Azevedo", "cargo": "Analista Programador", "nivel": "Júnior"  }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "nome": "MAPFRE",
+        "squads": [
+          {
+            "id": 1,
+            "nome": "CDS NN MAPFRE",
+            "pessoas":
+            [
+              { "nome": "Mikaeri Ohana Estevam Candido", "cargo": "Analista Programador", "nivel": "Pleno" },
+              { "nome": "Nicolas Tosatti", "cargo": "Analista de Programador", "nivel": "Pleno"  },
+              { "nome": "Cloter Gonçalves Barbosa Junior", "cargo": "Analista Programador", "nivel": "Sênior"  },
+              { "nome": "Lucas Marques da Silva", "cargo": "Analista Programador", "nivel": "Júnior"  },
+              { "nome": "Ricardo Cristiano Tapia", "cargo": "Analista de Sistemas", "nivel": "Sênior"  },
+              { "nome": "Felipe de Mello Oliveira", "cargo": "Analista de Qualidade", "nivel": "Pleno"  }
+            ]
+          },
+          {
+            "id": 2,
+            "nome": "CSS MAPFRE",
+            "pessoas":
+            [
+              { "nome": "Everton Lima", "cargo": "Analista de Negócios", "nivel": "Júnior" },
+              { "nome": "Fernando Alcântara Garcia", "cargo": "Analista Programador", "nivel": "Júnior" },
+              { "nome": "Ricardo Ramos", "cargo": "Analista Programador", "nivel": "Pleno" },
+              { "nome": "Silvia Cristina Arouche", "cargo": "Analista Programador", "nivel": "Sênior" },
+              { "nome": "Elaine Viana Costa", "cargo": "Analista Programador", "nivel": "Sênior" },
+              { "nome": "Leila Santana Ferreira Figueredo", "cargo": "Analista Programador", "nivel": "Júnior" },
+              { "nome": "Ana Clara Marson Rios Bordinhon", "cargo": "Analista Programador", "nivel": "Júnior" },
+              { "nome": "Gabriel William Galdino", "cargo": "Programador", "nivel": "Júnior" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "nome": "CDS Finamax",
+        "squads":
+        [
+          {
+            "id": 1,
+            "nome": "Rafael Zancani Fercondini",
+            "pessoas":
+            [
+              { "nome": "Rafael Zancani Fercondini", "cargo": "Analista de Sistemas", "nivel": "Sênior" },
+              { "nome": "Ricardo Aparecido Garbati", "cargo": "Analista Programador", "nivel": "Sênior"  }
+            ]
+           },
+           {
+            "id": 2,
+            "nome": "Daniel Meireles Tomazini",
+            "pessoas":
+            [
+              { "nome": "Daniel Meireles Tomazini", "cargo": "Analista de Sistemas", "nivel": "Sênior"  },
+              { "nome": "Lucas Vendramin Antunes", "cargo": "Analista de Qualidade", "nivel": "Júnior"  },
+              { "nome": "Gregori Bruno Felicio", "cargo": "Analista Programador", "nivel": "Júnior"  },
+              { "nome": "Mario Jorge de Araujo Barbosa", "cargo": "Analista Programador", "nivel": "Pleno"  },
+              { "nome": "Otavio Augusto Toledo de Paula Cipro", "cargo": "Analista Programador", "nivel": "Sênior"  }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "nome": "Viceri",
+        "squads": [
+          {
+            "id": 1,
+            "nome": "Gestão e Negócios",
+            "pessoas":
+            [
+              { "nome": "Henrique Fanthato", "cargo": "Coordenador de Desenvolvimento", "nivel": "" },
+              { "nome": "Rafaela Gritotte Sampaio", "cargo": "", "nivel": ""  },
+              { "nome": "Ricardo Mean", "cargo": "", "nivel": ""  },
+              { "nome": "Anderson Cavalcante", "cargo": "", "nivel": ""  },
+              { "nome": "Everton Lima", "cargo": "", "nivel": ""  }
+            ]
+          },
+          {
+            "id": 2,
+            "nome": "CDS Sequoia",
+            "pessoas":
+            [
+              { "nome": "Leandro Codarin", "cargo": "Analista de Sistemas", "nivel": "Sênior" },
+              { "nome": "Tiago Henrique Bernardo", "cargo": "Analista de Qualidade", "nivel": "Pleno"  },
+              { "nome": "Rodrigo Alves Ferreira de Brito", "cargo": "Analista Programador", "nivel": "Sênior"  },
+              { "nome": "Anderson de Carvalho Bernabé", "cargo": "Analista Programador", "nivel": "Júnior"  },
+              { "nome": "Rafael de Moura Alves ", "cargo": "Analista Programador", "nivel": "Sênior"  }
+            ]
+          },
+          {
+            "id": 3,
+            "nome": "CDS Passarela",
+            "pessoas":
+            [
+              { "nome": "Emerson Carlos Duarte", "cargo": "Analista de Sistemas", "nivel": "Sênior" },
+              { "nome": "Ricardo Aparecido Garbati", "cargo": "Analista de Qualidade", "nivel": "Sênior"  },
+              { "nome": "Daniel Meireles Tomazini", "cargo": "Analista Programador", "nivel": "Pleno"  }
+            ]
+          },
+          {
+            "id": 4,
+            "nome": "CDS Unibanco",
+            "pessoas":
+            [
+              { "nome": "Guilherme Cestarolli Seleguim", "cargo": "", "nivel": "" },
+              { "nome": "Gabriel Bruno Traldi", "cargo": "", "nivel": ""  },
+              { "nome": "Aules Roni Jobstraibizer", "cargo": "", "nivel": ""  },
+              { "nome": "Eduardo Alberto do Santos", "cargo": "", "nivel": ""  },
+              { "nome": "Fernando Mendes", "cargo": "", "nivel": ""  }
+            ]
+          },
+          {
+            "id": 5,
+            "nome": "Consultoria",
+            "pessoas":
+            [
+              { "nome": "Fernanda Maria Duarte Vieira", "cargo": "Arquiteto de testes", "nivel": "Pleno" },
+              { "nome": "Paulo Rogério Spiandorim Mattiuzzo", "cargo": "Arquiteto UX/UI", "nivel": "Sênior"  },
+              { "nome": "Ricardo Alves de Souza Francisco", "cargo": "Engenheiro de Software", "nivel": "Sênior"  }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "nome": "Talentos",
+        "squads": [
+          {
+            "id": 1,
+            "nome": "Nerd Bunker",
+            "pessoas":
+            [
+              { "nome": "Mateus Gonçalves Brito", "cargo": "Analista de Negócios", "nivel": "Júnior" },
+              { "nome": "Fernando Junio da Silva", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Isac Daniel Fildelflavio Petinate", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Pedro Mietto Bruini", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Lucas Tumolo Contesini", "cargo": "Analista de Qualidade", "nivel": "Júnior" }
+            ]
+          },
+          {
+            "id": 2,
+            "nome": "Bug Hunters",
+            "pessoas":
+            [
+              { "nome": "Matheus Bio Salles", "cargo": "Analista de Negócios", "nivel": "Júnior" },
+              { "nome": "Leandro Marques de Oliveira", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Vanderley Neres de Silva", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Denise Nogueira dos Santos", "cargo": "Analista de Qualidade", "nivel": "Júnior" },
+              { "nome": "Luís Antonio Prado Lança", "cargo": "Programador", "nivel": "Júnior" }
+            ]
+          },
+          {
+            "id": 3,
+            "nome": "Lemoris Mutoalistas",
+            "pessoas":
+            [
+              { "nome": "Fernanda Luíza Conti", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Mateus Augusto do Amaral", "cargo": "Analista de Qualidade", "nivel": "Júnior" },
+              { "nome": "Gleber Michel Alves Schivano", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Alex Barletta Araújo", "cargo": "Analista de Negócios", "nivel": "Júnior" },
+              { "nome": "Caléo de Antonio Caciano", "cargo": "Programador", "nivel": "Júnior" }
+            ]
+          },
+          {
+            "id": 4,
+            "nome": "Alpha Noob",
+            "pessoas":
+            [
+              { "nome": "Giovana Seleio Valini", "cargo": "Analista de Negócios", "nivel": "Júnior" },
+              { "nome": "Jhonatan Vinícius Martins dos Santos", "cargo": "Analista de Qualidade", "nivel": "Júnior" },
+              { "nome": "Everton Luiz Ferreira", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Fábio Vieira Gonçalves", "cargo": "Programador", "nivel": "Júnior" },
+              { "nome": "Pedro de Souza Moraes", "cargo": "Programador", "nivel": "Júnior" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

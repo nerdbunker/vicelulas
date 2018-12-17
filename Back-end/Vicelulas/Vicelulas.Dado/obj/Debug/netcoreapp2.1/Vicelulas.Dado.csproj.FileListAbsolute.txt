@@ -1,0 +1,12 @@
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Vicelulas.Dado.deps.json
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Vicelulas.Dado.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Vicelulas.Dado.pdb
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Viceluas.Dominio.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Viceluas.Dominio.pdb
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.csprojAssemblyReference.cache
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.csproj.CoreCompileInputs.cache
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.AssemblyInfoInputs.cache
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.AssemblyInfo.cs
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.csproj.CopyComplete
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.pdb

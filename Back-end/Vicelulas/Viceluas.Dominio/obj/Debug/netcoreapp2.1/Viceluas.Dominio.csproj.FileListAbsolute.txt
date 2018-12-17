@@ -1,0 +1,9 @@
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\bin\Debug\netcoreapp2.1\Viceluas.Dominio.deps.json
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\bin\Debug\netcoreapp2.1\Viceluas.Dominio.dll
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\bin\Debug\netcoreapp2.1\Viceluas.Dominio.pdb
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Viceluas.Dominio.csprojAssemblyReference.cache
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Viceluas.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Viceluas.Dominio.AssemblyInfoInputs.cache
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Viceluas.Dominio.AssemblyInfo.cs
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Viceluas.Dominio.dll
+C:\Users\pbruini\source\repos\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Viceluas.Dominio.pdb

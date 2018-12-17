@@ -1,0 +1,9 @@
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.dacpac
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.pdb
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\obj\Debug\Model.xml
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\obj\Debug\refactor.xml
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\obj\Debug\postdeploy.sql
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\obj\Debug\predeploy.sql
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.pdb

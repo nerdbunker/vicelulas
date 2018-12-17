@@ -1,0 +1,10 @@
+17/12/2018 14:36:54	This log contains information about the import schema operation into project 'Vicelulas.Database' on computer 'WKSJUN000465' by user 'pbruini'.
+17/12/2018 14:36:55	Deserializing model
+17/12/2018 14:36:55	Resolving model
+17/12/2018 14:36:55	Visiting imported model for types
+17/12/2018 14:36:56	Scanning project for duplicate elements
+17/12/2018 14:36:56	Finished duplicate element processing
+17/12/2018 14:36:56	Processing extra files
+17/12/2018 14:36:56	Finished importing Data-tier Application file.
+17/12/2018 14:36:56	A summary of the import was saved to the following location: C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Database\Import Schema Logs\Vicelulas.Database_20181217043654.log
+17/12/2018 14:36:56	Click Finish to continue...

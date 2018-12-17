@@ -1,0 +1,14 @@
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\Vicelulas.Teste.deps.json
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\Vicelulas.Teste.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.csproj.CoreCompileInputs.cache
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.AssemblyInfoInputs.cache
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.AssemblyInfo.cs
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.csprojAssemblyReference.cache
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\Vicelulas.Teste.runtimeconfig.json
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\Vicelulas.Teste.runtimeconfig.dev.json
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\Vicelulas.Teste.pdb
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.dll
+C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.pdb

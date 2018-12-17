@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[TB_endereco] (
-    [id]            UNIQUEIDENTIFIER NOT NULL,
+    [id]            INT IDENTITY NOT NULL,
     [pais]          VARCHAR (15)     NOT NULL,
     [estado]        VARCHAR (30)     NOT NULL,
     [cidade]        VARCHAR (40)     NOT NULL,

@@ -7899,11 +7899,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
+      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
       "projectName": "Vicelulas.Teste",
-      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
+      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
       "packagesPath": "C:\\Users\\pbruini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\obj\\",
+      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7922,11 +7922,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj": {
-              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj"
+            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj": {
+              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj"
             },
-            "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj": {
-              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj"
+            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj": {
+              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj"
             }
           }
         }

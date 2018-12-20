@@ -1884,11 +1884,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
+      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
       "projectName": "Vicelulas.Dado",
-      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
+      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
       "packagesPath": "C:\\Users\\pbruini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\obj\\",
+      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1907,8 +1907,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj": {
-              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj"
+            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj": {
+              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj"
             }
           }
         }

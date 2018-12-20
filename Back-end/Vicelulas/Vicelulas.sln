@@ -15,15 +15,15 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Vicelulas.Database", "Vicel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vicelulas.Dado", "Vicelulas.Dado\Vicelulas.Dado.csproj", "{25B13935-5481-4F0D-A09B-DEBCABD16D88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Viceluas.Dominio", "Viceluas.Dominio\Viceluas.Dominio.csproj", "{831D7631-C64D-4FB8-B702-A3DE8695495D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vicelulas.Dominio", "Viceluas.Dominio\Vicelulas.Dominio.csproj", "{831D7631-C64D-4FB8-B702-A3DE8695495D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vicelulas.Api", "Vicelulas.Api\Vicelulas.Api.csproj", "{840A4890-DA93-45BB-A8CC-11E2F2A2D739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vicelulas.Api", "Vicelulas.Api\Vicelulas.Api.csproj", "{840A4890-DA93-45BB-A8CC-11E2F2A2D739}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Teste", "5-Teste", "{02BA684D-4B52-4BBA-B3CA-EE511D9F8696}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vicelulas.Teste", "Vicelulas.Teste\Vicelulas.Teste.csproj", "{4093B4A2-EE7E-48F7-BD13-17F1A6ECBDB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vicelulas.Teste", "Vicelulas.Teste\Vicelulas.Teste.csproj", "{4093B4A2-EE7E-48F7-BD13-17F1A6ECBDB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vicelulas.Negocio", "Vicelulas.Negocio\Vicelulas.Negocio.csproj", "{45581224-EFB7-4E32-BA07-DC493E0A2ED8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vicelulas.Negocio", "Vicelulas.Negocio\Vicelulas.Negocio.csproj", "{45581224-EFB7-4E32-BA07-DC493E0A2ED8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

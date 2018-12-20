@@ -3227,16 +3227,6 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "Viceluas.Dominio/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Viceluas.Dominio.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Viceluas.Dominio.dll": {}
-        }
-      },
       "Vicelulas.Api/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -3245,7 +3235,7 @@
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.1.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
           "Swashbuckle.AspNetCore": "4.0.1",
-          "Viceluas.Dominio": "1.0.0",
+          "Vicelulas.Dominio": "1.0.0",
           "Vicelulas.Negocio": "1.0.0"
         },
         "compile": {
@@ -3260,13 +3250,23 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Dapper": "1.50.5",
-          "Viceluas.Dominio": "1.0.0"
+          "Vicelulas.Dominio": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Vicelulas.Dado.dll": {}
         },
         "runtime": {
           "bin/placeholder/Vicelulas.Dado.dll": {}
+        }
+      },
+      "Vicelulas.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Vicelulas.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vicelulas.Dominio.dll": {}
         }
       },
       "Vicelulas.Negocio/1.0.0": {
@@ -3811,7 +3811,7 @@
       ]
     },
     "Microsoft.Extensions.FileProviders.Abstractions/2.0.0": {
-      "sha512": "S01tSv3cVyOrIDtQFi2hFohrXAFSYS4zjIcEgwRNKCBQfEscjWyFcDMaAKSFIavCt6ALxssDZ8PbQpK3klU2HA==",
+      "sha512": "Y2R7L0FGA9G8Hc6eMlsm0SPfHFsrriHvmc8MM1g0z5dzR5VtVxQKHsnPBoQYYUVZVzlgWxiaybk9M71TpEQzFQ==",
       "type": "package",
       "path": "microsoft.extensions.fileproviders.abstractions/2.0.0",
       "files": [
@@ -9634,7 +9634,7 @@
       ]
     },
     "xunit/2.4.1": {
-      "sha512": "XNR3Yz9QTtec16O0aKcO6+baVNpXmOnPUxDkCY97J+8krUYxPvXT1szYYEUdKk4sB8GOI2YbAjRIOm8ZnXRfzQ==",
+      "sha512": "OwBhpez9SRZvEjqic3WVbACu2wsi9u5qi+YpzVg6BTL3R25R/6ytM4UkUTnx+dSZDJ3IUPx+99CX/YXnxrQAWA==",
       "type": "package",
       "path": "xunit/2.4.1",
       "files": [
@@ -9645,7 +9645,7 @@
       ]
     },
     "xunit.abstractions/2.0.3": {
-      "sha512": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
+      "sha512": "PKJri5f0qEQPFvgY6CZR9XG8JROlWSdC/ZYLkkDQuID++Egn+yWjB+Yf57AZ8U6GRlP7z33uDQ4/r5BZPer2JA==",
       "type": "package",
       "path": "xunit.abstractions/2.0.3",
       "files": [
@@ -9662,7 +9662,7 @@
       ]
     },
     "xunit.analyzers/0.10.0": {
-      "sha512": "4/IDFCJfIeg6bix9apmUtIMwvOsiwqdEexeO/R2D4GReIGPLIRODTpId/l4LRSrAJk9lEO3Zx1H0Zx6uohJDNg==",
+      "sha512": "Uw6EqkOmt0IystUtzkU4U8ixCEz+piqgczyoPT00RwPDsWHtWwzedjsBQTS6P1h2+uwDF6w5UpYt5/SSE7eexQ==",
       "type": "package",
       "path": "xunit.analyzers/0.10.0",
       "hasTools": true,
@@ -9677,7 +9677,7 @@
       ]
     },
     "xunit.assert/2.4.1": {
-      "sha512": "O/Oe0BS5RmSsM+LQOb041TzuPo5MdH2Rov+qXGS37X+KFG1Hxz7kopYklM5+1Y+tRGeXrOx5+Xne1RuqLFQoyQ==",
+      "sha512": "xWgCZQSBeM9C7Ak+VuzGsQr7K5ODLVsXK3g2sDD38/3Ljom2IbWJPudG8+IsspgvfpGh0g9Oe5vLc8U+izjieQ==",
       "type": "package",
       "path": "xunit.assert/2.4.1",
       "files": [
@@ -9690,7 +9690,7 @@
       ]
     },
     "xunit.core/2.4.1": {
-      "sha512": "Zsj5OMU6JasNGERXZy8s72+pcheG6Q15atS5XpZXqAtULuyQiQ6XNnUsp1gyfC6WgqScqMvySiEHmHcOG6Eg0Q==",
+      "sha512": "8taMlAQy9qQ7Tbiqr2TAwGkU+X0sckQ+96j7R9OX/Ut1gmHEa4QYIrI8c15j3iKTj3XzyQMVohkTMWa80BRf6w==",
       "type": "package",
       "path": "xunit.core/2.4.1",
       "files": [
@@ -9705,7 +9705,7 @@
       ]
     },
     "xunit.extensibility.core/2.4.1": {
-      "sha512": "yKZKm/8QNZnBnGZFD9SewkllHBiK0DThybQD/G4PiAmQjKtEZyHi6ET70QPU9KtSMJGRYS6Syk7EyR2EVDU4Kg==",
+      "sha512": "qkdxGfxdsAurEFsr8z6LfoBRVb4Vcbeyk1wF+MRrObruwOtl7O+ihQUEHX8fnZnlUFsY6kR+9tcweomLsocR1A==",
       "type": "package",
       "path": "xunit.extensibility.core/2.4.1",
       "files": [
@@ -9723,7 +9723,7 @@
       ]
     },
     "xunit.extensibility.execution/2.4.1": {
-      "sha512": "7e/1jqBpcb7frLkB6XDrHCGXAbKN4Rtdb88epYxCSRQuZDRW8UtTfdTEVpdTl8s4T56e07hOBVd4G0OdCxIY2A==",
+      "sha512": "gc8TxVPew3+Hy6qJTs70JHirtSt5ky380gxC8QF+VmWOs6EdWGlo9xm3URkm+gPbE9roVVfnrw5AuqFNr4R52Q==",
       "type": "package",
       "path": "xunit.extensibility.execution/2.4.1",
       "files": [
@@ -9738,7 +9738,7 @@
       ]
     },
     "xunit.runner.console/2.4.1": {
-      "sha512": "6yGe+Vx250m1zG/nV8FH1XlftJFoidCThpRdWEIwIFE/rc/lYSuL0M+D1gMDNmZgERAR/sHR18Q/etqd6lxaNA==",
+      "sha512": "ZOAIWPBvWIxpavMUiRho4Lc3SFR8dZV45kOWqOvnZy1/hipEIZjGcrH6ZXrrNjfGdifDjP/m18hEYE0Huk6JoA==",
       "type": "package",
       "path": "xunit.runner.console/2.4.1",
       "hasTools": true,
@@ -9816,7 +9816,7 @@
       ]
     },
     "xunit.runner.visualstudio/2.4.1": {
-      "sha512": "mBXd1lp1TQr4to2nFv+c4Tf+RnPoQPKglzwLdbdirOUxRaJsCUNDUx2y7E6j9ajgISlTTp1CydFBZCRCUIrwDg==",
+      "sha512": "70iTd44VD/UcP5kX7Bm6DjNayi9pquI7NhnU7Nl46qWVQBDHVqRrFDXgNrGP936YxefJxzC+2bp1yQUwPJIEvg==",
       "type": "package",
       "path": "xunit.runner.visualstudio/2.4.1",
       "files": [
@@ -9845,11 +9845,6 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "Viceluas.Dominio/1.0.0": {
-      "type": "project",
-      "path": "../Viceluas.Dominio/Viceluas.Dominio.csproj",
-      "msbuildProject": "../Viceluas.Dominio/Viceluas.Dominio.csproj"
-    },
     "Vicelulas.Api/1.0.0": {
       "type": "project",
       "path": "../Vicelulas.Api/Vicelulas.Api.csproj",
@@ -9859,6 +9854,11 @@
       "type": "project",
       "path": "../Vicelulas.Dado/Vicelulas.Dado.csproj",
       "msbuildProject": "../Vicelulas.Dado/Vicelulas.Dado.csproj"
+    },
+    "Vicelulas.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../Viceluas.Dominio/Vicelulas.Dominio.csproj",
+      "msbuildProject": "../Viceluas.Dominio/Vicelulas.Dominio.csproj"
     },
     "Vicelulas.Negocio/1.0.0": {
       "type": "project",
@@ -9877,23 +9877,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lcontesini\\.nuget\\packages\\": {},
+    "C:\\Users\\pbruini\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
+      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
       "projectName": "Vicelulas.Teste",
-      "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
-      "packagesPath": "C:\\Users\\lcontesini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\obj\\",
+      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
+      "packagesPath": "C:\\Users\\pbruini\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\lcontesini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pbruini\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9906,11 +9906,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj": {
-              "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj"
+            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj": {
+              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj"
             },
-            "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj": {
-              "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj"
+            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj": {
+              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj"
             }
           }
         }

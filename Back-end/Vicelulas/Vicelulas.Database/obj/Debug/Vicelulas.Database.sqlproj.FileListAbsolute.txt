@@ -13,3 +13,9 @@ C:\Users\pbruini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Databas
 C:\Users\pbruini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.dll
 C:\Users\pbruini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.pdb
 C:\Users\pbruini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.sqlprojAssemblyReference.cache
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.dacpac
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.dll
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.pdb
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.sqlprojAssemblyReference.cache
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.dll
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.pdb

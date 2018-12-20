@@ -12,3 +12,9 @@ C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\Vicelulas.Teste.pdb
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.dll
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.pdb
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.csprojAssemblyReference.cache
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.csproj.CoreCompileInputs.cache
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.AssemblyInfoInputs.cache
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.AssemblyInfo.cs
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.dll
+C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.pdb

@@ -4,5 +4,30 @@
         <name>Vicelulas.Api</name>
     </assembly>
     <members>
+        <member name="M:Vicelulas.Api.Controllers.TriboController.#ctor">
+            <summary>
+            EndPoints Tribo API
+            </summary>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.TriboController.Get">
+            <summary>
+            Método que obtem uma lista de tribos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.TriboController.GetId(System.Int32)">
+            <summary>
+            Método que seleciona uma tribo
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.TriboController.GetName(System.String)">
+            <summary>
+            Método que obtem lista de tribos com o determinado nome (pesquisa)
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

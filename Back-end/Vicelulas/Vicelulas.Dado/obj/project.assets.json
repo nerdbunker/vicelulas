@@ -1878,23 +1878,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pbruini\\.nuget\\packages\\": {},
+    "C:\\Users\\lcontesini\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
+      "projectUniqueName": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
       "projectName": "Vicelulas.Dado",
-      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
-      "packagesPath": "C:\\Users\\pbruini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\obj\\",
+      "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
+      "packagesPath": "C:\\Users\\lcontesini\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pbruini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lcontesini\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1907,8 +1907,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj": {
-              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj"
+            "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj": {
+              "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj"
             }
           }
         }

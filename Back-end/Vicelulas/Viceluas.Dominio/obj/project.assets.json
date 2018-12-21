@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj",
-      "projectName": "Viceluas.Dominio",
-      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj",
+      "projectName": "Vicelulas.Dominio",
+      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj",
       "packagesPath": "C:\\Users\\pbruini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\obj\\",
+      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

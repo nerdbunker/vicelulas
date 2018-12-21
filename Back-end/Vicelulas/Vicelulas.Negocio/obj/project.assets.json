@@ -476,28 +476,28 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "Viceluas.Dominio/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Viceluas.Dominio.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Viceluas.Dominio.dll": {}
-        }
-      },
       "Vicelulas.Dado/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Dapper": "1.50.5",
-          "Viceluas.Dominio": "1.0.0"
+          "Vicelulas.Dominio": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Vicelulas.Dado.dll": {}
         },
         "runtime": {
           "bin/placeholder/Vicelulas.Dado.dll": {}
+        }
+      },
+      "Vicelulas.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Vicelulas.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vicelulas.Dominio.dll": {}
         }
       }
     }
@@ -1878,15 +1878,15 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "Viceluas.Dominio/1.0.0": {
-      "type": "project",
-      "path": "../Viceluas.Dominio/Viceluas.Dominio.csproj",
-      "msbuildProject": "../Viceluas.Dominio/Viceluas.Dominio.csproj"
-    },
     "Vicelulas.Dado/1.0.0": {
       "type": "project",
       "path": "../Vicelulas.Dado/Vicelulas.Dado.csproj",
       "msbuildProject": "../Vicelulas.Dado/Vicelulas.Dado.csproj"
+    },
+    "Vicelulas.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../Viceluas.Dominio/Vicelulas.Dominio.csproj",
+      "msbuildProject": "../Viceluas.Dominio/Vicelulas.Dominio.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1902,11 +1902,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj",
+      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj",
       "projectName": "Vicelulas.Negocio",
-      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj",
+      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj",
       "packagesPath": "C:\\Users\\pbruini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\obj\\",
+      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1925,8 +1925,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj": {
-              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj"
+            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj": {
+              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj"
             }
           }
         }

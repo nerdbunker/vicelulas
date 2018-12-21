@@ -73,3 +73,5 @@ C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vicelulas.Api.pdb
 =======
 >>>>>>> master
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\bin\Debug\netcoreapp2.1\Vicelulas.Dominio.dll
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\bin\Debug\netcoreapp2.1\Vicelulas.Dominio.pdb

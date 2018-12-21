@@ -16,7 +16,7 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class TriboController : ControllerBase
     {
-        private TriboNegocio _triboNegocio;
+        private readonly TriboNegocio _triboNegocio;
 
 
         /// <summary>

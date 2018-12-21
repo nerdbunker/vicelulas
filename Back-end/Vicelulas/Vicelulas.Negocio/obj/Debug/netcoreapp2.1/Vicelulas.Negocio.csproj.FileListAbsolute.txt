@@ -30,10 +30,8 @@ C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Vicelulas.Negocio.deps.json
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Vicelulas.Negocio.dll
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Vicelulas.Negocio.pdb
-C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Viceluas.Dominio.dll
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Vicelulas.Dado.dll
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Vicelulas.Dado.pdb
-C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Viceluas.Dominio.pdb
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.csprojAssemblyReference.cache
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.csproj.CoreCompileInputs.cache
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.AssemblyInfoInputs.cache

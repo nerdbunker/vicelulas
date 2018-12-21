@@ -4,6 +4,38 @@
         <name>Vicelulas.Api</name>
     </assembly>
     <members>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.#ctor">
+            <summary>
+            EndPoints Pessoa API
+            </summary>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.Get">
+            <summary>
+            Método que obtem uma lista de pessoas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.GetId(System.Int32)">
+            <summary>
+            Método que seleciona uma pessoa
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.GetIdSquad(System.Int32)">
+            <summary>
+            Método que obtem lista de pessoas por squad
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.GetName(System.String)">
+            <summary>
+            Método que obtem lista de pessoas com o determinado nome (pesquisa)
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
         <member name="M:Vicelulas.Api.Controllers.SquadController.#ctor">
             <summary>
             EndPoints Squad API

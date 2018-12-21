@@ -14,7 +14,7 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class SquadController : ControllerBase
     {
-        private SquadNegocio _squadNegocio;
+        private readonly SquadNegocio _squadNegocio;
 
 
         /// <summary>

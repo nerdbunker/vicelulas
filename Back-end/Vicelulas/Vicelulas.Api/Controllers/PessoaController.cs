@@ -14,7 +14,7 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class PessoaController : ControllerBase
     {
-        private PessoaNegocio _pessoaNegocio;
+        private readonly PessoaNegocio _pessoaNegocio;
 
         /// <summary>
         /// EndPoints Pessoa API

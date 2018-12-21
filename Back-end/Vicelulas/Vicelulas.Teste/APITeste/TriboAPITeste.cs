@@ -6,7 +6,7 @@ using Viceluas.Dominio.Dto;
 
 namespace Vicelulas.Teste.APITeste
 {
-    public class TriboAPITeste
+    public class TriboApiTeste
     {
         [Fact]
         public void WorkGetAll()

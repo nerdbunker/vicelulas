@@ -12,6 +12,27 @@
       },
       "results": [
         {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/lcontesini/Documents/GitHub/vicelulas/Back-end/Vicelulas/Vicelulas.Api/Startup.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 13,
+                  "endLine": 80,
+                  "endColumn": 93
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S1118",
           "level": "warning",
           "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
@@ -24,69 +45,6 @@
                   "startColumn": 18,
                   "endLine": 14,
                   "endColumn": 25
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1186",
-          "level": "warning",
-          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/lcontesini/Documents/GitHub/vicelulas/Back-end/Vicelulas/Vicelulas.Api/Controllers/ValuesController.cs",
-                "region": {
-                  "startLine": 29,
-                  "startColumn": 21,
-                  "endLine": 29,
-                  "endColumn": 25
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1186",
-          "level": "warning",
-          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/lcontesini/Documents/GitHub/vicelulas/Back-end/Vicelulas/Vicelulas.Api/Controllers/ValuesController.cs",
-                "region": {
-                  "startLine": 35,
-                  "startColumn": 21,
-                  "endLine": 35,
-                  "endColumn": 24
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1186",
-          "level": "warning",
-          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/lcontesini/Documents/GitHub/vicelulas/Back-end/Vicelulas/Vicelulas.Api/Controllers/ValuesController.cs",
-                "region": {
-                  "startLine": 41,
-                  "startColumn": 21,
-                  "endLine": 41,
-                  "endColumn": 27
                 }
               }
             }
@@ -151,14 +109,14 @@
             ]
           }
         },
-        "S1186": {
-          "id": "S1186",
-          "shortDescription": "Methods should not be empty",
-          "fullDescription": "There are several reasons for a method not to have a method body:",
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1186",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
           "properties": {
-            "category": "Critical Code Smell",
+            "category": "Major Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",

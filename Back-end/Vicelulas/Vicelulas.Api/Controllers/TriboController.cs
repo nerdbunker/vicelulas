@@ -16,7 +16,7 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class TriboController : ControllerBase
     {
-        private TriboNegocio _triboNegocio;
+        private readonly TriboNegocio _triboNegocio;
 
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Vicelulas.Api.Controllers
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        
+
         public IActionResult Get()
         {
             return Ok(_triboNegocio.Selecionar());
@@ -52,7 +52,11 @@ namespace Vicelulas.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public IActionResult GetId(int id)
         {
-            return Ok(_triboNegocio.SelecionarPorId(id));
+            var obj = _triboNegocio.SelecionarPorId(id);
+            if (obj == null)
+                return NotFound();
+
+            return Ok(obj);
         }
 
 
@@ -67,7 +71,11 @@ namespace Vicelulas.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public IActionResult GetName(string nome)
         {
-            return Ok(_triboNegocio.SelecionarPorNome(nome));
+            var obj = _triboNegocio.SelecionarPorNome(nome);
+            if (obj == null)
+                return NotFound();
+
+            return Ok(obj);
         }
 
 

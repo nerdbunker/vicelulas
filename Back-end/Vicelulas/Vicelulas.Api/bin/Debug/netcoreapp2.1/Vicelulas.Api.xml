@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vicelulas.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.#ctor">
+            <summary>
+            EndPoints Pessoa API
+            </summary>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.Get">
+            <summary>
+            Método que obtem uma lista de pessoas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.GetId(System.Int32)">
+            <summary>
+            Método que seleciona uma pessoa
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.GetIdSquad(System.Int32)">
+            <summary>
+            Método que obtem lista de pessoas por squad
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.PessoaController.GetName(System.String)">
+            <summary>
+            Método que obtem lista de pessoas com o determinado nome (pesquisa)
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.SquadController.#ctor">
+            <summary>
+            EndPoints Squad API
+            </summary>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.SquadController.Get">
+            <summary>
+            Método que obtem uma lista de squads
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.SquadController.GetId(System.Int32)">
+            <summary>
+            Método que seleciona uma squad
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.SquadController.GetIdTribo(System.Int32)">
+            <summary>
+            Método que obtem uma lista de squads por tribo
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.SquadController.GetName(System.String)">
+            <summary>
+            Método que obtem lista de squads com o determinado nome (pesquisa)
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.TriboController.#ctor">
+            <summary>
+            EndPoints Tribo API
+            </summary>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.TriboController.Get">
+            <summary>
+            Método que obtem uma lista de tribos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.TriboController.GetId(System.Int32)">
+            <summary>
+            Método que seleciona uma tribo
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vicelulas.Api.Controllers.TriboController.GetName(System.String)">
+            <summary>
+            Método que obtem lista de tribos com o determinado nome (pesquisa)
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

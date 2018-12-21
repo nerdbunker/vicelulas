@@ -4690,28 +4690,28 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "Viceluas.Dominio/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Viceluas.Dominio.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Viceluas.Dominio.dll": {}
-        }
-      },
       "Vicelulas.Dado/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Dapper": "1.50.5",
-          "Viceluas.Dominio": "1.0.0"
+          "Vicelulas.Dominio": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Vicelulas.Dado.dll": {}
         },
         "runtime": {
           "bin/placeholder/Vicelulas.Dado.dll": {}
+        }
+      },
+      "Vicelulas.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Vicelulas.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vicelulas.Dominio.dll": {}
         }
       },
       "Vicelulas.Negocio/1.0.0": {
@@ -12745,15 +12745,15 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "Viceluas.Dominio/1.0.0": {
-      "type": "project",
-      "path": "../Viceluas.Dominio/Viceluas.Dominio.csproj",
-      "msbuildProject": "../Viceluas.Dominio/Viceluas.Dominio.csproj"
-    },
     "Vicelulas.Dado/1.0.0": {
       "type": "project",
       "path": "../Vicelulas.Dado/Vicelulas.Dado.csproj",
       "msbuildProject": "../Vicelulas.Dado/Vicelulas.Dado.csproj"
+    },
+    "Vicelulas.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../Viceluas.Dominio/Vicelulas.Dominio.csproj",
+      "msbuildProject": "../Viceluas.Dominio/Vicelulas.Dominio.csproj"
     },
     "Vicelulas.Negocio/1.0.0": {
       "type": "project",
@@ -12769,28 +12769,28 @@
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1",
       "Swashbuckle.AspNetCore >= 4.0.1",
-      "Viceluas.Dominio >= 1.0.0",
+      "Vicelulas.Dominio >= 1.0.0",
       "Vicelulas.Negocio >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lcontesini\\.nuget\\packages\\": {},
+    "C:\\Users\\pbruini\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj",
+      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj",
       "projectName": "Vicelulas.Api",
-      "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj",
-      "packagesPath": "C:\\Users\\lcontesini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\obj\\",
+      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj",
+      "packagesPath": "C:\\Users\\pbruini\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\lcontesini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pbruini\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12803,11 +12803,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj": {
-              "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Viceluas.Dominio.csproj"
+            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj": {
+              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj"
             },
-            "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj": {
-              "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj"
+            "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj": {
+              "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj"
             }
           }
         }

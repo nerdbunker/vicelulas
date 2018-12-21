@@ -8,49 +8,30 @@
               color="green"
               v-model="search"
               append-icon="search"
-              label="Search"
+              label="Pesquisar"
               single-line
               hide-details
             ></v-text-field>
           </v-card>
         </v-flex>
-        <v-flex xs10>
-          <div class="flex">
-            <router-link to="/tribos/brinks"><img :src="brinks" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <router-link to="/tribos/consultoria"><img :src="consultoria" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <router-link to="/tribos/finamax"><img :src="finamax" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <router-link to="/tribos/globaldev"><img :src="globaldev" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <router-link to="/tribos/unibanco"><img :src="unibanco" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <router-link to="/tribos/mapfre"><img :src="mapfre" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <router-link to="/tribos/passarela"><img :src="passarela" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <router-link to="/tribos/produtos"><img :src="produtos" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <router-link to="/tribos/sequoia"><img :src="sequoia" alt="" class="animate"></router-link>
-          </div>
-          <div class="flex">
-            <img :src="anderson" alt="Anderson - Gestor (Gerente)" class="animate">
-          </div>
-          <div class="flex">
-            <img :src="fantatho" alt="Fantatho - Gestor (Coordenador)" class="animate">
-          </div>
-          <div class="flex">
-            <img :src="rafaela" alt="Rafaela - Gestora (Coordenadora)" class="animate">
-          </div>
+        <v-flex xs12>
+          <v-flex
+            v-for="(tribo, i) in tribos"
+            :key="i"
+            class="flex"
+          >
+            <router-link :to="tribo.to">
+              <svg class="zoom" height="100px" width="100px" xmlns="http://www.w3.org/2000/svg">
+                <image xlink:href="../../static/icones/celula.png"
+                       x="0" y="0" height="100%" width="100%"></image>
+                <text x="50%" y="50%"
+                  dominant-baseline="middle" text-anchor="middle"
+                  font-size="15">
+                  {{ tribo.name }}
+                </text>
+              </svg>
+            </router-link>
+          </v-flex>
         </v-flex>
       </v-layout>
     </v-container>
@@ -62,25 +43,32 @@ export default {
   name: 'Home',
   data () {
     return {
-      // Imagens - Gestores, Tribos e Squads
-      anderson: require('../../static/organismo/anderson.png'),
-      fantatho: require('../../static/organismo/fantatho.png'),
-      rafaela: require('../../static/organismo/rafaela.png'),
-      brinks: require('../../static/organismo/brinks.png'),
-      consultoria: require('../../static/organismo/consultoria.png'),
-      finamax: require('../../static/organismo/finamax.png'),
-      globaldev: require('../../static/organismo/global.png'),
-      unibanco: require('../../static/organismo/iu.png'),
-      mapfre: require('../../static/organismo/mapfre.png'),
-      passarela: require('../../static/organismo/passarela.png'),
-      produtos: require('../../static/organismo/produtos.png'),
-      sequoia: require('../../static/organismo/sequoia.png')
+      name: 'qq coisa',
+      tribos: [
+        // Imagens - Gestores, Tribos e Squads
+        { name: 'Anderson', to: '/tribos/anderson', img: require('../../static/organismo/anderson.png') },
+        { name: 'Fantatho', to: '/tribos/fantatho', img: require('../../static/organismo/fantatho.png') },
+        { name: 'Rafaela', to: '/tribos/rafaela', img: require('../../static/organismo/rafaela.png') },
+        { name: 'Brinks', to: '/tribos/brinks', img: require('../../static/organismo/brinks.png') },
+        { name: 'Consultoria', to: '/tribos/consultoria', img: require('../../static/organismo/consultoria.png') },
+        { name: 'Finamax', to: '/tribos/finamax', img: require('../../static/organismo/finamax.png') },
+        { name: 'Global Dev', to: '/tribos/globaldev', img: require('../../static/organismo/global.png') },
+        { name: 'I. Unibanco', to: '/tribos/unibanco', img: require('../../static/organismo/iu.png') },
+        { name: 'MAPFRE', to: '/tribos/mapfre', img: require('../../static/organismo/mapfre.png') },
+        { name: 'Passarela', to: '/tribos/passarela', img: require('../../static/organismo/passarela.png') },
+        { name: 'Produtos', to: '/tribos/produtos', img: require('../../static/organismo/produtos.png') },
+        { name: 'Sequoia', to: '/tribos/sequoia', img: require('../../static/organismo/sequoia.png') }
+      ]
     }
   }
 }
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
 .flex {
   display: inline;
   flex-wrap: wrap;
@@ -93,19 +81,15 @@ export default {
   padding-left: 5px;
   padding-bottom: 10px;
 }
-/* .animate {
-  animation-name: girando;
-  animation-duration: 300s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+.zoom {
+  padding: 15px;
+  transition: transform .2s;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
 }
 
-@keyframes girando {
-  from {
-  transform: rotate(0deg);
+.zoom:hover {
+  transform: scale(1.5);
 }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 </style>

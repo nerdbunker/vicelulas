@@ -22,6 +22,7 @@ C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vi
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vicelulas.Api.pdb
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Api\bin\Debug\netcoreapp2.1\Vicelulas.Api.xml
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vicelulas.Api.xml
+<<<<<<< HEAD
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Api\bin\Debug\netcoreapp2.1\Vicelulas.Api.deps.json
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Api\bin\Debug\netcoreapp2.1\Vicelulas.Api.runtimeconfig.json
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Api\bin\Debug\netcoreapp2.1\Vicelulas.Api.runtimeconfig.dev.json
@@ -70,3 +71,5 @@ C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vicelulas.Api.dll
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vicelulas.Api.xml
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vicelulas.Api.pdb
+=======
+>>>>>>> master

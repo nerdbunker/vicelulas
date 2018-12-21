@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Viceluas.Dominio\Viceluas.Dominio.csproj" />
+    <ProjectReference Include="..\Viceluas.Dominio\Vicelulas.Dominio.csproj" />
     <ProjectReference Include="..\Vicelulas.Negocio\Vicelulas.Negocio.csproj" />
   </ItemGroup>
 

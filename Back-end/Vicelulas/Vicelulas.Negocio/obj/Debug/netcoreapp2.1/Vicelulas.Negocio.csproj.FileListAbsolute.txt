@@ -12,6 +12,7 @@ C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.csproj.CopyComplete
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.dll
 C:\Users\pbruini\source\repos\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.pdb
+<<<<<<< HEAD
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Vicelulas.Negocio.deps.json
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Vicelulas.Negocio.dll
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\bin\Debug\netcoreapp2.1\Vicelulas.Negocio.pdb
@@ -40,3 +41,5 @@ C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Nego
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.csproj.CopyComplete
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.dll
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\obj\Debug\netcoreapp2.1\Vicelulas.Negocio.pdb
+=======
+>>>>>>> master

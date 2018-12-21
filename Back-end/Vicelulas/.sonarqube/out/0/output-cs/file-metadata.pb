@@ -1,7 +1,9 @@
 }
-{C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Configurações\VicelulasConfiguracao.cst
+{C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Configurações\VicelulasConfiguracao.csd
+bC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\TriboDto.cst
 rC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exceções\ConflitoException.csy
 wC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exceções\NaoEncontradoException.cst
-rC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exceções\RecusadoException.csY
+rC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exceções\RecusadoException.cs]
+[C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Tribo.csY
 UC:\Users\lcontesini\AppData\Local\Temp\.NETCoreApp,Version=v2.1.AssemblyAttributes.cs�
 �C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Viceluas.Dominio.AssemblyInfo.cs

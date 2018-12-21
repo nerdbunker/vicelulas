@@ -3,7 +3,18 @@
 
  &
 
-		 ∆
+		 î
+bC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\TriboDto.cs
+
+ 
+
+		 
+
+
+
+ 
+
+ ∆
 rC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exce√ß√µes\ConflitoException.cs
 
  "
@@ -45,4 +56,15 @@ rC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Domi
 % '
 
   
-( /8 ?
+( /8 ?ç
+[C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Tribo.cs
+
+ 
+
+		 
+
+
+
+ 
+
+ 

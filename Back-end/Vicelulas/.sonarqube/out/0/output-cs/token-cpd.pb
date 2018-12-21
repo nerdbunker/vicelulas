@@ -25,7 +25,68 @@
 }
 
  
-} ±
+} ç
+bC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\TriboDto.cs
+	namespace 	
+Viceluas
+ 
+. 
+Dominio 
+. 
+Dto 
+{ 
+public 
+
+class 
+TriboDto 
+{ 
+public		 
+int		 
+Id		 
+{		 
+get		 
+;		 
+set		  
+;		  !
+}		" #
+public
+
+ 
+string
+
+ 
+Nome
+
+ 
+{
+
+ 
+get
+
+  
+;
+
+  !
+set
+
+" %
+;
+
+% &
+}
+
+' (
+public 
+Boolean 
+Ativo 
+{ 
+get "
+;" #
+set$ '
+;' (
+}) *
+} 
+} ±
 rC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exce√ß√µes\ConflitoException.cs
 	namespace 	
 Viceluas
@@ -196,4 +257,63 @@ Exce√ß√µes #
 { 	
 } 	
 } 
-} 
+} „
+[C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Tribo.cs
+	namespace 	
+Viceluas
+ 
+. 
+Dominio 
+{ 
+public 
+
+class 
+Tribo 
+{ 
+public		 
+int		 
+Id		 
+{		 
+get		 
+;		 
+set		  
+;		  !
+}		" #
+public
+
+ 
+string
+
+ 
+Nome
+
+ 
+{
+
+ 
+get
+
+  
+;
+
+  !
+set
+
+" %
+;
+
+% &
+}
+
+' (
+public 
+Boolean 
+Ativo 
+{ 
+get "
+;" #
+set$ '
+;' (
+}) *
+} 
+} 

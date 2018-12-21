@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Vicelulas.Negocio\Vicelulas.Negocio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NegocioTeste\" />
+  </ItemGroup>
+
 </Project>

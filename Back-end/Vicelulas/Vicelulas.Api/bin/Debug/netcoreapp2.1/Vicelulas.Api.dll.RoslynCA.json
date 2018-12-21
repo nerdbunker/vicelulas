@@ -33,60 +33,18 @@
           }
         },
         {
-          "ruleId": "S1186",
+          "ruleId": "S2933",
           "level": "warning",
-          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "message": "Make '_triboNegocio' 'readonly'.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/lcontesini/Documents/GitHub/vicelulas/Back-end/Vicelulas/Vicelulas.Api/Controllers/ValuesController.cs",
+                "uri": "file:///C:/Users/lcontesini/Documents/GitHub/vicelulas/Back-end/Vicelulas/Vicelulas.Api/Controllers/TriboController.cs",
                 "region": {
-                  "startLine": 29,
-                  "startColumn": 21,
-                  "endLine": 29,
-                  "endColumn": 25
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1186",
-          "level": "warning",
-          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/lcontesini/Documents/GitHub/vicelulas/Back-end/Vicelulas/Vicelulas.Api/Controllers/ValuesController.cs",
-                "region": {
-                  "startLine": 35,
-                  "startColumn": 21,
-                  "endLine": 35,
-                  "endColumn": 24
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1186",
-          "level": "warning",
-          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/lcontesini/Documents/GitHub/vicelulas/Back-end/Vicelulas/Vicelulas.Api/Controllers/ValuesController.cs",
-                "region": {
-                  "startLine": 41,
-                  "startColumn": 21,
-                  "endLine": 41,
-                  "endColumn": 27
+                  "startLine": 19,
+                  "startColumn": 30,
+                  "endLine": 19,
+                  "endColumn": 43
                 }
               }
             }
@@ -151,14 +109,14 @@
             ]
           }
         },
-        "S1186": {
-          "id": "S1186",
-          "shortDescription": "Methods should not be empty",
-          "fullDescription": "There are several reasons for a method not to have a method body:",
+        "S2933": {
+          "id": "S2933",
+          "shortDescription": "Fields that are only assigned in the constructor should be \"readonly\"",
+          "fullDescription": "readonly fields can only be assigned in a class constructor. If a class has a field that's not marked readonly but is only set in the constructor, it could cause confusion about the field's intended use. To avoid confusion, such fields should be marked readonly to make their intended use explicit, and to prevent future maintainers from inadvertently changing their use.",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1186",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2933",
           "properties": {
-            "category": "Critical Code Smell",
+            "category": "Major Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",

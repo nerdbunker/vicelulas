@@ -89,6 +89,7 @@
     <Property Name="sonar.updatecenter.url">https://update.sonarsource.org/update-center.properties</Property>
     <Property Name="sonar.core.id">BF41A1F2-AWeeI15yzT5FJVViYGXM</Property>
     <Property Name="sonar.core.startTime">20/12/2018 13:06:47</Property>
+    <Property Name="sonar.cs.vstest.reportsPaths">C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1</Property>
   </ServerSettings>
   <LocalSettings />
   <AnalyzersSettings>

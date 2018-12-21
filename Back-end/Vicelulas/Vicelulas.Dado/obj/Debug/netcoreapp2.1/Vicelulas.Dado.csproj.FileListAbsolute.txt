@@ -22,3 +22,15 @@ C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.csproj.CopyComplete
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.dll
 C:\Users\pbruini\Documents\GitHub\Viceri\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.pdb
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Vicelulas.Dado.deps.json
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Vicelulas.Dado.dll
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Vicelulas.Dado.pdb
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Viceluas.Dominio.dll
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\bin\Debug\netcoreapp2.1\Viceluas.Dominio.pdb
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.csprojAssemblyReference.cache
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.csproj.CoreCompileInputs.cache
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.AssemblyInfoInputs.cache
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.AssemblyInfo.cs
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.csproj.CopyComplete
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.dll
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.pdb

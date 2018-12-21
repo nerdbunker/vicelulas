@@ -1,14 +1,13 @@
 ﻿using System;
 using System.IO;
-using Vicelulas.Api.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
 using Swashbuckle.AspNetCore.Swagger;
 using System.Reflection;
+using Fatec.Clinica.Api.Filtros;
 
 namespace Vicelulas.Api
 {
@@ -51,11 +50,11 @@ namespace Vicelulas.Api
 
             });
 
-
+            services.AddScoped<ErroFiltro>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceFactory)
         {
             if (env.IsDevelopment())
             {
@@ -66,6 +65,7 @@ namespace Vicelulas.Api
                 app.UseHsts();
             }
 
+           
             app.UseHttpsRedirection();
             app.UseMvc();
 
@@ -75,6 +75,17 @@ namespace Vicelulas.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vicelulas API V1");
             });
+
+
+            //app.Use((c, next) => serviceFactory.GetService<ErroFiltro>().Invoke(c, next));
+
+            app.UseCors(c =>
+            {
+                c.AllowAnyHeader();
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
+            });
+
 
         }
     }

@@ -14,7 +14,7 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class SquadController : ControllerBase
     {
-        private SquadNegocio _squadNegocio;
+        private readonly SquadNegocio _squadNegocio;
 
 
         /// <summary>
@@ -50,7 +50,11 @@ namespace Vicelulas.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public IActionResult GetId(int id)
         {
-            return Ok(_squadNegocio.SelecionarPorId(id));
+            var obj = _squadNegocio.SelecionarPorId(id);
+            if (obj == null)
+                return NotFound();
+
+            return Ok(obj);
         }
 
         /// <summary>
@@ -64,7 +68,11 @@ namespace Vicelulas.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public IActionResult GetIdTribo(int id)
         {
-            return Ok(_squadNegocio.SelecionarPorIdTribo(id));
+            var obj = _squadNegocio.SelecionarPorIdTribo(id);
+            if (obj == null)
+                return NotFound();
+
+            return Ok(obj);
         }
 
         /// <summary>
@@ -78,7 +86,11 @@ namespace Vicelulas.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public IActionResult GetName(string nome)
         {
-            return Ok(_squadNegocio.SelecionarPorNome(nome));
+            var obj = _squadNegocio.SelecionarPorNome(nome);
+            if (obj == null)
+                return NotFound();
+
+            return Ok(obj);
         }
 
 

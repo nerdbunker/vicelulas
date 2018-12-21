@@ -35,7 +35,7 @@ namespace Vicelulas.Api.Controllers
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        
+
         public IActionResult Get()
         {
             return Ok(_triboNegocio.Selecionar());
@@ -52,7 +52,12 @@ namespace Vicelulas.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public IActionResult GetId(int id)
         {
-            return Ok(_triboNegocio.SelecionarPorId(id));
+            var retorno = _triboNegocio.SelecionarPorId(id);
+
+            if (retorno == null)
+                return NotFound();
+
+            return Ok(retorno);
         }
 
 

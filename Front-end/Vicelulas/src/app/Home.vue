@@ -14,21 +14,19 @@
             ></v-text-field>
           </v-card>
         </v-flex>
-        <v-flex xs10>
+        <v-flex xs12>
           <v-flex
-            md2 xs12
             v-for="(tribo, i) in tribos"
             :key="i"
             class="flex"
           >
             <router-link :to="tribo.to">
-              <svg height="150px" width="150px" xmlns="http://www.w3.org/2000/svg">
+              <svg class="zoom" height="100px" width="100px" xmlns="http://www.w3.org/2000/svg">
                 <image xlink:href="../../static/icones/celula.png"
                        x="0" y="0" height="100%" width="100%"></image>
-                <!-- <circle cx="200" cy="100" r="50" fill="none" stroke="blue" stroke-width="5" /> -->
                 <text x="50%" y="50%"
                   dominant-baseline="middle" text-anchor="middle"
-                  font-size="20">
+                  font-size="15">
                   {{ tribo.name }}
                 </text>
               </svg>
@@ -55,7 +53,7 @@ export default {
         { name: 'Consultoria', to: '/tribos/consultoria', img: require('../../static/organismo/consultoria.png') },
         { name: 'Finamax', to: '/tribos/finamax', img: require('../../static/organismo/finamax.png') },
         { name: 'Global Dev', to: '/tribos/globaldev', img: require('../../static/organismo/global.png') },
-        { name: 'IU', to: '/tribos/unibanco', img: require('../../static/organismo/iu.png') },
+        { name: 'I. Unibanco', to: '/tribos/unibanco', img: require('../../static/organismo/iu.png') },
         { name: 'MAPFRE', to: '/tribos/mapfre', img: require('../../static/organismo/mapfre.png') },
         { name: 'Passarela', to: '/tribos/passarela', img: require('../../static/organismo/passarela.png') },
         { name: 'Produtos', to: '/tribos/produtos', img: require('../../static/organismo/produtos.png') },
@@ -67,6 +65,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
 .flex {
   display: inline;
   flex-wrap: wrap;
@@ -79,19 +81,15 @@ export default {
   padding-left: 5px;
   padding-bottom: 10px;
 }
-.animate {
-  animation-name: girando;
-  animation-duration: 100s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+.zoom {
+  padding: 15px;
+  transition: transform .2s;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
 }
 
-@keyframes girando {
-  from {
-  transform: rotate(360deg);
-}
-  to {
-    transform: rotate(360deg);
-  }
+.zoom:hover {
+  transform: scale(1.5);
 }
 </style>

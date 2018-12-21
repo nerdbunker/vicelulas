@@ -6,7 +6,7 @@ using Viceluas.Dominio.Dto;
 
 namespace Vicelulas.DBMock
 {
-    class DbMock
+    internal class DbMock
     {
         public static List<TriboDto> Tribo { get; set; }
         public static List<SquadDto> Squad { get; set; }

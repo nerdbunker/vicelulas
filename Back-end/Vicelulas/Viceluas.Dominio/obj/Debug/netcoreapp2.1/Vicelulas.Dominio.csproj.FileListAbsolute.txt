@@ -7,3 +7,12 @@ C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Viceluas.Do
 C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.AssemblyInfo.cs
 C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.dll
 C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.pdb
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\bin\Debug\netcoreapp2.1\Vicelulas.Dominio.deps.json
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\bin\Debug\netcoreapp2.1\Vicelulas.Dominio.dll
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\bin\Debug\netcoreapp2.1\Vicelulas.Dominio.pdb
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.AssemblyInfoInputs.cache
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.AssemblyInfo.cs
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.dll
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.pdb
+C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\obj\Debug\netcoreapp2.1\Vicelulas.Dominio.csprojAssemblyReference.cache

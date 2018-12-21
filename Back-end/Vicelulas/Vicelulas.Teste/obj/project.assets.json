@@ -5727,7 +5727,7 @@
       ]
     },
     "xunit.analyzers/0.10.0": {
-      "sha512": "4/IDFCJfIeg6bix9apmUtIMwvOsiwqdEexeO/R2D4GReIGPLIRODTpId/l4LRSrAJk9lEO3Zx1H0Zx6uohJDNg==",
+      "sha512": "Uw6EqkOmt0IystUtzkU4U8ixCEz+piqgczyoPT00RwPDsWHtWwzedjsBQTS6P1h2+uwDF6w5UpYt5/SSE7eexQ==",
       "type": "package",
       "path": "xunit.analyzers/0.10.0",
       "hasTools": true,
@@ -5848,23 +5848,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lcontesini\\.nuget\\packages\\": {},
+    "C:\\Users\\pbruini\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
+      "projectUniqueName": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
       "projectName": "Vicelulas.Teste",
-      "projectPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
-      "packagesPath": "C:\\Users\\lcontesini\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lcontesini\\Documents\\GitHub\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\obj\\",
+      "projectPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\Vicelulas.Teste.csproj",
+      "packagesPath": "C:\\Users\\pbruini\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pbruini\\Documents\\GitHub\\Viceri\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Teste\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\lcontesini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pbruini\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

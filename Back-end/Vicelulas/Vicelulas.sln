@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vicelulas.Negocio", "Vicelu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Teste", "5-Teste", "{E475C762-ABBD-4A82-8900-C178C182C3D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vicelulas.Teste", "Vicelulas.Teste\Vicelulas.Teste.csproj", "{122766D5-6E79-4039-A4D5-62108D394CB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vicelulas.Teste", "Vicelulas.Teste\Vicelulas.Teste.csproj", "{122766D5-6E79-4039-A4D5-62108D394CB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vicelulas.DBMock", "Vicelulas.DBMock\Vicelulas.DBMock.csproj", "{5A11BD9E-722F-446B-9279-4ECCCCC882CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{122766D5-6E79-4039-A4D5-62108D394CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{122766D5-6E79-4039-A4D5-62108D394CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{122766D5-6E79-4039-A4D5-62108D394CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A11BD9E-722F-446B-9279-4ECCCCC882CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A11BD9E-722F-446B-9279-4ECCCCC882CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A11BD9E-722F-446B-9279-4ECCCCC882CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A11BD9E-722F-446B-9279-4ECCCCC882CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{840A4890-DA93-45BB-A8CC-11E2F2A2D739} = {BC8F899A-4E66-4FBA-AD75-8FFEE8D36513}
 		{45581224-EFB7-4E32-BA07-DC493E0A2ED8} = {44054CAF-B29C-4087-8D99-3F242F6B609F}
 		{122766D5-6E79-4039-A4D5-62108D394CB6} = {E475C762-ABBD-4A82-8900-C178C182C3D8}
+		{5A11BD9E-722F-446B-9279-4ECCCCC882CC} = {2450FFFE-17A4-4718-A2A9-8C97DDAB63A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8159E630-D82E-460C-B49F-D7A861FE2CD0}

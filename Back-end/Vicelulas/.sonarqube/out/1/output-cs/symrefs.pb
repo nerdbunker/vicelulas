@@ -32,4 +32,22 @@ vC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dad
 
  -
 
-		 0
+		 0…
+dC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\TriboRepositorio.cs
+
+ !
+
+% /
+ ! &
+  
+
+ '
+, .
+Ç Ñ
+ ! $
+  
+
+% 6
+> B	##} Å
+!! !## &
+## %% 

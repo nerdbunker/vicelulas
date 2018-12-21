@@ -1,27 +1,18 @@
-õ
-oC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\ValuesController.cs
+Œ
+nC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\TriboController.cs
 
- !
+  2
+ * )) #77 #FF #
 
-1 4
+ 
 
-$ '
+''  
 
-, .
+55 "
+55' )774 6
 
- 
-
-+ 0
-
-## 
-
-## 
-
-##2 7
-
-)) 
-
-)) !£
+DD $
+DD, 0FF6 :£
 eC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Filtros\ErroFiltro.cs
 
 

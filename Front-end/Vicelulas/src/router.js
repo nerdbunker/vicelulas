@@ -13,9 +13,9 @@ import Squads from '@/app/organismo/Squads'
 import Tribo from '@/app/organismo/Tribo'
 import Tribos from '@/app/organismo/Tribos'
 // App - Autenticacao
-import Login from '@/app/autenticacao/Login'
-import Adicionar from '@/app/autenticacao/autenticado/Adicionar'
-import Gerenciar from '@/app/autenticacao/autenticado/Gerenciar'
+import Login from '@/app/acesso/Login'
+import Adicionar from '@/app/acesso/gerencia/Adicionar'
+import Gerenciar from '@/app/acesso/gerencia/Gerenciar'
 
 Vue.use(Router)
 

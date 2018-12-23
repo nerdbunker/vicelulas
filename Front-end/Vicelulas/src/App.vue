@@ -64,7 +64,7 @@ export default {
       items: [
         { icon: 'home', title: 'Organismo', to: '/' },
         { icon: 'loyalty', title: 'Valores', to: '/valores' },
-        { icon: 'photo', title: 'Viceri', to: '/viceri' },
+        { icon: 'photo', title: 'Fotos da Viceri', to: '/viceri' },
         { icon: 'info', title: 'Dúvidas', to: '/duvidas' },
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
         { icon: 'fingerprint', title: 'Entrar', to: '/entrar' }

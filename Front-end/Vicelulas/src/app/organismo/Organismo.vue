@@ -83,19 +83,15 @@ export default {
         pessoas: 97
       },
       tribos: [
-        // Imagens - Gestores, Tribos e Squads
-        // { name: 'Rafaela', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
-        // { name: 'Anderson', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
-        // { name: 'Fantatho', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
-        { name: 'Consultoria', to: '/tribos/consultoria', img: require('../../../static/organismo/consultoria.png') },
-        { name: 'Finamax', to: '/tribos/finamax', img: require('../../../static/organismo/finamax.png') },
-        { name: 'Global Dev', to: '/tribos/globaldev', img: require('../../../static/organismo/global.png') },
-        { name: 'Viceri', to: '/tribos/globaldev', img: require('../../../static/organismo/global.png') },
-        { name: 'I. Unibanco', to: '/tribos/unibanco', img: require('../../../static/organismo/iu.png') },
-        { name: 'MAPFRE', to: '/tribos/mapfre', img: require('../../../static/organismo/mapfre.png') },
-        { name: 'Passarela', to: '/tribos/passarela', img: require('../../../static/organismo/passarela.png') },
-        { name: 'Produtos', to: '/tribos/produtos', img: require('../../../static/organismo/produtos.png') },
-        { name: 'Sequoia', to: '/tribos/sequoia', img: require('../../../static/organismo/sequoia.png') }
+        { name: 'Consultoria', to: '/tribos/consultoria' },
+        { name: 'Finamax', to: '/tribos/finamax' },
+        { name: 'Global Dev', to: '/tribos/globaldev' },
+        { name: 'Viceri', to: '/tribos/globaldev' },
+        { name: 'I. Unibanco', to: '/tribos/unibanco' },
+        { name: 'MAPFRE', to: '/tribos/mapfre' },
+        { name: 'Passarela', to: '/tribos/passarela' },
+        { name: 'Produtos', to: '/tribos/produtos' },
+        { name: 'Sequoia', to: '/tribos/sequoia' }
       ]
     }
   }

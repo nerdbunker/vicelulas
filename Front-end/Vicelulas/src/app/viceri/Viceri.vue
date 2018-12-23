@@ -17,10 +17,10 @@ export default {
     return {
       // Imagens para o for do Carousel
       fotos: [
-        { src: require('../../../static/mindset/fotos/1.jpeg') },
-        { src: require('../../../static/mindset/fotos/2.jpeg') },
-        { src: require('../../../static/mindset/fotos/3.jpeg') },
-        { src: require('../../../static/mindset/fotos/4.jpeg') }
+        { src: require('../../../static/mindset/1.jpeg') },
+        { src: require('../../../static/mindset/2.jpeg') },
+        { src: require('../../../static/mindset/3.jpeg') },
+        { src: require('../../../static/mindset/4.jpeg') }
       ]
     }
   }

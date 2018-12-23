@@ -1,23 +1,24 @@
 // Global
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/app/Home'
 // App - Viceri
+import Home from '@/app/Home'
 import Viceri from '@/app/viceri/Viceri'
 import Duvidas from '@/app/viceri/Duvidas'
 import Suporte from '@/app/viceri/Suporte'
 import Valores from '@/app/viceri/Valores'
 // App - Organismo
-import Squad from '@/app/organismo/Squad'
-import Tribo from '@/app/organismo/Tribo'
+import Organismo from '@/app/organismo/Organismo'
+import Squads from '@/app/organismo/Squads'
+import Tribos from '@/app/organismo/Tribos'
 // App - Acesso
-import Login from '@/app/acesso/Login'
-import Adicionar from '@/app/acesso/gerencia/Adicionar'
-import Gerenciar from '@/app/acesso/gerencia/Gerenciar'
-import Historico from '@/app/acesso/gerencia/Historico'
-import GerenciarPessoa from '@/app/acesso/crud/GerenciarPessoa'
-import GerenciarTribo from '@/app/acesso/crud/GerenciarTribo'
-import GerenciarSquad from '@/app/acesso/crud/GerenciarSquad'
+import Entrar from '@/app/acesso/Entrar'
+import Adicionar from '@/app/acesso/admin/Adicionar'
+import Gerenciar from '@/app/acesso/admin/Gerenciar'
+import Historico from '@/app/acesso/crud/Historico'
+import Pessoa from '@/app/acesso/crud/Pessoa'
+import Tribo from '@/app/acesso/crud/Tribo'
+import Squad from '@/app/acesso/crud/Squad'
 
 Vue.use(Router)
 
@@ -32,10 +33,11 @@ export default new Router({
     { path: '/suporte', name: 'Suporte', component: Suporte },
     { path: '/valores', name: 'Valores', component: Valores },
     // App - Organismo
-    { path: '/tribos/:name', name: 'Tribo', component: Tribo },
-    { path: '/tribos/squads/:id', name: 'Squad', component: Squad },
+    { path: '/organismo', name: 'Organismo', component: Organismo },
+    { path: '/tribos/:name', name: 'Tribos', component: Tribos },
+    { path: '/tribos/squads/:id', name: 'Squads', component: Squads },
     // App - Autenticacao
-    { path: '/login', name: 'Login', component: Login },
+    { path: '/entrar', name: 'Login', component: Entrar },
     { path: '/adicionar', name: 'Adicionar', component: Adicionar },
     // App - Acesso - Gerencia (com rotas aninhadas)
     { path: '/gerenciar',
@@ -43,9 +45,9 @@ export default new Router({
       component: Gerenciar,
       children: [
         { path: '/historico', component: Historico },
-        { path: '/gerenciarpessoa', component: GerenciarPessoa },
-        { path: '/gerenciartribo', component: GerenciarTribo },
-        { path: '/gerenciarsquad', component: GerenciarSquad }
+        { path: '/pessoa', component: Pessoa },
+        { path: '/tribo', component: Tribo },
+        { path: '/squad', component: Squad }
       ]
     }
   ]

@@ -5,10 +5,11 @@
         dark
         persistent
         v-model="drawer"
-        fixed
-        app
+        fixed app width="200"
       >
         <v-list>
+            <img src="../static/icones/viceri.png" class="logo" alt="">
+          <v-divider></v-divider>
           <v-list-tile
             value="true"
             v-for="(item, i) in items"
@@ -31,11 +32,10 @@
         flat
         color="red"
         app
-        :clipped-left="clipped"
       >
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <v-list-tile-title text-xs-center class="title">
-          {{ name }}
+        <v-list-tile-title text-xs-center class="titulo">
+          {{ titulo }}
         </v-list-tile-title>
       </v-toolbar>
       <!-- Conteúdo -->
@@ -60,13 +60,14 @@ export default {
     return {
       drawer: false,
       fixed: false,
+      titulo: 'VICELULAS',
       items: [
         { icon: 'home', title: 'Organismo', to: '/' },
         { icon: 'loyalty', title: 'Valores', to: '/valores' },
         { icon: 'photo', title: 'Viceri', to: '/viceri' },
         { icon: 'info', title: 'Dúvidas', to: '/duvidas' },
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
-        { icon: 'fingerprint', title: 'Entrar', to: '/login' }
+        { icon: 'fingerprint', title: 'Entrar', to: '/entrar' }
       ]
     }
   }
@@ -74,12 +75,23 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Play');
+
 .bg {
   background-image: url('../static/backgrounds/mol-bg.png');
-  background-attachment: fixed;
+  background-attachment: fixed !important;
   background-size: cover;
 }
 #inspire {
+  font-family: 'Play', sans-serif;
   background: none;
+}
+.titulo {
+  font-family: 'Play', sans-serif;
+  font-size: 25px;
+}
+.logo {
+  padding-left: 10px;
+  width: 190px;
 }
 </style>

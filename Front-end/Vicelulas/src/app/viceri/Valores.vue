@@ -1,15 +1,15 @@
 <template>
   <v-container fluid grid-list-xs text-xs-center>
     <v-layout row wrap justify-center align-content-center>
-      <v-flex xs10>
+      <v-flex md8 xs12>
         <v-layout row wrap>
           <v-flex
             v-for="card in cards"
             v-bind="{ [`xs${card.flex}`]: true }"
             :key="card.title"
-            pa-2
+            pa-1
           >
-            <v-card>
+            <v-card dark>
               <v-img
                 :src="card.src"
                 height="200px"
@@ -52,9 +52,9 @@ export default {
   name: 'Valores',
   data: () => ({
     cards: [
-      { title: 'Em breve', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-      { title: 'Em breve', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-      { title: 'Em breve', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 }
+      { title: 'Em breve', src: require('../../../static/imagens/viceri.svg'), flex: 12 },
+      { title: '...', src: require('../../../static/imagens/viceri.svg'), flex: 6 },
+      { title: '....', src: require('../../../static/imagens/viceri.svg'), flex: 6 }
     ]
   })
 }

@@ -4,7 +4,7 @@
       <v-flex md8 xs12>
         <v-card>
           <v-img
-          height="250px"
+          height="230px"
           :src="img"
           ></v-img>
           <v-card-title primary-title>
@@ -13,7 +13,7 @@
               <br>
               <div>
                 <p>{{ lema }} — &lambda; &lambda; &lambda;</p>
-                <hr><br>
+                <v-divider></v-divider>
                 <p>{{ msg }}</p>
               </div>
             </div>

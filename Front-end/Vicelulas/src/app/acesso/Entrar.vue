@@ -11,7 +11,7 @@
                 name="email"
                 label="E-mail"
                 type="text"
-                autofocus="true"
+                :autofocus="true"
                 ></v-text-field>
                 <v-text-field
                 id="senha"
@@ -24,7 +24,7 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn to="/gerenciartribo" color="teal">Login</v-btn>
+              <v-btn to="/tribo" color="teal">Login</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -35,8 +35,11 @@
 
 <script>
 export default {
-  props: {
-    source: String
+  name: 'Entrar',
+  data () {
+    return {
+      true: true
+    }
   }
 }
 </script>

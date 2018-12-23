@@ -1,42 +1,70 @@
 <template>
   <v-slide-y-transition mode="out-in">
-    <v-container class="celulaSvg" fluid grid-list-md text-xs-center>
+    <v-container fluid grid-list-md text-xs-center>
       <v-layout row wrap justify-center align-content-center>
         <v-flex xs12>
-          <v-chip color="purple" text-color="white">
+          <v-chip color="green" text-color="white">
             <v-avatar>
               <v-icon>bubble_chart</v-icon>
             </v-avatar>
-            Você está visualizando o organismo da Viceri.
+            Você está em: Organismo Viceri.
           </v-chip>
         </v-flex>
-        <v-flex xs7>
+        <v-flex md8 xs12>
           <v-flex
             v-for="(tribo, i) in tribos"
             :key="i"
             class="flex"
           >
             <router-link :to="tribo.to">
+              <!-- SVG Dinamico, cria as imagens conforme a API fornece dados -->
               <svg class="zoom" height="100px" width="100px" xmlns="http://www.w3.org/2000/svg">
-                <!-- Imagem de Fundo - Atomo girando -->
-                <image xlink:href="../../../static/icones/celula.png"
+                <!-- Imagem de Fundo - Célula -->
+                <image xlink:href="../../../static/icones/cell.png"
                        x="0" y="0" height="100%" width="100%"></image>
                 <!-- Fundo do Texto -->
                 <filter x="0" y="0" width="1" height="1" id="solid">
-                  <feFlood flood-color="teal"/>
+                  <feFlood flood-color="red"/>
                   <feComposite in="SourceGraphic"/>
                 </filter>
-                <!-- Texto -->
+                <!-- Titulo -->
                 <text
-                  x="50%" y="50%"
-                  fill="white"
-                  filter="url(#solid)"
+                  x="50%" y="50%" class="fundo"
+                  fill="white" filter="url(#solid)"
                   dominant-baseline="middle" text-anchor="middle"
-                  font-size="15">
+                  font-size="100%">
                   {{ tribo.name }}
                 </text>
               </svg>
             </router-link>
+          </v-flex>
+        </v-flex>
+        <v-flex d-flex md8 xs12>
+          <v-flex md4 xs12 pa-3>
+            <v-chip color="red" text-color="white">
+              <v-avatar>
+                <v-icon>bubble_chart</v-icon>
+              </v-avatar>
+              Tribos: {{ metricas.tribos }}
+            </v-chip>
+          </v-flex>
+          <v-spacer></v-spacer>
+          <v-flex md4 xs12 pa-3>
+            <v-chip color="green" text-color="white">
+              <v-avatar>
+                <v-icon>grain</v-icon>
+              </v-avatar>
+              Squads: {{ metricas.squads }}
+            </v-chip>
+          </v-flex>
+          <v-spacer></v-spacer>
+          <v-flex md4 xs12 pa-3>
+            <v-chip color="indigo" text-color="white">
+              <v-avatar>
+                <v-icon>person</v-icon>
+              </v-avatar>
+              Pessoas: {{ metricas.pessoas }}
+            </v-chip>
           </v-flex>
         </v-flex>
       </v-layout>
@@ -49,14 +77,20 @@ export default {
   name: 'Home',
   data () {
     return {
+      metricas: {
+        tribos: 7,
+        squads: 15,
+        pessoas: 97
+      },
       tribos: [
         // Imagens - Gestores, Tribos e Squads
-        { name: 'Rafaela', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
-        { name: 'Anderson', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
-        { name: 'Fantatho', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
+        // { name: 'Rafaela', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
+        // { name: 'Anderson', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
+        // { name: 'Fantatho', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
         { name: 'Consultoria', to: '/tribos/consultoria', img: require('../../../static/organismo/consultoria.png') },
         { name: 'Finamax', to: '/tribos/finamax', img: require('../../../static/organismo/finamax.png') },
         { name: 'Global Dev', to: '/tribos/globaldev', img: require('../../../static/organismo/global.png') },
+        { name: 'Viceri', to: '/tribos/globaldev', img: require('../../../static/organismo/global.png') },
         { name: 'I. Unibanco', to: '/tribos/unibanco', img: require('../../../static/organismo/iu.png') },
         { name: 'MAPFRE', to: '/tribos/mapfre', img: require('../../../static/organismo/mapfre.png') },
         { name: 'Passarela', to: '/tribos/passarela', img: require('../../../static/organismo/passarela.png') },
@@ -69,6 +103,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Kalam');
+
 a {
   text-decoration: none;
   text-transform: uppercase;
@@ -76,14 +112,7 @@ a {
 .flex {
   display: inline;
   flex-wrap: wrap;
-}
-.espaco {
-  padding: 10px;
-}
-.search {
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-bottom: 10px;
+
 }
 .zoom {
   padding: 15px;
@@ -93,9 +122,10 @@ a {
   margin: 0 auto;
 }
 .zoom:hover {
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
-.borda {
+.fundo {
+  font-family: 'Kalam', cursive;
   border-radius: 10px;
 }
 </style>

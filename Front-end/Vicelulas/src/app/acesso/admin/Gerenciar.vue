@@ -1,6 +1,6 @@
 <template>
-  <v-layout row wrap fluid>
-    <v-flex xs12>
+  <v-layout row wrap justify-center align-content-center>
+    <v-flex>
       <v-tabs dark fixed-tabs>
         <v-tab
           v-for="(aba, i) in abas"
@@ -26,11 +26,10 @@ export default {
   data () {
     return {
       abas: [
-        { titulo: 'Tribo', to: '/gerenciartribo' },
-        { titulo: 'Squad', to: '/gerenciarsquad' },
-        { titulo: 'Pessoa', to: '/gerenciarpessoa' },
-        { titulo: 'Histórico', to: '/historico' },
-        { titulo: 'Timeline', to: '/timeline' }
+        { titulo: 'Tribo', to: '/tribo' },
+        { titulo: 'Squad', to: '/squad' },
+        { titulo: 'Pessoa', to: '/pessoa' },
+        { titulo: 'Histórico', to: '/historico' }
       ]
     }
   }

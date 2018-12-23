@@ -1,6 +1,6 @@
 import Vue from 'vue'
 // Plugins
-import './plugins/axios'
+import axios from './plugins/axios'
 import './plugins/vuetify'
 // Motor da App
 import App from './App.vue'
@@ -16,5 +16,10 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  mounted () {
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => (this.info = response))
+  }
 }).$mount('#app')

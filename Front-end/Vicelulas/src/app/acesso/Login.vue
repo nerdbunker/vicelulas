@@ -1,8 +1,8 @@
 <template>
   <v-slide-y-transition>
-    <v-container fluid fill-height>
+    <v-container fluid>
       <v-layout align-center justify-center>
-        <v-flex md7 xs12>
+        <v-flex md7 xs12 pt-5>
           <v-card class="elevation-12">
             <v-card-text>
               <v-form>
@@ -24,7 +24,7 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn to="/gerenciar" color="teal">Login</v-btn>
+              <v-btn to="/gerenciartribo" color="teal">Login</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>

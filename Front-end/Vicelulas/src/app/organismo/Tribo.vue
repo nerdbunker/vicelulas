@@ -3,9 +3,8 @@
     <v-layout row wrap justify-center align-content-center>
       <v-flex md5 xs12 mb-6 pa-1>
         <v-card>
-          <v-toolbar flat>
-            <Pesquisar />
-          </v-toolbar>
+          <Pesquisar />
+          <v-divider></v-divider>
           <Squads />
         </v-card>
       </v-flex>

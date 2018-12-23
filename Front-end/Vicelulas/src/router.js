@@ -10,11 +10,14 @@ import Valores from '@/app/viceri/Valores'
 // App - Organismo
 import Squad from '@/app/organismo/Squad'
 import Tribo from '@/app/organismo/Tribo'
-// App - Autenticacao
+// App - Acesso
 import Login from '@/app/acesso/Login'
 import Adicionar from '@/app/acesso/gerencia/Adicionar'
 import Gerenciar from '@/app/acesso/gerencia/Gerenciar'
 import Historico from '@/app/acesso/gerencia/Historico'
+import GerenciarPessoa from '@/app/acesso/crud/GerenciarPessoa'
+import GerenciarTribo from '@/app/acesso/crud/GerenciarTribo'
+import GerenciarSquad from '@/app/acesso/crud/GerenciarSquad'
 
 Vue.use(Router)
 
@@ -34,7 +37,16 @@ export default new Router({
     // App - Autenticacao
     { path: '/login', name: 'Login', component: Login },
     { path: '/adicionar', name: 'Adicionar', component: Adicionar },
-    { path: '/gerenciar', name: 'Gerenciar', component: Gerenciar },
-    { path: '/historico', name: 'Historico', component: Historico }
+    // App - Acesso - Gerencia (com rotas aninhadas)
+    { path: '/gerenciar',
+      name: 'Gerenciar',
+      component: Gerenciar,
+      children: [
+        { path: '/historico', component: Historico },
+        { path: '/gerenciarpessoa', component: GerenciarPessoa },
+        { path: '/gerenciartribo', component: GerenciarTribo },
+        { path: '/gerenciarsquad', component: GerenciarSquad }
+      ]
+    }
   ]
 })

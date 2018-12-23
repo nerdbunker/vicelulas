@@ -7,7 +7,7 @@
         xs12
       >
         <!-- Card da Squad -->
-        <v-card color="blue darken-2" class="white--text">
+        <v-card color="teal" class="white--text">
           <v-flex xs12>
             <v-card-title primary-title>
               <v-flex xs5>
@@ -28,7 +28,7 @@
           </v-flex>
           <v-divider light></v-divider>
           <v-card-actions class="pa-3">
-            Esta Squad pertence à Tribo: {{ squad.tribo }}
+            Tribo: {{ squad.tribo }} | Gestor: {{ squad.gestor }}
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -42,9 +42,9 @@ export default {
   data () {
     return {
       squads: [
-        { nome: 'SQUAD First', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/team.png') },
-        { nome: 'SQUAD Lightning', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/team.png') },
-        { nome: 'SQUAD Master', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/team.png') }
+        { nome: 'SQUAD First', gestor: 'Anderson', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/squad.png') },
+        { nome: 'SQUAD Lightning', gestor: 'Rafaela', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/squad.png') },
+        { nome: 'SQUAD Master', gestor: 'Fantatho', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/squad.png') }
       ]
     }
   }
@@ -54,8 +54,5 @@ export default {
 <style>
 .squad-text {
   text-align: left;
-}
-.imagem-time {
-  width: 100%;
 }
 </style>

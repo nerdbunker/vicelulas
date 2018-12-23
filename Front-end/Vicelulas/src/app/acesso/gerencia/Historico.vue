@@ -1,36 +1,23 @@
 <template>
-  <v-container fluid grid-list-md text-xs-center>
+  <v-container fluid grid-list-xs>
     <v-layout row wrap justify-center align-content-center>
-      <v-flex md7 xs12 mb-6 pa-1>
-        <v-card>
-          <v-toolbar flat>
-            <v-text-field
-              color="red"
-              v-model="search"
-              append-icon="search"
-              label="Pesquisar"
-              single-line
-              hide-details
-            ></v-text-field>
-          </v-toolbar>
-          <v-flex
-            v-for="(historico, i) in historicos"
-            :key="i"
+      <v-flex md8 xs12>
+        <v-timeline>
+          <v-timeline-item
+            v-for="(historico, n) in historicos"
+            :key="n"
+            color="red lighten-2"
+            large
           >
-            <v-card flat>
-              <v-list>
-                {{ historico.nome + ' alterou ' + historico.pessoa + ' do squad ' + historico.squadAnterior + ' para ' + historico.squadAtual + 'Data: 00:00 — 00/00' }}
-              </v-list>
-              <v-divider></v-divider>
+            <span slot="opposite">{{ historico.data }}</span>
+            <v-card class="elevation-2">
+              <v-card-title class="headline">Alteração</v-card-title>
+              <v-card-text>
+                {{ historico.admin + ' moveu ' + historico.alterado + ' de ' + historico.anterior + ' para ' + historico.atual }}
+              </v-card-text>
             </v-card>
-          </v-flex>
-          <v-btn
-            to="/gerenciar"
-            color="teal"
-          >
-            <v-icon>arrow_back</v-icon>
-          </v-btn>
-        </v-card>
+          </v-timeline-item>
+        </v-timeline>
       </v-flex>
     </v-layout>
   </v-container>
@@ -38,42 +25,17 @@
 
 <script>
 export default {
-  name: 'Squads',
+  name: 'Timeline',
   data () {
     return {
       historicos: [
-        { nome: 'Anderson', pessoa: 'Pedro', squadAnterior: 'NerdBunker', squadAtual: 'LAMBDA' },
-        { nome: 'Fantatho', pessoa: 'Isac', squadAnterior: 'NerdBunker', squadAtual: 'BUNKERS' },
-        { nome: 'Fantatho', pessoa: 'Isac', squadAnterior: 'NerdBunker', squadAtual: 'BUNKERS' },
-        { nome: 'Fantatho', pessoa: 'Isac', squadAnterior: 'NerdBunker', squadAtual: 'BUNKERS' },
-        { nome: 'Fantatho', pessoa: 'Isac', squadAnterior: 'NerdBunker', squadAtual: 'BUNKERS' },
-        { nome: 'Fantatho', pessoa: 'Isac', squadAnterior: 'NerdBunker', squadAtual: 'BUNKERS' },
-        { nome: 'Fantatho', pessoa: 'Isac', squadAnterior: 'NerdBunker', squadAtual: 'BUNKERS' },
-        { nome: 'Rafaela', pessoa: 'Lucas', squadAnterior: 'NerdBunker', squadAtual: 'NERDS' }
+        { data: '05/16', admin: 'Anderson', alterado: 'Marcelo', anterior: 'SQUAD1', atual: 'SQUAD5' },
+        { data: '05/16', admin: 'Rafaela', alterado: 'Lucas', anterior: 'SQUAD13', atual: 'SQUAD7' },
+        { data: '01/17', admin: 'Fantatho', alterado: 'Mateus', anterior: 'SQUAD15', atual: 'SQUAD9' },
+        { data: '05/17', admin: 'Anderson', alterado: 'Rafael', anterior: 'SQUAD7', atual: 'SQUAD3' },
+        { data: '05/18', admin: 'Rafaela', alterado: 'Felipe', anterior: 'SQUAD3', atual: 'SQUAD13' }
       ]
     }
   }
 }
 </script>
-
-<style scoped>
-.flex {
-  display: inline;
-  flex-wrap: wrap;
-}
-.espaco {
-  padding: 10px;
-}
-.search {
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-bottom: 10px;
-}
-p {
-  font-size: 18px;
-  padding-top: 15px;
-}
-.imagem {
-  width: 50%;
-}
-</style>

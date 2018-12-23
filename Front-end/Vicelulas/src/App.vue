@@ -4,9 +4,7 @@
       <v-navigation-drawer
         dark
         persistent
-        :clipped="clipped"
         v-model="drawer"
-        enable-resize-watcher
         fixed
         app
       >
@@ -37,36 +35,31 @@
       >
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-list-tile-title text-xs-center class="title">
-          Vicélulas
+          {{ name }}
         </v-list-tile-title>
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>
         <router-view/>
       </v-content>
-      <!-- Botão -->
-      <v-btn
-        fab fixed
-        bottom right
-        dark center
-        onclick="location.reload(true)"
-        v-show="$vuetify.breakpoint.xs"
-        >
-        <v-icon dark>arrow_back</v-icon>
-      </v-btn>
+      <!-- Menu Inferior [apenas no mobile] -->
+      <Menu />
     </v-app>
   </div>
 </template>
 
 <script>
+import Menu from './app/componentes/Menu'
+
 export default {
   name: 'App',
+  components: {
+    Menu
+  },
   data () {
     return {
-      clipped: false,
       drawer: false,
       fixed: false,
-      miniVariant: false,
       items: [
         { icon: 'home', title: 'Organismo', to: '/' },
         { icon: 'loyalty', title: 'Valores', to: '/valores' },
@@ -75,14 +68,6 @@ export default {
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
         { icon: 'fingerprint', title: 'Entrar', to: '/login' }
       ]
-    }
-  },
-  // voltar: function () {
-  //   return this.$router.go(-1)
-  // },
-  methods: {
-    reloadPage () {
-      window.location.reload()
     }
   }
 }

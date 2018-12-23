@@ -2,12 +2,15 @@
   <v-slide-y-transition mode="out-in">
     <v-container class="celulaSvg" fluid grid-list-md text-xs-center>
       <v-layout row wrap justify-center align-content-center>
-        <v-flex md5 xs12 mb-5 pa-1>
-          <v-card class="search">
-            <Pesquisar />
-          </v-card>
-        </v-flex>
         <v-flex xs12>
+          <v-chip color="purple" text-color="white">
+            <v-avatar>
+              <v-icon>bubble_chart</v-icon>
+            </v-avatar>
+            Você está visualizando o organismo da Viceri.
+          </v-chip>
+        </v-flex>
+        <v-flex xs7>
           <v-flex
             v-for="(tribo, i) in tribos"
             :key="i"
@@ -20,7 +23,7 @@
                        x="0" y="0" height="100%" width="100%"></image>
                 <!-- Fundo do Texto -->
                 <filter x="0" y="0" width="1" height="1" id="solid">
-                  <feFlood flood-color="red"/>
+                  <feFlood flood-color="teal"/>
                   <feComposite in="SourceGraphic"/>
                 </filter>
                 <!-- Texto -->
@@ -42,18 +45,15 @@
 </template>
 
 <script>
-import Pesquisar from '../componentes/Pesquisar'
-
 export default {
   name: 'Home',
-  components: {
-    Pesquisar
-  },
   data () {
     return {
       tribos: [
         // Imagens - Gestores, Tribos e Squads
-        { name: 'Brinks', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
+        { name: 'Rafaela', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
+        { name: 'Anderson', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
+        { name: 'Fantatho', to: '/tribos/brinks', img: require('../../../static/organismo/brinks.png') },
         { name: 'Consultoria', to: '/tribos/consultoria', img: require('../../../static/organismo/consultoria.png') },
         { name: 'Finamax', to: '/tribos/finamax', img: require('../../../static/organismo/finamax.png') },
         { name: 'Global Dev', to: '/tribos/globaldev', img: require('../../../static/organismo/global.png') },
@@ -92,8 +92,10 @@ a {
   height: 150px;
   margin: 0 auto;
 }
-
 .zoom:hover {
   transform: scale(1.5);
+}
+.borda {
+  border-radius: 10px;
 }
 </style>

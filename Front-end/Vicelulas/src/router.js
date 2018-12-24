@@ -7,6 +7,7 @@ import Viceri from '@/app/viceri/Viceri'
 import Duvidas from '@/app/viceri/Duvidas'
 import Suporte from '@/app/viceri/Suporte'
 import Valores from '@/app/viceri/Valores'
+import Pessoas from '@/app/viceri/Pessoas'
 // App - Organismo
 import Organismo from '@/app/organismo/Organismo'
 import Squads from '@/app/organismo/Squads'
@@ -32,6 +33,7 @@ export default new Router({
     { path: '/duvidas', name: 'Dúvidas', component: Duvidas },
     { path: '/suporte', name: 'Suporte', component: Suporte },
     { path: '/valores', name: 'Valores', component: Valores },
+    { path: '/pessoas', name: 'Pessoas', component: Pessoas },
     // App - Organismo
     { path: '/organismo', name: 'Organismo', component: Organismo },
     { path: '/tribos/:name', name: 'Tribos', component: Tribos },

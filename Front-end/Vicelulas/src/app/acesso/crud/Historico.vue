@@ -1,7 +1,7 @@
 <template>
   <v-container fluid grid-list-xs>
     <v-layout row wrap justify-center align-content-center>
-      <v-flex md8 xs12>
+      <v-flex md10 xs12>
         <v-timeline>
           <v-timeline-item
             v-for="(historico, n) in historicos"

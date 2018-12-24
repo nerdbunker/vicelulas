@@ -1,16 +1,15 @@
 <template>
   <div id="squads">
-    <v-layout row wrap pa-2>
+    <v-layout row wrap pt-3>
       <v-flex
         v-for="(squad, i) in squads"
         :key="i"
-        xs12
+        xs12 md6
       >
         <!-- Card da Squad -->
-        <v-card color="teal" class="white--text">
-          <v-flex xs12>
+        <v-card dark>
             <v-card-title primary-title>
-              <v-flex xs5>
+              <v-flex md6 xs12>
                 <v-img
                   :src="squad.img"
                   height="125px"
@@ -25,7 +24,6 @@
                 <div>Dev Team: {{ squad.time }}</div>
               </div>
             </v-card-title>
-          </v-flex>
           <v-divider light></v-divider>
           <v-card-actions class="pa-3">
             Tribo: {{ squad.tribo }} | Gestor: {{ squad.gestor }}
@@ -43,6 +41,7 @@ export default {
     return {
       squads: [
         { nome: 'SQUAD First', gestor: 'Anderson', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/squad.png') },
+        { nome: 'SQUAD Lightning', gestor: 'Rafaela', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/squad.png') },
         { nome: 'SQUAD Lightning', gestor: 'Rafaela', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/squad.png') },
         { nome: 'SQUAD Master', gestor: 'Fantatho', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/squad.png') }
       ]

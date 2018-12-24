@@ -1,12 +1,13 @@
 <template>
   <v-container fluid grid-list-md text-xs-center>
     <v-layout row wrap justify-center align-content-center>
-      <v-flex md5 xs12 mb-6 pa-1>
+      <v-flex md5 xs10>
         <v-card>
           <Pesquisar />
-          <v-divider></v-divider>
-          <Squads />
         </v-card>
+      </v-flex>
+      <v-flex md8 xs12>
+        <Squads />
       </v-flex>
     </v-layout>
   </v-container>

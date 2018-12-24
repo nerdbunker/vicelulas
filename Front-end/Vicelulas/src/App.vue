@@ -30,7 +30,7 @@
       <v-toolbar
         class="white--text"
         flat
-        color="red"
+        color="viceri"
         app
       >
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -65,6 +65,7 @@ export default {
         { icon: 'home', title: 'Organismo', to: '/' },
         { icon: 'loyalty', title: 'Valores', to: '/valores' },
         { icon: 'photo', title: 'Fotos da Viceri', to: '/viceri' },
+        { icon: 'person', title: 'Pessoas', to: '/pessoas' },
         { icon: 'info', title: 'Dúvidas', to: '/duvidas' },
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
         { icon: 'fingerprint', title: 'Entrar', to: '/entrar' }

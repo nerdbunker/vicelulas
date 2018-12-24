@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xs>
     <v-layout row wrap justify-center align-content-center>
-      <v-flex md8 xs12>
+      <v-flex md10 xs12>
         <v-data-table
           :headers="headers"
           :items="desserts"
@@ -25,7 +25,7 @@
               </v-btn>
             </td>
             <td class="text-xs-right">
-              <v-btn flat icon color="green">
+              <v-btn flat icon color="red">
                 <v-icon>{{ props.item.desativar }}</v-icon>
               </v-btn>
             </td>

@@ -42,6 +42,16 @@
       <v-content>
         <router-view/>
       </v-content>
+      <!-- Botão Voltar - [apenas desktop] -->
+      <v-flex>
+        <v-btn
+          flat icon color="primary"
+          right bottom fixed
+          onclick="history.back()"
+        >
+          <v-icon>arrow_back</v-icon>
+        </v-btn>
+      </v-flex>
       <!-- Menu Inferior [apenas no mobile] -->
       <Menu />
     </v-app>

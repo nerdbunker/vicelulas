@@ -4,7 +4,6 @@
     height="200px"
   >
     <v-bottom-nav
-      :active.sync="bottomNav"
       :value="true"
       fixed
     >
@@ -44,11 +43,6 @@
 <script>
 export default {
   name: 'Menu',
-  data () {
-    return {
-      bottomNav: 'recent'
-    }
-  },
   methods: {
     reloadPage () {
       window.location.reload()

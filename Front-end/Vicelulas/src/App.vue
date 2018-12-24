@@ -79,7 +79,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Play');
 
 .bg {
-  background-image: url('../static/backgrounds/mol-bg.png');
+  background-image: url('../static/backgrounds/bg.png');
   background-attachment: fixed !important;
   background-size: cover;
 }

@@ -11,7 +11,6 @@ import Pessoas from '@/app/viceri/Pessoas'
 import Documentos from '@/app/viceri/Documentos'
 // App - Organismo
 import Organismo from '@/app/organismo/Organismo'
-import Squads from '@/app/organismo/Squads'
 import Tribos from '@/app/organismo/Tribos'
 // App - Acesso
 import Entrar from '@/app/acesso/Entrar'
@@ -38,8 +37,7 @@ export default new Router({
     { path: '/documentos', name: 'Documentos', component: Documentos },
     // App - Organismo
     { path: '/organismo', name: 'Organismo', component: Organismo },
-    { path: '/tribos/:name', name: 'Tribos', component: Tribos },
-    { path: '/tribos/squads/:id', name: 'Squads', component: Squads },
+    { path: '/tribos/:id', name: 'Tribos', component: Tribos },
     // App - Autenticacao
     { path: '/entrar', name: 'Login', component: Entrar },
     { path: '/adicionar', name: 'Adicionar', component: Adicionar },

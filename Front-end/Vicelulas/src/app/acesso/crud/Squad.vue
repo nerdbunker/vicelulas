@@ -11,9 +11,7 @@
           <template slot="items" slot-scope="props">
             <td>{{ props.item.nome }}</td>
             <td class="text-xs-right">{{ props.item.tribo }}</td>
-            <td class="text-xs-right">{{ props.item.analista }}</td>
-            <td class="text-xs-right">{{ props.item.qualidade }}</td>
-            <td class="text-xs-right">{{ props.item.devteam }}</td>
+            <td class="text-xs-right">{{ props.item.pessoas }}</td>
             <td class="text-xs-right">
               <v-btn flat icon color="cyan">
                 <v-icon flat>{{ props.item.info }}</v-icon>
@@ -49,9 +47,7 @@ export default {
           value: 'nome'
         },
         { text: 'Tribo', value: 'tribo' },
-        { text: 'Analista/PO', value: 'analista' },
-        { text: 'Qualidade', value: 'qualidade' },
-        { text: 'Dev Team', value: 'devteam' },
+        { text: 'Pessoas', value: 'pessoas' },
         { text: 'Info', value: 'info' },
         { text: 'Editar', value: 'editar' },
         { text: 'Ativar/Desativar', value: 'desativar' }
@@ -61,9 +57,7 @@ export default {
           value: false,
           nome: 'Fernando',
           tribo: 'Consultoria',
-          analista: 'Guilherme',
-          qualidade: 'Aules',
-          devteam: 'FM, GT, ED',
+          pessoas: 'Todas os nomes aqui',
           info: 'info',
           editar: 'create',
           desativar: 'delete'
@@ -72,9 +66,7 @@ export default {
           value: false,
           nome: 'Fernando',
           tribo: 'Consultoria',
-          analista: 'Guilherme',
-          qualidade: 'Aules',
-          devteam: 'FM, GT, ED',
+          pessoas: 'Todas os nomes aqui',
           info: 'info',
           editar: 'create',
           desativar: 'delete'
@@ -83,9 +75,7 @@ export default {
           value: false,
           nome: 'Fernando',
           tribo: 'Consultoria',
-          analista: 'Guilherme',
-          qualidade: 'Aules',
-          devteam: 'FM, GT, ED',
+          pessoas: 'Todas os nomes aqui',
           info: 'info',
           editar: 'create',
           desativar: 'delete'

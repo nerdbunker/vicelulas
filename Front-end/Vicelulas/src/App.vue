@@ -40,7 +40,7 @@
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>
-        <transition>
+        <transition enter-active-class="animate fadeIn delay-1s" leave-active-class="animate fadeOut delay-1s">
           <router-view/>
         </transition>
       </v-content>
@@ -67,7 +67,7 @@ export default {
         { icon: 'home', title: 'Organismo', to: '/' },
         { icon: 'loyalty', title: 'Valores', to: '/valores' },
         { icon: 'photo', title: 'Fotos da Viceri', to: '/viceri' },
-        { icon: 'folder', title: 'Documentos', to: '/documentos' },
+        // { icon: 'folder', title: 'Documentos', to: '/documentos' },
         // { icon: 'person', title: 'Pessoas', to: '/pessoas' },
         { icon: 'info', title: 'Dúvidas', to: '/duvidas' },
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
@@ -78,7 +78,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
 @import url('https://fonts.googleapis.com/css?family=Play');
 
 .bg {

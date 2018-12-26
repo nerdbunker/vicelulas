@@ -1,5 +1,6 @@
 import axios from 'axios'
 
 export const http = axios.create({
-  baseURL: 'api/organismo/'
+  baseURL: 'https://localhost:5001/api/organismo/',
+  withCredentials: false
 })

@@ -9,7 +9,6 @@ import store from './store'
 import './registerServiceWorker'
 // Fontes como Dependencia
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import 'vue-material-design-icons/styles.css'
 
 Vue.config.productionTip = false
 

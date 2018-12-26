@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Viceluas.Dominio.Exceções;
 
-namespace Fatec.Clinica.Api.Filtros
+namespace Vicelulas.Api.Filtros
+
 {
     public class ErroFiltro
     {

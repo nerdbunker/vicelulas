@@ -12,7 +12,7 @@
 import Squads from './Squads'
 
 export default {
-  name: 'Squad',
+  name: 'Tribos',
   components: {
     Squads
   }

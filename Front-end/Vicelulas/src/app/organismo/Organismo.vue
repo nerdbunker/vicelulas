@@ -16,7 +16,7 @@
             :key="tribo.id"
             class="flex"
           >
-            <router-link :to="tribo.to">
+            <router-link :to="{ name: 'Tribos', params: { id: tribo.id }}">
               <!-- SVG Dinamico, cria as imagens conforme a API fornece dados -->
               <svg class="zoom" height="100px" width="100px" xmlns="http://www.w3.org/2000/svg">
                 <!-- Imagem de Fundo - Célula -->
@@ -34,7 +34,34 @@
             </router-link>
           </v-flex>
         </v-flex>
-        <Contador />
+        <v-flex d-flex md8 xs12>
+        <v-flex md4 xs12 pa-3>
+          <v-chip color="teal" text-color="black">
+            <v-avatar>
+              <v-icon>bubble_chart</v-icon>
+            </v-avatar>
+              Tribos: {{ tribos.length }}
+            </v-chip>
+          </v-flex>
+          <v-spacer></v-spacer>
+          <v-flex md4 xs12 pa-3>
+            <v-chip color="teal" text-color="black">
+              <v-avatar>
+                <v-icon>grain</v-icon>
+              </v-avatar>
+              Squads: {{ squads.length }}
+            </v-chip>
+          </v-flex>
+          <v-spacer></v-spacer>
+          <v-flex md4 xs12 pa-3 pb-5>
+            <v-chip color="teal" text-color="black">
+              <v-avatar>
+                <v-icon>person</v-icon>
+              </v-avatar>
+              <!-- Pessoas: {{ contador.pessoas }} -->
+            </v-chip>
+          </v-flex>
+        </v-flex>
       </v-layout>
     </v-container>
   </v-slide-y-transition>
@@ -42,7 +69,8 @@
 
 <script>
 import Contador from '../componentes/Contador'
-import Tribos from '../../domains/services/Tribos.js'
+import Tribos from '../../domains/services/Tribos'
+import Squads from '../../domains/services/Squads'
 
 export default {
   name: 'Home',
@@ -53,13 +81,18 @@ export default {
     return {
       legenda: 'Tribos e Squads do Organismo Viceri',
       img: require('../../../static/icones/cell.png'),
-      tribos: []
+      tribos: [],
+      squads: []
     }
   },
   mounted () {
-    Tribos.obterTribos().the(resposta => {
-      console.log(resposta)
-      this.tribos = resposta.data
+    Tribos.obterTribo().then(respostaTribo => {
+      console.log(respostaTribo)
+      this.tribos = respostaTribo.data
+    })
+    Squads.obterSquad().then(respostaSquad => {
+      console.log(respostaSquad)
+      this.squads = respostaSquad.data
     })
   }
 }

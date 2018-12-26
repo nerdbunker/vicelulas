@@ -37,7 +37,7 @@ export default new Router({
     { path: '/documentos', name: 'Documentos', component: Documentos },
     // App - Organismo
     { path: '/organismo', name: 'Organismo', component: Organismo },
-    { path: '/tribos/:nome', name: 'Tribos', component: Tribos },
+    { path: '/tribos/:id', name: 'Tribos', component: Tribos },
     // App - Autenticacao
     { path: '/entrar', name: 'Login', component: Entrar },
     { path: '/adicionar', name: 'Adicionar', component: Adicionar },

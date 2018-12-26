@@ -7,13 +7,12 @@
             <v-avatar>
               <v-icon>bubble_chart</v-icon>
             </v-avatar>
-            {{ msg }}
+            {{ legenda }}
           </v-chip>
         </v-flex>
         <v-flex pt-3 md8 xs12>
-          <Legenda />
           <v-flex
-            v-for="(tribo) in tribos"
+            v-for="tribo in tribos"
             :key="tribo.id"
             class="flex"
           >
@@ -21,7 +20,7 @@
               <!-- SVG Dinamico, cria as imagens conforme a API fornece dados -->
               <svg class="zoom" height="100px" width="100px" xmlns="http://www.w3.org/2000/svg">
                 <!-- Imagem de Fundo - Célula -->
-                <image :xlink:href="tribo.img" x="0" y="0" height="100%" width="100%"></image>
+                <image :xlink:href="img" x="0" y="0" height="100%" width="100%"></image>
                 <!-- Titulo -->
                 <text
                   x="50%" y="50%" class="fundo"
@@ -29,7 +28,7 @@
                   dominant-baseline="middle" text-anchor="middle"
                   font-size="100%"
                 >
-                  {{ tribo.name }}
+                  {{ tribo.nome }}
                 </text>
               </svg>
             </router-link>
@@ -43,35 +42,25 @@
 
 <script>
 import Contador from '../componentes/Contador'
-import Legenda from '../componentes/Legenda'
-import Tribos from '../../domains/services/Tribos'
+import Tribos from '../../domains/services/Tribos.js'
 
 export default {
   name: 'Home',
   components: {
-    Contador,
-    Legenda
-  },
-  mounted () {
-    Tribos.listar().then(resposta => {
-      console.log(resposta)
-    })
+    Contador
   },
   data () {
     return {
-      msg: 'Tribos e Squads do Organismo Viceri',
-      tribos: [
-        { name: 'Consultoria', to: '/tribos/consultoria', img: require('../../../static/icones/cell.png') },
-        { name: 'Finamax', to: '/tribos/finamax', img: require('../../../static/icones/cell.png') },
-        { name: 'Global Dev', to: '/tribos/globaldev', img: require('../../../static/icones/cell-blue.png') },
-        { name: 'Viceri', to: '/tribos/globaldev', img: require('../../../static/icones/cell.png') },
-        { name: 'I. Unibanco', to: '/tribos/unibanco', img: require('../../../static/icones/cell.png') },
-        { name: 'MAPFRE', to: '/tribos/mapfre', img: require('../../../static/icones/cell.png') },
-        { name: 'Passarela', to: '/tribos/passarela', img: require('../../../static/icones/cell.png') },
-        { name: 'Produtos', to: '/tribos/produtos', img: require('../../../static/icones/cell.png') },
-        { name: 'Sequoia', to: '/tribos/sequoia', img: require('../../../static/icones/cell-blue.png') }
-      ]
+      legenda: 'Tribos e Squads do Organismo Viceri',
+      img: require('../../../static/icones/cell.png'),
+      tribos: []
     }
+  },
+  mounted () {
+    Tribos.obterTribos().the(resposta => {
+      console.log(resposta)
+      this.tribos = resposta.data
+    })
   }
 }
 </script>

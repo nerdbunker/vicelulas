@@ -1,0 +1,8 @@
+{ name: 'Consultoria', to: '/tribos/consultoria', img: require('../../../static/icones/cell.png') },
+{ name: 'Finamax', to: '/tribos/finamax', img: require('../../../static/icones/cell.png') },
+{ name: 'Global Dev', to: '/tribos/globaldev', img: require('../../../static/icones/cell.png') },
+{ name: 'Viceri', to: '/tribos/globaldev', img: require('../../../static/icones/cell.png') },
+{ name: 'I. Unibanco', to: '/tribos/unibanco', img: require('../../../static/icones/cell.png') },
+{ name: 'MAPFRE', to: '/tribos/mapfre', img: require('../../../static/icones/cell.png') },
+{ name: 'Passarela', to: '/tribos/passarela', img: require('../../../static/icones/cell.png') },
+{ name: 'Produtos', to: '/tribos/produtos', img: require('../../../static/icones/cell.png') }

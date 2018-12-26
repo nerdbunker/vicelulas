@@ -1,16 +1,24 @@
 <template>
-  <v-container fluid grid-list-xs>
+  <v-container fluid grid-list-xs text-xs-center>
     <v-layout row wrap justify-center align-content-center>
+      <v-flex pb-5 xs12>
+        <v-chip color="cinza" text-color="white">
+          <v-avatar>
+            <v-icon>bubble_chart</v-icon>
+          </v-avatar>
+          {{ legenda }}
+        </v-chip>
+      </v-flex>
       <v-flex md10 xs12>
         <v-timeline>
           <v-timeline-item
             v-for="(historico, n) in historicos"
             :key="n"
-            color="purple lighten-2"
+            color="green"
             large
           >
             <span slot="opposite">{{ historico.data }}</span>
-            <v-card color="teal" class="elevation-2">
+            <v-card dark elevation-2>
               <v-card-title class="headline">{{ historico.tipo }}</v-card-title>
               <v-card-text>
                 {{ historico.admin + ' moveu ' + historico.alterado + ' de ' + historico.anterior + ' para ' + historico.atual }}
@@ -28,6 +36,7 @@ export default {
   name: 'Timeline',
   data () {
     return {
+      legenda: 'Histórico de Alterações (fake)',
       historicos: [
         { data: '04/05/2017', tipo: 'Alteração de Squad', admin: 'Anderson', alterado: 'Marcelo', anterior: 'SQUAD1', atual: 'SQUAD5' },
         { data: '05/05/2017', tipo: 'Alteração de Tribo', admin: 'Anderson', alterado: 'Marcelo', anterior: 'SQUAD1', atual: 'SQUAD5' },

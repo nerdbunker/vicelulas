@@ -1,7 +1,1 @@
-import { http } from '../api/config'
-
-export default {
-  listarSquads: () => {
-    return http.get('Squads')
-  }
-}
+// id, id_tribo, nome, nomeTribo, ativo

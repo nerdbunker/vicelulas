@@ -1,6 +1,6 @@
 <template>
   <div id="squads">
-    <v-layout row wrap pt-3>
+    <v-layout row wrap pt-3 justify-center align-content-center>
       <v-flex
         v-for="(squad, i) in squads"
         :key="i"
@@ -9,8 +9,9 @@
         <!-- Card da Squad -->
         <v-card dark>
             <v-card-title primary-title>
-              <v-flex md6 xs12>
+              <v-flex md5 xs12>
                 <v-img
+                  justify-center
                   :src="squad.img"
                   height="125px"
                   contain
@@ -45,7 +46,7 @@ export default {
       squads: [
         { nome: 'SQUAD First', gestor: 'Anderson', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/avatar-viceri.png') },
         { nome: 'SQUAD Lightning', gestor: 'Rafaela', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/avatar-viceri.png') },
-        { nome: 'SQUAD Lightning', gestor: 'Rafaela', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/avatar-viceri.png') },
+        { nome: 'SQUAD Darkness', gestor: 'Rafaela', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/avatar-viceri.png') },
         { nome: 'SQUAD Master', gestor: 'Fantatho', tribo: 'Mapfre', analista: 'Ricardo', qualidade: 'Ana Paula', time: 'Marcos, Luis, Jose', img: require('../../../static/icones/avatar-viceri.png') }
       ]
     }

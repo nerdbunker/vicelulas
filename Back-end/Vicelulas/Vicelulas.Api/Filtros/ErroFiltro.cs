@@ -9,11 +9,19 @@ namespace Fatec.Clinica.Api.Filtros
 {
     public class ErroFiltro
     {
-        public async Task Invoke(HttpContext context, Func<Task> next)
+        private readonly RequestDelegate next;
+
+        public ErroFiltro(RequestDelegate next)
+        {
+           this.next = next;
+        }
+
+
+        public async Task Invoke(HttpContext context)
         {
             try
             {
-                await next();
+                await next(context);
             }
             catch (Exception ex)
             {

@@ -67,6 +67,7 @@ namespace Vicelulas.Api
 
            
             app.UseHttpsRedirection();
+            app.UseMiddleware<ErroFiltro>();
             app.UseMvc();
 
 
@@ -77,7 +78,7 @@ namespace Vicelulas.Api
             });
 
 
-            //app.Use((c, next) => serviceFactory.GetService<ErroFiltro>().Invoke(c, next));
+           
 
             app.UseCors(c =>
             {

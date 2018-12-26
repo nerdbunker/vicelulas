@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Vicelulas.Dado.Configuração
+﻿namespace Vicelulas.Dado.Configuração
 {
     internal static class DbConnectionFactory
     {

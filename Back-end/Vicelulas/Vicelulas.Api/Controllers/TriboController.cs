@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Negocio;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Viceluas.Dominio.Dto;
 using System.Net;
 
 namespace Vicelulas.Api.Controllers
@@ -53,8 +46,6 @@ namespace Vicelulas.Api.Controllers
         public IActionResult GetId(int id)
         {
             var obj = _triboNegocio.SelecionarPorId(id);
-            if (obj == null)
-                return NotFound();
 
             return Ok(obj);
         }
@@ -72,9 +63,7 @@ namespace Vicelulas.Api.Controllers
         public IActionResult GetName(string nome)
         {
             var obj = _triboNegocio.SelecionarPorNome(nome);
-            if (obj == null)
-                return NotFound();
-
+     
             return Ok(obj);
         }
 

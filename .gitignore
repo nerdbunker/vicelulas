@@ -240,3 +240,5 @@ project.lock.json
 *.dll
 *.pdb
 *.cache
+
+Back-end/Vicelulas/Vicelulas.Database/Vicelulas.Database.jfm

@@ -51,8 +51,6 @@ namespace Vicelulas.Api.Controllers
         public IActionResult GetId(int id)
         {
             var obj = _squadNegocio.SelecionarPorId(id);
-            if (obj == null)
-                return NotFound();
 
             return Ok(obj);
         }
@@ -69,8 +67,6 @@ namespace Vicelulas.Api.Controllers
         public IActionResult GetIdTribo(int id)
         {
             var obj = _squadNegocio.SelecionarPorIdTribo(id);
-            if (obj == null)
-                return NotFound();
 
             return Ok(obj);
         }
@@ -87,8 +83,6 @@ namespace Vicelulas.Api.Controllers
         public IActionResult GetName(string nome)
         {
             var obj = _squadNegocio.SelecionarPorNome(nome);
-            if (obj == null)
-                return NotFound();
 
             return Ok(obj);
         }

@@ -50,9 +50,6 @@ namespace Vicelulas.Api.Controllers
         {
             var obj = _pessoaNegocio.SelecionarPorId(id);
 
-            if (obj == null)
-                return NotFound();
-
             return Ok(obj);
         }
 
@@ -69,9 +66,6 @@ namespace Vicelulas.Api.Controllers
         {
             var obj = _pessoaNegocio.SelecionarPorIdSquad(id);
 
-            if (obj == null)
-                return NotFound();
-
             return Ok(obj);
         }
 
@@ -87,8 +81,6 @@ namespace Vicelulas.Api.Controllers
         public IActionResult GetName(string nome)
         {
             var obj = _pessoaNegocio.SelecionarPorNome(nome);
-            if (obj == null)
-                return NotFound();
 
             return Ok(obj);
         }

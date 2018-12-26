@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Viceluas.Dominio.Configurações
+﻿namespace Viceluas.Dominio.Configurações
 {
     public class VicelulasConfiguracao
     {

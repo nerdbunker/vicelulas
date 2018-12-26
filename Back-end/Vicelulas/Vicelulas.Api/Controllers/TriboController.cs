@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Negocio;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Viceluas.Dominio.Dto;
 using System.Net;
 
 namespace Vicelulas.Api.Controllers

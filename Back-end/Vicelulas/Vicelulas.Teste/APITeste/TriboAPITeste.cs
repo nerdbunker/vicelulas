@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 using Vicelulas.Api.Controllers;
 using Microsoft.AspNetCore.Mvc;
-using Viceluas.Dominio.Dto;
 
 namespace Vicelulas.Teste.APITeste
 {

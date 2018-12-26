@@ -11,7 +11,7 @@ namespace Vicelulas.Dominio.Dto
         public string Email { get; set; }
         public string Cargo { get; set; }
 
-        public Boolean Ativo { get; set; }
+        public bool Ativo { get; set; }
         public int Id_Squads { get; set; }
         public int Id_Unidade { get; set; }
         public int Permisao { get; set; }

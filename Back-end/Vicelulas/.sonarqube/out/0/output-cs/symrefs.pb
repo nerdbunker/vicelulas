@@ -1,70 +1,89 @@
-ï
-{C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Configura√ß√µes\VicelulasConfiguracao.cs
+ì
+yC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Configuracoes\VicelulasConfiguracao.cs
 
- &
+ &
 
-		 î
+ ›
+cC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\PessoaDto.cs
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ¨
+bC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\SquadDto.cs
+
+ 
+
+ 
+
+ 
+
+		 
+
+
+
+ 
+
+ î
 bC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\TriboDto.cs
 
- 
+ 
 
-		 
+ 
 
-
-
- 
+ 
 
- ∆
-rC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exce√ß√µes\ConflitoException.cs
+		 ƒ
+pC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Excecoes\ConflitoException.cs
 
- "
+ "
 
-
-
-  
+  
 
-  
+  
 
-% '
+% '
 
-  
-( /8 ?À
-wC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exce√ß√µes\NaoEncontradoException.cs
+  
+( /8 ?…
+uC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Excecoes\NaoEncontradoException.cs
 
- '
+ '
 
-
-
- %
+ %
 
- %
+ %
 
-* ,
+* ,
 
- %
-- 4= D∆
-rC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Exce√ß√µes\RecusadoException.cs
+ %
+- 4= Dƒ
+pC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Excecoes\RecusadoException.cs
 
- "
+ "
 
-
-
-  
+  
 
-  
+  
 
-% '
+% '
 
-  
-( /8 ?ç
-[C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Tribo.cs
-
- 
-
-		 
-
-
-
- 
-
- 
+  
+( /8 ?

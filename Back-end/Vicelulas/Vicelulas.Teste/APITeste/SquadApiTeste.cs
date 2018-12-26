@@ -3,34 +3,31 @@ using Vicelulas.Api.Controllers;
 using Viceluas.Dominio.Exceções;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace Vicelulas.Teste.APITeste
 {
-    public class TriboApiTeste
+    public class SquadApiTeste
     {
         [Fact]
         public void RetornaStatusOKGetAll()
         {
-            TriboController _triboController = new TriboController();
+            SquadController squadController = new SquadController();
             int valorEsperado = 200;
 
-            var actionResult = _triboController.Get();
+            var actionResult = squadController.Get();
 
             var okObjectResult = (OkObjectResult)actionResult;
 
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
         }
-
 
         [Fact]
         public void RetornaStatusOKGetId()
         {
-            TriboController _triboController = new TriboController();
+            SquadController squadController = new SquadController();
             int id = 1;
             int valorEsperado = 200;
 
-            var actionResult = _triboController.GetId(id);
+            var actionResult = squadController.GetId(id);
 
             var okObjectResult = (OkObjectResult)actionResult;
 
@@ -41,32 +38,28 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusNotFoundGetId()
         {
-            TriboController _triboController = new TriboController();
+            SquadController squadController = new SquadController();
 
             int id = 0;
 
-            Assert.Throws<NaoEncontradoException>(() => _triboController.GetId(id));
+            Assert.Throws<NaoEncontradoException>(() => squadController.GetId(id));
         }
 
         [Fact]
         public void RetornaStatusOKGetName()
         {
-            TriboController triboController = new TriboController();
+            SquadController squadController = new SquadController();
 
             var nome = "a";
             int valorEsperado = 200;
 
-            var actionResult = triboController.GetName(nome);
+            var actionResult = squadController.GetName(nome);
 
             var okObjectResult = (OkObjectResult)actionResult;
 
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
 
         }
-
-
-
-
 
     }
 }

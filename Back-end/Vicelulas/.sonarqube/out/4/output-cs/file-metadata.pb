@@ -1,5 +1,11 @@
 q
-oC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\TriboNegocioTeste.csY
-UC:\Users\lcontesini\AppData\Local\Temp\.NETCoreApp,Version=v2.1.AssemblyAttributes.csâ
-ÑC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.Program.csé
-âC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\obj\Debug\netcoreapp2.1\Vicelulas.Teste.AssemblyInfo.cs
+oC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\PessoaController.csp
+nC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\SquadController.csp
+nC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\TriboController.csg
+eC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Filtros\ErroFiltro.cs\
+ZC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Program.cs\
+ZC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Startup.csY
+UC:\Users\lcontesini\AppData\Local\Temp\.NETCoreApp,Version=v2.1.AssemblyAttributes.csè
+äC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vicelulas.Api.RazorAssemblyInfo.csá
+ÇC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.csä
+ÖC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\obj\Debug\netcoreapp2.1\Vicelulas.Api.AssemblyInfo.cs

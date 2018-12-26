@@ -1,62 +1,99 @@
-Œ
-nC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\TriboController.cs
+»
+mC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Abstracao\INegocioBase.cs
 
-  2
- * )) #77 #FF #
+ !F
+" #+ ,  			 
+
+ 	
+
+ 
 
- 
+ !
 
-''  
+
+ 
 
-55 "
-55' )774 6
+  
 
-DD $
-DD, 0FF6 :£
-eC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Filtros\ErroFiltro.cs
+		 
+
+		 
 
 
 
- 
+
+ 
 
-  
-- 4+ 2
-A E 
- 4 6
- 0 *(
-= D-- .. // (
-P Y ,,C L,,^ g<
-  "" %% (( ../ 3
+
+
+ 
 
-, 0
+
+
+ "
 
-!!' +
+ 
 
-$$' +
-,, /// 5¶
-ZC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Program.cs
+ Ž
+dC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\PessoaNegocio.cs
 
- 
+ <
+
+
++ =  % ($$ *// *
 
- 
-) - 
- + 
-5 9) -¢
-ZC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Startup.cs
+ 
 
- 
+& 0
 
- 
-& 3 )
- + 
+ (
+- /9 ;
+   
 
- %(
-9 A   
-# $!! 22 
-00 11E L
-11 22% ,
+""& 7
+""? C$$= A
+$$ && )) 
 
-:: F
-::2 5>> BB EE FF II JJ 
-::K N<< 
-JJ LL 
+--& :
+--? A//@ B
+// 11 44 
+cC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\SquadNegocio.cs
+
+ <
+
+
+* ;  $ '%% )00 )
+
+ 
+
+% /
+
+ '
+, .8 :
+   
+
+##% 6
+##> B%%< @
+%% '' ** 
+
+..% 9
+..> @00? A
+00 22 55 Á
+cC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\TriboNegocio.cs
+
+ 2
+
+
+* ;  $ '%% )
+
+ 
+
+% /
+
+ '
+, .8 :
+   
+
+##% 6
+##> B%%< @
+%% '' ** 

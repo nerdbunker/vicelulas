@@ -13,7 +13,7 @@ Vue.use(Vuetify, {
     success: '#4CAF50',
     warning: '#FFC107',
     viceri: '#FC0001',
-    verde: '#FC000'
+    cinza: '#323234'
   },
   iconfont: 'md',
   lang: {

@@ -33,25 +33,17 @@
         color="viceri"
         app
       >
-        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-toolbar-side-icon aria-label="menu" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         <v-list-tile-title text-xs-center class="titulo">
           {{ titulo }}
         </v-list-tile-title>
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>
-        <router-view/>
+        <transition>
+          <router-view/>
+        </transition>
       </v-content>
-      <!-- Botão Voltar - [apenas desktop] -->
-      <v-flex>
-        <v-btn
-          flat icon color="primary"
-          right bottom fixed
-          onclick="history.back()"
-        >
-          <v-icon>arrow_back</v-icon>
-        </v-btn>
-      </v-flex>
       <!-- Menu Inferior [apenas no mobile] -->
       <Menu />
     </v-app>
@@ -75,7 +67,8 @@ export default {
         { icon: 'home', title: 'Organismo', to: '/' },
         { icon: 'loyalty', title: 'Valores', to: '/valores' },
         { icon: 'photo', title: 'Fotos da Viceri', to: '/viceri' },
-        { icon: 'person', title: 'Pessoas', to: '/pessoas' },
+        { icon: 'folder', title: 'Documentos', to: '/documentos' },
+        // { icon: 'person', title: 'Pessoas', to: '/pessoas' },
         { icon: 'info', title: 'Dúvidas', to: '/duvidas' },
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
         { icon: 'fingerprint', title: 'Entrar', to: '/entrar' }
@@ -90,7 +83,7 @@ export default {
 
 .bg {
   background-image: url('../static/backgrounds/bg.png');
-  background-attachment: fixed !important;
+  background-attachment: fixed;
   background-size: cover;
 }
 #inspire {

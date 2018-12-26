@@ -1,21 +1,29 @@
 <template>
-  <v-treeview
-    v-model="tree"
-    :open="open"
-    :items="items"
-    activatable
-    item-key="name"
-    open-on-click
-  >
-    <template slot="prepend" slot-scope="{ item, open, leaf }">
-      <v-icon v-if="!item.file">
-        {{ open ? 'mdi-folder-open' : 'mdi-folder' }}
-      </v-icon>
-      <v-icon v-else>
-        {{ files[item.file] }}
-      </v-icon>
-    </template>
-  </v-treeview>
+  <v-container grid-list-xs>
+    <v-layout row wrap justify-center>
+      <v-flex xs6>
+        <v-card>
+          <v-treeview
+          v-model="tree"
+          :open="open"
+          :items="items"
+          activatable
+          item-key="name"
+          open-on-click
+        >
+          <template slot="prepend" slot-scope="{ item, open }">
+            <v-icon v-if="!item.file">
+              {{ open ? 'mdi-folder-open' : 'mdi-folder' }}
+            </v-icon>
+            <v-icon v-else>
+              {{ files[item.file] }}
+            </v-icon>
+          </template>
+        </v-treeview>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

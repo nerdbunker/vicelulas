@@ -10,12 +10,14 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@mdi/font": "^3.2.89",
     "axios": "^0.18.0",
     "d3": "^5.7.0",
     "material-design-icons-iconfont": "^3.0.3",
     "register-service-worker": "^1.5.2",
     "roboto-fontface": "*",
     "vue": "^2.5.17",
+    "vue-material-design-icons": "^2.5.0",
     "vue-router": "^3.0.1",
     "vuetify": "^1.3.0",
     "vuex": "^3.0.1"

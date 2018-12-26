@@ -26,10 +26,13 @@
             </v-card-title>
           <v-divider light></v-divider>
           <v-card-actions class="pa-3">
-            Tribo: {{ squad.tribo }} | Gestor: {{ squad.gestor }}
+            Tribo: {{ squad.tribo }}
+            <v-spacer></v-spacer>
+            Gestor: {{ squad.gestor }}
           </v-card-actions>
         </v-card>
       </v-flex>
+      <v-flex xs12 pb-5></v-flex>
     </v-layout>
   </div>
 </template>

@@ -3,7 +3,7 @@
     <v-container fluid grid-list-md text-xs-center>
       <v-layout row wrap justify-center align-content-center>
         <v-flex pt-5 xs12>
-          <v-chip color="green" text-color="white">
+          <v-chip color="cinza" text-color="white">
             <v-avatar>
               <v-icon>bubble_chart</v-icon>
             </v-avatar>
@@ -11,10 +11,10 @@
           </v-chip>
         </v-flex>
         <v-flex pt-3 md8 xs12>
-          <Gestor />
+          <Legenda />
           <v-flex
-            v-for="(tribo, i) in tribos"
-            :key="i"
+            v-for="(tribo) in tribos"
+            :key="tribo.id"
             class="flex"
           >
             <router-link :to="tribo.to">
@@ -22,15 +22,10 @@
               <svg class="zoom" height="100px" width="100px" xmlns="http://www.w3.org/2000/svg">
                 <!-- Imagem de Fundo - Célula -->
                 <image :xlink:href="tribo.img" x="0" y="0" height="100%" width="100%"></image>
-                <!-- Fundo do Texto -->
-                <filter x="0" y="0" style="border-radius: 5px;" width="1" height="1" id="solid">
-                  <feFlood flood-color="black"/>
-                  <feComposite in="SourceGraphic"/>
-                </filter>
                 <!-- Titulo -->
                 <text
                   x="50%" y="50%" class="fundo"
-                  fill="white" filter="url(#solid)"
+                  fill="black"
                   dominant-baseline="middle" text-anchor="middle"
                   font-size="100%"
                 >
@@ -48,27 +43,33 @@
 
 <script>
 import Contador from '../componentes/Contador'
-import Gestor from '../componentes/Gestor'
+import Legenda from '../componentes/Legenda'
+import Tribos from '../../domains/services/Tribos'
 
 export default {
   name: 'Home',
   components: {
     Contador,
-    Gestor
+    Legenda
+  },
+  mounted () {
+    Tribos.listar().then(resposta => {
+      console.log(resposta)
+    })
   },
   data () {
     return {
       msg: 'Tribos e Squads do Organismo Viceri',
       tribos: [
-        { name: 'Consultoria', cor: 'blue', tipo: 'bubble_chart', to: '/tribos/consultoria', img: require('../../../static/icones/cell.png') },
-        { name: 'Finamax', cor: 'purple', tipo: 'tribo', to: '/tribos/finamax', img: require('../../../static/icones/cell.png') },
-        { name: 'Global Dev', cor: 'green', tipo: 'squad', to: '/tribos/globaldev', img: require('../../../static/icones/cell-blue.png') },
-        { name: 'Viceri', cor: 'blue', tipo: 'tribo', to: '/tribos/globaldev', img: require('../../../static/icones/cell.png') },
-        { name: 'I. Unibanco', cor: 'blue', tipo: 'tribo', to: '/tribos/unibanco', img: require('../../../static/icones/cell.png') },
-        { name: 'MAPFRE', cor: 'purple', tipo: 'tribo', to: '/tribos/mapfre', img: require('../../../static/icones/cell.png') },
-        { name: 'Passarela', cor: 'purple', tipo: 'tribo', to: '/tribos/passarela', img: require('../../../static/icones/cell.png') },
-        { name: 'Produtos', cor: 'green', tipo: 'tribo', to: '/tribos/produtos', img: require('../../../static/icones/cell.png') },
-        { name: 'Sequoia', cor: 'blue', tipo: 'squad', to: '/tribos/sequoia', img: require('../../../static/icones/cell-blue.png') }
+        { name: 'Consultoria', to: '/tribos/consultoria', img: require('../../../static/icones/cell.png') },
+        { name: 'Finamax', to: '/tribos/finamax', img: require('../../../static/icones/cell.png') },
+        { name: 'Global Dev', to: '/tribos/globaldev', img: require('../../../static/icones/cell-blue.png') },
+        { name: 'Viceri', to: '/tribos/globaldev', img: require('../../../static/icones/cell.png') },
+        { name: 'I. Unibanco', to: '/tribos/unibanco', img: require('../../../static/icones/cell.png') },
+        { name: 'MAPFRE', to: '/tribos/mapfre', img: require('../../../static/icones/cell.png') },
+        { name: 'Passarela', to: '/tribos/passarela', img: require('../../../static/icones/cell.png') },
+        { name: 'Produtos', to: '/tribos/produtos', img: require('../../../static/icones/cell.png') },
+        { name: 'Sequoia', to: '/tribos/sequoia', img: require('../../../static/icones/cell-blue.png') }
       ]
     }
   }
@@ -76,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Kalam');
+@import url('https://fonts.googleapis.com/css?family=Kalam:700');
 
 a {
   text-decoration: none;

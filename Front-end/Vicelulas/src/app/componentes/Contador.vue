@@ -18,7 +18,7 @@
       </v-chip>
     </v-flex>
     <v-spacer></v-spacer>
-    <v-flex md4 xs12 pa-3>
+    <v-flex md4 xs12 pa-3 pb-5>
       <v-chip color="teal" text-color="black">
         <v-avatar>
           <v-icon>person</v-icon>

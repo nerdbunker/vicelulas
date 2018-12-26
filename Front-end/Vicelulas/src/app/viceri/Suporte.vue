@@ -2,7 +2,7 @@
   <v-container>
     <v-layout justify-center align-content-center>
       <v-flex md8 xs12>
-        <v-card>
+        <v-card dark>
           <v-img
           height="230px"
           :src="img"

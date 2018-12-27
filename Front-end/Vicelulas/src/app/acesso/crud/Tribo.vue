@@ -4,27 +4,24 @@
       <v-flex md8 xs12>
         <v-data-table
           :headers="headers"
-          :items="desserts"
+          :items="tribos"
           class="elevation-1"
           dark
         >
-          <template slot="items" slot-scope="props">
-            <td>{{ props.item.nome }}</td>
-            <td>{{ props.item.squads }}</td>
-            <td>{{ props.item.pessoas }}</td>
-            <td>{{ props.item.gestor }}</td>
+          <template slot="items" slot-scope="tribos">
+            <td>{{ items.tribos.nome }}</td>
+            <td>{{ items.tribos.squads }}</td>
             <td>
               <v-btn to="/editartribo" flat icon color="green">
-                <v-icon flat>{{ props.item.editar }}</v-icon>
+                <v-icon flat>create</v-icon>
               </v-btn>
-              <v-btn flat icon color="red">
-                <v-icon>{{ props.item.desativar }}</v-icon>
-              </v-btn>
+              <v-switch label="desativar" color="red" v-model="items.tribos.ativo"></v-switch>
             </td>
           </template>
         </v-data-table>
-        <v-btn to="/inserirtribo" icon color="blue">
+        <v-btn to="/inserirtribo" color="blue">
           <v-icon>add</v-icon>
+          Adicionar Tribo
         </v-btn>
       </v-flex>
     </v-layout>
@@ -32,61 +29,37 @@
 </template>
 
 <script>
+import Pessoas from '../../../domains/services/Pessoas'
+import Tribos from '../../../domains/services/Tribos'
+import Squads from '../../../domains/services/Squads'
+
 export default {
   name: 'Pessoa',
   data () {
     return {
       headers: [
-        {
-          text: 'Nome',
-          align: 'left',
-          sortable: true,
-          value: 'nome'
-        },
+        { text: 'Nome', align: 'left', sortable: true, value: 'nome' },
         { text: 'Squads', value: 'squads' },
-        { text: 'Pessoas', value: 'pessoas' },
-        { text: 'Gestor', value: 'gestor' },
         { text: 'Editar — Desativar', value: 'acoes' }
       ],
-      desserts: [
-        {
-          value: false,
-          nome: 'CDS MAPFRE',
-          squads: 5,
-          pessoas: 14,
-          gestor: 'Rafaela',
-          editar: 'create',
-          desativar: 'delete'
-        },
-        {
-          value: false,
-          nome: 'CDS PRODUTOS',
-          squads: 2,
-          pessoas: 10,
-          gestor: 'Fantatho',
-          editar: 'create',
-          desativar: 'delete'
-        },
-        {
-          value: false,
-          nome: 'CDS Viceri',
-          squads: 4,
-          pessoas: 30,
-          gestor: 'Anderson',
-          editar: 'create',
-          desativar: 'delete'
-        },
-        {
-          value: false,
-          nome: 'CDS FINAMAX',
-          squads: 2,
-          pessoas: 10,
-          gestor: 'Fantatho',
-          editar: 'create',
-          desativar: 'delete'
-        }
-      ]
+      pessoas: [],
+      tribos: [],
+      squads: []
     }
+  },
+  mounted () {
+    Pessoas.obterPessoa().then(respostaPessoa => {
+      console.log(respostaPessoa)
+      this.pessoas = respostaPessoa.data
+    })
+    Tribos.obterTribo().then(respostaTribo => {
+      console.log(respostaTribo)
+      this.pessoas = respostaTribo.data
+    })
+    Squads.obterSquad().then(respostaSquad => {
+      console.log(respostaSquad)
+      this.squads = respostaSquad.data
+    })
   }
 }
 </script>

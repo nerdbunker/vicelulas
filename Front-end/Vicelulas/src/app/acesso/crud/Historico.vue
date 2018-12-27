@@ -36,7 +36,7 @@ export default {
   name: 'Timeline',
   data () {
     return {
-      legenda: 'Histórico de Alterações (fake)',
+      legenda: 'Histórico de Alterações - [Não Implementado Ainda]',
       historicos: [
         { data: '04/05/2017', tipo: 'Alteração de Squad', admin: 'Anderson', alterado: 'Marcelo', anterior: 'SQUAD1', atual: 'SQUAD5' },
         { data: '05/05/2017', tipo: 'Alteração de Tribo', admin: 'Anderson', alterado: 'Marcelo', anterior: 'SQUAD1', atual: 'SQUAD5' },

@@ -19,6 +19,7 @@
     "vue": "^2.5.17",
     "vue-material-design-icons": "^2.5.0",
     "vue-router": "^3.0.1",
+    "vuelidate": "^0.7.4",
     "vuetify": "^1.3.0",
     "vuex": "^3.0.1"
   },

@@ -11,7 +11,7 @@
         </v-tab>
       </v-tabs>
       <v-flex>
-        <v-btn to="/tribo" color="blue">
+        <v-btn to="/gerenciar" color="blue">
           <v-icon>arrow_back</v-icon>
           Voltar
         </v-btn>
@@ -32,9 +32,9 @@ export default {
   data () {
     return {
       abas: [
-        { titulo: 'Adicionar Tribo', to: '/inserirtribo' },
-        { titulo: 'Adicionar Squad', to: '/inserirsquad' },
-        { titulo: 'Adicionar Pessoa', to: '/inserirpessoa' }
+        { titulo: 'Editar Tribo', to: '/inserirtribo' },
+        { titulo: 'Editar Squad', to: '/inserirsquad' },
+        { titulo: 'Editar Pessoa', to: '/inserirpessoa' }
       ]
     }
   }

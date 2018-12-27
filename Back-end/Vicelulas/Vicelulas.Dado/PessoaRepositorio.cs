@@ -13,9 +13,11 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads , P.id_unidade, U.nome AS Unidade , P.permissao FROM [TB_pessoa] P " +
-                                                        $" INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
-                                                        $" INNER JOIN [TB_unidade] U ON P.id_unidade = U.id ");
+                var lista = connection.Query<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, S.Nome As SquadNome, T.id As id_tribo, T.nome As TriboNome, P.id_unidade, U.nome As Unidade, P.permissao FROM [TB_pessoa] P " +
+                                                        $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
+                                                        $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
+                                                        $"INNER JOIN [TB_squad] S ON P.id_squads = S.id " +
+                                                        $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id");
                 return lista;
             }
         }
@@ -25,9 +27,11 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads , P.id_unidade, U.nome AS Unidade , P.permissao FROM [TB_pessoa] P " +
+                var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, S.Nome As SquadNome, T.id As id_tribo, T.nome As TriboNome, P.id_unidade, U.nome As Unidade, P.permissao FROM [TB_pessoa] P " +
                                                                    $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                                    $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id "+
+                                                                   $"INNER JOIN [TB_squad] S ON P.id_squads = S.id " +
+                                                                   $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                                    $"WHERE P.Id = {id}");
                 return obj;
             }
@@ -37,9 +41,11 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads , P.id_unidade, U.nome AS Unidade , P.permissao FROM [TB_pessoa] P " +
+                var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, S.Nome As SquadNome, T.id As id_tribo, T.nome As TriboNome, P.id_unidade, U.nome As Unidade, P.permissao FROM [TB_pessoa] P  " +
                                                                    $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                                    $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
+                                                                   $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id " +
+                                                                   $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                                    $"WHERE P.email = '{email}'");
                 return obj;
             }
@@ -49,10 +55,11 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads , P.id_unidade, U.nome AS Unidade , P.permissao FROM [TB_pessoa] P " +
+                var lista = connection.Query<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, S.Nome As SquadNome, T.id As id_tribo, T.nome As TriboNome, P.id_unidade, U.nome As Unidade, P.permissao FROM [TB_pessoa] P  " +
                                                                    $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                                    $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
                                                                    $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id "+
+                                                                   $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                                    $"WHERE S.Id = {id}");
                 return lista;
             }
@@ -62,9 +69,11 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads , P.id_unidade, U.nome AS Unidade , P.permissao FROM [TB_pessoa] P " +
+                var lista = connection.Query<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, S.Nome As SquadNome, T.id As id_tribo, T.nome As TriboNome, P.id_unidade, U.nome As Unidade, P.permissao FROM [TB_pessoa] P   " +
                                                        $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                        $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
+                                                       $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id " +
+                                                       $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                        $"WHERE P.Nome LIKE '%{nome}%'");
 
                 return lista;

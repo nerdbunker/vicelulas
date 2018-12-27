@@ -14,6 +14,6 @@ namespace Vicelulas.Dominio.Dto
         public bool Ativo { get; set; }
         public int Id_Squads { get; set; }
         public int Id_Unidade { get; set; }
-        public int Permisao { get; set; }
+        public int Permissao { get; set; }
     }
 }

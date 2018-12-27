@@ -4,7 +4,7 @@
       <v-layout row wrap>
         <v-flex md10 xs12>
           <v-toolbar flat dark>
-            <v-toolbar-title>Tribo</v-toolbar-title>
+            <v-toolbar-title>PESSOAS</v-toolbar-title>
             <v-divider class="mx-2" inset vertical></v-divider>
             <v-spacer></v-spacer>
             <v-dialog v-model="dialog" max-width="500px">
@@ -63,11 +63,11 @@
           >
             <template slot="items" slot-scope="props">
               <td>{{ props.item.nome }}</td>
-              <td class="text-xs-right">{{ props.item.email }}</td>
-              <td class="text-xs-right">{{ props.item.cargo }}</td>
-              <td class="text-xs-right">{{ props.item.id_Unidade }}</td>
-              <td class="text-xs-right">{{ props.item.id_Squads }}</td>
-              <td class="text-xs-right">{{ props.item.tribo }}</td>
+              <td>{{ props.item.email }}</td>
+              <td>{{ props.item.cargo }}</td>
+              <td>{{ props.item.unidade }}</td>
+              <td>{{ props.item.squadNome }}</td>
+              <td>{{ props.item.triboNome }}</td>
               <td class="justify-center layout px-0">
               <v-icon
                 small

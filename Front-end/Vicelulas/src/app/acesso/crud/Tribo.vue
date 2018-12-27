@@ -4,7 +4,7 @@
       <v-layout row wrap>
         <v-flex md10 xs12>
           <v-toolbar flat dark>
-            <v-toolbar-title>Tribo</v-toolbar-title>
+            <v-toolbar-title>TRIBOS</v-toolbar-title>
             <v-divider class="mx-2" inset vertical></v-divider>
             <v-spacer></v-spacer>
             <v-dialog v-model="dialog" max-width="500px">

@@ -4,11 +4,11 @@
       <v-layout row wrap>
         <v-flex md10 xs12>
           <v-toolbar flat dark>
-            <v-toolbar-title>Tribo</v-toolbar-title>
+            <v-toolbar-title>SQUADS</v-toolbar-title>
             <v-divider class="mx-2" inset vertical></v-divider>
             <v-spacer></v-spacer>
             <v-dialog v-model="dialog" max-width="500px">
-              <v-btn slot="activator" color="primary" dark class="mb-2">Nova Pessoa</v-btn>
+              <v-btn slot="activator" color="primary" dark class="mb-2">Nova Squad</v-btn>
               <v-card>
                 <v-card-title>
                   <span class="headline">{{ formTitle }}</span>
@@ -18,30 +18,13 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="editedItem.nome" label="Nome Completo"></v-text-field>
-                      </v-flex>
-                      <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="editedItem.email" label="Email"></v-text-field>
+                        <v-text-field v-model="editedItem.nome" label="Nome da Squad"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
                           :items="items"
-                          v-model="editedItem.cargo"
-                          label="Cargo"
-                        ></v-select>
-                      </v-flex>
-                      <v-flex xs12 sm12 md12>
-                        <v-select
-                          :items="items"
-                          v-model="editedItem.unidade"
-                          label="Unidade"
-                        ></v-select>
-                      </v-flex>
-                      <v-flex xs12 sm12 md12>
-                        <v-select
-                          :items="items"
-                          v-model="editedItem.id_Squads"
-                          label="Squad"
+                          v-model="editedItem.nomeTribo"
+                          label="Tribo"
                         ></v-select>
                       </v-flex>
                     </v-layout>
@@ -58,17 +41,13 @@
           </v-toolbar>
           <v-data-table
             :headers="headers"
-            :items="pessoas"
+            :items="squads"
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
               <td>{{ props.item.nome }}</td>
-              <td class="text-xs-right">{{ props.item.email }}</td>
-              <td class="text-xs-right">{{ props.item.cargo }}</td>
-              <td class="text-xs-right">{{ props.item.id_Unidade }}</td>
-              <td class="text-xs-right">{{ props.item.id_Squads }}</td>
-              <td class="text-xs-right">{{ props.item.tribo }}</td>
-              <td class="justify-center layout px-0">
+              <td>{{ props.item.nomeTribo }}</td>
+              <td>
               <v-icon
                 small
                 class="mr-2"
@@ -95,48 +74,36 @@
 </template>
 
 <script>
-import Pessoas from '../../../domains/services/Pessoas'
+import Squads from '../../../domains/services/Squads'
 
 export default {
   data: () => ({
     dialog: false,
-    pessoas: [],
+    squads: [],
     headers: [
       {
         text: 'Nome',
         align: 'left',
-        sortable: false,
+        sortable: true,
         value: 'nome'
       },
-      { text: 'Email', value: 'email' },
-      { text: 'Cargo', value: 'cargo' },
-      { text: 'Unidade', value: 'unidade' },
-      { text: 'Squad', value: 'id_Squads' },
       { text: 'Tribo', value: 'tribo' },
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
     editedItem: {
       nome: '',
-      email: '',
-      cargo: '',
-      unidade: '',
-      squad: '',
-      tribo: ''
+      nomeTribo: ''
     },
     defaultItem: {
       nome: '',
-      email: '',
-      cargo: '',
-      unidade: '',
-      squad: '',
-      tribo: ''
+      nomeTribo: ''
     }
   }),
 
   computed: {
     formTitle () {
-      return this.editedIndex === -1 ? 'Adicionar Pessoa' : 'Editar Pessoa'
+      return this.editedIndex === -1 ? 'Adicionar Squad' : 'Editar Squad'
     }
   },
 
@@ -152,12 +119,12 @@ export default {
 
   methods: {
     initialize () {
-      this.pessoas = []
+      this.squads = []
     },
 
     editItem (item) {
       // Alterar aqui o this.pessoas
-      this.editedIndex = this.pessoas.indexOf(item)
+      this.editedIndex = this.squads.indexOf(item)
       this.editedItem = Object.assign({}, item)
       this.dialog = true
     },
@@ -178,21 +145,17 @@ export default {
 
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.pessoas[this.editedIndex], this.editedItem)
+        Object.assign(this.squads[this.editedIndex], this.editedItem)
       } else {
-        this.pessoas.push(this.editedItem)
+        this.squads.push(this.editedItem)
       }
       this.close()
     }
   },
   mounted () {
-    Pessoas.obterPessoa().then(respostaPessoa => {
-      console.log(respostaPessoa)
-      this.pessoas = respostaPessoa.data
-    })
-    Pessoas.obterPessoaPorId().then(respostaPessoaId => {
-      console.log(respostaPessoaId)
-      this.pessoasId = respostaPessoaId
+    Squads.obterSquad().then(respostaSquad => {
+      console.log(respostaSquad)
+      this.squads = respostaSquad.data
     })
   }
 }

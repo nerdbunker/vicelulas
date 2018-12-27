@@ -4,7 +4,7 @@
       <v-layout row wrap>
         <v-flex md10 xs12>
           <v-toolbar flat dark>
-            <v-toolbar-title>Squad</v-toolbar-title>
+            <v-toolbar-title>Tribo</v-toolbar-title>
             <v-divider class="mx-2" inset vertical></v-divider>
             <v-spacer></v-spacer>
             <v-dialog v-model="dialog" max-width="500px">
@@ -26,22 +26,22 @@
                       <v-flex xs12 sm12 md12>
                         <v-select
                           :items="items"
-                          v-model="value"
+                          v-model="editedItem.cargo"
+                          label="Cargo"
+                        ></v-select>
+                      </v-flex>
+                      <v-flex xs12 sm12 md12>
+                        <v-select
+                          :items="items"
+                          v-model="editedItem.unidade"
                           label="Unidade"
                         ></v-select>
                       </v-flex>
-                      <v-flex xs6 sm6 md12>
+                      <v-flex xs12 sm12 md12>
                         <v-select
                           :items="items"
-                          v-model="value"
+                          v-model="editedItem.id_Squads"
                           label="Squad"
-                        ></v-select>
-                      </v-flex>
-                      <v-flex xs6 sm6 md12>
-                        <v-select
-                          :items="items"
-                          v-model="value"
-                          label="Tribo"
                         ></v-select>
                       </v-flex>
                     </v-layout>
@@ -56,17 +56,33 @@
               </v-card>
             </v-dialog>
           </v-toolbar>
-          <v-data-table :headers="headers" :items="pessoas" class="elevation-1">
+          <v-data-table
+            :headers="headers"
+            :items="pessoas"
+            class="elevation-1"
+          >
             <template slot="items" slot-scope="props">
               <td>{{ props.item.nome }}</td>
               <td class="text-xs-right">{{ props.item.email }}</td>
-              <td class="text-xs-right">{{ props.item.unidade }}</td>
-              <td class="text-xs-right">{{ props.item.squad }}</td>
+              <td class="text-xs-right">{{ props.item.cargo }}</td>
+              <td class="text-xs-right">{{ props.item.id_Unidade }}</td>
+              <td class="text-xs-right">{{ props.item.id_Squads }}</td>
               <td class="text-xs-right">{{ props.item.tribo }}</td>
               <td class="justify-center layout px-0">
-                <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>
-                <v-icon small @click="deleteItem(props.item)">delete</v-icon>
-              </td>
+              <v-icon
+                small
+                class="mr-2"
+                @click="editItem(props.item)"
+              >
+                edit
+              </v-icon>
+              <v-icon
+                small
+                @click="deleteItem(props.item)"
+              >
+                delete
+              </v-icon>
+            </td>
             </template>
             <template slot="no-data">
               <v-btn color="primary" @click="initialize">Reset</v-btn>
@@ -84,6 +100,7 @@ import Pessoas from '../../../domains/services/Pessoas'
 export default {
   data: () => ({
     dialog: false,
+    pessoas: [],
     headers: [
       {
         text: 'Nome',
@@ -91,30 +108,30 @@ export default {
         sortable: false,
         value: 'nome'
       },
-      { text: 'Email', value: 'calories' },
-      { text: 'Unidade', value: 'fat' },
-      { text: 'Squad', value: 'carbs' },
-      { text: 'Tribo', value: 'protein' },
+      { text: 'Email', value: 'email' },
+      { text: 'Cargo', value: 'cargo' },
+      { text: 'Unidade', value: 'unidade' },
+      { text: 'Squad', value: 'id_Squads' },
+      { text: 'Tribo', value: 'tribo' },
       { text: 'Ações', value: 'nome' }
     ],
-    pessoas: [],
     editedIndex: -1,
     editedItem: {
       nome: '',
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
+      email: '',
+      cargo: '',
+      unidade: '',
+      squad: '',
+      tribo: ''
     },
     defaultItem: {
       nome: '',
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
-    },
-    pessoas: [],
-    pessoasId: []
+      email: '',
+      cargo: '',
+      unidade: '',
+      squad: '',
+      tribo: ''
+    }
   }),
 
   computed: {
@@ -139,15 +156,16 @@ export default {
     },
 
     editItem (item) {
-      this.editedIndex = this.desserts.indexOf(item)
+      // Alterar aqui o this.pessoas
+      this.editedIndex = this.pessoas.indexOf(item)
       this.editedItem = Object.assign({}, item)
       this.dialog = true
     },
 
     deleteItem (item) {
-      const index = this.desserts.indexOf(item)
+      const index = this.pessoas.indexOf(item)
       confirm('Tem certeza que deseja desativar esta Pessoa?') &&
-        this.desserts.splice(index, 1)
+        this.pessoas.splice(index, 1)
     },
 
     close () {
@@ -160,9 +178,9 @@ export default {
 
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem)
+        Object.assign(this.pessoas[this.editedIndex], this.editedItem)
       } else {
-        this.desserts.push(this.editedItem)
+        this.pessoas.push(this.editedItem)
       }
       this.close()
     }

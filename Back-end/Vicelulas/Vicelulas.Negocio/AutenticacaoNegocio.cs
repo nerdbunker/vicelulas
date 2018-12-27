@@ -1,4 +1,5 @@
-﻿using Viceluas.Dominio.Exceções;
+﻿
+using Viceluas.Dominio.Exceções;
 using Vicelulas.Dado;
 using Vicelulas.Dominio.Dto;
 using Vicelulas.Dominio.Seguranca;

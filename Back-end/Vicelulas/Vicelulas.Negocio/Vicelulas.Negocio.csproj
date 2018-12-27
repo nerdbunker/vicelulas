@@ -1,15 +1,15 @@
-﻿﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Viceluas.Dominio\Vicelulas.Dominio.csproj" />
     <ProjectReference Include="..\Vicelulas.Dado\Vicelulas.Dado.csproj" />
   </ItemGroup>
 

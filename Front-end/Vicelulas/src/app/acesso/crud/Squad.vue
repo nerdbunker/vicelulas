@@ -6,29 +6,25 @@
           :headers="headers"
           :items="desserts"
           class="elevation-1"
-          dark
+          dark centered
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.nome }}</td>
-            <td class="text-xs-right">{{ props.item.tribo }}</td>
-            <td class="text-xs-right">{{ props.item.pessoas }}</td>
-            <td class="text-xs-right">
-              <v-btn flat icon color="cyan">
-                <v-icon flat>{{ props.item.info }}</v-icon>
-              </v-btn>
-            </td>
-            <td class="text-xs-right">
-              <v-btn flat icon color="green">
+            <td>{{ props.item.tribo }}</td>
+            <td>{{ props.item.pessoas }}</td>
+            <td>
+              <v-btn to="/editarsquad" flat icon color="green">
                 <v-icon flat>{{ props.item.editar }}</v-icon>
               </v-btn>
-            </td>
-            <td class="text-xs-right">
               <v-btn flat icon color="red">
                 <v-icon>{{ props.item.desativar }}</v-icon>
               </v-btn>
             </td>
           </template>
         </v-data-table>
+        <v-btn to="/inserirsquad" icon color="blue">
+          <v-icon>add</v-icon>
+        </v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -39,6 +35,7 @@ export default {
   name: 'Pessoa',
   data () {
     return {
+      dialog: false,
       headers: [
         {
           text: 'Nome',
@@ -48,9 +45,7 @@ export default {
         },
         { text: 'Tribo', value: 'tribo' },
         { text: 'Pessoas', value: 'pessoas' },
-        { text: 'Info', value: 'info' },
-        { text: 'Editar', value: 'editar' },
-        { text: 'Ativar/Desativar', value: 'desativar' }
+        { text: 'Editar — Desativar', value: 'acoes' }
       ],
       desserts: [
         {
@@ -58,7 +53,6 @@ export default {
           nome: 'Fernando',
           tribo: 'Consultoria',
           pessoas: 'Todas os nomes aqui',
-          info: 'info',
           editar: 'create',
           desativar: 'delete'
         },
@@ -67,7 +61,6 @@ export default {
           nome: 'Fernando',
           tribo: 'Consultoria',
           pessoas: 'Todas os nomes aqui',
-          info: 'info',
           editar: 'create',
           desativar: 'delete'
         },
@@ -76,7 +69,6 @@ export default {
           nome: 'Fernando',
           tribo: 'Consultoria',
           pessoas: 'Todas os nomes aqui',
-          info: 'info',
           editar: 'create',
           desativar: 'delete'
         }

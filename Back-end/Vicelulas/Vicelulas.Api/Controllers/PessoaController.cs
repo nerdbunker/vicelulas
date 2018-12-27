@@ -5,6 +5,8 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Vicelulas.Api.Model;
+using Vicelulas.Dominio;
 using Vicelulas.Negocio;
 
 namespace Vicelulas.Api.Controllers
@@ -43,7 +45,7 @@ namespace Vicelulas.Api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("{id}")]
+        [Route("{id}", Name = "PessoaGetId")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public IActionResult GetId(int id)
@@ -91,6 +93,91 @@ namespace Vicelulas.Api.Controllers
                 return NotFound();
 
             return Ok(obj);
+        }
+
+        /// <summary>
+        /// Método que insere uma Pessoa
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public IActionResult Post([FromBody] PessoaInput input)
+        {
+            var objPessoa = new Pessoa()
+            {
+                Id_login = input.Id_login,
+                Nome = input.Nome,
+                Id_squad = input.Id_squads,
+                Id_papel = input.Id_papel,
+                Id_unidade = input.Id_unidade,
+                Email = input.Email,
+                Permissao = input.Permissao,
+                Ativo = true
+
+            };
+
+            var idPessoa = _pessoaNegocio.Inserir(objPessoa);
+            objPessoa.Id = idPessoa;
+
+            return CreatedAtRoute(routeName: "PessoaGetId", routeValues: new { id = objPessoa.Id }, value: objPessoa);
+        }
+
+        /// <summary>
+        /// Método que altera uma Pessoa
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("{id}")]
+        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.Accepted)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public IActionResult Put([FromRoute]int id, [FromBody]PessoaInput input)
+        {
+            var objPessoa = new Pessoa()
+            {
+                Nome = input.Nome,
+                Email = input.Email,
+                Id_squad = input.Id_squads,
+                Id_papel = input.Id_papel,
+                Id_login = input.Id_login,
+                Id_unidade = input.Id_unidade,
+                Permissao = input.Permissao
+            };
+
+            var retorno = _pessoaNegocio.Alterar(id, objPessoa);
+            return Accepted(retorno);
+        }
+
+        /// <summary>
+        /// Método que Desativa uma Squad
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPut("update/{id}")]
+        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.Accepted)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public IActionResult PutDesativar([FromRoute] int id, [FromBody] PessoaInput input)
+        {
+            var objPessoa = new Pessoa()
+            {
+                Nome = input.Nome,
+                Email = input.Email,
+                Id_squad = input.Id_squads,
+                Id_papel = input.Id_papel,
+                Id_login = input.Id_login,
+                Id_unidade = input.Id_unidade,
+                Permissao = input.Permissao,
+                Ativo = false
+            };
+            var retorno = _pessoaNegocio.Desativar(id, objPessoa);
+            return Accepted(retorno);
         }
     }
 }

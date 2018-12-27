@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Text;
 using Viceluas.Dominio.Dto;
 using Vicelulas.Dado.Configuração;
+using Vicelulas.Dominio;
 
 namespace Vicelulas.Dado
 {
@@ -43,6 +44,16 @@ namespace Vicelulas.Dado
             }
         }
 
+        public SquadDto SelecionarPorNomeEspecifico(string nome)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, S.Nome, S.Nome, S.Ativo FROM [TB_squad] S " +
+                                                                   $"WHERE S.Nome = '{nome}'");
+                return obj;
+            }
+        }
+
         public IEnumerable<SquadDto> SelecionarPorIdTribo(int id)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
@@ -53,5 +64,42 @@ namespace Vicelulas.Dado
                 return lista;
             }
         }
+
+        public int Inserir(Squad entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                return connection.QuerySingle<int>($"DECLARE @Id int;" +
+                                                   $"INSERT INTO [TB_squad] (Id_tribo, Nome, Ativo) " +
+                                                   $"VALUES('{entity.Id_tribo}'," +
+                                                   $"'{entity.Nome}'," +
+                                                   $"'{entity.Ativo}');" +
+                                                   $"SET @Id = SCOPE_IDENTITY();" +
+                                                   $"SELECT @Id");
+            }
+        }
+
+        public void Alterar(Squad entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                connection.Execute($"UPDATE [TB_squad] " +
+                                      $"SET Nome = '{entity.Nome}'," +
+                                      $"Id_tribo = {entity.Id_tribo}" +
+                                      $"WHERE Id = {entity.Id}");
+            }
+        }
+
+        public void AlterarStatus(Squad entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                connection.Execute($"UPDATE [TB_squad] " +
+                                   $"SET Ativo = '{entity.Ativo}', " +
+                                   $"Nome = '{entity.Nome}'" +
+                                   $"WHERE Id = {entity.Id}");
+            }
+        }
+
     }
 }

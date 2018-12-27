@@ -4,6 +4,7 @@ using System.Text;
 using Viceluas.Dominio.Dto;
 using Viceluas.Dominio.Exceções;
 using Vicelulas.Dado;
+using Vicelulas.Dominio;
 
 namespace Vicelulas.Negocio
 {
@@ -43,5 +44,56 @@ namespace Vicelulas.Negocio
 
             return lista;
         }
+
+        public int Inserir(Tribo entity)
+        {
+            var NomeExistente = _triboRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
+
+            if (NomeExistente != null)
+                throw new ConflitoException($"Já existe uma Tribo cadastrada com este nome {entity.Nome}!");
+
+            return _triboRepositorio.Inserir(entity);
+        }
+
+        public TriboDto Alterar(int Id, Tribo entity)
+        {
+            var idExistente = _triboRepositorio.SelecionarPorId(Id);
+
+            if(idExistente == null)
+            {
+                throw new NaoEncontradoException($"Não existe esta tribo!");
+            }
+
+            var NomeExistente = _triboRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
+
+            if (NomeExistente != null)
+                throw new ConflitoException($"Já existe uma Tribo cadastrada com este nome {entity.Nome}!");
+
+            entity.Id = Id;
+            _triboRepositorio.AlterarNome(entity);
+
+            return _triboRepositorio.SelecionarPorId(Id);
+        }
+
+        public TriboDto Desativar(int Id, Tribo entity)
+        {
+            var idExistente = _triboRepositorio.SelecionarPorId(Id);
+
+            if (idExistente == null)
+            {
+                throw new NaoEncontradoException($"Não existe esta tribo!");
+            }
+
+            var NomeExistente = _triboRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
+
+            if (NomeExistente == null)
+                throw new NaoEncontradoException($"Não existe uma Tribo cadastrada com este nome {entity.Nome}!");
+
+            entity.Id = Id;
+            _triboRepositorio.AlterarStatus(entity);
+
+            return _triboRepositorio.SelecionarPorId(Id);
+        }
+
     }
 }

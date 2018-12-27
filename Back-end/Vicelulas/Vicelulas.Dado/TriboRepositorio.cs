@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 using Viceluas.Dominio.Dto;
+using Vicelulas.Dado.Abstração;
 using Vicelulas.Dado.Configuração;
+using Vicelulas.Dominio;
 
 namespace Vicelulas.Dado
 {
@@ -28,6 +30,15 @@ namespace Vicelulas.Dado
             }
         }
 
+        public TriboDto SelecionarPorNomeEspecifico(string nome)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                var obj = connection.QueryFirstOrDefault<TriboDto>($"SELECT T.Id, T.Nome ,T.Ativo FROM [TB_tribo] T WHERE T.Nome = '{nome}'");
+                return obj;
+            }
+        }
+
         public IEnumerable<TriboDto> SelecionarPorNome(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
@@ -37,5 +48,40 @@ namespace Vicelulas.Dado
                 return lista;
             }
         }
+
+        public int Inserir(Tribo entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                return connection.QuerySingle<int>($"DECLARE @Id int;" +
+                                                   $"INSERT INTO [TB_tribo] (Nome, Ativo) " +
+                                                   $"VALUES('{entity.Nome}'," +
+                                                   $"'{entity.Ativo}');" +
+                                                   $"SET @Id = SCOPE_IDENTITY();" +
+                                                   $"SELECT @Id");
+            }
+        }
+
+        public void AlterarNome(Tribo entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                connection.Execute($"UPDATE [TB_tribo] " +
+                                      $"SET Nome = '{entity.Nome}'" +                            
+                                      $"WHERE Id = {entity.Id}");
+            }
+        }
+
+        public void AlterarStatus(Tribo entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                connection.Execute($"UPDATE [TB_tribo] " +
+                                   $"SET Ativo = '{entity.Ativo}', " +
+                                   $"Nome = '{entity.Nome}'" +
+                                   $"WHERE Id = {entity.Id}");
+            }
+        }
+
     }
 }

@@ -35,7 +35,6 @@ namespace Vicelulas.Teste.NegocioTeste
         {
             SquadNegocio squadNegocio = new SquadNegocio();
             var atual = squadNegocio.SelecionarPorNome("Consultoria");
-            var esperado = squadNegocio.SelecionarPorId(5);
             Assert.Single(atual);
         }
 

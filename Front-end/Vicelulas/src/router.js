@@ -13,22 +13,14 @@ import Organismo from '@/app/organismo/Organismo'
 import Tribos from '@/app/organismo/Tribos'
 // App - Acesso
 import Entrar from '@/app/acesso/Entrar'
+import Cadastrar from '@/app/acesso/Cadastrar'
 // App - Acesso Admin
-import Adicionar from '@/app/acesso/admin/Adicionar'
 import Gerenciar from '@/app/acesso/admin/Gerenciar'
 // App - Acesso CRUD
 import Historico from '@/app/acesso/crud/Historico'
 import Pessoa from '@/app/acesso/crud/Pessoa'
 import Tribo from '@/app/acesso/crud/Tribo'
 import Squad from '@/app/acesso/crud/Squad'
-// App - Acesso Componentes
-import InserirPessoa from '@/app/acesso/componentes/InserirPessoa'
-import InserirTribo from '@/app/acesso/componentes/InserirTribo'
-import InserirSquad from '@/app/acesso/componentes/InserirSquad'
-import EditarPessoa from '@/app/acesso/componentes/EditarPessoa'
-import EditarTribo from '@/app/acesso/componentes/EditarTribo'
-import EditarSquad from '@/app/acesso/componentes/EditarSquad'
-import Feedback from '@/app/acesso/componentes/Feedback'
 
 Vue.use(Router)
 
@@ -47,20 +39,8 @@ export default new Router({
     { path: '/organismo', name: 'Organismo', component: Organismo },
     { path: '/tribos/:id', name: 'Tribos', component: Tribos },
     // App - Autenticacao
-    { path: '/entrar', name: 'Login', component: Entrar },
-    { path: '/adicionar',
-      name: 'Adicionar',
-      component: Adicionar,
-      children: [
-        { path: '/inserirpessoa', component: InserirPessoa },
-        { path: '/inserirtribo', component: InserirTribo },
-        { path: '/inserirsquad', component: InserirSquad },
-        { path: '/editarpessoa', component: EditarPessoa },
-        { path: '/editarsquad', component: EditarSquad },
-        { path: '/editartribo', component: EditarTribo },
-        { path: '/feedback', component: Feedback }
-      ]
-    },
+    { path: '/entrar', name: 'Entrar', component: Entrar },
+    { path: '/cadastrar', name: 'Cadastrar', component: Cadastrar },
     // App - Acesso - Gerencia (com rotas aninhadas)
     {
       path: '/gerenciar',

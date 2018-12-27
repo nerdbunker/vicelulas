@@ -44,5 +44,22 @@ namespace Vicelulas.Teste.NegocioTeste
             SquadNegocio squadNegocio = new SquadNegocio();
             Assert.NotEmpty(squadNegocio.SelecionarPorNome(""));
         }
+
+        [Fact]
+        public void RetornaStatusOkGetIdTribo()
+        {
+            SquadNegocio squadNegocio = new SquadNegocio();
+            var atual = squadNegocio.SelecionarPorIdTribo(1);
+            Assert.NotNull(atual);
+        }
+
+        [Fact]
+        public void RetornaStatusNotFoundGetIdTribo()
+        {
+            SquadNegocio squadNegocio = new SquadNegocio();
+            var atual = squadNegocio.SelecionarPorIdTribo(0);
+            Assert.NotNull(atual);
+        }
+
     }
 }

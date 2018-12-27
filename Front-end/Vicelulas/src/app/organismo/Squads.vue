@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style>
-.squad-text {
+/* .squad-text {
   text-align: left;
-}
+} */
 </style>

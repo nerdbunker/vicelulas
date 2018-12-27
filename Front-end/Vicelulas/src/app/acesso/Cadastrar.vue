@@ -27,7 +27,7 @@
               v-model="select"
               :items="papeis"
               value="papeis.id_papel"
-              :rules="[v => !!v || 'Papel']"
+              :rules="[v => !!v || 'Papel precisa ser preenchido.']"
               label="Papel"
               required
             ></v-select>
@@ -35,7 +35,7 @@
               v-model="select"
               :items="squads"
               value="squads.id_squads"
-              :rules="[v => !!v || 'Squad']"
+              :rules="[v => !!v || 'Squad precisa ser preenchida.']"
               label="Squad"
               required
             ></v-select>
@@ -43,7 +43,7 @@
               v-model="select"
               :items="unidades"
               value="unidades.id_unidades"
-              :rules="[v => !!v || 'Unidade']"
+              :rules="[v => !!v || 'Unidade precisa ser preenchida.']"
               label="Unidade"
               required
             ></v-select>
@@ -70,7 +70,7 @@ export default {
   data: () => ({
     valid: true,
     nome: '',
-    nameRuegras: [
+    nameRegras: [
       v => !!v || 'Nome é um campo obrigatório.',
       v => (v && v.length <= 50) || 'O nome deve ter menos de 50 caracteres.'
     ],
@@ -107,6 +107,10 @@ export default {
     Squad.obterSquad().then(respostaSquad => {
       console.log(respostaSquad)
       this.squads = respostaSquad.data
+    })
+    Papel.obterPapel().then(respostaPapel => {
+      console.log(respostaPapel)
+      this.squads = respostaPapel.data
     })
   }
 }

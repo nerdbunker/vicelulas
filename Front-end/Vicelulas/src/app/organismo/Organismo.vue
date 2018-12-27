@@ -58,7 +58,7 @@
               <v-avatar>
                 <v-icon>person</v-icon>
               </v-avatar>
-              <!-- Pessoas: {{ contador.pessoas }} -->
+              Pessoas: {{ pessoas.length }}
             </v-chip>
           </v-flex>
         </v-flex>
@@ -68,24 +68,28 @@
 </template>
 
 <script>
-import Contador from '../componentes/Contador'
+import Pessoas from '../../domains/services/Pessoas'
 import Tribos from '../../domains/services/Tribos'
 import Squads from '../../domains/services/Squads'
 
 export default {
   name: 'Home',
-  components: {
-    Contador
-  },
   data () {
     return {
       legenda: 'Tribos e Squads do Organismo Viceri',
       img: require('../../../static/icones/cell.png'),
+      pessoas: [],
       tribos: [],
       squads: []
     }
   },
+  // Requisições e Retornos da API para Pessoas, Tribos e Squads
+  // Cada this. atribui a resposta da requisição há um array que ta dentro da função data acima
   mounted () {
+    Pessoas.obterPessoa().then(respostaPessoa => {
+      console.log(respostaPessoa)
+      this.pessoas = respostaPessoa.data
+    })
     Tribos.obterTribo().then(respostaTribo => {
       console.log(respostaTribo)
       this.tribos = respostaTribo.data

@@ -26,22 +26,22 @@
                       <v-flex xs12 sm12 md12>
                         <v-select
                           :items="items"
-                          v-model="value"
+                          v-model="editedItem.cargo"
+                          label="Cargo"
+                        ></v-select>
+                      </v-flex>
+                      <v-flex xs12 sm12 md12>
+                        <v-select
+                          :items="items"
+                          v-model="editedItem.unidade"
                           label="Unidade"
                         ></v-select>
                       </v-flex>
-                      <v-flex xs6 sm6 md12>
+                      <v-flex xs12 sm12 md12>
                         <v-select
                           :items="items"
-                          v-model="value"
+                          v-model="editedItem.id_Squads"
                           label="Squad"
-                        ></v-select>
-                      </v-flex>
-                      <v-flex xs6 sm6 md12>
-                        <v-select
-                          :items="items"
-                          v-model="value"
-                          label="Tribo"
                         ></v-select>
                       </v-flex>
                     </v-layout>
@@ -60,8 +60,9 @@
             <template slot="items" slot-scope="props">
               <td>{{ props.item.nome }}</td>
               <td class="text-xs-right">{{ props.item.email }}</td>
-              <td class="text-xs-right">{{ props.item.unidade }}</td>
-              <td class="text-xs-right">{{ props.item.squad }}</td>
+              <td class="text-xs-right">{{ props.item.cargo }}</td>
+              <td class="text-xs-right">{{ props.item.id_Unidade }}</td>
+              <td class="text-xs-right">{{ props.item.id_Squads }}</td>
               <td class="text-xs-right">{{ props.item.tribo }}</td>
               <td class="justify-center layout px-0">
                 <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>
@@ -84,6 +85,7 @@ import Pessoas from '../../../domains/services/Pessoas'
 export default {
   data: () => ({
     dialog: false,
+    pessoas: [],
     headers: [
       {
         text: 'Nome',
@@ -91,30 +93,30 @@ export default {
         sortable: false,
         value: 'nome'
       },
-      { text: 'Email', value: 'calories' },
+      { text: 'Email', value: 'email' },
+      { text: 'Cargo', value: 'cargo' },
       { text: 'Unidade', value: 'fat' },
       { text: 'Squad', value: 'carbs' },
       { text: 'Tribo', value: 'protein' },
       { text: 'Ações', value: 'nome' }
     ],
-    pessoas: [],
     editedIndex: -1,
     editedItem: {
       nome: '',
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
+      email: '',
+      cargo: '',
+      unidade: '',
+      squad: '',
+      tribo: ''
     },
     defaultItem: {
       nome: '',
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
-    },
-    pessoas: [],
-    pessoasId: []
+      email: '',
+      cargo: '',
+      unidade: '',
+      squad: '',
+      tribo: ''
+    }
   }),
 
   computed: {

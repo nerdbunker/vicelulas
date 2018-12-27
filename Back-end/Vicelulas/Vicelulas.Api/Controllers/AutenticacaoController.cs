@@ -56,8 +56,8 @@ namespace Vicelulas.Api.Controllers
         {
             var objLogin = new Login()
             {
-                Username = input.Username,
-                Password = input.Password
+                Username = input.Email,
+                Password = "123Aa321" 
 
             };
 

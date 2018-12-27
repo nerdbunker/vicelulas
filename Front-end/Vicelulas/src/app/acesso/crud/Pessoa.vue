@@ -18,29 +18,36 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="editedItem.nome" label="Nome Completo"></v-text-field>
+                        <v-text-field v-model="pessoaInput.nome" label="Nome Completo"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="editedItem.email" label="Email"></v-text-field>
+                        <v-text-field v-model="pessoaInput.email" label="Email"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
-                          :items="items"
-                          v-model="editedItem.cargo"
+                          
+                          item-text="cargo"
+                          item-value="id"
+                          v-model="pessoaInput.id_papel"
                           label="Cargo"
+                          :items="Papel"
                         ></v-select>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
-                          :items="items"
-                          v-model="editedItem.unidade"
+                          item-text="nome"
+                          item-value="id"
+                          :items="Unidade"
+                          v-model="pessoaInput.id_unidade"
                           label="Unidade"
                         ></v-select>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
-                          :items="items"
-                          v-model="editedItem.id_Squads"
+                          item-text="nome"
+                          item-value="id"
+                          :items="Squads"
+                          v-model="pessoaInput.id_squads"
                           label="Squad"
                         ></v-select>
                       </v-flex>
@@ -96,6 +103,9 @@
 
 <script>
 import Pessoas from '../../../domains/services/Pessoas'
+import Papel from '../../../domains/services/Papel'
+import Unidade from '../../../domains/services/Unidade'
+import Squads from '../../../domains/services/Squads'
 
 export default {
   data: () => ({
@@ -116,7 +126,7 @@ export default {
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
-    editedItem: {
+    pessoaInput: {
       nome: '',
       email: '',
       cargo: '',
@@ -158,7 +168,7 @@ export default {
     editItem (item) {
       // Alterar aqui o this.pessoas
       this.editedIndex = this.pessoas.indexOf(item)
-      this.editedItem = Object.assign({}, item)
+      this.pessoaInput = Object.assign({}, item)
       this.dialog = true
     },
 
@@ -171,16 +181,17 @@ export default {
     close () {
       this.dialog = false
       setTimeout(() => {
-        this.editedItem = Object.assign({}, this.defaultItem)
+        this.pessoaInput = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       }, 300)
     },
 
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.pessoas[this.editedIndex], this.editedItem)
+        Object.assign(this.pessoas[this.editedIndex], this.pessoaInput)
       } else {
-        this.pessoas.push(this.editedItem)
+        this.pessoas.push(this.pessoaInput)
+        Pessoas.inserirPessoa(this.pessoaInput)
       }
       this.close()
     }
@@ -193,6 +204,17 @@ export default {
     Pessoas.obterPessoaPorId().then(respostaPessoaId => {
       console.log(respostaPessoaId)
       this.pessoasId = respostaPessoaId
+    })
+    Papel.obterPapel().then(respostaPapel => {
+      console.log(respostaPapel.data)
+      this.Papel = respostaPapel.data
+      console.log(Papel)
+    })
+    Unidade.unidades().then(respostaUnidade => {
+      this.Unidade = respostaUnidade.data
+    })
+    Squads.obterSquad().then(respostaSquads => {
+      this.Squads = respostaSquads.data
     })
   }
 }

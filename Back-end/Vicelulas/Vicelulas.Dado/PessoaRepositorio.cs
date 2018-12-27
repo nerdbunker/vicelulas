@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Vicelulas.Dado.Configuração;
+using Vicelulas.Dominio;
 using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Dado
@@ -32,6 +33,18 @@ namespace Vicelulas.Dado
             }
         }
 
+        public PessoaDto SelecionarPorEmail(string email)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads , P.id_unidade, U.nome AS Unidade , P.permissao FROM [TB_pessoa] P " +
+                                                                   $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
+                                                                   $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
+                                                                   $"WHERE P.email = '{email}'");
+                return obj;
+            }
+        }
+
         public IEnumerable<PessoaDto> SelecionarPorIdSquad(int id)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
@@ -45,7 +58,6 @@ namespace Vicelulas.Dado
             }
         }
 
-
         public IEnumerable<PessoaDto> SelecionarPorNome(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
@@ -58,5 +70,63 @@ namespace Vicelulas.Dado
                 return lista;
             }
         }
+
+        public PessoaDto SelecionarPorNomeEspecifico(string nome)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_login, P.Id_Papel, P.Nome, P.email, P.Ativo, P.id_squads , P.id_unidade, P.permissao FROM [TB_pessoa] P " +
+                                                                    $"WHERE P.Nome = '{nome}'");
+                return obj;
+            }
+        }
+
+        public int Inserir(Pessoa entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                return connection.QuerySingle<int>($"DECLARE @Id int;" +
+                                                   $"INSERT INTO [TB_pessoa] (Id_login, Id_papel, Nome, Email, Ativo, Id_squads, Id_unidade, Permissao) " +
+                                                   $"VALUES({entity.Id_login}," +
+                                                   $"{entity.Id_papel}, " +
+                                                   $"'{entity.Nome}', " +
+                                                   $"'{entity.Email}', " +
+                                                   $"'{entity.Ativo}'," +
+                                                   $"{entity.Id_squad}," +
+                                                   $"{entity.Id_unidade}," +
+                                                   $"{entity.Permissao}); " +
+                                                   $"SET @Id = SCOPE_IDENTITY();" +
+                                                   $"SELECT @Id");
+            }
+        }
+
+        public void Alterar(Pessoa entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                connection.Execute($"UPDATE [TB_pessoa] " +
+                                      $"SET Id_login = {entity.Id_login}," +
+                                      $"Id_papel = {entity.Id_papel}," +
+                                      $"Nome = '{entity.Nome}'," +
+                                      $"Email = '{entity.Email}'," +
+                                      $"Ativo = '{entity.Ativo}'," +
+                                      $"Id_squads = {entity.Id_squad}," +
+                                      $"Id_unidade = {entity.Id_unidade}," +
+                                      $"Permissao = {entity.Permissao}" +
+                                      $"WHERE Id = {entity.Id}");
+            }
+        }
+
+        public void AlterarStatus(Pessoa entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                connection.Execute($"UPDATE [TB_pessoa] " +
+                                   $"SET Ativo = '{entity.Ativo}'," +
+                                   $"Nome = '{entity.Nome}'" +
+                                   $"WHERE Id = {entity.Id}");
+            }
+        }
+
     }
 }

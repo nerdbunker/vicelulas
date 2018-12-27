@@ -8,6 +8,5 @@ namespace Vicelulas.Dado.Abstração
         T SelecionarPorId(int id);
         int Inserir(T entity);
         void Alterar(T entity);
-        void Deletar(int id);
     }
 }

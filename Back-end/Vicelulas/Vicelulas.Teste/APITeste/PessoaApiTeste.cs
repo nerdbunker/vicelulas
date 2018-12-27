@@ -1,7 +1,7 @@
 ﻿using Xunit;
+using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Api.Controllers;
 using Viceluas.Dominio.Exceções;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Vicelulas.Teste.APITeste
 {

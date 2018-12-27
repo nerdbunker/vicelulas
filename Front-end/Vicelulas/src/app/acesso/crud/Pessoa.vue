@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xs>
     <v-layout row wrap justify-center align-content-center>
-      <v-flex md10 xs12>
+      <v-flex md8 xs12>
         <v-data-table
           :headers="headers"
           :items="desserts"
@@ -10,26 +10,25 @@
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.nome }}</td>
-            <td class="text-xs-right">{{ props.item.posicao_papel }}</td>
-            <td class="text-xs-right">{{ props.item.squad }}</td>
-            <td class="text-xs-right">{{ props.item.tribo }}</td>
-            <td class="text-xs-right">
+            <td>{{ props.item.papel }}</td>
+            <td>{{ props.item.squad }}</td>
+            <td>{{ props.item.tribo }}</td>
+            <td>
               <v-btn flat icon color="cyan">
                 <v-icon flat>{{ props.item.feedback }}</v-icon>
               </v-btn>
-            </td>
-            <td class="text-xs-right">
               <v-btn flat icon color="green">
                 <v-icon flat>{{ props.item.editar }}</v-icon>
               </v-btn>
-            </td>
-            <td class="text-xs-right">
               <v-btn flat icon color="red">
                 <v-icon>{{ props.item.desativar }}</v-icon>
               </v-btn>
             </td>
           </template>
         </v-data-table>
+        <v-btn to="/inserirpessoa" icon color="blue">
+          <v-icon>add</v-icon>
+        </v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -47,18 +46,16 @@ export default {
           sortable: true,
           value: 'nome'
         },
-        { text: 'Posição/Papel', value: 'posicao_papel' },
+        { text: 'Papel', value: 'posicao_papel' },
         { text: 'Squad', value: 'squad' },
         { text: 'Tribo', value: 'tribo' },
-        { text: 'Feedback', value: 'feedback' },
-        { text: 'Editar', value: 'editar' },
-        { text: 'Desativar', value: 'desativar' }
+        { text: 'Feedback/Editar/Desativar', value: 'acoes' }
       ],
       desserts: [
         {
           value: false,
           nome: 'Fernando',
-          posicao_papel: 'Arquiteto Back-end',
+          papel: 'Arquiteto Back-end',
           squad: 'Tech',
           tribo: 'Consultoria',
           feedback: 'feedback',
@@ -68,7 +65,7 @@ export default {
         {
           value: false,
           nome: 'Fernanda',
-          posicao_papel: 'Arquiteto de Testes',
+          papel: 'Arquiteto de Testes',
           squad: 'Tech',
           tribo: 'Consultoria',
           feedback: 'feedback',
@@ -78,7 +75,7 @@ export default {
         {
           value: false,
           nome: 'Paulo',
-          posicao_papel: 'UX Senior',
+          papel: 'UX Senior',
           squad: 'Tech',
           tribo: 'Consultoria',
           feedback: 'feedback',

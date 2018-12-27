@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -12,6 +12,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Vicelulas.Dado\Vicelulas.Dado.csproj" />
   </ItemGroup>
-
 
 </Project>

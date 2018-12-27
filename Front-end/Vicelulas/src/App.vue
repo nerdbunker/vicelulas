@@ -40,9 +40,7 @@
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>
-        <transition enter-active-class="animate fadeIn delay-1s" leave-active-class="animate fadeOut delay-1s">
-          <router-view/>
-        </transition>
+        <router-view/>
       </v-content>
       <!-- Menu Inferior [apenas no mobile] -->
       <Menu />

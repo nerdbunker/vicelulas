@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xs>
     <v-layout row wrap justify-center align-content-center>
-      <v-flex md10 xs12>
+      <v-flex md8 xs12>
         <v-data-table
           :headers="headers"
           :items="desserts"

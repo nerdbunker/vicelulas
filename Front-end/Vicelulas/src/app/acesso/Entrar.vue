@@ -36,12 +36,21 @@
 </template>
 
 <script>
+import Entrar from '../../domains/services/Entrar'
+
 export default {
   name: 'Entrar',
   data () {
     return {
+      entrar: [],
       true: true
     }
+  },
+  mounted () {
+    Entrar.entrar().then(respostaEntrar => {
+      console.log(respostaEntrar)
+      this.entrar = respostaEntrar.data
+    })
   }
 }
 </script>

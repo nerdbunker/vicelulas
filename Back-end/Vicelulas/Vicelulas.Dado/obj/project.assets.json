@@ -1875,11 +1875,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
+      "projectUniqueName": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
       "projectName": "Vicelulas.Dado",
-      "projectPath": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
+      "projectPath": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\Vicelulas.Dado.csproj",
       "packagesPath": "C:\\Users\\Fsilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\obj\\",
+      "outputPath": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Dado\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1898,8 +1898,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj": {
-              "projectPath": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj"
+            "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj": {
+              "projectPath": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj"
             }
           }
         }

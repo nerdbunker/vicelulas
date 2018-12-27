@@ -23,3 +23,13 @@ C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Data
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\predeploy.sql
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.dll
 C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.pdb
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.dacpac
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.dll
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\bin\Debug\Vicelulas.Database.pdb
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.sqlprojAssemblyReference.cache
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Model.xml
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\refactor.xml
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\postdeploy.sql
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\predeploy.sql
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.dll
+C:\Users\Fsilva\source\repos\nerdbunker\vicelulas\Back-end\Vicelulas\Vicelulas.Database\obj\Debug\Vicelulas.Database.pdb

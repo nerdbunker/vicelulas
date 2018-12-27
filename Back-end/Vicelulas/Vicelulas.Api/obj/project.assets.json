@@ -12736,11 +12736,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj",
       "projectName": "Vicelulas.Api",
-      "projectPath": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj",
+      "projectPath": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\Vicelulas.Api.csproj",
       "packagesPath": "C:\\Users\\Fsilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\obj\\",
+      "outputPath": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12759,11 +12759,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj": {
-              "projectPath": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj"
+            "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj": {
+              "projectPath": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Viceluas.Dominio\\Vicelulas.Dominio.csproj"
             },
-            "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj": {
-              "projectPath": "C:\\Users\\Fsilva\\Source\\Repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj"
+            "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj": {
+              "projectPath": "C:\\Users\\Fsilva\\source\\repos\\nerdbunker\\vicelulas\\Back-end\\Vicelulas\\Vicelulas.Negocio\\Vicelulas.Negocio.csproj"
             }
           }
         }

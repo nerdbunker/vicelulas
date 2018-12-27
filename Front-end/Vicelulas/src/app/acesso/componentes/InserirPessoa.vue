@@ -88,8 +88,8 @@ export default {
           name: this.name,
           email: this.email,
           username: this.username,
-          papeis: this.papeis,
-          unidade: this.unidades,
+          id_papel: this.papeis,
+          id_unidade: this.unidades,
           select: this.select
         })
       }

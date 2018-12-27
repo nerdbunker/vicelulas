@@ -26,31 +26,31 @@
 </template>
 
 <script>
-  import { http } from '../../../domains/api/config'
+import { http } from '../../../domains/api/config'
 
-  export default {
-    data: () => ({
-      valid: true,
-      nome: '',
-      nomeRegras: [
-        v => !!v || 'Nome da Tribo é um campo obrigatório!',
-        v => (v && v.length >= 2) || 'Um nome de Tribo tem que ser maior que 2 caracteres'
-      ]
-    }),
+export default {
+  data: () => ({
+    valid: true,
+    nome: '',
+    nomeRegras: [
+      v => !!v || 'Nome da Tribo é um campo obrigatório!',
+      v => (v && v.length >= 2) || 'Um nome de Tribo tem que ser maior que 2 caracteres'
+    ]
+  }),
 
-    methods: {
-      submit () {
-        if (this.$refs.form.validate()) {
-          http.post('/Tribos/Inserir', {
-            nome: this.nome
-          })
-        }
-      },
-      clear () {
-        this.$refs.form.reset()
+  methods: {
+    submit () {
+      if (this.$refs.form.validate()) {
+        http.post('/Tribos/Inserir', {
+          nome: this.nome
+        })
       }
+    },
+    clear () {
+      this.$refs.form.reset()
     }
   }
+}
 </script>
 
 <style>

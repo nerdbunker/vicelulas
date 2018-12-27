@@ -53,7 +53,7 @@ export default {
       if (this.$refs.form.validate()) {
         http.post('/Squads/Inserir', {
           nome: this.nome,
-          select: this.select,
+          select: this.select
         })
       }
     },

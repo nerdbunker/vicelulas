@@ -10,7 +10,6 @@ namespace Vicelulas.Api.Model
         public string Nome { get; set; }
         public string Email { get; set; }
         public int Id_squads { get; set; }
-        public int Id_login { get; set; }
         public int Id_unidade { get; set; }
         public int Id_papel { get; set; }
         public int Permissao { get; set; }

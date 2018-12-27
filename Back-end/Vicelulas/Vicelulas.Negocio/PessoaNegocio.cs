@@ -73,6 +73,7 @@ namespace Vicelulas.Negocio
         public PessoaDto Alterar(int Id, Pessoa entity)
         {
             var idExistente = _pessoaRepositorio.SelecionarPorId(Id);
+            
 
             if (idExistente == null)
             {

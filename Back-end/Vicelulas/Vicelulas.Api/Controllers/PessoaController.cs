@@ -102,9 +102,9 @@ namespace Vicelulas.Api.Controllers
                 Email = input.Email,
                 Id_squad = input.Id_squads,
                 Id_papel = input.Id_papel,
-                Id_login = input.Id_login,
                 Id_unidade = input.Id_unidade,
-                Permissao = input.Permissao
+                Permissao = input.Permissao,
+                Ativo = true
             };
 
             var retorno = _pessoaNegocio.Alterar(id, objPessoa);
@@ -128,8 +128,7 @@ namespace Vicelulas.Api.Controllers
                 Nome = input.Nome,
                 Email = input.Email,
                 Id_squad = input.Id_squads,
-                Id_papel = input.Id_papel,
-                Id_login = input.Id_login,
+                Id_papel = input.Id_papel,      
                 Id_unidade = input.Id_unidade,
                 Permissao = input.Permissao,
                 Ativo = false

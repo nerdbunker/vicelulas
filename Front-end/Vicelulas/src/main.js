@@ -2,7 +2,6 @@ import Vue from 'vue'
 // Plugins
 import './plugins/axios'
 import './plugins/vuetify'
-import 'vuelidate'
 // Motor da App
 import App from './App.vue'
 import router from './router'

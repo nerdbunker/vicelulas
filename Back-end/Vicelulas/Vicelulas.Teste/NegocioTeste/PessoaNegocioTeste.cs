@@ -35,7 +35,6 @@ namespace Vicelulas.Teste.NegocioTeste
         {
             PessoaNegocio pessoaNegocio = new PessoaNegocio();
             var atual = pessoaNegocio.SelecionarPorNome("Pablo Zampa");
-            var esperado = pessoaNegocio.SelecionarPorId(5);
             Assert.Single(atual);
         }
 

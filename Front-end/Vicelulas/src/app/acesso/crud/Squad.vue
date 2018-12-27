@@ -4,26 +4,27 @@
       <v-flex md8 xs12>
         <v-data-table
           :headers="headers"
-          :items="desserts"
+          :items="squads"
           class="elevation-1"
           dark centered
         >
-          <template slot="items" slot-scope="props">
-            <td>{{ props.item.nome }}</td>
-            <td>{{ props.item.tribo }}</td>
-            <td>{{ props.item.pessoas }}</td>
+          <template slot="items" slot-scope="squads">
+            <td>{{ items.squads.nome }}</td>
+            <td>{{ items.squads.tribo }}</td>
+            <td>{{ items.squads.squad }}</td>
             <td>
               <v-btn to="/editarsquad" flat icon color="green">
-                <v-icon flat>{{ props.item.editar }}</v-icon>
+                <v-icon flat>create</v-icon>
               </v-btn>
               <v-btn flat icon color="red">
-                <v-icon>{{ props.item.desativar }}</v-icon>
+                <v-icon>delete</v-icon>
               </v-btn>
             </td>
           </template>
         </v-data-table>
-        <v-btn to="/inserirsquad" icon color="blue">
+        <v-btn to="/inserirsquad" color="blue">
           <v-icon>add</v-icon>
+          Adicionar Squad
         </v-btn>
       </v-flex>
     </v-layout>
@@ -31,49 +32,37 @@
 </template>
 
 <script>
+import Pessoas from '../../../domains/services/Pessoas'
+import Tribos from '../../../domains/services/Tribos'
+import Squads from '../../../domains/services/Squads'
+
 export default {
   name: 'Pessoa',
   data () {
     return {
-      dialog: false,
       headers: [
-        {
-          text: 'Nome',
-          align: 'left',
-          sortable: true,
-          value: 'nome'
-        },
+        { text: 'Nome', align: 'left', sortable: true, value: 'nome' },
         { text: 'Tribo', value: 'tribo' },
-        { text: 'Pessoas', value: 'pessoas' },
         { text: 'Editar — Desativar', value: 'acoes' }
       ],
-      desserts: [
-        {
-          value: false,
-          nome: 'Fernando',
-          tribo: 'Consultoria',
-          pessoas: 'Todas os nomes aqui',
-          editar: 'create',
-          desativar: 'delete'
-        },
-        {
-          value: false,
-          nome: 'Fernando',
-          tribo: 'Consultoria',
-          pessoas: 'Todas os nomes aqui',
-          editar: 'create',
-          desativar: 'delete'
-        },
-        {
-          value: false,
-          nome: 'Fernando',
-          tribo: 'Consultoria',
-          pessoas: 'Todas os nomes aqui',
-          editar: 'create',
-          desativar: 'delete'
-        }
-      ]
+      pessoas: [],
+      tribos: [],
+      squads: []
     }
+  },
+  mounted () {
+    Pessoas.obterPessoa().then(respostaPessoa => {
+      console.log(respostaPessoa)
+      this.pessoas = respostaPessoa.data
+    })
+    Tribos.obterTribo().then(respostaTribo => {
+      console.log(respostaTribo)
+      this.pessoas = respostaTribo.data
+    })
+    Squads.obterSquad().then(respostaSquad => {
+      console.log(respostaSquad)
+      this.squads = respostaSquad.data
+    })
   }
 }
 </script>

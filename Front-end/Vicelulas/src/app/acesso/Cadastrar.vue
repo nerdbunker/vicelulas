@@ -64,7 +64,7 @@
 
 <script>
 import { http } from '../../domains/api/config'
-// import Squad from '../../domains/services/Squads'
+import Squad from '../../domains/services/Squads'
 
 export default {
   data: () => ({
@@ -91,6 +91,7 @@ export default {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
         http.post('Cadastrar', {
+          id: this.id,
           name: this.name,
           email: this.email,
           select: this.select,
@@ -101,10 +102,13 @@ export default {
     clear () {
       this.$refs.form.reset()
     }
+  },
+  mounted () {
+    Squad.obterSquad().then(respostaSquad => {
+      console.log(respostaSquad)
+      this.squads = respostaSquad.data
+    })
   }
-  // mounted () {
-  //   Squad
-  // }
 }
 </script>
 

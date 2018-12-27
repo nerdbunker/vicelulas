@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Entrar from '../../domains/services/Entrar'
+// import Entrar from '../../domains/services/Entrar'
 
 export default {
   name: 'Entrar',
@@ -46,11 +46,11 @@ export default {
       true: true
     }
   },
-  mounted () {
-    Entrar.entrar().then(respostaEntrar => {
-      console.log(respostaEntrar)
-      this.entrar = respostaEntrar.data
-    })
-  }
+  // mounted () {
+  //   Entrar.entrar().then(respostaEntrar => {
+  //     console.log(respostaEntrar)
+  //     this.entrar = respostaEntrar.data
+  //   })
+  // }
 }
 </script>

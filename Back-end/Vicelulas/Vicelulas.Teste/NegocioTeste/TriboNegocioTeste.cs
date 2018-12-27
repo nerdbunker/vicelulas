@@ -35,7 +35,6 @@ namespace Vicelulas.Teste.NegocioTeste
         {
             TriboNegocio triboNegocio = new TriboNegocio();
             var atual = triboNegocio.SelecionarPorNome("Viceri");
-            var esperado = triboNegocio.SelecionarPorId(7);
             Assert.Single(atual);
         }
 

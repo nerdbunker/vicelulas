@@ -1,9 +1,13 @@
-// Conexão de API para Login (chamado de 'Entrar' aqui neste sistema)
+// Conexão de API para Entrar e Cadastrar
 
 import { http } from '../api/config'
 
 export default {
   entrar: () => {
-    return http.get('Entrar')
+    return http.post('Entrar', {
+      id: this.id,
+      email: this.email,
+      senha: this.senha
+    })
   }
 }

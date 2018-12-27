@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>Vicelulas.Teste</ProjectName>
+  <ProjectName>Vicelulas.Api</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
-  <ProjectGuid>4093b4a2-ee7e-48f7-bd13-17f1a6ecbdb5</ProjectGuid>
-  <FullPath>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\Vicelulas.Teste.csproj</FullPath>
+  <ProjectGuid>840a4890-da93-45bb-a8cc-11e2f2a2d739</ProjectGuid>
+  <FullPath>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Vicelulas.Api.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
     <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\out\4\FilesToAnalyze.txt" />
   </AnalysisResults>
   <AnalysisSettings>
-    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\Vicelulas.Teste.dll.RoslynCA.json|C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1\Vicelulas.Teste.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\bin\Debug\netcoreapp2.1\Vicelulas.Api.dll.RoslynCA.json</Property>
     <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\out\4</Property>
   </AnalysisSettings>
   <Configuration>Debug</Configuration>

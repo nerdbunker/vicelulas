@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Viceluas.Dominio.Dto
 {
@@ -10,6 +8,6 @@ namespace Viceluas.Dominio.Dto
         public int Id_Tribo { get; set; }
         public string Nome { get; set; }
         public string NomeTribo { get; set; }
-        public Boolean Ativo { get; set; }
+        public bool Ativo { get; set; }
     }
 }

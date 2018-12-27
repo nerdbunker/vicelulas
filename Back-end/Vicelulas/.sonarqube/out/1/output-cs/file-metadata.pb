@@ -1,6 +1,6 @@
-r
-pC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\Abstra√ß√£o\IRepositorioBase.csx
-vC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\Configura√ß√£o\DbConnectionFactory.csf
-dC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\TriboRepositorio.csY
-UC:\Users\lcontesini\AppData\Local\Temp\.NETCoreApp,Version=v2.1.AssemblyAttributes.cså
-áC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Dado\obj\Debug\netcoreapp2.1\Vicelulas.Dado.AssemblyInfo.cs
+^
+\C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\DbMock.csv
+tC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\Repositorios\RepositiorioSquad.csu
+sC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\Repositorios\RepositorioTribo.csY
+UC:\Users\lcontesini\AppData\Local\Temp\.NETCoreApp,Version=v2.1.AssemblyAttributes.csê
+ãC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\obj\Debug\netcoreapp2.1\Vicelulas.DBMock.AssemblyInfo.cs

@@ -3,28 +3,18 @@
   "short_name": "Vicélulas",
   "icons": [
     {
-      "src": "./img/icons/favicon.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "./img/icons/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "./img/icons/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
       "src": "./img/icons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "./img/icons/apple-touch-icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
     }
   ],
   "start_url": "/",
   "display": "fullscreen",
   "background_color": "#000000",
-  "theme_color": "#1387e2"
+  "theme_color": "#FC0001"
 }

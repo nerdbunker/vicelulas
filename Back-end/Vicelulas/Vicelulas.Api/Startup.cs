@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Reflection;
-using Fatec.Clinica.Api.Filtros;
+using Vicelulas.Api.Filtros;
 
 namespace Vicelulas.Api
 {
@@ -65,8 +65,18 @@ namespace Vicelulas.Api
                 app.UseHsts();
             }
 
-           
+            app.UseCors(c =>
+            {
+                c.AllowAnyHeader();
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
+                c.DisallowCredentials();
+
+            });
+
+
             app.UseHttpsRedirection();
+            app.UseMiddleware<ErroFiltro>();
             app.UseMvc();
 
 
@@ -75,17 +85,6 @@ namespace Vicelulas.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vicelulas API V1");
             });
-
-
-            //app.Use((c, next) => serviceFactory.GetService<ErroFiltro>().Invoke(c, next));
-
-            app.UseCors(c =>
-            {
-                c.AllowAnyHeader();
-                c.AllowAnyMethod();
-                c.AllowAnyOrigin();
-            });
-
 
         }
     }

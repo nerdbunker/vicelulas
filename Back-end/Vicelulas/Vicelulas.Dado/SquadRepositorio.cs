@@ -1,8 +1,6 @@
 ﻿using Dapper;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Text;
 using Viceluas.Dominio.Dto;
 using Vicelulas.Dado.Configuração;
 using Vicelulas.Dominio;

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Api.Model;
 using Vicelulas.Dominio;
@@ -52,9 +47,6 @@ namespace Vicelulas.Api.Controllers
         {
             var obj = _pessoaNegocio.SelecionarPorId(id);
 
-            if (obj == null)
-                return NotFound();
-
             return Ok(obj);
         }
 
@@ -71,9 +63,6 @@ namespace Vicelulas.Api.Controllers
         {
             var obj = _pessoaNegocio.SelecionarPorIdSquad(id);
 
-            if (obj == null)
-                return NotFound();
-
             return Ok(obj);
         }
 
@@ -89,8 +78,6 @@ namespace Vicelulas.Api.Controllers
         public IActionResult GetName(string nome)
         {
             var obj = _pessoaNegocio.SelecionarPorNome(nome);
-            if (obj == null)
-                return NotFound();
 
             return Ok(obj);
         }

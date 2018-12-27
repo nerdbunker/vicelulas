@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Viceluas.Dominio.Dto;
 using Viceluas.Dominio.Exceções;
 using Vicelulas.Dado;

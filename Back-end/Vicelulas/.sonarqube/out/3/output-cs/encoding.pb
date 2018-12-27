@@ -1,5 +1,5 @@
-w
-nC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\TriboController.csutf-8n
-eC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Filtros\ErroFiltro.csutf-8c
-ZC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Program.csutf-8c
-ZC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Startup.csutf-8
+v
+mC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Abstracao\INegocioBase.csutf-8m
+dC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\PessoaNegocio.csutf-8l
+cC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\SquadNegocio.csutf-8l
+cC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\TriboNegocio.csutf-8

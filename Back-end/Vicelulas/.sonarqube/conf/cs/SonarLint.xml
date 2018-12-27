@@ -13,10 +13,6 @@
       <Key>sonar.cs.file.suffixes</Key>
       <Value>.cs</Value>
     </Setting>
-    <Setting>
-      <Key>sonar.cs.vstest.reportsPaths</Key>
-      <Value>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\bin\Debug\netcoreapp2.1</Value>
-    </Setting>
   </Settings>
   <Rules>
     <Rule>

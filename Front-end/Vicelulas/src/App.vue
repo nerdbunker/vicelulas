@@ -1,108 +1,100 @@
 <template>
   <div id="app" class="bg">
-    <v-layout row wrap>
-      <v-app id="inspire">
-        <v-navigation-drawer
-          dark
-          persistent
-          :clipped="clipped"
-          v-model="drawer"
-          enable-resize-watcher
-          fixed
-          app
-        >
-          <v-list>
-            <v-list-tile
-              value="true"
-              v-for="(item, i) in items"
-              :key="i"
-              :to="item.to"
-              active-class="active"
-              exact-active-class="primary"
-            >
-              <v-list-tile-action>
-                <v-icon v-html="item.icon"></v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title v-text="item.title"></v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-        </v-navigation-drawer>
-        <v-toolbar
-          class="white--text"
-          flat
-          color="red"
-          app
-          :clipped-left="clipped"
-        >
-          <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-          <v-list-tile-title text-xs-center class="title">
-            Vicélulas
-          </v-list-tile-title>
-        </v-toolbar>
-        <!-- Conteúdo -->
-        <v-content>
-          <router-view/>
-        </v-content>
-        <!-- Botão -->
-        <v-btn
-          fab fixed
-          bottom right
-          dark center
-          onclick="location.reload(true)"
-          v-show="$vuetify.breakpoint.xs"
+    <v-app id="inspire">
+      <v-navigation-drawer
+        dark
+        persistent
+        v-model="drawer"
+        fixed app width="200"
+      >
+        <v-list>
+            <img src="../static/icones/viceri.png" class="logo" alt="">
+          <v-divider></v-divider>
+          <v-list-tile
+            value="true"
+            v-for="(item, i) in items"
+            :key="i"
+            :to="item.to"
+            active-class="active"
+            exact-active-class="primary"
           >
-          <v-icon dark>refresh</v-icon>
-        </v-btn>
-      </v-app>
-    </v-layout>
+            <v-list-tile-action>
+              <v-icon v-html="item.icon"></v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title v-text="item.title"></v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-navigation-drawer>
+      <v-toolbar
+        class="white--text"
+        flat
+        color="viceri"
+        app
+      >
+        <v-toolbar-side-icon aria-label="menu" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-list-tile-title text-xs-center class="titulo">
+          {{ titulo }}
+        </v-list-tile-title>
+      </v-toolbar>
+      <!-- Conteúdo -->
+      <v-content>
+        <router-view/>
+      </v-content>
+      <!-- Menu Inferior [apenas no mobile] -->
+      <Menu />
+    </v-app>
   </div>
 </template>
 
 <script>
+import Menu from './app/componentes/Menu'
+
 export default {
   name: 'App',
+  components: {
+    Menu
+  },
   data () {
     return {
-      clipped: false,
       drawer: false,
       fixed: false,
-      miniVariant: false,
+      titulo: 'VICELULAS',
       items: [
-        { icon: 'bubble_chart', title: 'Organismo', to: '/' },
+        { icon: 'home', title: 'Organismo', to: '/' },
         { icon: 'loyalty', title: 'Valores', to: '/valores' },
-        { icon: 'photo', title: 'Viceri', to: '/viceri' },
+        { icon: 'photo', title: 'Fotos da Viceri', to: '/viceri' },
+        // { icon: 'folder', title: 'Documentos', to: '/documentos' },
+        // { icon: 'person', title: 'Pessoas', to: '/pessoas' },
         { icon: 'info', title: 'Dúvidas', to: '/duvidas' },
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
-        { icon: 'fingerprint', title: 'Entrar', to: '/login' }
+        { icon: 'fingerprint', title: 'Entrar', to: '/entrar' }
       ]
-    }
-  },
-  methods: {
-    reloadPage () {
-      window.location.reload()
-    }
-  },
-  watch: {
-    $route(to, from) {
-      this.$store.state.bounceFix.fixBounce();
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style scoped>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
+@import url('https://fonts.googleapis.com/css?family=Play');
+
 .bg {
-  background-image: url('../static/backgrounds/mol-bg.png');
+  background-image: url('../static/backgrounds/bg.png');
   background-attachment: fixed;
   background-size: cover;
 }
 #inspire {
+  font-family: 'Play', sans-serif;
   background: none;
 }
-// overflow {
-//   auto;
-//   -webkit-overflow-scrolling: touch;
-// }
+.titulo {
+  font-family: 'Play', sans-serif;
+  font-size: 25px;
+}
+.logo {
+  padding-left: 10px;
+  width: 190px;
+}
 </style>

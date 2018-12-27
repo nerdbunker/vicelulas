@@ -1,80 +1,65 @@
 <template>
-  <v-slide-y-transition mode="out-in">
-    <v-container fluid grid-list-md text-xs-center>
-      <v-layout row wrap justify-center align-content-center>
-        <v-flex md5 xs10 mb-5 pa-1>
-          <v-card class="search">
-            <v-text-field
-              color="green"
-              v-model="search"
-              append-icon="search"
-              label="Pesquisar"
-              single-line
-              hide-details
-            ></v-text-field>
-          </v-card>
-        </v-flex>
-        <v-flex md10 xs12>
-          <v-card light class="espaco" elevation-20>
-            <div class="flex">
-              <router-link to="/tribos/squads/1"><img :src="consultoria" alt=""></router-link>
-            </div>
-            <div class="flex">
-              <router-link to="tribos/squads/2"><img :src="unibanco" alt=""></router-link>
-            </div>
-            <div class="flex">
-              <router-link to="tribos/squads/3"><img :src="sequoia" alt=""></router-link>
-            </div>
-            <div class="flex">
-              <router-link to="tribos/squads/4"><img :src="produtos" alt=""></router-link>
-            </div>
-            <!-- <div class="flex">
-              <img :src="anderson" alt="Anderson - Gestor (Gerente)">
-            </div>
-            <div class="flex">
-              <img :src="fantatho" alt="Fantatho - Gestor (Coordenador)">
-            </div> -->
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-slide-y-transition>
+  <div id="squads">
+    <v-layout row wrap pt-3 justify-center align-content-center>
+      <v-flex
+        v-for="(squad, i) in squads"
+        :key="i"
+        xs12 md6
+      >
+        <!-- Card da Squad -->
+        <v-card dark>
+            <v-card-title primary-title>
+              <v-flex md5 xs12>
+                <v-img
+                  justify-center
+                  :src="img"
+                  height="125px"
+                  contain
+                ></v-img>
+              </v-flex>
+              <v-spacer></v-spacer>
+              <div class="squad-text">
+                <div class="headline">{{ squad.nome }}</div>
+                <!-- <div>Analista: {{ squad.analista }}</div>
+                <div>Qualidade: {{ squad.qualidade }}</div>
+                <div>Dev Team: {{ squad.time }}</div> -->
+              </div>
+            </v-card-title>
+          <v-divider light></v-divider>
+          <v-card-actions class="pa-3">
+            Tribo: {{ squad.nomeTribo }}
+            <v-spacer></v-spacer>
+            <!-- Mentor: {{ squad.gestor }} -->
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+      <v-flex xs12 pb-5></v-flex>
+    </v-layout>
+  </div>
 </template>
 
 <script>
+import Squads from '../../domains/services/Squads'
+
 export default {
-  name: 'Tribos',
+  name: 'Squads',
   data () {
     return {
-      // Imagens - Gestores, Tribos e Squads
-      anderson: require('../../../static/organismo/anderson.png'),
-      fantatho: require('../../../static/organismo/fantatho.png'),
-      rafaela: require('../../../static/organismo/rafaela.png'),
-      brinks: require('../../../static/organismo/brinks.png'),
-      consultoria: require('../../../static/organismo/consultoria.png'),
-      finamax: require('../../../static/organismo/finamax.png'),
-      globaldev: require('../../../static/organismo/global.png'),
-      unibanco: require('../../../static/organismo/iu.png'),
-      mapfre: require('../../../static/organismo/mapfre.png'),
-      passarela: require('../../../static/organismo/passarela.png'),
-      produtos: require('../../../static/organismo/produtos.png'),
-      sequoia: require('../../../static/organismo/sequoia.png')
+      img: require('../../../static/icones/viceri.png'),
+      squads: []
     }
+  },
+  mounted () {
+    Squads.obterSquadPorIdTribo(this.$route.params.id).then(resposta => {
+      console.log(resposta)
+      this.squads = resposta.data
+    })
   }
 }
 </script>
 
-<style scoped>
-.flex {
-  display: inline;
-  flex-wrap: wrap;
-}
-.espaco {
-  padding: 10px;
-}
-.search {
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-bottom: 10px;
+<style>
+.squad-text {
+  text-align: left;
 }
 </style>

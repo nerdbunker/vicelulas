@@ -234,3 +234,11 @@ project.lock.json
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
 
+*.props
+*.cache
+*.pdb
+*.dll
+*.pdb
+*.cache
+
+Back-end/Vicelulas/Vicelulas.Database/Vicelulas.Database.jfm

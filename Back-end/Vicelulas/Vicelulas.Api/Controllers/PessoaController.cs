@@ -82,35 +82,6 @@ namespace Vicelulas.Api.Controllers
             return Ok(obj);
         }
 
-        /// <summary>
-        /// Método que insere uma Pessoa
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.Created)]
-        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public IActionResult Post([FromBody] PessoaInput input)
-        {
-            var objPessoa = new Pessoa()
-            {
-                Id_login = input.Id_login,
-                Nome = input.Nome,
-                Id_squad = input.Id_squads,
-                Id_papel = input.Id_papel,
-                Id_unidade = input.Id_unidade,
-                Email = input.Email,
-                Permissao = input.Permissao,
-                Ativo = true
-
-            };
-
-            var idPessoa = _pessoaNegocio.Inserir(objPessoa);
-            objPessoa.Id = idPessoa;
-
-            return CreatedAtRoute(routeName: "PessoaGetId", routeValues: new { id = objPessoa.Id }, value: objPessoa);
-        }
 
         /// <summary>
         /// Método que altera uma Pessoa

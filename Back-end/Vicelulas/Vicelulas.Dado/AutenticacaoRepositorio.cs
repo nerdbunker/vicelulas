@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Vicelulas.Dado.Configuração;
+using Vicelulas.Dominio;
 using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Dado
@@ -21,7 +22,28 @@ namespace Vicelulas.Dado
             }
         }
 
+        public int Cadastrar(Login entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                return connection.QuerySingle<int>($"DECLARE @Id int;" +
+                                                   $"INSERT INTO [TB_login] (username,password) " +
+                                                   $"VALUES('{entity.Username}'," +
+                                                   $"'{entity.Password}'); " +
+                                                   $"SET @Id = SCOPE_IDENTITY();" +
+                                                   $"SELECT @Id");
+            }
+        }
 
-        
+        public int SelecionarPorUsername(string username)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                var obj = connection.QueryFirstOrDefault<int>($"SELECT L.Id FROM [TB_login] L "+
+                                                                $"WHERE L.username = '{username}' ");
+                return obj;
+            }
+        }
+
     }
 }

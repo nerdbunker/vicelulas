@@ -4,30 +4,33 @@
       <v-flex md8 xs12>
         <v-data-table
           :headers="headers"
-          :items="desserts"
+          :items="pessoas"
           class="elevation-1"
           dark
         >
-          <template slot="items" slot-scope="props">
-            <td>{{ props.item.nome }}</td>
-            <td>{{ props.item.papel }}</td>
-            <td>{{ props.item.squad }}</td>
-            <td>{{ props.item.tribo }}</td>
+          <template slot="items" slot-scope="pessoas">
+            <td>{{ items.nome }}</td>
+            <td>{{ items.papel }}</td>
+            <td>{{ items.squad }}</td>
+            <td>{{ items.tribo }}</td>
+            <!-- Ícone de Feedback
             <td>
               <v-btn flat icon color="cyan">
                 <v-icon flat>{{ props.item.feedback }}</v-icon>
               </v-btn>
-              <v-btn flat icon color="green">
-                <v-icon flat>{{ props.item.editar }}</v-icon>
+            </td>
+            -->
+            <td>
+              <v-btn to="/editarpessoa" flat icon color="green">
+                <v-icon flat>create</v-icon>
               </v-btn>
-              <v-btn flat icon color="red">
-                <v-icon>{{ props.item.desativar }}</v-icon>
-              </v-btn>
+              <v-switch label="desativar" color="red" v-model="item.ativo"></v-switch>
             </td>
           </template>
         </v-data-table>
-        <v-btn to="/inserirpessoa" icon color="blue">
+        <v-btn to="/inserirpessoa" color="blue">
           <v-icon>add</v-icon>
+          Adicionar Pessoa
         </v-btn>
       </v-flex>
     </v-layout>
@@ -35,55 +38,33 @@
 </template>
 
 <script>
+import Pessoas from '../../../domains/services/Pessoas'
+
 export default {
   name: 'Pessoa',
   data () {
     return {
       headers: [
-        {
-          text: 'Nome',
-          align: 'left',
-          sortable: true,
-          value: 'nome'
-        },
+        { text: 'Nome', align: 'left', sortable: true, value: 'nome' },
         { text: 'Papel', value: 'posicao_papel' },
         { text: 'Squad', value: 'squad' },
         { text: 'Tribo', value: 'tribo' },
-        { text: 'Feedback/Editar/Desativar', value: 'acoes' }
+        // { text: 'Feedback', value: 'feedback' },
+        { text: 'Editar — Desativar', value: 'acoes' }
       ],
-      desserts: [
-        {
-          value: false,
-          nome: 'Fernando',
-          papel: 'Arquiteto Back-end',
-          squad: 'Tech',
-          tribo: 'Consultoria',
-          feedback: 'feedback',
-          editar: 'create',
-          desativar: 'delete'
-        },
-        {
-          value: false,
-          nome: 'Fernanda',
-          papel: 'Arquiteto de Testes',
-          squad: 'Tech',
-          tribo: 'Consultoria',
-          feedback: 'feedback',
-          editar: 'create',
-          desativar: 'delete'
-        },
-        {
-          value: false,
-          nome: 'Paulo',
-          papel: 'UX Senior',
-          squad: 'Tech',
-          tribo: 'Consultoria',
-          feedback: 'feedback',
-          editar: 'create',
-          desativar: 'delete'
-        }
-      ]
+      pessoas: [],
+      pessoasId: []
     }
+  },
+  mounted () {
+    Pessoas.obterPessoa().then(respostaPessoa => {
+      console.log(respostaPessoa)
+      this.pessoas = respostaPessoa.data
+    })
+    Pessoas.obterPessoaPorId().then(respostaPessoaId => {
+      console.log(respostaPessoaId)
+      this.pessoasId = respostaPessoaId
+    })
   }
 }
 </script>

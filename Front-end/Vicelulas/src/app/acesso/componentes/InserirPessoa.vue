@@ -1,94 +1,114 @@
 <template>
-  <v-layout row justify-center>
-    <v-dialog v-model="dialog" persistent max-width="600px">
-      <v-btn slot="activator" color="primary" dark>Open Dialog</v-btn>
-      <v-card>
-        <v-card-title>
-          <span class="headline">Editar: Pessoa</span>
-        </v-card-title>
-        <v-card-text>
-          <v-container grid-list-md>
-            <v-layout wrap>
-              <v-flex xs12 sm6 md4>
-                <v-text-field label="Primeiro Completo *" required hint="Ex: Marcelo Fernandes" v-model="pessoa.nome"></v-text-field>
-              </v-flex>
-              <v-flex xs12 sm6 md4>
-                <v-select
-                  v-model="pessoa.squad"
-                  :items="squads.nome"
-                  label="Squad *"
-                  hint="Selecione a Squad que a Pessoa pertence!"
-                  persistent-hint required autocomplete
-                ></v-select>
-              </v-flex>
-              <v-flex xs12>
-                <v-text-field label="E-mail Corporativo *" required v-model="pessoa.email"></v-text-field>
-              </v-flex>
-              <v-flex xs12>
-                <v-text-field label="Unidade *"  required v-model="pessoa.unidade"></v-text-field>
-              </v-flex>
-            </v-layout>
-          </v-container>
-          <small>* campos requeridos</small>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" flat @click="dialog = false">Fechar</v-btn>
+<v-container grid-list-xs>
+  <v-layout row wrap justify-center>
+    <v-flex pb-5 md6 xs12>
+      <v-card dark>
+        <v-form class="margemSeguranca" ref="form" v-model="valid" lazy-validation>
+          <v-text-field
+            v-model="nome"
+            :rules="nomeRegras"
+            :counter="50"
+            label="Nome"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="email"
+            :rules="emailRegras"
+            label="E-mail"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="username"
+            :rules="usernameRegras"
+            label="Username"
+            required
+          ></v-text-field>
+          <v-select
+            v-model="select"
+            :items="papeis"
+            :rules="[v => !!v || 'Papel é um campo obrigatório!']"
+            label="Papel"
+            required
+          ></v-select>
+          <v-select
+            v-model="select"
+            :items="squads"
+            :rules="[v => !!v || 'Squad é um campo obrigatório!']"
+            label="Squad"
+            required
+          ></v-select>
+          <v-select
+            v-model="select"
+            :items="unidades"
+            :rules="[v => !!v || 'Unidade é um campo obrigatório!']"
+            label="Unidade"
+            required
+          ></v-select>
           <v-btn
-            :disabled="dialog"
-            :loading="dialog"
-            class="white--text"
-            flat
-            @click="dialog = true"
+            :disabled="!valid"
+            @click="adicionar"
           >
-            Salvar
+            Adicionar
           </v-btn>
-          <v-dialog
-            v-model="dialog"
-            hide-overlay
-            persistent
-            width="200"
-          >
-            <v-card
-              color="primary"
-              dark
-            >
-              <v-card-text>
-                Espere um instante
-                <v-progress-linear
-                  indeterminate
-                  color="white"
-                  class="mb-0"
-                ></v-progress-linear>
-              </v-card-text>
-            </v-card>
-          </v-dialog>
-        </v-card-actions>
+          <v-btn @click="clear">Limpar</v-btn>
+        </v-form>
       </v-card>
-    </v-dialog>
+    </v-flex>
   </v-layout>
+</v-container>
 </template>
 
 <script>
+import { http } from '../../../domains/api/config'
+import Squads from '../../../domains/services/Squads'
+
 export default {
-  name: 'EditarPessoa',
-  data () {
-    return {
-      dialog: false,
-      pessoa: {
-        id: '',
-        nome: '',
-        squad: '',
-        email: '',
-        unidade: ''
+  data: () => ({
+    valid: true,
+    name: '',
+    nomeRegras: [
+      v => !!v || 'Nome é um campo obrigatório!',
+      v => (v && v.length <= 50) || 'O nome deve ser menos que 50 caracteres'
+    ],
+    email: '',
+    emailRegras: [
+      v => !!v || 'E-mail é um campo obrigatório!',
+      v => /.+@.+/.test(v) || 'Insira um e-mail válido'
+    ],
+    select: null,
+    papeis: [],
+    squads: [],
+    unidades: []
+  }),
+
+  methods: {
+    submit () {
+      if (this.$refs.form.validate()) {
+        http.post('/Pessoa/Adicionar', {
+          name: this.name,
+          email: this.email,
+          username: this.username,
+          papeis: this.papeis,
+          unidade: this.unidades,
+          select: this.select
+        })
       }
+    },
+    clear () {
+      this.$refs.form.reset()
     }
   },
-  watch: {
-    dialog (val) {
-      if (!val) return
-      setTimeout(() => (this.dialog = false), 4000)
-    }
+  mounted () {
+    Squads.obterSquad().then(respostaSquad => {
+      console.log(respostaSquad)
+      this.squads = respostaSquad
+    })
   }
 }
 </script>
+
+<style>
+.margemSeguranca {
+  padding: 10px;
+}
+</style>

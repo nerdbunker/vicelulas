@@ -48,35 +48,29 @@ export default new Router({
     { path: '/tribos/:id', name: 'Tribos', component: Tribos },
     // App - Autenticacao
     { path: '/entrar', name: 'Login', component: Entrar },
-    { path: '/adicionar', name: 'Adicionar', component: Adicionar },
+    { path: '/adicionar',
+      name: 'Adicionar',
+      component: Adicionar,
+      children: [
+        { path: '/inserirpessoa', component: InserirPessoa },
+        { path: '/inserirtribo', component: InserirTribo },
+        { path: '/inserirsquad', component: InserirSquad },
+        { path: '/editarpessoa', component: EditarPessoa },
+        { path: '/editarsquad', component: EditarSquad },
+        { path: '/editartribo', component: EditarTribo },
+        { path: '/feedback', component: Feedback }
+      ]
+    },
     // App - Acesso - Gerencia (com rotas aninhadas)
-    { path: '/gerenciar',
+    {
+      path: '/gerenciar',
       name: 'Gerenciar',
       component: Gerenciar,
       children: [
         { path: '/historico', component: Historico },
-        { path: '/pessoa',
-          component: Pessoa,
-          children: [
-            { path: '/inserirpessoa', component: InserirPessoa },
-            { path: '/editarpessoa', component: EditarPessoa },
-            { path: '/feedback', component: Feedback }
-          ]
-        },
-        { path: '/tribo',
-          component: Tribo,
-          children: [
-            { path: '/inserirtribo', component: InserirTribo },
-            { path: '/editartribo', component: EditarTribo }
-          ]
-        },
-        { path: '/squad',
-          component: Squad,
-          children: [
-            { path: '/inserirsquad', component: InserirSquad },
-            { path: '/editarsquad', component: EditarSquad }
-          ]
-        }
+        { path: '/pessoa', component: Pessoa },
+        { path: '/tribo', component: Tribo },
+        { path: '/squad', component: Squad }
       ]
     }
   ]

@@ -47,6 +47,9 @@ namespace Vicelulas.Negocio
         {
             var NomeExistente = _triboRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 
+            if (string.IsNullOrEmpty(entity.Nome))
+                throw new ConflitoException("Não é permitido tribo sem nome");
+
             if (NomeExistente != null)
                 throw new ConflitoException($"Já existe uma Tribo cadastrada com este nome {entity.Nome}!");
 
@@ -58,9 +61,8 @@ namespace Vicelulas.Negocio
             var idExistente = _triboRepositorio.SelecionarPorId(Id);
 
             if(idExistente == null)
-            {
                 throw new NaoEncontradoException($"Não existe esta tribo!");
-            }
+            
 
             var NomeExistente = _triboRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 
@@ -78,9 +80,8 @@ namespace Vicelulas.Negocio
             var idExistente = _triboRepositorio.SelecionarPorId(Id);
 
             if (idExistente == null)
-            {
                 throw new NaoEncontradoException($"Não existe esta tribo!");
-            }
+            
 
             var NomeExistente = _triboRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 

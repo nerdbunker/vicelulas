@@ -91,7 +91,7 @@ namespace Vicelulas.Teste.APITeste
             TriboController _triboController = new TriboController();
             int valorEsperado = 202;
 
-            int Id = 1003;
+            int Id = 1;
             
             var objTribo = new TriboInput()
             {

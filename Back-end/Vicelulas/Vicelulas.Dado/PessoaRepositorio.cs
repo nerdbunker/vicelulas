@@ -114,8 +114,7 @@ namespace Vicelulas.Dado
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 connection.Execute($"UPDATE [TB_pessoa] " +
-                                      $"SET Id_login = {entity.Id_login}," +
-                                      $"Id_papel = {entity.Id_papel}," +
+                                      $"SET Id_papel = {entity.Id_papel},"+                          
                                       $"Nome = '{entity.Nome}'," +
                                       $"Email = '{entity.Email}'," +
                                       $"Ativo = '{entity.Ativo}'," +

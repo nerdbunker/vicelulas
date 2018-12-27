@@ -78,40 +78,19 @@ namespace Vicelulas.Teste.APITeste
         }
 
         [Fact]
-        public void RetornaStatusOKPost()
-        {
-            SquadController _squadController = new SquadController();
-            int valorEsperado = 201;
-
-            var objSquad = new SquadInput()
-            {
-                Id_tribo = 5,
-                Nome = "Teste26",
-                Ativo = true
-            };
-
-            var actionResult = _squadController.Post(objSquad);
-
-            var okObjectResult = (CreatedAtRouteResult)actionResult;
-
-            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
-        }
-
-        [Fact]
         public void RetornaStatusOKPut()
         {
             PessoaController _pessoaController = new PessoaController();
             int valorEsperado = 202;
 
-            int Id = 1285;
+            int Id = 1;
 
             var objPessoa = new PessoaInput()
             {
-                Id_squads = 24,
-                Id_login = 8,
-                Id_papel = 7,
-                Id_unidade = 3,
+                Id_squads = 1,
+                Id_login = 2,
+                Id_papel = 5,
+                Id_unidade = 1,
                 Ativo = true,
                 Nome = "Testando",
                 Email = "teste@teste",

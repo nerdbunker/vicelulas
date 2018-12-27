@@ -89,7 +89,7 @@ namespace Vicelulas.Teste.APITeste
             SquadController _squadController = new SquadController();
             int valorEsperado = 202;
 
-            int Id = 1004;
+            int Id = 1;
 
             var objSquad = new SquadInput()
             {

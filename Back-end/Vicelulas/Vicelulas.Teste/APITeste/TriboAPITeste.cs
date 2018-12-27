@@ -2,7 +2,8 @@
 using Vicelulas.Api.Controllers;
 using Viceluas.Dominio.Exceções;
 using Microsoft.AspNetCore.Mvc;
-
+using Vicelulas.Dominio;
+using Vicelulas.Api.Model;
 
 namespace Vicelulas.Teste.APITeste
 {
@@ -64,8 +65,48 @@ namespace Vicelulas.Teste.APITeste
 
         }
 
+        [Fact]
+        public void RetornaStatusOKPost()
+        {
+            TriboController _triboController = new TriboController();
+            int valorEsperado = 201;
 
+            var objTribo = new TriboInput()
+            {
+                Nome = "Teste26",
+                Ativo = true
+            };
 
+            var actionResult = _triboController.Post(objTribo);
+
+            var okObjectResult = (CreatedAtRouteResult)actionResult;
+
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+
+        }
+
+        [Fact]
+        public void RetornaStatusOKPut()
+        {
+            TriboController _triboController = new TriboController();
+            int valorEsperado = 202;
+
+            int Id = 1;
+            
+            var objTribo = new TriboInput()
+            {
+                
+                Ativo = true,
+                Nome = "Tentando"
+            };
+
+            var actionResult = _triboController.Put(Id, objTribo);
+
+            var okObjectResult = (AcceptedResult)actionResult;
+
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+
+        }
 
 
     }

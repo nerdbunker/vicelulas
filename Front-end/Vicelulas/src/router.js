@@ -13,6 +13,7 @@ import Organismo from '@/app/organismo/Organismo'
 import Tribos from '@/app/organismo/Tribos'
 // App - Acesso
 import Entrar from '@/app/acesso/Entrar'
+import Cadastrar from '@/app/acesso/Cadastrar'
 // App - Acesso Admin
 import Gerenciar from '@/app/acesso/admin/Gerenciar'
 // App - Acesso CRUD
@@ -38,7 +39,8 @@ export default new Router({
     { path: '/organismo', name: 'Organismo', component: Organismo },
     { path: '/tribos/:id', name: 'Tribos', component: Tribos },
     // App - Autenticacao
-    { path: '/entrar', name: 'Login', component: Entrar },
+    { path: '/entrar', name: 'Entrar', component: Entrar },
+    { path: '/cadastrar', name: 'Cadastrar', component: Cadastrar },
     // App - Acesso - Gerencia (com rotas aninhadas)
     {
       path: '/gerenciar',

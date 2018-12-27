@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Api.Controllers;
 using Viceluas.Dominio.Exceções;
+using Vicelulas.Api.Model;
 
 namespace Vicelulas.Teste.APITeste
 {
@@ -71,6 +72,34 @@ namespace Vicelulas.Teste.APITeste
             var actionResult = pessoaController.GetName(nome);
 
             var okObjectResult = (OkObjectResult)actionResult;
+
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+
+        }
+
+        [Fact]
+        public void RetornaStatusOKPut()
+        {
+            PessoaController _pessoaController = new PessoaController();
+            int valorEsperado = 202;
+
+            int Id = 1;
+
+            var objPessoa = new PessoaInput()
+            {
+                Id_squads = 1,
+                Id_login = 2,
+                Id_papel = 5,
+                Id_unidade = 1,
+                Ativo = true,
+                Nome = "Testando",
+                Email = "teste@teste",
+                Permissao = 1,
+            };
+
+            var actionResult = _pessoaController.Put(Id, objPessoa);
+
+            var okObjectResult = (AcceptedResult)actionResult;
 
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
 

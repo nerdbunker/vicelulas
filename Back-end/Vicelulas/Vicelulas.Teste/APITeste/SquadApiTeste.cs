@@ -2,6 +2,7 @@
 using Vicelulas.Api.Controllers;
 using Viceluas.Dominio.Exceções;
 using Microsoft.AspNetCore.Mvc;
+using Vicelulas.Api.Model;
 
 namespace Vicelulas.Teste.APITeste
 {
@@ -56,6 +57,50 @@ namespace Vicelulas.Teste.APITeste
             var actionResult = squadController.GetName(nome);
 
             var okObjectResult = (OkObjectResult)actionResult;
+
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+
+        }
+
+        [Fact]
+        public void RetornaStatusOKPost()
+        {
+            SquadController _squadController = new SquadController();
+            int valorEsperado = 201;
+
+            var objSquad = new SquadInput()
+            {
+                Id_tribo = 5,
+                Nome = "Teste26",
+                Ativo = true
+            };
+
+            var actionResult = _squadController.Post(objSquad);
+
+            var okObjectResult = (CreatedAtRouteResult)actionResult;
+
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+
+        }
+
+        [Fact]
+        public void RetornaStatusOKPut()
+        {
+            SquadController _squadController = new SquadController();
+            int valorEsperado = 202;
+
+            int Id = 1;
+
+            var objSquad = new SquadInput()
+            {
+                Id_tribo = 5,
+                Ativo = true,
+                Nome = "Testando"
+            };
+
+            var actionResult = _squadController.Put(Id, objSquad);
+
+            var okObjectResult = (AcceptedResult)actionResult;
 
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
 

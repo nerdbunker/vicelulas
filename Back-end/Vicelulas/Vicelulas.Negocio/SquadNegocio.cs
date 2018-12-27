@@ -59,6 +59,9 @@ namespace Vicelulas.Negocio
         {
             var NomeExistente = _squadRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 
+            if (string.IsNullOrEmpty(entity.Nome))
+                throw new ConflitoException("Não é permitido tribo sem nome");
+
             if (NomeExistente != null)
                 throw new ConflitoException($"Já existe uma Squad cadastrada com este nome {entity.Nome}!");
 
@@ -71,9 +74,8 @@ namespace Vicelulas.Negocio
             var idExistente = _squadRepositorio.SelecionarPorId(Id);
 
             if (idExistente == null)
-            {
                 throw new NaoEncontradoException($"Não existe esta Squad!");
-            }
+            
 
             var NomeExistente = _squadRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 
@@ -92,9 +94,8 @@ namespace Vicelulas.Negocio
             var idExistente = _squadRepositorio.SelecionarPorId(Id);
 
             if (idExistente == null)
-            {
                 throw new NaoEncontradoException($"Não existe esta Squad!");
-            }
+            
 
             var NomeExistente = _squadRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 

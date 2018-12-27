@@ -136,7 +136,7 @@ export default {
 
   computed: {
     formTitle () {
-      return this.editedIndex === -1 ? 'Adicionar Pessoa' : 'Editar Pessoa'
+      return this.editedIndex === -1 ? 'Adicionar Tribo' : 'Editar Tribo'
     }
   },
 

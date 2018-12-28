@@ -52,12 +52,12 @@ namespace Vicelulas.Teste.NegocioTeste
             TriboNegocio triboNegocio = new TriboNegocio();
             Tribo tribo = new Tribo()
             {
-                Id = 15,
-                Nome = "FDSFF",
+                Nome = "gfgdggdf",
                 Ativo = true
             };
+
             var valor = triboNegocio.Inserir(tribo);
-            Assert.Equal(tribo.Id, valor);
+            Assert.Equal(21, valor);
         }
 
         [Fact]
@@ -132,7 +132,7 @@ namespace Vicelulas.Teste.NegocioTeste
                 Nome = "Viceri",
                 Ativo = true
             };
-            var valor = triboNegocio.Desativar(15, tribo);
+            var valor = triboNegocio.Desativar(7, tribo);
             Assert.Equal(tribo.Id, valor.Id);
         }
 

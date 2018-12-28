@@ -88,7 +88,6 @@ namespace Vicelulas.Teste.APITeste
             var objPessoa = new PessoaInput()
             {
                 Id_squads = 1,
-                Id_login = 2,
                 Id_papel = 5,
                 Id_unidade = 1,
                 Ativo = true,

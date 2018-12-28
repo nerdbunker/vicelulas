@@ -136,5 +136,7 @@ namespace Vicelulas.Api.Controllers
             var retorno = _pessoaNegocio.Desativar(id, objPessoa);
             return Accepted(retorno);
         }
+
+     
     }
 }

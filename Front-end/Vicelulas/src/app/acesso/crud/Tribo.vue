@@ -8,7 +8,7 @@
             <v-divider class="mx-2" inset vertical></v-divider>
             <v-spacer></v-spacer>
             <v-dialog v-model="dialog" max-width="500px">
-              <v-btn slot="activator" color="primary" dark class="mb-2">Nova Pessoa</v-btn>
+              <v-btn slot="activator" color="primary" dark class="mb-2">Nova Tribo</v-btn>
               <v-card>
                 <v-card-title>
                   <span class="headline">{{ formTitle }}</span>
@@ -18,31 +18,7 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="editedItem.nome" label="Nome Completo"></v-text-field>
-                      </v-flex>
-                      <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="editedItem.email" label="Email"></v-text-field>
-                      </v-flex>
-                      <v-flex xs12 sm12 md12>
-                        <v-select
-                          :items="items"
-                          v-model="editedItem.cargo"
-                          label="Cargo"
-                        ></v-select>
-                      </v-flex>
-                      <v-flex xs12 sm12 md12>
-                        <v-select
-                          :items="items"
-                          v-model="editedItem.unidade"
-                          label="Unidade"
-                        ></v-select>
-                      </v-flex>
-                      <v-flex xs12 sm12 md12>
-                        <v-select
-                          :items="items"
-                          v-model="editedItem.id_Squads"
-                          label="Squad"
-                        ></v-select>
+                        <v-text-field v-model="editedItem.nome" label="Nome da Tribo"></v-text-field>
                       </v-flex>
                     </v-layout>
                   </v-container>
@@ -58,17 +34,12 @@
           </v-toolbar>
           <v-data-table
             :headers="headers"
-            :items="pessoas"
+            :items="tribos"
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
               <td>{{ props.item.nome }}</td>
-              <td class="text-xs-right">{{ props.item.email }}</td>
-              <td class="text-xs-right">{{ props.item.cargo }}</td>
-              <td class="text-xs-right">{{ props.item.id_Unidade }}</td>
-              <td class="text-xs-right">{{ props.item.id_Squads }}</td>
-              <td class="text-xs-right">{{ props.item.tribo }}</td>
-              <td class="justify-center layout px-0">
+              <td>
               <v-icon
                 small
                 class="mr-2"
@@ -95,12 +66,12 @@
 </template>
 
 <script>
-import Pessoas from '../../../domains/services/Pessoas'
+import Tribos from '../../../domains/services/Tribos'
 
 export default {
   data: () => ({
     dialog: false,
-    pessoas: [],
+    tribos: [],
     headers: [
       {
         text: 'Nome',
@@ -108,11 +79,6 @@ export default {
         sortable: false,
         value: 'nome'
       },
-      { text: 'Email', value: 'email' },
-      { text: 'Cargo', value: 'cargo' },
-      { text: 'Unidade', value: 'unidade' },
-      { text: 'Squad', value: 'id_Squads' },
-      { text: 'Tribo', value: 'tribo' },
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
@@ -152,20 +118,20 @@ export default {
 
   methods: {
     initialize () {
-      this.pessoas = []
+      this.tribos = []
     },
 
     editItem (item) {
-      // Alterar aqui o this.pessoas
-      this.editedIndex = this.pessoas.indexOf(item)
+      // Alterar aqui o this.tribos
+      this.editedIndex = this.tribos.indexOf(item)
       this.editedItem = Object.assign({}, item)
       this.dialog = true
     },
 
     deleteItem (item) {
-      const index = this.pessoas.indexOf(item)
+      const index = this.tribos.indexOf(item)
       confirm('Tem certeza que deseja desativar esta Pessoa?') &&
-        this.pessoas.splice(index, 1)
+        this.tribos.splice(index, 1)
     },
 
     close () {
@@ -178,21 +144,21 @@ export default {
 
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.pessoas[this.editedIndex], this.editedItem)
+        Object.assign(this.tribos[this.editedIndex], this.editedItem)
       } else {
-        this.pessoas.push(this.editedItem)
+        this.tribos.push(this.editedItem)
       }
       this.close()
     }
   },
   mounted () {
-    Pessoas.obterPessoa().then(respostaPessoa => {
-      console.log(respostaPessoa)
-      this.pessoas = respostaPessoa.data
+    Tribos.obterTribo().then(respostaTribo => {
+      console.log(respostaTribo)
+      this.tribos = respostaTribo.data
     })
-    Pessoas.obterPessoaPorId().then(respostaPessoaId => {
+    tribos.obterPessoaPorId().then(respostaPessoaId => {
       console.log(respostaPessoaId)
-      this.pessoasId = respostaPessoaId
+      this.tribosId = respostaPessoaId
     })
   }
 }

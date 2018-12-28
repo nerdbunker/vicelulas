@@ -1,8 +1,8 @@
 <template>
   <v-container grid-list-xs>
     <v-layout row wrap>
-      <v-flex xs1>
-        <v-card>
+      <v-flex md6 xs12>
+        <v-card class="margemSeguranca" dark>
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
               v-model="nome"
@@ -17,27 +17,44 @@
               label="E-mail"
               required
             ></v-text-field>
+            <v-text-field
+              v-model="senha"
+              :rules="senhaRegras"
+              label="Senha"
+              required
+            ></v-text-field>
             <v-select
               v-model="select"
-              :items="items"
+              :items="papeis"
+              value="papeis.id_papel"
+              :rules="[v => !!v || 'Papel']"
+              label="Papel"
+              required
+            ></v-select>
+            <v-select
+              v-model="select"
+              :items="squads"
+              value="squads.id_squads"
+              :rules="[v => !!v || 'Squad']"
+              label="Squad"
+              required
+            ></v-select>
+            <v-select
+              v-model="select"
+              :items="unidades"
+              value="unidades.id_unidades"
               :rules="[v => !!v || 'Unidade']"
               label="Unidade"
               required
             ></v-select>
-            <v-checkbox
-              v-model="checkbox"
-              :rules="[v => !!v || 'You must agree to continue!']"
-              label="Você concorda"
-              required
-            ></v-checkbox>
 
             <v-btn
               :disabled="!valid"
               @click="submit"
             >
-              submit
+              Enviar
             </v-btn>
-            <v-btn @click="clear">clear</v-btn>
+            <v-btn @click="clear">Limpar</v-btn>
           </v-form>
         </v-card>
       </v-flex>
@@ -46,28 +63,26 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { http } from '../../domains/api/config'
+import Squad from '../../domains/services/Squads'
 
 export default {
   data: () => ({
     valid: true,
-    name: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+    nome: '',
+    nameRuegras: [
+      v => !!v || 'Nome é um campo obrigatório.',
+      v => (v && v.length <= 50) || 'O nome deve ter menos de 50 caracteres.'
     ],
     email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+/.test(v) || 'E-mail must be valid'
+    emailRegras: [
+      v => !!v || 'E-mail é um campo obrigatório.',
+      v => /.+@.+/.test(v) || 'Insira um e-mail válido.'
     ],
     select: null,
-    items: [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-      'Item 4'
-    ],
+    papeis: [],
+    squads: [],
+    unidades: [],
     checkbox: false
   }),
 
@@ -75,7 +90,8 @@ export default {
     submit () {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
-        axios.post('/api/submit', {
+        http.post('Cadastrar', {
+          id: this.id,
           name: this.name,
           email: this.email,
           select: this.select,
@@ -86,6 +102,18 @@ export default {
     clear () {
       this.$refs.form.reset()
     }
+  },
+  mounted () {
+    Squad.obterSquad().then(respostaSquad => {
+      console.log(respostaSquad)
+      this.squads = respostaSquad.data
+    })
   }
 }
 </script>
+
+<style scoped>
+.margemSeguranca {
+  padding: 20px;
+}
+</style>

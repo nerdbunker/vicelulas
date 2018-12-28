@@ -20,8 +20,8 @@ export default {
     return http.put('Pessoa')
   },
   // Insere novas Pessoas
-  inserirPessoa: () => {
-    return http.post('Pessoa')
+  inserirPessoa: (Pessoa) => {
+    return http.post('Cadastrar', Pessoa)
   },
   // Altera o status, ativando/desativando as Pessoas
   desativarPessoa: () => {

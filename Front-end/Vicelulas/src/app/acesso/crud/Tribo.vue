@@ -156,7 +156,7 @@ export default {
       console.log(respostaTribo)
       this.tribos = respostaTribo.data
     })
-    tribos.obterPessoaPorId().then(respostaPessoaId => {
+    Tribos.obterPessoaPorId().then(respostaPessoaId => {
       console.log(respostaPessoaId)
       this.tribosId = respostaPessoaId
     })

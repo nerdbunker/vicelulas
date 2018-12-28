@@ -112,29 +112,19 @@ namespace Vicelulas.Api.Controllers
         }
 
         /// <summary>
-        /// Método que Desativa uma Squad
+        /// Método que Desativa uma Pessoa
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="input"></param>
         /// <returns></returns>
-        [HttpPut("update/{id}")]
-        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.Accepted)]
+        [HttpPut("MudarAtivo/{id}")]
+        [ProducesResponseType((int)HttpStatusCode.Accepted)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public IActionResult PutDesativar([FromRoute] int id, [FromBody] PessoaInput input)
+        public IActionResult PutDesativar([FromRoute] int id)
         {
-            var objPessoa = new Pessoa()
-            {
-                Nome = input.Nome,
-                Email = input.Email,
-                Id_squad = input.Id_squads,
-                Id_papel = input.Id_papel,      
-                Id_unidade = input.Id_unidade,
-                Permissao = input.Permissao,
-                Ativo = false
-            };
-            var retorno = _pessoaNegocio.Desativar(id, objPessoa);
-            return Accepted(retorno);
+            
+            _pessoaNegocio.AtivarDesativarPessoa(id);
+            return Accepted();
         }
 
      

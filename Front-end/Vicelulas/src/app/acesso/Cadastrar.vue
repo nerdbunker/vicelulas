@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-xs>
-    <v-layout row wrap>
+    <v-layout row wrap justify-center>
       <v-flex md6 xs12>
         <v-card class="margemSeguranca" dark>
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -18,16 +18,21 @@
               required
             ></v-text-field>
             <v-text-field
-              v-model="senha"
-              :rules="senhaRegras"
+              :append-icon="show ? 'visibility_off' : 'visibility'"
+              :rules="[rules.required, rules.min]"
+              :type="show ? 'text' : 'password'"
+              name="input-10-2"
               label="Senha"
-              required
+              hint="Insira sua senha de no minimo 5 caracteres."
+              value=""
+              class="input-group--focused"
+              @click:append="show = !show"
             ></v-text-field>
             <v-select
               v-model="select"
               :items="papeis"
               value="papeis.id_papel"
-              :rules="[v => !!v || 'Papel']"
+              :rules="[v => !!v || 'Papel precisa ser preenchido.']"
               label="Papel"
               required
             ></v-select>
@@ -35,7 +40,7 @@
               v-model="select"
               :items="squads"
               value="squads.id_squads"
-              :rules="[v => !!v || 'Squad']"
+              :rules="[v => !!v || 'Squad precisa ser preenchida.']"
               label="Squad"
               required
             ></v-select>
@@ -43,7 +48,7 @@
               v-model="select"
               :items="unidades"
               value="unidades.id_unidades"
-              :rules="[v => !!v || 'Unidade']"
+              :rules="[v => !!v || 'Unidade precisa ser preenchida.']"
               label="Unidade"
               required
             ></v-select>
@@ -52,7 +57,7 @@
               :disabled="!valid"
               @click="submit"
             >
-              Enviar
+              Cadastrar
             </v-btn>
             <v-btn @click="clear">Limpar</v-btn>
           </v-form>
@@ -69,8 +74,15 @@ import Squad from '../../domains/services/Squads'
 export default {
   data: () => ({
     valid: true,
+    show: false,
     nome: '',
-    nameRuegras: [
+    password: 'Password',
+    rules: {
+      required: value => !!value || 'Campo obrigatório.',
+      min: v => v.length >= 5 || 'Mínimo: 5 caracteres'
+      // emailMatch: () => ('The email and password you entered don\'t match')
+    },
+    nameRegras: [
       v => !!v || 'Nome é um campo obrigatório.',
       v => (v && v.length <= 50) || 'O nome deve ter menos de 50 caracteres.'
     ],
@@ -108,6 +120,10 @@ export default {
       console.log(respostaSquad)
       this.squads = respostaSquad.data
     })
+    // Papel.obterPapel().then(respostaPapel => {
+    //   console.log(respostaPapel)
+    //   this.squads = respostaPapel.data
+    // })
   }
 }
 </script>

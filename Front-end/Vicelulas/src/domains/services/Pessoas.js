@@ -11,20 +11,16 @@ export default {
   obterPessoaPorIdSquad: (id) => {
     return http.get('Pessoa/Squad/' + id)
   },
-  // Get assincrono
-  // obterPessoaAssinc: () => {
-  //   return async => http.get('Pessoas')
-  // },
   // Altera as info da Pessoa
-  alterarPessoa: () => {
-    return http.put('Pessoa')
+  alterarPessoa: (id, Pessoa) => {
+    return http.put('Pessoa/' + id, Pessoa)
   },
   // Insere novas Pessoas
   inserirPessoa: (Pessoa) => {
     return http.post('Cadastrar', Pessoa)
   },
   // Altera o status, ativando/desativando as Pessoas
-  desativarPessoa: () => {
-    return http.patch('Pessoa')
+  mudarAtivoPessoa: (id) => {
+    return http.put('Pessoa/MudarAtivo/' + id)
   }
 }

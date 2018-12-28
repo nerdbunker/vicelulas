@@ -97,24 +97,18 @@ namespace Vicelulas.Negocio
         }
 
         /// <param name="Id, entity"></param>
-        public PessoaDto Desativar(int Id, Pessoa entity)
+        public void AtivarDesativarPessoa(int id)
         {
-            var idExistente = _pessoaRepositorio.SelecionarPorId(Id);
+            var obj = _pessoaRepositorio.SelecionarCampoAtivo(id);
 
-            if (idExistente == null)
+            if (obj.Ativo == true)
             {
-                throw new NaoEncontradoException($"Não existe esta Pessoa!");
+                _pessoaRepositorio.DesativarPessoa(id);
             }
-
-            var NomeExistente = _pessoaRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
-
-            if (NomeExistente == null)
-                throw new NaoEncontradoException($"Não existe uma Pessoa cadastrada com este nome {entity.Nome}!");
-
-            entity.Id = Id;
-            _pessoaRepositorio.AlterarStatus(entity);
-
-            return _pessoaRepositorio.SelecionarPorId(Id);
+            else
+            {
+                _pessoaRepositorio.AtivarPessoa(id);
+            }
         }
 
     }

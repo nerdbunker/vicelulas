@@ -6,12 +6,13 @@
           <v-card-text>
             <v-form>
               <v-text-field
+              v-model="username"
               prepend-icon="person"
-              name="email"
-              label="E-mail"
+              name="username"
+              label="Usuário"
               type="text"
-              :autofocus="true"
-              color="lime"
+              autofocus="true"
+              color="blue"
               ></v-text-field>
               <!--  -->
               <v-text-field
@@ -20,14 +21,14 @@
               name="senha"
               label="Senha"
               type="password"
-              color="lime"
+              color="blue"
               ></v-text-field>
             </v-form>
           </v-card-text>
           <!--  -->
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn pa-2 to="/tribo" color="lime" flat>Entrar</v-btn>
+            <v-btn pa-2 to="/tribo" color="blue" flat>Entrar</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -36,21 +37,29 @@
 </template>
 
 <script>
-// import Entrar from '../../domains/services/Entrar'
+// import Autenticacao from '../../domains/services/Autenticacao'
 
-export default {
-  name: 'Entrar',
-  data () {
-    return {
-      entrar: [],
-      true: true
-    }
-  },
-  // mounted () {
-  //   Entrar.entrar().then(respostaEntrar => {
-  //     console.log(respostaEntrar)
-  //     this.entrar = respostaEntrar.data
-  //   })
-  // }
-}
+// export default {
+//   name: 'Entrar',
+//   data () {
+//     return {
+//       entrar: {
+//         username: '',
+//         password: ''
+//       }
+//     }
+//   },
+//   methods: {
+//     setAuthenticated(status) {
+//         this.authenticated = status
+//       }
+//     }
+//   },
+//   mounted () {
+//     Autenticacao.entrar().then(respostaEntrar => {
+//       console.log(respostaEntrar)
+//       this.entrar = respostaEntrar.data
+//     })
+//   }
+// }
 </script>

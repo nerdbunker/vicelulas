@@ -25,7 +25,6 @@
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
-                          
                           item-text="cargo"
                           item-value="id"
                           v-model="pessoaInput.id_papel"
@@ -75,7 +74,11 @@
               <td>{{ props.item.unidade }}</td>
               <td>{{ props.item.squadNome }}</td>
               <td>{{ props.item.triboNome }}</td>
-              <td class="justify-center layout px-0">
+              <td>
+                <div v-if="props.item.ativo === true">Sim</div>
+                <div v-else>Não</div>
+              </td>
+              <td>
               <v-icon
                 small
                 class="mr-2"
@@ -85,7 +88,7 @@
               </v-icon>
               <v-icon
                 small
-                @click="deleteItem(props.item)"
+                @click="deleteItem(props.item), location.reload(true)"
               >
                 delete
               </v-icon>
@@ -106,11 +109,11 @@ import Pessoas from '../../../domains/services/Pessoas'
 import Papel from '../../../domains/services/Papel'
 import Unidade from '../../../domains/services/Unidade'
 import Squads from '../../../domains/services/Squads'
+import { http } from '../../../domains/api/config'
 
 export default {
   data: () => ({
     dialog: false,
-    pessoas: [],
     headers: [
       {
         text: 'Nome',
@@ -123,9 +126,11 @@ export default {
       { text: 'Unidade', value: 'unidade' },
       { text: 'Squad', value: 'id_Squads' },
       { text: 'Tribo', value: 'tribo' },
+      { text: 'Ativo?', value: 'ativo' },
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
+    pessoas: [],
     pessoaInput: {
       nome: '',
       email: '',
@@ -164,7 +169,12 @@ export default {
     initialize () {
       this.pessoas = []
     },
-
+    reloadPage(){
+        setTimeout(function(){
+                window.location.reload(true)
+            }, 1000)
+    },
+  
     editItem (item) {
       // Alterar aqui o this.pessoas
       this.editedIndex = this.pessoas.indexOf(item)
@@ -174,8 +184,19 @@ export default {
 
     deleteItem (item) {
       const index = this.pessoas.indexOf(item)
-      confirm('Tem certeza que deseja desativar esta Pessoa?') &&
-        this.pessoas.splice(index, 1)
+      let msg = 'Tem certeza que deseja desativar esta Pessoa?'
+      if(item.ativo === false){
+        msg = 'Tem certeza que deseja ativar esta Pessoa?'
+      }
+      confirm(msg) &&
+        // Ativa/Desativa da API
+        Pessoas.mudarAtivoPessoa(item.id)
+
+      
+        this.reloadPage()
+       
+        // Remove da lista do Front
+        //this.pessoas.splice(index, 1)
     },
 
     close () {
@@ -189,9 +210,17 @@ export default {
     save () {
       if (this.editedIndex > -1) {
         Object.assign(this.pessoas[this.editedIndex], this.pessoaInput)
+
+         this.pessoas.push(this.pessoaInput)
+         Pessoas.alterarPessoa(this.pessoaInput.id,this.pessoaInput)
+
+         this.reloadPage()
+
       } else {
         this.pessoas.push(this.pessoaInput)
         Pessoas.inserirPessoa(this.pessoaInput)
+
+        this.reloadPage()
       }
       this.close()
     }

@@ -125,15 +125,54 @@ namespace Vicelulas.Dado
             }
         }
 
-        public void AlterarStatus(Pessoa entity)
+        /// <summary>
+        /// Selecionar campo ativo da Pessoa
+        /// </summary>
+        /// <param name="id"></param>
+        /// 
+        public Pessoa SelecionarCampoAtivo(int id)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                connection.Execute($"UPDATE [TB_pessoa] " +
-                                   $"SET Ativo = '{entity.Ativo}'," +
-                                   $"Nome = '{entity.Nome}'" +
-                                   $"WHERE Id = {entity.Id}");
+
+                var obj = connection.QueryFirstOrDefault<Pessoa>($"SELECT Ativo " +
+                                                                 $"FROM [TB_pessoa] " +
+                                                                 $"WHERE Id = '{id}'");
+                return obj;
             }
+
+        }
+
+        /// <summary>
+        /// Desativar Pessoa
+        /// </summary>
+        /// <param name="id"></param>
+        /// 
+        public void DesativarPessoa(int id)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                connection.Execute($"UPDATE [TB_pessoa]" +
+                                   $"SET Ativo = 0" +
+                                   $"WHERE Id = {id}");
+            }
+
+        }
+
+        /// <summary>
+        /// Ativar Pessoa
+        /// </summary>
+        /// <param name="id"></param>
+        /// 
+        public void AtivarPessoa(int id)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                connection.Execute($"UPDATE [TB_pessoa]" +
+                                   $"SET Ativo = 1" +
+                                   $"WHERE Id = {id}");
+            }
+
         }
 
     }

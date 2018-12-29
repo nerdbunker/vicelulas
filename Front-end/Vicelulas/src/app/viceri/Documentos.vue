@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: 'Arvore',
+  name: 'Documentos',
   data: () => ({
     open: ['public'],
     files: {

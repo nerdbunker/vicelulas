@@ -68,8 +68,8 @@
 </template>
 
 <script>
-import { http } from '../../domains/api/config'
-import Squad from '../../domains/services/Squads'
+import { http } from '../../domain/api/config'
+import Squad from '../../domain/services/Squads'
 
 export default {
   data: () => ({

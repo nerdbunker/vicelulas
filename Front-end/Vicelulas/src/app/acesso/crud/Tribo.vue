@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import Tribos from '../../../domains/services/Tribos'
+import Tribos from '../../../domain/services/Tribos'
 
 export default {
   data: () => ({

@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import Squads from '../../domains/services/Squads'
+import Squads from '../../domain/services/Squads'
 
 export default {
   name: 'Squads',

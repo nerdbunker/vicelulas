@@ -105,11 +105,11 @@
 </template>
 
 <script>
-import Pessoas from '../../../domains/services/Pessoas'
-import Papel from '../../../domains/services/Papel'
-import Unidade from '../../../domains/services/Unidade'
-import Squads from '../../../domains/services/Squads'
-import { http } from '../../../domains/api/config'
+import Pessoas from '../../../domain/services/Pessoas'
+import Papel from '../../../domain/services/Papel'
+import Unidade from '../../../domain/services/Unidade'
+import Squads from '../../../domain/services/Squads'
+import { http } from '../../../domain/api/config'
 
 export default {
   data: () => ({
@@ -170,18 +170,16 @@ export default {
       this.pessoas = []
     },
     reloadPage(){
-        setTimeout(function(){
-                window.location.reload(true)
-            }, 1000)
+      setTimeout(function(){
+        window.location.reload(true)
+      }, 1000)
     },
-  
     editItem (item) {
       // Alterar aqui o this.pessoas
       this.editedIndex = this.pessoas.indexOf(item)
       this.pessoaInput = Object.assign({}, item)
       this.dialog = true
     },
-
     deleteItem (item) {
       const index = this.pessoas.indexOf(item)
       let msg = 'Tem certeza que deseja desativar esta Pessoa?'
@@ -191,14 +189,10 @@ export default {
       confirm(msg) &&
         // Ativa/Desativa da API
         Pessoas.mudarAtivoPessoa(item.id)
-
-      
         this.reloadPage()
-       
         // Remove da lista do Front
         //this.pessoas.splice(index, 1)
     },
-
     close () {
       this.dialog = false
       setTimeout(() => {
@@ -206,20 +200,15 @@ export default {
         this.editedIndex = -1
       }, 300)
     },
-
     save () {
       if (this.editedIndex > -1) {
         Object.assign(this.pessoas[this.editedIndex], this.pessoaInput)
-
          this.pessoas.push(this.pessoaInput)
          Pessoas.alterarPessoa(this.pessoaInput.id,this.pessoaInput)
-
          this.reloadPage()
-
       } else {
         this.pessoas.push(this.pessoaInput)
         Pessoas.inserirPessoa(this.pessoaInput)
-
         this.reloadPage()
       }
       this.close()

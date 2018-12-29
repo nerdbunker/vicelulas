@@ -68,9 +68,9 @@
 </template>
 
 <script>
-import Pessoas from '../../domains/services/Pessoas'
-import Tribos from '../../domains/services/Tribos'
-import Squads from '../../domains/services/Squads'
+import Pessoas from '../../domain/services/Pessoas'
+import Tribos from '../../domain/services/Tribos'
+import Squads from '../../domain/services/Squads'
 
 export default {
   name: 'Home',

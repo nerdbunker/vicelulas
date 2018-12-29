@@ -37,7 +37,7 @@
 </template>
 
 <script>
-// import Autenticacao from '../../domains/services/Autenticacao'
+// import Autenticacao from '../../domain/services/Autenticacao'
 
 // export default {
 //   name: 'Entrar',

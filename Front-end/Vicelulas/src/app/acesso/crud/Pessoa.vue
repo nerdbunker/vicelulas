@@ -109,7 +109,7 @@ import Pessoas from '../../../domain/services/Pessoas'
 import Papel from '../../../domain/services/Papel'
 import Unidade from '../../../domain/services/Unidade'
 import Squads from '../../../domain/services/Squads'
-import { http } from '../../../domain/api/config'
+// import { http } from '../../../domain/api/config'
 
 export default {
   data: () => ({
@@ -169,8 +169,8 @@ export default {
     initialize () {
       this.pessoas = []
     },
-    reloadPage(){
-      setTimeout(function(){
+    reloadPage () {
+      setTimeout(function () {
         window.location.reload(true)
       }, 1000)
     },
@@ -181,17 +181,17 @@ export default {
       this.dialog = true
     },
     deleteItem (item) {
-      const index = this.pessoas.indexOf(item)
+      // const index = this.pessoas.indexOf(item)
       let msg = 'Tem certeza que deseja desativar esta Pessoa?'
-      if(item.ativo === false){
+      if (item.ativo === false) {
         msg = 'Tem certeza que deseja ativar esta Pessoa?'
       }
       confirm(msg) &&
-        // Ativa/Desativa da API
-        Pessoas.mudarAtivoPessoa(item.id)
-        this.reloadPage()
-        // Remove da lista do Front
-        //this.pessoas.splice(index, 1)
+      // Ativa/Desativa da API
+      Pessoas.mudarAtivoPessoa(item.id)
+      this.reloadPage()
+      // Remove da lista do Front
+      // this.pessoas.splice(index, 1)
     },
     close () {
       this.dialog = false
@@ -203,9 +203,9 @@ export default {
     save () {
       if (this.editedIndex > -1) {
         Object.assign(this.pessoas[this.editedIndex], this.pessoaInput)
-         this.pessoas.push(this.pessoaInput)
-         Pessoas.alterarPessoa(this.pessoaInput.id,this.pessoaInput)
-         this.reloadPage()
+        this.pessoas.push(this.pessoaInput)
+        Pessoas.alterarPessoa(this.pessoaInput.id, this.pessoaInput)
+        this.reloadPage()
       } else {
         this.pessoas.push(this.pessoaInput)
         Pessoas.inserirPessoa(this.pessoaInput)

@@ -6,63 +6,61 @@ namespace Vicelulas.Teste.NegocioTeste
 {
     public class PessoaNegocioTeste
     {
-        
+        private readonly IPessoaNegocio _pessoaNegocio;
+
+        public PessoaNegocioTeste(IPessoaNegocio _pessoaNegocio)
+        {
+            this._pessoaNegocio = _pessoaNegocio;
+        }
 
 
         [Fact]
         public void RetornaStatusOkGetAll()
         {
-            PessoaNegocio pessoaNegocio = new PessoaNegocio();
-            Assert.NotEmpty(pessoaNegocio.Selecionar());
+
+            Assert.NotEmpty(_pessoaNegocio.Selecionar());
         }
 
         [Fact]
         public void RetornaStatusOkGetId()
         {
-            PessoaNegocio pessoaNegocio = new PessoaNegocio();
-            var atual = pessoaNegocio.SelecionarPorId(1);
 
+            var atual = _pessoaNegocio.SelecionarPorId(1);
             Assert.Equal(1, atual.Id);
         }
 
         [Fact]
         public void RetornaStatusNotFoundGetId()
         {
-            PessoaNegocio pessoaNegocio = new PessoaNegocio();
             int id = 0;
-            Assert.Throws<NaoEncontradoException>(() => pessoaNegocio.SelecionarPorId(id));
+            Assert.Throws<NaoEncontradoException>(() => _pessoaNegocio.SelecionarPorId(id));
         }
 
         [Fact]
         public void RetornaStatusOkGetNome()
         {
-            PessoaNegocio pessoaNegocio = new PessoaNegocio();
-            var atual = pessoaNegocio.SelecionarPorNome("Pablo Zampa");
+            var atual = _pessoaNegocio.SelecionarPorNome("Pablo Zampa");
             Assert.Single(atual);
         }
 
         [Fact]
         public void RetornaStatusNotFoundGetNome()
         {
-            PessoaNegocio pessoaNegocio = new PessoaNegocio();
-            Assert.NotEmpty(pessoaNegocio.SelecionarPorNome(""));
+            Assert.NotEmpty(_pessoaNegocio.SelecionarPorNome(""));
         }
 
         [Fact]
         public void RetornaStatusOkGetIdSquad()
         {
-            PessoaNegocio pessoaNegocio = new PessoaNegocio();
-
-            Assert.NotEmpty(pessoaNegocio.SelecionarPorIdSquad(1));
-            
+            Assert.NotEmpty(_pessoaNegocio.SelecionarPorIdSquad(1));
+     
         }
 
         [Fact]
         public void RetornaStatusNotFoundGetIdSquad()
-        {
-            PessoaNegocio pessoaNegocio = new PessoaNegocio();
+        {  
             int id = 0;
-            Assert.Empty(pessoaNegocio.SelecionarPorIdSquad(id));
+            Assert.Empty(_pessoaNegocio.SelecionarPorIdSquad(id));
 
         }
 

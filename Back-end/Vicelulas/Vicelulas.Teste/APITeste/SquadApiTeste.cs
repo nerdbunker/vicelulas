@@ -8,13 +8,15 @@ namespace Vicelulas.Teste.APITeste
 {
     public class SquadApiTeste
     {
+
+
         [Fact]
         public void RetornaStatusOKGetAll()
         {
-            SquadController squadController = new SquadController();
+
             int valorEsperado = 200;
 
-            var actionResult = squadController.Get();
+            var actionResult = _squadController.Get();
 
             var okObjectResult = (OkObjectResult)actionResult;
 
@@ -24,11 +26,11 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusOKGetId()
         {
-            SquadController squadController = new SquadController();
+
             int id = 1;
             int valorEsperado = 200;
 
-            var actionResult = squadController.GetId(id);
+            var actionResult = _squadController.GetId(id);
 
             var okObjectResult = (OkObjectResult)actionResult;
 
@@ -39,22 +41,20 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusNotFoundGetId()
         {
-            SquadController squadController = new SquadController();
 
             int id = 0;
 
-            Assert.Throws<NaoEncontradoException>(() => squadController.GetId(id));
+            Assert.Throws<NaoEncontradoException>(() => _squadController.GetId(id));
         }
 
         [Fact]
         public void RetornaStatusOKGetName()
         {
-            SquadController squadController = new SquadController();
 
             var nome = "a";
             int valorEsperado = 200;
 
-            var actionResult = squadController.GetName(nome);
+            var actionResult = _squadController.GetName(nome);
 
             var okObjectResult = (OkObjectResult)actionResult;
 
@@ -65,7 +65,7 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusOKPost()
         {
-            SquadController _squadController = new SquadController();
+  
             int valorEsperado = 201;
 
             var objSquad = new SquadInput()
@@ -86,7 +86,6 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusOKPut()
         {
-            SquadController _squadController = new SquadController();
             int valorEsperado = 202;
 
             int Id = 1;

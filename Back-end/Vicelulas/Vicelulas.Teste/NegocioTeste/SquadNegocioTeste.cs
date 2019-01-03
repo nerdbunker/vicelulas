@@ -6,58 +6,57 @@ namespace Vicelulas.Teste.NegocioTeste
 {
     public class SquadNegocioTeste
     {
+        private readonly ISquadNegocio _squadNegocio;
+
+        public SquadNegocioTeste(ISquadNegocio _squadNegocio)
+        {
+            this._squadNegocio = _squadNegocio;
+        }
+
         [Fact]
         public void RetornaStatusOkGetAll()
         {
-            SquadNegocio squadNegocio = new SquadNegocio();
-            Assert.NotEmpty(squadNegocio.Selecionar());
+            Assert.NotEmpty(_squadNegocio.Selecionar());
         }
 
         [Fact]
         public void RetornaStatusOkGetId()
         {
-            SquadNegocio squadNegocio = new SquadNegocio();
-            var atual = squadNegocio.SelecionarPorId(1);
-
+            var atual = _squadNegocio.SelecionarPorId(1);
             Assert.Equal(1, atual.Id);
         }
 
         [Fact]
         public void RetornaStatusNotFoundGetId()
         {
-            SquadNegocio squadNegocio = new SquadNegocio();
             int id = 0;
-            Assert.Throws<NaoEncontradoException>(() => squadNegocio.SelecionarPorId(id));
+            Assert.Throws<NaoEncontradoException>(() => _squadNegocio.SelecionarPorId(id));
         }
 
         [Fact]
         public void RetornaStatusOkGetNome()
-        {
-            SquadNegocio squadNegocio = new SquadNegocio();
-            var atual = squadNegocio.SelecionarPorNome("Consultoria");
+        {  
+            var atual = _squadNegocio.SelecionarPorNome("Consultoria");
             Assert.Single(atual);
         }
 
         [Fact]
         public void RetornaStatusNotFoundGetNome()
         {
-            SquadNegocio squadNegocio = new SquadNegocio();
-            Assert.NotEmpty(squadNegocio.SelecionarPorNome(""));
+            Assert.NotEmpty(_squadNegocio.SelecionarPorNome(""));
         }
 
         [Fact]
         public void RetornaStatusOkGetIdTribo()
         {
-            SquadNegocio squadNegocio = new SquadNegocio();
-            var atual = squadNegocio.SelecionarPorIdTribo(1);
+            var atual = _squadNegocio.SelecionarPorIdTribo(1);
             Assert.NotNull(atual);
         }
 
         [Fact]
         public void RetornaStatusNotFoundGetIdTribo()
         {
-            SquadNegocio squadNegocio = new SquadNegocio();
-            var atual = squadNegocio.SelecionarPorIdTribo(0);
+            var atual = _squadNegocio.SelecionarPorIdTribo(0);
             Assert.NotNull(atual);
         }
 

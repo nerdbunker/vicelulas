@@ -8,10 +8,11 @@ namespace Vicelulas.Teste.APITeste
 {
     public class TriboApiTeste
     {
+
         [Fact]
         public void RetornaStatusOKGetAll()
         {
-            TriboController _triboController = new TriboController();
+
             int valorEsperado = 200;
 
             var actionResult = _triboController.Get();
@@ -26,7 +27,7 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusOKGetId()
         {
-            TriboController _triboController = new TriboController();
+   
             int id = 1;
             int valorEsperado = 200;
 
@@ -41,7 +42,6 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusNotFoundGetId()
         {
-            TriboController _triboController = new TriboController();
 
             int id = 0;
 
@@ -51,12 +51,11 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusOKGetName()
         {
-            TriboController triboController = new TriboController();
 
             var nome = "a";
             int valorEsperado = 200;
 
-            var actionResult = triboController.GetName(nome);
+            var actionResult = _triboController.GetName(nome);
 
             var okObjectResult = (OkObjectResult)actionResult;
 
@@ -67,7 +66,6 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusOKPost()
         {
-            TriboController _triboController = new TriboController();
             int valorEsperado = 201;
 
             var objTribo = new TriboInput()
@@ -87,7 +85,6 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusOKPut()
         {
-            TriboController _triboController = new TriboController();
             int valorEsperado = 202;
 
             int Id = 1;

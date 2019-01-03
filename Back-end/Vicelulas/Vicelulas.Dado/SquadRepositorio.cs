@@ -99,5 +99,23 @@ namespace Vicelulas.Dado
             }
         }
 
+        /// <summary>
+        /// Ativar/Desativar Squad
+        /// </summary>
+        /// <param name="id"></param>
+        public void AtivarDesativarSquad(int id, bool ativo)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+
+                connection.Execute($"UPDATE [TB_squad]" +
+                                   $"SET Ativo = '{ativo}' " +
+                                   $"WHERE Id = {id}");
+            }
+
+        }
+
+
+
     }
 }

@@ -65,7 +65,7 @@ namespace Vicelulas.Dado
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 connection.Execute($"UPDATE [TB_tribo] " +
-                                      $"SET Nome = '{entity.Nome}'" +                            
+                                      $"SET Nome = '{entity.Nome}'" +
                                       $"WHERE Id = {entity.Id}");
             }
         }
@@ -81,5 +81,21 @@ namespace Vicelulas.Dado
             }
         }
 
+
+        /// <summary>
+        /// Ativar/Desativar Tribo
+        /// </summary>
+        /// <param name="id"></param>
+        public void AtivarDesativarTribo(int id, bool ativo)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+
+                connection.Execute($"UPDATE [TB_tribo]" +
+                                   $"SET Ativo = '{ativo}' " +
+                                   $"WHERE Id = {id}");
+            }
+
+        }
     }
 }

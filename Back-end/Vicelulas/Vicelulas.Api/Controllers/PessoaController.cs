@@ -112,7 +112,7 @@ namespace Vicelulas.Api.Controllers
         }
 
         /// <summary>
-        /// Método que Desativa uma Pessoa
+        /// Método que Desativa/Ativa uma Pessoa
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

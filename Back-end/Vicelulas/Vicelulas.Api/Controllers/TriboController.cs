@@ -121,25 +121,19 @@ namespace Vicelulas.Api.Controllers
         }
 
         /// <summary>
-        /// Método que Desativa uma Tribo
+        /// Método que Desativa/Ativa uma Tribo
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="input"></param>
         /// <returns></returns>
-        [HttpPut("update/{id}")]
-        [ProducesResponseType(typeof(Tribo), (int)HttpStatusCode.Accepted)]
+        [HttpPut("MudarAtivo/{id}")]
+        [ProducesResponseType((int)HttpStatusCode.Accepted)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public IActionResult PutDesativar([FromRoute] int id, [FromBody] TriboInput input)
+        public IActionResult PutDesativar([FromRoute] int id)
         {
-            var objTribo = new Tribo()
-            {
-                Ativo = false,
-                Nome = input.Nome
-            };
-            var retorno = _triboNegocio.Desativar(id, objTribo);
-            return Accepted(retorno);
-        }
 
+            _triboNegocio.AtivarDesativarTribo(id);
+            return Accepted();
+        }
     }
 }

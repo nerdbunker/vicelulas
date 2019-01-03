@@ -108,5 +108,16 @@ namespace Vicelulas.Negocio
             return _squadRepositorio.SelecionarPorId(Id);
         }
 
+        /// <param name="Id"></param>
+        public void AtivarDesativarSquad(int id)
+        {
+            var obj = _squadRepositorio.SelecionarPorId(id);
+
+            if (obj == null)
+                throw new NaoEncontradoException($"Não existe uma Squad com o id {id}");
+
+            _squadRepositorio.AtivarDesativarSquad(id, !obj.Ativo);
+        }
+
     }
 }

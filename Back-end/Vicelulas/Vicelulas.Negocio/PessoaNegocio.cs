@@ -96,19 +96,15 @@ namespace Vicelulas.Negocio
             return _pessoaRepositorio.SelecionarPorId(Id);
         }
 
-        /// <param name="Id, entity"></param>
+        /// <param name="Id"></param>
         public void AtivarDesativarPessoa(int id)
         {
-            var obj = _pessoaRepositorio.SelecionarCampoAtivo(id);
+            var obj = _pessoaRepositorio.SelecionarPorId(id);
 
-            if (obj.Ativo == true)
-            {
-                _pessoaRepositorio.DesativarPessoa(id);
-            }
-            else
-            {
-                _pessoaRepositorio.AtivarPessoa(id);
-            }
+            if (obj == null)
+                throw new NaoEncontradoException($"Não existe uma Pessoa com o id {id}");
+
+            _pessoaRepositorio.AtivarDesativarPessoa(id, !obj.Ativo);
         }
 
     }

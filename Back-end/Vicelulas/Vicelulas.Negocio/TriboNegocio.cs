@@ -94,5 +94,18 @@ namespace Vicelulas.Negocio
             return _triboRepositorio.SelecionarPorId(Id);
         }
 
+        /// <param name="Id"></param>
+        public void AtivarDesativarTribo(int id)
+        {
+            var obj = _triboRepositorio.SelecionarPorId(id);
+
+            if (obj == null)
+                throw new NaoEncontradoException($"Não existe uma Tribo com o id {id}");
+
+            _triboRepositorio.AtivarDesativarTribo(id,!obj.Ativo);
+            
+            
+        }
+
     }
 }

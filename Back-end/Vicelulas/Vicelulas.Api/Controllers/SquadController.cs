@@ -133,25 +133,19 @@ namespace Vicelulas.Api.Controllers
         }
 
         /// <summary>
-        /// Método que Desativa uma Squad
+        /// Método que Desativa/Ativa uma Squad
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="input"></param>
         /// <returns></returns>
-        [HttpPut("update/{id}")]
-        [ProducesResponseType(typeof(Squad), (int)HttpStatusCode.Accepted)]
+        [HttpPut("MudarAtivo/{id}")]
+        [ProducesResponseType((int)HttpStatusCode.Accepted)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public IActionResult PutDesativar([FromRoute] int id, [FromBody] SquadInput input)
+        public IActionResult PutDesativar([FromRoute] int id)
         {
-            var objSquad = new Squad()
-            {
-                Ativo = false,
-                Id_tribo = input.Id_tribo,
-                Nome = input.Nome
-            };
-            var retorno = _squadNegocio.Desativar(id, objSquad);
-            return Accepted(retorno);
+
+            _squadNegocio.AtivarDesativarSquad(id);
+            return Accepted();
         }
     }
 }

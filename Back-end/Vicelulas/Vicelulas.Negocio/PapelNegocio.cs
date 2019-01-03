@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Vicelulas.Dado;
 using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Negocio
 {
-    public class PapelNegocio
+    public class PapelNegocio : IPapelNegocio
     {
-        private readonly PapelRepositorio _papelRepositorio;
 
-        public PapelNegocio()
+
+        private readonly IPapelRepositorio _papelRepositorio;
+
+        public PapelNegocio(IPapelRepositorio _papelRepositorio)
         {
-            _papelRepositorio = new PapelRepositorio();
+            this._papelRepositorio = _papelRepositorio;
         }
 
         public IEnumerable<PapelDto> Selecionar()

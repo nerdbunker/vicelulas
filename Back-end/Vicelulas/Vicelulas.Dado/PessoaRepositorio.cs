@@ -7,7 +7,7 @@ using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Dado
 {
-    public class PessoaRepositorio
+    public class PessoaRepositorio : IPessoaRepositorio
     {
         public IEnumerable<PessoaDto> Selecionar()
         {
@@ -95,9 +95,8 @@ namespace Vicelulas.Dado
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 return connection.QuerySingle<int>($"DECLARE @Id int;" +
-                                                   $"INSERT INTO [TB_pessoa] (Id_login, Id_papel, Nome, Email, Ativo, Id_squads, Id_unidade, Permissao) " +
-                                                   $"VALUES({entity.Id_login}," +
-                                                   $"{entity.Id_papel}, " +
+                                                   $"INSERT INTO [TB_pessoa] (Id_papel, Nome, Email, Ativo, Id_squads, Id_unidade, Permissao) " +
+                                                   $"VALUES({entity.Id_papel}, " +
                                                    $"'{entity.Nome}', " +
                                                    $"'{entity.Email}', " +
                                                    $"'{entity.Ativo}'," +

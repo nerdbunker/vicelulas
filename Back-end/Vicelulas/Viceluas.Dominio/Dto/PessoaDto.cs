@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Vicelulas.Dominio.Dto
+﻿namespace Vicelulas.Dominio.Dto
 {
     public class PessoaDto
     {

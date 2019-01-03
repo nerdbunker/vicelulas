@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Negocio;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Net;
 using Vicelulas.Dominio;
 using Vicelulas.Api.Model;
-using Microsoft.AspNetCore.JsonPatch;
 
 namespace Vicelulas.Api.Controllers
 {
@@ -13,15 +11,15 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class TriboController : ControllerBase
     {
-        private readonly TriboNegocio _triboNegocio;
+        private readonly ITriboNegocio _triboNegocio;
 
 
         /// <summary>
         /// EndPoints Tribo API
         /// </summary>
-        public TriboController()
+        public TriboController(ITriboNegocio _triboNegocio)
         {
-            _triboNegocio = new TriboNegocio();
+            this._triboNegocio = _triboNegocio;
 
         }
 

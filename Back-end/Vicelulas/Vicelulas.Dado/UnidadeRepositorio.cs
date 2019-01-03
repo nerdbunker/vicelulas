@@ -6,7 +6,7 @@ using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Dado
 {
-    public class UnidadeRepositorio
+    public class UnidadeRepositorio : IUnidadeRepositorio
     {
         public IEnumerable<UnidadeDto> Selecionar()
         {
@@ -17,5 +17,6 @@ namespace Vicelulas.Dado
                 return lista;
             }
         }
-    }
+
+    }   
 }

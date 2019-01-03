@@ -8,16 +8,14 @@ using Vicelulas.Dominio.Seguranca;
 
 namespace Vicelulas.Negocio
 {
-    public class AutenticacaoNegocio
+    public class AutenticacaoNegocio : IAutenticacaoNegocio
     {
-        private readonly AutenticacaoRepositorio _autenticacaoRepositorio;
 
+        private readonly IAutenticacaoRepositorio _autenticacaoRepositorio;
 
-        public AutenticacaoNegocio()
+        public AutenticacaoNegocio(IAutenticacaoRepositorio _autenticacaoRepositorio)
         {
-            _autenticacaoRepositorio = new AutenticacaoRepositorio();
-            
-            
+            this._autenticacaoRepositorio = _autenticacaoRepositorio;
         }
 
         /// <param name="username"></param>
@@ -37,25 +35,5 @@ namespace Vicelulas.Negocio
             return obj;
         }
 
-        /// <param name="entity"></param>
-        public int Cadastrar(Login entity)
-        {
-            //Verifica se os campos Email e Senha estão preenchidos
-            if (String.IsNullOrEmpty(entity.Username) || String.IsNullOrEmpty(entity.Password))
-                throw new ConflitoException("Usuário ou senha não estão preenchidos !");
-
-            //Verifica se o username já existe
-
-            int objExiste = _autenticacaoRepositorio.SelecionarPorUsername(entity.Username);
-            if (objExiste != 0)
-                throw new ConflitoException("Usuário já existe !");
-
-
-           var pwHash = PasswordHash.Create(entity.Password);
-       
-           entity.Password = pwHash;
-
-           return _autenticacaoRepositorio.Cadastrar(entity);
-        }
     }
 }

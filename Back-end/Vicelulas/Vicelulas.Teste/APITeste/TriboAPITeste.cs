@@ -2,7 +2,6 @@
 using Vicelulas.Api.Controllers;
 using Viceluas.Dominio.Exceções;
 using Microsoft.AspNetCore.Mvc;
-using Vicelulas.Dominio;
 using Vicelulas.Api.Model;
 
 namespace Vicelulas.Teste.APITeste

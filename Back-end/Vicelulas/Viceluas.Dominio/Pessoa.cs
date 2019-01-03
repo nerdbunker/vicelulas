@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Vicelulas.Dominio
+﻿namespace Vicelulas.Dominio
 {
     public class Pessoa
     {

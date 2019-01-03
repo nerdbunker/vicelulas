@@ -6,6 +6,9 @@ namespace Vicelulas.Teste.NegocioTeste
 {
     public class PessoaNegocioTeste
     {
+        
+
+
         [Fact]
         public void RetornaStatusOkGetAll()
         {

@@ -6,14 +6,14 @@ using Vicelulas.Dominio;
 
 namespace Vicelulas.Negocio
 {
-    public class SquadNegocio
+    public class SquadNegocio : ISquadNegocio
     {
-        private readonly SquadRepositorio _squadRepositorio;
+        private readonly ISquadRepositorio _squadRepositorio;
 
 
-        public SquadNegocio()
+        public SquadNegocio(ISquadRepositorio _squadRepositorio)
         {
-            _squadRepositorio = new SquadRepositorio();
+            this._squadRepositorio = _squadRepositorio;
         }
 
         public IEnumerable<SquadDto> Selecionar()

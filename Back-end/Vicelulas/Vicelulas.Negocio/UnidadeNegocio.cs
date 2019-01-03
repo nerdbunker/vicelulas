@@ -4,13 +4,13 @@ using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Negocio
 {
-    public class UnidadeNegocio
+    public class UnidadeNegocio : IUnidadeNegocio
     {
-        private readonly UnidadeRepositorio _UnidadeRepositorio;
+        private readonly IUnidadeRepositorio _UnidadeRepositorio;
 
-        public UnidadeNegocio()
+        public UnidadeNegocio(IUnidadeRepositorio _UnidadeRepositorio)
         {
-            _UnidadeRepositorio = new UnidadeRepositorio();
+            this._UnidadeRepositorio = _UnidadeRepositorio;
         }
 
         public IEnumerable<UnidadeDto> Selecionar()

@@ -11,14 +11,14 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class PessoaController : ControllerBase
     {
-        private readonly PessoaNegocio _pessoaNegocio;
+        private readonly IPessoaNegocio _pessoaNegocio;
 
         /// <summary>
         /// EndPoints Pessoa API
         /// </summary>
-        public PessoaController()
+        public PessoaController(IPessoaNegocio _pessoaNegocio)
         {
-            _pessoaNegocio = new PessoaNegocio();
+            this._pessoaNegocio = _pessoaNegocio;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Vicelulas.Api.Controllers
                 Id_squad = input.Id_squads,
                 Id_papel = input.Id_papel,
                 Id_unidade = input.Id_unidade,
-                Permissao = input.Permissao,
+                Permissao = 1,
                 Ativo = true
             };
 
@@ -127,6 +127,35 @@ namespace Vicelulas.Api.Controllers
             return Accepted();
         }
 
-     
+        /// <summary>
+        /// Método que cadastra usuário no sistema
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ProducesResponseType(typeof(Pessoa), (int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        public IActionResult Cadastrar([FromBody]PessoaInput input)
+        {
+            var objPessoa = new Pessoa()
+            {
+                Nome = input.Nome,
+                Email = input.Email,    
+                Id_papel = input.Id_papel,
+                Id_unidade = input.Id_unidade,  
+                Id_squad = input.Id_squads,
+                Ativo = true,
+                Permissao =  1 
+
+            };
+
+            var id = _pessoaNegocio.Inserir(objPessoa);
+
+            //Refenciar Rota
+            return CreatedAtRoute(routeName: "PessoaGetId", routeValues: new { id = objPessoa.Id }, value: objPessoa);
+        }
+
+
     }
 }

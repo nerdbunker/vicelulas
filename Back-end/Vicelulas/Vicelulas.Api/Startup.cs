@@ -8,6 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using System.Reflection;
 using Vicelulas.Api.Filtros;
+using Vicelulas.IoC;
+
+
 
 namespace Vicelulas.Api
 {
@@ -51,6 +54,8 @@ namespace Vicelulas.Api
             });
 
             services.AddScoped<ErroFiltro>();
+            RegisterServices(services);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,5 +92,11 @@ namespace Vicelulas.Api
             });
 
         }
+
+        void RegisterServices(IServiceCollection services)
+        {
+            new RootServiceBootStrapper().ChildServiceRegister(services);
+        }
+
     }
 }

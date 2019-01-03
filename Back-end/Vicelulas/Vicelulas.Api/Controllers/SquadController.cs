@@ -11,16 +11,15 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class SquadController : ControllerBase
     {
-        private readonly SquadNegocio _squadNegocio;
+        private readonly ISquadNegocio _squadNegocio;
 
 
         /// <summary>
         /// EndPoints Squad API
         /// </summary>
-        public SquadController()
+        public SquadController(ISquadNegocio _squadNegocio)
         {
-            _squadNegocio = new SquadNegocio();
-
+            this._squadNegocio = _squadNegocio;
         }
 
         /// <summary>

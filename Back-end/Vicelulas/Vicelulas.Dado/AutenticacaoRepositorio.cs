@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using Vicelulas.Dado.Configuração;
 using Vicelulas.Dominio;
@@ -7,7 +6,7 @@ using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Dado
 {
-    public class AutenticacaoRepositorio
+    public class AutenticacaoRepositorio : IAutenticacaoRepositorio
     {
         public PessoaDto Entrar(string username, string password)
         {
@@ -22,18 +21,18 @@ namespace Vicelulas.Dado
             }
         }
 
-        public int Cadastrar(Login entity)
-        {
-            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
-            {
-                return connection.QuerySingle<int>($"DECLARE @Id int;" +
-                                                   $"INSERT INTO [TB_login] (username,password) " +
-                                                   $"VALUES('{entity.Username}'," +
-                                                   $"'{entity.Password}'); " +
-                                                   $"SET @Id = SCOPE_IDENTITY();" +
-                                                   $"SELECT @Id");
-            }
-        }
+        //public int Cadastrar(CadastroPessoa entity)
+        //{
+        //    using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+        //    {
+        //        return connection.QuerySingle<int>($"DECLARE @Id int;" +
+        //                                           $"INSERT INTO [TB_login] (username,password) " +
+        //                                           $"VALUES('{entity.Email}'," +
+        //                                           $"'{entity.Senha}'); " +
+        //                                           $"SET @Id = SCOPE_IDENTITY();" +
+        //                                           $"SELECT @Id");
+        //    }
+        //}
 
         public int SelecionarPorUsername(string username)
         {

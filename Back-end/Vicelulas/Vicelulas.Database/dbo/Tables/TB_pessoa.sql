@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TB_pessoa] (
     [id]         INT IDENTITY NOT NULL,
-    [id_login]   INT NOT NULL,
+    [id_login]   INT NULL,
     [id_papel]   INT NOT NULL,
     [nome]       VARCHAR (50)     NOT NULL,
     [email]      VARCHAR (50)     NOT NULL,

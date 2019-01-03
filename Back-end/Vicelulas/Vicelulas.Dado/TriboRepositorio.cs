@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Viceluas.Dominio.Dto;
-using Vicelulas.Dado.Abstração;
 using Vicelulas.Dado.Configuração;
 using Vicelulas.Dominio;
 
 namespace Vicelulas.Dado
 {
-    public class TriboRepositorio
+    public class TriboRepositorio : ITriboRepositorio
     {
         public IEnumerable<TriboDto> Selecionar()
         {

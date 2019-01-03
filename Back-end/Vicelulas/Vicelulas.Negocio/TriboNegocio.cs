@@ -6,14 +6,14 @@ using Vicelulas.Dominio;
 
 namespace Vicelulas.Negocio
 {
-    public class TriboNegocio
+    public class TriboNegocio : ITriboNegocio
     {
-        private readonly TriboRepositorio _triboRepositorio;
+        private readonly ITriboRepositorio _triboRepositorio;
 
         
-        public TriboNegocio()
+        public TriboNegocio(ITriboRepositorio _triboRepositorio)
         {
-            _triboRepositorio = new TriboRepositorio();
+            this._triboRepositorio = _triboRepositorio;
         }
 
         public IEnumerable<TriboDto> Selecionar()

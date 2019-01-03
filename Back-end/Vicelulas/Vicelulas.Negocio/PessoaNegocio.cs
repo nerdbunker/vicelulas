@@ -6,13 +6,13 @@ using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Negocio
 {
-    public class PessoaNegocio
+    public class PessoaNegocio : IPessoaNegocio
     {
-        private readonly PessoaRepositorio _pessoaRepositorio;
+        private readonly IPessoaRepositorio _pessoaRepositorio;
 
-        public PessoaNegocio()
+        public PessoaNegocio(IPessoaRepositorio _pessoaRepositorio)
         {
-            _pessoaRepositorio = new PessoaRepositorio();
+            this._pessoaRepositorio = _pessoaRepositorio;
         }
 
         public IEnumerable<PessoaDto> Selecionar()

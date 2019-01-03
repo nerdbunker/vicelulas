@@ -6,7 +6,7 @@ using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.Dado
 {
-    public class PapelRepositorio
+    public class PapelRepositorio : IPapelRepositorio
     {
         public IEnumerable<PapelDto> Selecionar()
         {

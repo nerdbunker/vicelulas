@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Viceluas.Dominio.Dto
+﻿namespace Viceluas.Dominio.Dto
 {
     public class SquadDto
     {

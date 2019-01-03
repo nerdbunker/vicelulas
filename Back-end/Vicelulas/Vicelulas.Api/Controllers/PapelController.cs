@@ -9,15 +9,15 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class PapelController: ControllerBase
     {
-        private readonly PapelNegocio _papelNegocio;
+        private readonly IPapelNegocio _papelNegocio;
 
 
         /// <summary>
         /// EndPoints Papel API
         /// </summary>
-        public PapelController()
+        public PapelController(IPapelNegocio _papelNegocio)
         {
-            _papelNegocio = new PapelNegocio();
+            this._papelNegocio = _papelNegocio;
 
         }
 

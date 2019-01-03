@@ -7,7 +7,7 @@ using Vicelulas.Dominio;
 
 namespace Vicelulas.Dado
 {
-    public class SquadRepositorio
+    public class SquadRepositorio : ISquadRepositorio
     {
         public IEnumerable<SquadDto> Selecionar()
         {

@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using Vicelulas.Negocio;
 
 namespace Vicelulas.Api.Controllers
@@ -13,14 +9,14 @@ namespace Vicelulas.Api.Controllers
     [ApiController]
     public class UnidadeController: ControllerBase
     {
-        private readonly UnidadeNegocio _unidadeNegocio;
-
+        private readonly IUnidadeNegocio _unidadeNegocio;
+        
         /// <summary>
         /// EndPoints Unidade API
         /// </summary>
-        public UnidadeController()
+        public UnidadeController(IUnidadeNegocio _unidadeNegocio)
         {
-            _unidadeNegocio = new UnidadeNegocio();
+            this._unidadeNegocio = _unidadeNegocio;
 
         }
 

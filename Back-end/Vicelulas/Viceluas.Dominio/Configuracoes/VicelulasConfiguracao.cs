@@ -1,4 +1,4 @@
-﻿namespace Viceluas.Dominio.Configurações
+﻿namespace Vicelulas.Dominio.Configurações
 {
     public class VicelulasConfiguracao
     {

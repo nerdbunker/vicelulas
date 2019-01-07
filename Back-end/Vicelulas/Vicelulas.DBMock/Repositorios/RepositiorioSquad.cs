@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Viceluas.Dominio.Dto;
+using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.DBMock.Repositorios
 {

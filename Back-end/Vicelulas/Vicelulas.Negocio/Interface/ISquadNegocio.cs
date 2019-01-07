@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Viceluas.Dominio.Dto;
+using Vicelulas.Dominio.Dto;
 using Vicelulas.Dominio;
 
 namespace Vicelulas.Negocio
@@ -14,5 +14,6 @@ namespace Vicelulas.Negocio
         SquadDto SelecionarPorId(int id);
         IEnumerable<SquadDto> SelecionarPorIdTribo(int id);
         IEnumerable<SquadDto> SelecionarPorNome(string nome);
+        IEnumerable<SquadDto> SelecionarSquadsSemTribo();
     }
 }

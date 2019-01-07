@@ -35,6 +35,20 @@ namespace Vicelulas.Api.Controllers
             return Ok(_squadNegocio.Selecionar());
         }
 
+
+        /// <summary>
+        /// Método que obtem uma lista de squads sem tribo
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("SemTribo")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public IActionResult GetPorSquadSemTribo()
+        {
+            return Ok(_squadNegocio.SelecionarSquadsSemTribo());
+        }
+
         /// <summary>
         /// Método que seleciona uma squad
         /// </summary>

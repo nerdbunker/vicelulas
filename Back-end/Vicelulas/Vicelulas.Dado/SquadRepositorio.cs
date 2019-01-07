@@ -1,9 +1,10 @@
 ﻿using Dapper;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using Viceluas.Dominio.Dto;
+using Vicelulas.Dominio.Dto;
 using Vicelulas.Dado.Configuração;
 using Vicelulas.Dominio;
+using System.Threading.Tasks;
 
 namespace Vicelulas.Dado
 {
@@ -59,6 +60,16 @@ namespace Vicelulas.Dado
                 var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome, S.Ativo FROM [TB_squad] S "+
                                                        $"INNER JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"WHERE S.Id_Tribo = {id}");
+                return lista;
+            }
+        }
+
+        public IEnumerable<SquadDto> SelecionarSquadsSemTribo()
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Nome FROM [TB_squad] S " +
+                                                            $"WHERE S.Id_Tribo IS NULL");
                 return lista;
             }
         }

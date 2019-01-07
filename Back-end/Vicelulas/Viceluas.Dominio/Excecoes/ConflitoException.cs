@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Viceluas.Dominio.Exceções
+namespace Vicelulas.Dominio.Exceções
 {
     [Serializable]
     public class ConflitoException : Exception

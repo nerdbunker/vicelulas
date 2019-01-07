@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Viceluas.Dominio.Dto;
+using Vicelulas.Dominio.Dto;
 
 namespace Vicelulas.DBMock
 {

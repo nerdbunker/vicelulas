@@ -66,12 +66,12 @@
     <Build Include="dbo\Tables\TB_historico_pessoa.sql" />
     <Build Include="dbo\Tables\TB_historico_squad.sql" />
     <Build Include="dbo\Tables\TB_historico_tribo.sql" />
-    <Build Include="dbo\Tables\TB_login.sql" />
     <Build Include="dbo\Tables\TB_papel.sql" />
     <Build Include="dbo\Tables\TB_pessoa.sql" />
     <Build Include="dbo\Tables\TB_squad.sql" />
     <Build Include="dbo\Tables\TB_tribo.sql" />
     <Build Include="dbo\Tables\TB_unidade.sql" />
+    <Build Include="dbo\Tables\TB_Mentor.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\Inserts\Insert.PostDeployment1.sql" />

@@ -10,7 +10,7 @@ namespace Vicelulas.Dominio.Seguranca
         {
             var valueBytes = KeyDerivation.Pbkdf2(
                                 password: value,
-                                salt: Encoding.UTF8.GetBytes("vicelulas"),
+                                salt: Encoding.UTF8.GetBytes("Vicelulas"),
                                 prf: KeyDerivationPrf.HMACSHA512,
                                 iterationCount: 10000,
                                 numBytesRequested: 256 / 8);

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Viceluas.Dominio.Exceções;
+using Vicelulas.Dominio.Exceções;
 using Vicelulas.Dado;
 using Vicelulas.Dominio;
 using Vicelulas.Dominio.Dto;

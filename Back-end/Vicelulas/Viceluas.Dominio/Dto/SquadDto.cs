@@ -1,4 +1,4 @@
-﻿namespace Viceluas.Dominio.Dto
+﻿namespace Vicelulas.Dominio.Dto
 {
     public class SquadDto
     {

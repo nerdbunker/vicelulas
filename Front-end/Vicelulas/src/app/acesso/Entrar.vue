@@ -35,31 +35,3 @@
     </v-layout>
   </v-container>
 </template>
-
-<script>
-// import Autenticacao from '../../domain/services/Autenticacao'
-
-// export default {
-//   name: 'Entrar',
-//   data () {
-//     return {
-//       entrar: {
-//         username: '',
-//         password: ''
-//       }
-//     }
-//   },
-//   methods: {
-//     setAuthenticated(status) {
-//         this.authenticated = status
-//       }
-//     }
-//   },
-//   mounted () {
-//     Autenticacao.entrar().then(respostaEntrar => {
-//       console.log(respostaEntrar)
-//       this.entrar = respostaEntrar.data
-//     })
-//   }
-// }
-</script>

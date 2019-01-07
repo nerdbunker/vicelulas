@@ -1,6 +1,6 @@
 ﻿using Xunit;
 using Vicelulas.Api.Controllers;
-using Viceluas.Dominio.Exceções;
+using Vicelulas.Dominio.Exceções;
 using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Api.Model;
 

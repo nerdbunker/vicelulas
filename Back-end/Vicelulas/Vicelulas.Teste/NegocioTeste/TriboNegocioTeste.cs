@@ -1,6 +1,6 @@
 ﻿using Xunit;
 using Vicelulas.Negocio;
-using Viceluas.Dominio.Exceções;
+using Vicelulas.Dominio.Exceções;
 using Vicelulas.Dominio;
 using Moq;
 

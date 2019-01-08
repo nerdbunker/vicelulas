@@ -84,7 +84,7 @@ namespace Vicelulas.Negocio
 
             var NomeExistente = _squadRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 
-            if (NomeExistente != null)
+            if (NomeExistente != null && idExistente.Id != entity.Id)
                 throw new ConflitoException($"Já existe uma Squad cadastrada com este nome {entity.Nome}!");
 
             entity.Id = Id;

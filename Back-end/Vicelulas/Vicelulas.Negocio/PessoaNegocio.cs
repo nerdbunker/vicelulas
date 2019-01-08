@@ -85,16 +85,16 @@ namespace Vicelulas.Negocio
 
             var NomeExistente = _pessoaRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 
-            if (NomeExistente != null)
+            if (NomeExistente != null && idExistente.Id != entity.Id)
                 throw new ConflitoException($"Já existe uma Pessoa cadastrada com este nome {entity.Nome}!");
 
             var EmailExistente = _pessoaRepositorio.SelecionarPorEmail(entity.Email);
 
-            if (EmailExistente != null)
+            if (EmailExistente != null && idExistente.Id != entity.Id)
                 throw new ConflitoException($"Já esxiste uma pessoa cadastrada com este email {entity.Email}!");
 
             entity.Id = Id;
-            entity.Senha = PasswordHash.Create(entity.Senha);
+            //entity.Senha = PasswordHash.Create(entity.Senha);
             _pessoaRepositorio.Alterar(entity);
 
             return  _pessoaRepositorio.SelecionarPorId(Id);

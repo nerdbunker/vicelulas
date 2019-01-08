@@ -117,7 +117,6 @@ namespace Vicelulas.Dado
                                       $"SET Id_papel = {entity.Id_papel},"+                          
                                       $"Nome = '{entity.Nome}'," +
                                       $"Email = '{entity.Email}'," +
-                                      $"Password = '{entity.Senha}'," +
                                       $"Ativo = '{entity.Ativo}'," +
                                       $"Id_squads = {entity.Id_squad}," +
                                       $"Id_unidade = {entity.Id_unidade}," +

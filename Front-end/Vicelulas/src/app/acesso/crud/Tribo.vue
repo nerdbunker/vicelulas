@@ -39,6 +39,7 @@
           >
             <template slot="items" slot-scope="props">
               <td>{{ props.item.nome }}</td>
+              <td>{{ props.item.ativo?'Sim':'Não' }}</td>
               <td>
               <v-icon
                 small
@@ -56,7 +57,7 @@
             </td>
             </template>
             <template slot="no-data">
-              <v-btn color="primary" @click="initialize">Reset</v-btn>
+              <v-btn color="primary" @click="initialize">Reiniciar</v-btn>
             </template>
           </v-data-table>
         </v-flex>
@@ -79,24 +80,22 @@ export default {
         sortable: false,
         value: 'nome'
       },
+      {
+        text: 'Ativo?',
+        align: 'left',
+        sortable: true,
+        value: 'ativo'
+      },
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
     editedItem: {
       nome: '',
-      email: '',
-      cargo: '',
-      unidade: '',
-      squad: '',
-      tribo: ''
+      ativo: true
     },
     defaultItem: {
       nome: '',
-      email: '',
-      cargo: '',
-      unidade: '',
-      squad: '',
-      tribo: ''
+      ativo: true
     }
   }),
 
@@ -147,6 +146,7 @@ export default {
         Object.assign(this.tribos[this.editedIndex], this.editedItem)
       } else {
         this.tribos.push(this.editedItem)
+        Tribos.inserirTribo(this.editedItem)
       }
       this.close()
     }
@@ -155,10 +155,6 @@ export default {
     Tribos.obterTribo().then(respostaTribo => {
       console.log(respostaTribo)
       this.tribos = respostaTribo.data
-    })
-    Tribos.obterPessoaPorId().then(respostaPessoaId => {
-      console.log(respostaPessoaId)
-      this.tribosId = respostaPessoaId
     })
   }
 }

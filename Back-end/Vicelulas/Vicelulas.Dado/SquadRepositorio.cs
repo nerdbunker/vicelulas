@@ -4,19 +4,18 @@ using System.Data.SqlClient;
 using Vicelulas.Dominio.Dto;
 using Vicelulas.Dado.Configuração;
 using Vicelulas.Dominio;
-using System.Threading.Tasks;
 
 namespace Vicelulas.Dado
 {
     public class SquadRepositorio : ISquadRepositorio
     {
-        public IEnumerable<SquadDto> Selecionar()
+        public  IEnumerable<SquadDto> Selecionar()
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo,T.Nome AS NomeTribo, S.Nome, S.Ativo FROM [TB_squad] S " + 
                                                        $"INNER JOIN [TB_tribo] T ON S.Id_Tribo = T.Id ");
-                return lista;
+                return  lista;
             }
         }
 
@@ -31,7 +30,7 @@ namespace Vicelulas.Dado
             }
         }
 
-        public IEnumerable<SquadDto> SelecionarPorNome(string nome)
+        public  IEnumerable<SquadDto> SelecionarPorNome(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
@@ -39,21 +38,21 @@ namespace Vicelulas.Dado
                                                        $"INNER JOIN [TB_tribo] T ON S.Id_Tribo = T.Id "+ 
                                                        $"WHERE S.Nome LIKE '%{nome}%'");
 
-                return lista;
+                return  lista;
             }
         }
 
-        public SquadDto SelecionarPorNomeEspecifico(string nome)
+        public  SquadDto SelecionarPorNomeEspecifico(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, S.Nome, S.Nome, S.Ativo FROM [TB_squad] S " +
                                                                    $"WHERE S.Nome = '{nome}'");
-                return obj;
+                return  obj;
             }
         }
 
-        public IEnumerable<SquadDto> SelecionarPorIdTribo(int id)
+        public  IEnumerable<SquadDto> SelecionarPorIdTribo(int id)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
@@ -64,13 +63,13 @@ namespace Vicelulas.Dado
             }
         }
 
-        public IEnumerable<SquadDto> SelecionarSquadsSemTribo()
+        public  IEnumerable<SquadDto> SelecionarSquadsSemTribo()
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Nome FROM [TB_squad] S " +
                                                             $"WHERE S.Id_Tribo IS NULL");
-                return lista;
+                return  lista;
             }
         }
 

@@ -14,10 +14,20 @@ namespace Vicelulas.Teste.APITeste
     {
 
 
-        [Fact]
-        public void RetornaStatusOKGetAll()
-        {
+        //[Fact]
+        //public void RetornaStatusOKGetAll()
+        //{
 
+<<<<<<< HEAD
+        //    int valorEsperado = 200;
+
+        //    var actionResult = _squadController.Get();
+
+        //    var okObjectResult = (OkObjectResult)actionResult;
+
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        //}
+=======
             // Arrange
             int valorEsperado = 200;
 
@@ -32,11 +42,22 @@ namespace Vicelulas.Teste.APITeste
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
         }
+>>>>>>> 173964ed076d1b5621ba0084e9b9da3c6e06db45
 
-        [Fact]
-        public void RetornaStatusOKGetId()
-        {
+        //[Fact]
+        //public void RetornaStatusOKGetId()
+        //{
 
+<<<<<<< HEAD
+        //    int id = 1;
+        //    int valorEsperado = 200;
+
+        //    var actionResult = _squadController.GetId(id);
+
+        //    var okObjectResult = (OkObjectResult)actionResult;
+
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+=======
             // Arrange
             int valorEsperado = 200;
 
@@ -59,9 +80,33 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+>>>>>>> 173964ed076d1b5621ba0084e9b9da3c6e06db45
 
-        }
+        //}
 
+<<<<<<< HEAD
+        //[Fact]
+        //public void RetornaStatusNotFoundGetId()
+        //{
+
+        //    int id = 0;
+
+        //    Assert.Throws<NaoEncontradoException>(() => _squadController.GetId(id));
+        //}
+
+        //[Fact]
+        //public void RetornaStatusOKGetName()
+        //{
+
+        //    var nome = "a";
+        //    int valorEsperado = 200;
+
+        //    var actionResult = _squadController.GetName(nome);
+
+        //    var okObjectResult = (OkObjectResult)actionResult;
+
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+=======
   
         [Fact]
         public void RetornaStatusOKGetName()
@@ -80,12 +125,54 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+>>>>>>> 173964ed076d1b5621ba0084e9b9da3c6e06db45
 
-        }
+        //}
 
         //[Fact]
         //public void RetornaStatusOKPost()
         //{
+<<<<<<< HEAD
+  
+        //    int valorEsperado = 201;
+
+        //    var objSquad = new SquadInput()
+        //    {
+        //        Id_tribo = 5,
+        //        Nome = "Teste26",
+        //        Ativo = true
+        //    };
+
+        //    var actionResult = _squadController.Post(objSquad);
+
+        //    var okObjectResult = (CreatedAtRouteResult)actionResult;
+
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+
+        //}
+
+        //[Fact]
+        //public void RetornaStatusOKPut()
+        //{
+        //    int valorEsperado = 202;
+
+        //    int Id = 1;
+
+        //    var objSquad = new SquadInput()
+        //    {
+        //        Id_tribo = 5,
+        //        Ativo = true,
+        //        Nome = "Testando"
+        //    };
+
+        //    var actionResult = _squadController.Put(Id, objSquad);
+
+        //    var okObjectResult = (AcceptedResult)actionResult;
+
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+
+        //}
+=======
 
         //    int valorEsperado = 201;
 
@@ -143,6 +230,7 @@ namespace Vicelulas.Teste.APITeste
         //    Assert.Throws<NaoEncontradoException>(() => _squadController.GetId(0));
         //}
 
+>>>>>>> 173964ed076d1b5621ba0084e9b9da3c6e06db45
 
     }
 }

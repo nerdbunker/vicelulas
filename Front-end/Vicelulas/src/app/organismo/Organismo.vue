@@ -87,15 +87,12 @@ export default {
   // Cada this. atribui a resposta da requisição há um array que ta dentro da função data acima
   mounted () {
     Pessoas.obterPessoa().then(respostaPessoa => {
-      console.log(respostaPessoa)
       this.pessoas = respostaPessoa.data
     })
     Tribos.obterTribo().then(respostaTribo => {
-      console.log(respostaTribo)
       this.tribos = respostaTribo.data
     })
     Squads.obterSquad().then(respostaSquad => {
-      console.log(respostaSquad)
       this.squads = respostaSquad.data
     })
   }

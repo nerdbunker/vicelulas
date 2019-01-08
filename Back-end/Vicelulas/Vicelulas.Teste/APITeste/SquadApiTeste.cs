@@ -10,100 +10,100 @@ namespace Vicelulas.Teste.APITeste
     {
 
 
-        [Fact]
-        public void RetornaStatusOKGetAll()
-        {
+        //[Fact]
+        //public void RetornaStatusOKGetAll()
+        //{
 
-            int valorEsperado = 200;
+        //    int valorEsperado = 200;
 
-            var actionResult = _squadController.Get();
+        //    var actionResult = _squadController.Get();
 
-            var okObjectResult = (OkObjectResult)actionResult;
+        //    var okObjectResult = (OkObjectResult)actionResult;
 
-            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-        }
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        //}
 
-        [Fact]
-        public void RetornaStatusOKGetId()
-        {
+        //[Fact]
+        //public void RetornaStatusOKGetId()
+        //{
 
-            int id = 1;
-            int valorEsperado = 200;
+        //    int id = 1;
+        //    int valorEsperado = 200;
 
-            var actionResult = _squadController.GetId(id);
+        //    var actionResult = _squadController.GetId(id);
 
-            var okObjectResult = (OkObjectResult)actionResult;
+        //    var okObjectResult = (OkObjectResult)actionResult;
 
-            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
 
-        }
+        //}
 
-        [Fact]
-        public void RetornaStatusNotFoundGetId()
-        {
+        //[Fact]
+        //public void RetornaStatusNotFoundGetId()
+        //{
 
-            int id = 0;
+        //    int id = 0;
 
-            Assert.Throws<NaoEncontradoException>(() => _squadController.GetId(id));
-        }
+        //    Assert.Throws<NaoEncontradoException>(() => _squadController.GetId(id));
+        //}
 
-        [Fact]
-        public void RetornaStatusOKGetName()
-        {
+        //[Fact]
+        //public void RetornaStatusOKGetName()
+        //{
 
-            var nome = "a";
-            int valorEsperado = 200;
+        //    var nome = "a";
+        //    int valorEsperado = 200;
 
-            var actionResult = _squadController.GetName(nome);
+        //    var actionResult = _squadController.GetName(nome);
 
-            var okObjectResult = (OkObjectResult)actionResult;
+        //    var okObjectResult = (OkObjectResult)actionResult;
 
-            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
 
-        }
+        //}
 
-        [Fact]
-        public void RetornaStatusOKPost()
-        {
+        //[Fact]
+        //public void RetornaStatusOKPost()
+        //{
   
-            int valorEsperado = 201;
+        //    int valorEsperado = 201;
 
-            var objSquad = new SquadInput()
-            {
-                Id_tribo = 5,
-                Nome = "Teste26",
-                Ativo = true
-            };
+        //    var objSquad = new SquadInput()
+        //    {
+        //        Id_tribo = 5,
+        //        Nome = "Teste26",
+        //        Ativo = true
+        //    };
 
-            var actionResult = _squadController.Post(objSquad);
+        //    var actionResult = _squadController.Post(objSquad);
 
-            var okObjectResult = (CreatedAtRouteResult)actionResult;
+        //    var okObjectResult = (CreatedAtRouteResult)actionResult;
 
-            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
 
-        }
+        //}
 
-        [Fact]
-        public void RetornaStatusOKPut()
-        {
-            int valorEsperado = 202;
+        //[Fact]
+        //public void RetornaStatusOKPut()
+        //{
+        //    int valorEsperado = 202;
 
-            int Id = 1;
+        //    int Id = 1;
 
-            var objSquad = new SquadInput()
-            {
-                Id_tribo = 5,
-                Ativo = true,
-                Nome = "Testando"
-            };
+        //    var objSquad = new SquadInput()
+        //    {
+        //        Id_tribo = 5,
+        //        Ativo = true,
+        //        Nome = "Testando"
+        //    };
 
-            var actionResult = _squadController.Put(Id, objSquad);
+        //    var actionResult = _squadController.Put(Id, objSquad);
 
-            var okObjectResult = (AcceptedResult)actionResult;
+        //    var okObjectResult = (AcceptedResult)actionResult;
 
-            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
 
-        }
+        //}
 
     }
 }

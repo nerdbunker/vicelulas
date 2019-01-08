@@ -141,7 +141,8 @@ namespace Vicelulas.Api.Controllers
             var objPessoa = new Pessoa()
             {
                 Nome = input.Nome,
-                Email = input.Email,    
+                Email = input.Email,
+                Senha = input.Senha,
                 Id_papel = input.Id_papel,
                 Id_unidade = input.Id_unidade,  
                 Id_squad = input.Id_squads,

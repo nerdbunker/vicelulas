@@ -9,7 +9,7 @@ namespace Vicelulas.Dado
 {
     public class PessoaRepositorio : IPessoaRepositorio
     {
-        public IEnumerable<PessoaDto> Selecionar()
+        public  IEnumerable<PessoaDto> Selecionar()
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
@@ -18,7 +18,7 @@ namespace Vicelulas.Dado
                                                         $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
                                                         $"INNER JOIN [TB_squad] S ON P.id_squads = S.id " +
                                                         $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id");
-                return lista;
+                return  lista;
             }
         }
 
@@ -37,7 +37,7 @@ namespace Vicelulas.Dado
             }
         }
 
-        public PessoaDto SelecionarPorEmail(string email)
+        public  PessoaDto SelecionarPorEmail(string email)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
@@ -47,11 +47,11 @@ namespace Vicelulas.Dado
                                                                    $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id " +
                                                                    $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                                    $"WHERE P.email = '{email}'");
-                return obj;
+                return  obj;
             }
         }
 
-        public IEnumerable<PessoaDto> SelecionarPorIdSquad(int id)
+        public  IEnumerable<PessoaDto> SelecionarPorIdSquad(int id)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
@@ -61,11 +61,11 @@ namespace Vicelulas.Dado
                                                                    $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id "+
                                                                    $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                                    $"WHERE S.Id = {id}");
-                return lista;
+                return  lista;
             }
         }
 
-        public IEnumerable<PessoaDto> SelecionarPorNome(string nome)
+        public  IEnumerable<PessoaDto> SelecionarPorNome(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
@@ -76,17 +76,17 @@ namespace Vicelulas.Dado
                                                        $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                        $"WHERE P.Nome LIKE '%{nome}%'");
 
-                return lista;
+                return  lista;
             }
         }
 
-        public PessoaDto SelecionarPorNomeEspecifico(string nome)
+        public  PessoaDto SelecionarPorNomeEspecifico(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_login, P.Id_Papel, P.Nome, P.email, P.Ativo, P.id_squads , P.id_unidade, P.permissao FROM [TB_pessoa] P " +
                                                                     $"WHERE P.Nome = '{nome}'");
-                return obj;
+                return  obj;
             }
         }
 
@@ -99,6 +99,7 @@ namespace Vicelulas.Dado
                                                    $"VALUES({entity.Id_papel}, " +
                                                    $"'{entity.Nome}', " +
                                                    $"'{entity.Email}', " +
+                                                   $"'{entity.Senha}', " +
                                                    $"'{entity.Ativo}'," +
                                                    $"{entity.Id_squad}," +
                                                    $"{entity.Id_unidade}," +
@@ -116,6 +117,7 @@ namespace Vicelulas.Dado
                                       $"SET Id_papel = {entity.Id_papel},"+                          
                                       $"Nome = '{entity.Nome}'," +
                                       $"Email = '{entity.Email}'," +
+                                      $"Senha = '{entity.Senha}'," +
                                       $"Ativo = '{entity.Ativo}'," +
                                       $"Id_squads = {entity.Id_squad}," +
                                       $"Id_unidade = {entity.Id_unidade}," +
@@ -133,7 +135,7 @@ namespace Vicelulas.Dado
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
 
-                connection.Execute($"UPDATE [TB_pessoa]" +
+                var obj = connection.Execute($"UPDATE [TB_pessoa]" +
                                    $"SET Ativo = '{ativo}' " +
                                    $"WHERE Id = {id}");
             }

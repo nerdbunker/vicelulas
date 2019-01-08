@@ -74,10 +74,7 @@
               <td>{{ props.item.unidade }}</td>
               <td>{{ props.item.squadNome }}</td>
               <td>{{ props.item.triboNome }}</td>
-              <td>
-                <div v-if="props.item.ativo === true">Sim</div>
-                <div v-else>Não</div>
-              </td>
+              <td>{{ props.item.ativo ? 'Sim':'Não'}}</td>
               <td>
               <v-icon
                 small
@@ -166,6 +163,12 @@ export default {
   },
 
   methods: {
+    listarPessoas () {
+      this.initialize()
+      Pessoas.obterPessoa().then(respostaPessoa => {
+        this.pessoas = respostaPessoa.data
+      })
+    },
     initialize () {
       this.pessoas = []
     },
@@ -189,7 +192,9 @@ export default {
       confirm(msg) &&
       // Ativa/Desativa da API
       Pessoas.mudarAtivoPessoa(item.id)
-      this.reloadPage()
+      console.log('Listei');
+      this.listarPessoas()
+      // this.reloadPage()
       // Remove da lista do Front
       // this.pessoas.splice(index, 1)
     },
@@ -205,24 +210,17 @@ export default {
         Object.assign(this.pessoas[this.editedIndex], this.pessoaInput)
         this.pessoas.push(this.pessoaInput)
         Pessoas.alterarPessoa(this.pessoaInput.id, this.pessoaInput)
-        this.reloadPage()
       } else {
+        console.log(this.pessoaInput)
         this.pessoas.push(this.pessoaInput)
+        console.log(this.pessoaInput)
         Pessoas.inserirPessoa(this.pessoaInput)
-        this.reloadPage()
       }
       this.close()
     }
   },
   mounted () {
-    Pessoas.obterPessoa().then(respostaPessoa => {
-      console.log(respostaPessoa)
-      this.pessoas = respostaPessoa.data
-    })
-    Pessoas.obterPessoaPorId().then(respostaPessoaId => {
-      console.log(respostaPessoaId)
-      this.pessoasId = respostaPessoaId
-    })
+    this.listarPessoas()
     Papel.obterPapel().then(respostaPapel => {
       console.log(respostaPapel.data)
       this.Papel = respostaPapel.data

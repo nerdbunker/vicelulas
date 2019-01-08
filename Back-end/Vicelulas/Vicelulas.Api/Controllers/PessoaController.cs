@@ -154,7 +154,7 @@ namespace Vicelulas.Api.Controllers
 
             var id = _pessoaNegocio.Inserir(objPessoa);
 
-            //Refenciar Rota
+            objPessoa.Id = id;
             return CreatedAtRoute(routeName: "PessoaGetId", routeValues: new { id = objPessoa.Id }, value: objPessoa);
         }
 

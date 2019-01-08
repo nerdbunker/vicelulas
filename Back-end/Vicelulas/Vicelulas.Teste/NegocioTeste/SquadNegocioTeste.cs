@@ -109,8 +109,6 @@ namespace Vicelulas.Teste.NegocioTeste
             // Assert
             // Act + Assert
             Assert.Throws<NaoEncontradoException>(() => _squadNegocio.SelecionarPorNome(nome));
-
-
         }
 
         [Fact]

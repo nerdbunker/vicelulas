@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Vicelulas.Dominio.Dto;
 using Vicelulas.Dominio;
+using System;
 
 namespace Vicelulas.Negocio
 {

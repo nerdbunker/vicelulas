@@ -144,6 +144,7 @@ export default {
     save () {
       if (this.editedIndex > -1) {
         Object.assign(this.tribos[this.editedIndex], this.editedItem)
+        Tribos.alterarTribo(this.editedItem.id, this.editedItem)
       } else {
         this.tribos.push(this.editedItem)
         Tribos.inserirTribo(this.editedItem)
@@ -153,7 +154,6 @@ export default {
   },
   mounted () {
     Tribos.obterTribo().then(respostaTribo => {
-      console.log(respostaTribo)
       this.tribos = respostaTribo.data
     })
   }

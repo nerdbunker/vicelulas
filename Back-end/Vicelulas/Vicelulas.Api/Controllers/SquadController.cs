@@ -138,6 +138,7 @@ namespace Vicelulas.Api.Controllers
         {
             var objSquad = new Squad()
             {
+                Id = id,
                 Nome = input.Nome,
                 Id_tribo = input.Id_tribo
             };

@@ -98,12 +98,13 @@ namespace Vicelulas.Api.Controllers
         {
             var objPessoa = new Pessoa()
             {
+                Id = id,
                 Nome = input.Nome,
                 Email = input.Email,
                 Id_squad = input.Id_squads,
                 Id_papel = input.Id_papel,
                 Id_unidade = input.Id_unidade,
-                Permissao = 1,
+                Permissao = input.Permissao,
                 Ativo = true
             };
 
@@ -141,12 +142,13 @@ namespace Vicelulas.Api.Controllers
             var objPessoa = new Pessoa()
             {
                 Nome = input.Nome,
-                Email = input.Email,    
+                Email = input.Email,
+                Senha = "123Aa321",
                 Id_papel = input.Id_papel,
                 Id_unidade = input.Id_unidade,  
                 Id_squad = input.Id_squads,
                 Ativo = true,
-                Permissao =  1 
+                Permissao =  input.Permissao 
 
             };
 

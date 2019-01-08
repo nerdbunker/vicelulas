@@ -75,12 +75,12 @@ VALUES (cargo);
 
 MERGE INTO TB_tribo AS Target USING (VALUES
 
-	(1, 'Brinks ', 1),
-	(2, 'Evo. MAPFRE ', 1),
-	(3, 'Finamax   ', 1),
-	(4, 'MAPFRE ', 1),
-	(5, 'Formação ', 1),
-	(6, 'Produtos ', 1),
+	(1, 'Brinks', 1),
+	(2, 'Evo. MAPFRE', 1),
+	(3, 'Finamax', 1),
+	(4, 'MAPFRE', 1),
+	(5, 'Formação', 1),
+	(6, 'Produtos', 1),
 	(7, 'Consultoria',1)
 	
 
@@ -91,122 +91,13 @@ INSERT (nome, ativo)
 VALUES (nome, ativo);
 
 
-/*		 INSERTS TB_login		*/
-
-
---MERGE INTO TB_login AS Target USING (VALUES
-
---(1, 'viceri1', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(2, 'viceri2', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(3, 'viceri3', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(4, 'viceri4 ', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(5, 'viceri5 ', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(6, 'viceri6', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(7, 'viceri7', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(8, 'viceri8', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(9, 'viceri9', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(10, 'viceri10', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(11, 'viceri11', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(12, 'viceri12', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(13, 'viceri13', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(14, 'viceri14', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(15, 'viceri15', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(16, 'viceri16', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(17, 'viceri17', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(18, 'viceri18', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(19, 'viceri19', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(20, 'viceri20', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(21, 'viceri21', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(22, 'viceri22', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(23, 'viceri23', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(24, 'viceri24', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(25, 'viceri25', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(26, 'viceri26', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(27, 'viceri27', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(28, 'viceri28', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(29, 'viceri29', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(30, 'viceri30', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(31, 'viceri31', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(32, 'viceri32', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(33, 'viceri33', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(34, 'viceri34', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(35, 'viceri35', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(36, 'viceri36', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(37, 'viceri37', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(38, 'viceri38', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(39, 'viceri39', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(40, 'viceri40', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(41, 'viceri41', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(42, 'viceri42', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(43, 'viceri43', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(44, 'viceri44', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(45, 'viceri45', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(46, 'viceri46', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(47, 'viceri47', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(48, 'viceri48', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(49, 'viceri49', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(50, 'viceri50', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(51, 'viceri51', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(52, 'viceri52', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(53, 'viceri53', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(54, 'viceri54', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(55, 'viceri55', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(56, 'viceri56', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(57, 'viceri57', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(58, 'viceri58', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(59, 'viceri59', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(60, 'viceri60', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(61, 'viceri61', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(62, 'viceri62', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(63, 'viceri63', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(64, 'viceri64', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(65, 'viceri65', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(66, 'viceri66', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(67, 'viceri67', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(68, 'viceri68', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(69, 'viceri69', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(70, 'viceri70', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(71, 'viceri71', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(72, 'viceri72', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(73, 'viceri73', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(74, 'viceri74', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(75, 'viceri75', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(76, 'viceri76', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(77, 'viceri77', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(78, 'viceri78', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(79, 'viceri79', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(80, 'viceri80', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(81, 'viceri81', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(82, 'viceri82', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(83, 'viceri83', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(84, 'viceri84', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(85, 'viceri85', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(86, 'viceri86', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(87, 'viceri87', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(88, 'viceri88', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(89, 'viceri89', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(90, 'viceri90', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(91, 'viceri91', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(92, 'viceri92', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(93, 'viceri93', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(94, 'viceri94', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM='),
---(95, 'viceri95', 'z2A8fvNuPehbViYpKNR9CBFGoSOAQwXMbBSmI5g4hwM=')
-	
-
---)AS SOURCE (id, username, password)
---ON Target.id = Source.id
---WHEN NOT MATCHED BY TARGET THEN 
---INSERT (username, password) 
---VALUES (username, password);
-
-
 /*		 INSERTS TB_squad		*/
 
 
 MERGE INTO TB_squad AS Target USING (VALUES
 
 (1, null, 'Sequoia', 1),
-(2, 7, 'Gestão e Negócios', 1),
+(2, 7,	  'Gestão e Negócios', 1),
 (3, null, 'Passarela', 1),
 (4, null, 'Unibanco', 1),
 (6, 5,    'Nerd Bunker', 1),

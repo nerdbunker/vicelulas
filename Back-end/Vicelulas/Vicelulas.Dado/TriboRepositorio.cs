@@ -9,12 +9,12 @@ namespace Vicelulas.Dado
 {
     public class TriboRepositorio : ITriboRepositorio
     {
-        public IEnumerable<TriboDto> Selecionar()
+        public  IEnumerable<TriboDto> Selecionar()
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var lista = connection.Query<TriboDto>($"SELECT T.Id, T.Nome ,T.Ativo FROM [TB_tribo] T");
-                return lista;
+                return  lista;
             }
         }
 
@@ -27,22 +27,22 @@ namespace Vicelulas.Dado
             }
         }
 
-        public TriboDto SelecionarPorNomeEspecifico(string nome)
+        public  TriboDto SelecionarPorNomeEspecifico(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var obj = connection.QueryFirstOrDefault<TriboDto>($"SELECT T.Id, T.Nome ,T.Ativo FROM [TB_tribo] T WHERE T.Nome = '{nome}'");
-                return obj;
+                return  obj;
             }
         }
 
-        public IEnumerable<TriboDto> SelecionarPorNome(string nome)
+        public  IEnumerable<TriboDto> SelecionarPorNome(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var lista = connection.Query<TriboDto>($"SELECT T.Id, T.Nome, T.Ativo FROM [TB_tribo] T WHERE T.Nome LIKE '%{nome}%'");
 
-                return lista;
+                return  lista;
             }
         }
 

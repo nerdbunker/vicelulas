@@ -110,6 +110,7 @@ namespace Vicelulas.Api.Controllers
         {
             var objTribo = new Tribo()
             {
+                Id = id,
                 Ativo = input.Ativo,
                 Nome = input.Nome
             };

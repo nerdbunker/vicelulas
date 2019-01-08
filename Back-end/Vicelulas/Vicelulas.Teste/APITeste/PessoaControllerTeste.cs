@@ -14,7 +14,10 @@ namespace Vicelulas.Teste.APITeste
         //[Fact]
         //public void RetornaStatusOKGetAll()
         //{
+<<<<<<< HEAD
+=======
            
+>>>>>>> 173964ed076d1b5621ba0084e9b9da3c6e06db45
 
         //    int valorEsperado = 200;
 

@@ -12,6 +12,8 @@
 
         public string Email { get; set; }
 
+        public string Senha { get; set; }
+
         public bool Ativo { get; set; }
 
         public int Id_squad { get; set; }

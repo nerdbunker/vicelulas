@@ -16,9 +16,9 @@ namespace Vicelulas.Negocio
             this._squadRepositorio = _squadRepositorio;
         }
 
-        public IEnumerable<SquadDto> Selecionar()
+        public  IEnumerable<SquadDto> Selecionar()
         {
-            return _squadRepositorio.Selecionar();
+            return  _squadRepositorio.Selecionar();
         }
 
         /// <param name="id"></param>
@@ -29,34 +29,34 @@ namespace Vicelulas.Negocio
             if (obj == null)
                 throw new NaoEncontradoException("Squad não encontrada !");
 
-            return obj;
+            return  obj;
         }
 
         /// <param name="nome"></param>
-        public IEnumerable<SquadDto> SelecionarPorNome(string nome)
+        public  IEnumerable<SquadDto> SelecionarPorNome(string nome)
         {
             var lista = _squadRepositorio.SelecionarPorNome(nome);
 
             if (lista == null)
                 throw new NaoEncontradoException("Não foi encontrada nenhuma squad com esse nome !");
 
-            return lista;
+            return  lista;
         }
 
-        public IEnumerable<SquadDto> SelecionarSquadsSemTribo()
+        public  IEnumerable<SquadDto> SelecionarSquadsSemTribo()
         {
            return _squadRepositorio.SelecionarSquadsSemTribo();
         }
 
         /// <param name="id"></param>
-        public IEnumerable<SquadDto> SelecionarPorIdTribo(int id)
+        public  IEnumerable<SquadDto> SelecionarPorIdTribo(int id)
         {
             var lista = _squadRepositorio.SelecionarPorIdTribo(id);
 
             if (lista == null)
                 throw new NaoEncontradoException("Não foi encontrada nenhuma squad dessa tribo !");
 
-            return lista;
+            return  lista;
         }
 
         /// <param name="entity"></param>
@@ -74,7 +74,7 @@ namespace Vicelulas.Negocio
         }
 
         /// <param name="Id, entity"></param>
-        public SquadDto Alterar(int Id, Squad entity)
+        public  SquadDto Alterar(int Id, Squad entity)
         {
             var idExistente = _squadRepositorio.SelecionarPorId(Id);
 
@@ -84,13 +84,13 @@ namespace Vicelulas.Negocio
 
             var NomeExistente = _squadRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 
-            if (NomeExistente != null)
+            if (NomeExistente != null && idExistente.Id != entity.Id)
                 throw new ConflitoException($"Já existe uma Squad cadastrada com este nome {entity.Nome}!");
 
             entity.Id = Id;
             _squadRepositorio.Alterar(entity);
 
-            return _squadRepositorio.SelecionarPorId(Id);
+            return  _squadRepositorio.SelecionarPorId(Id);
         }
 
         /// <param name="Id, entity"></param>
@@ -110,7 +110,7 @@ namespace Vicelulas.Negocio
             entity.Id = Id;
             _squadRepositorio.AlterarStatus(entity);
 
-            return _squadRepositorio.SelecionarPorId(Id);
+            return  _squadRepositorio.SelecionarPorId(Id);
         }
 
         /// <param name="Id"></param>

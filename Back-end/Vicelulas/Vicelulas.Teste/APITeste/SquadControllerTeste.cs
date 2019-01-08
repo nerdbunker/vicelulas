@@ -17,9 +17,13 @@ namespace Vicelulas.Teste.APITeste
 {
     public class SquadControllerTeste
     {
+
         [Fact]
         public void RetornaStatusOKGetAll()
         {
+
+
+
 
             // Arrange
             int valorEsperado = 200;
@@ -69,7 +73,6 @@ namespace Vicelulas.Teste.APITeste
             repoMock.Verify(call, Times.Once);
         }
 
-  
         [Fact]
         public void RetornaStatusOKGetName()
         {

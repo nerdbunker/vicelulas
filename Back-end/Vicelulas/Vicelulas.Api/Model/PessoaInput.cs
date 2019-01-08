@@ -1,4 +1,6 @@
-﻿namespace Vicelulas.Api.Model
+﻿using Vicelulas.Dominio;
+
+namespace Vicelulas.Api.Model
 {
     public class PessoaInput
     {
@@ -8,6 +10,7 @@
         public int Id_squads { get; set; }
         public int Id_unidade { get; set; }
         public int Id_papel { get; set; }
+        public int Permissao { get; set; }
 
     }
 }

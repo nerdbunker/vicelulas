@@ -17,7 +17,7 @@ namespace Vicelulas.Dado
                                                         $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                         $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
                                                         $"INNER JOIN [TB_squad] S ON P.id_squads = S.id " +
-                                                        $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id");
+                                                        $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id");
                 return  lista;
             }
         }
@@ -31,7 +31,7 @@ namespace Vicelulas.Dado
                                                                    $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                                    $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id "+
                                                                    $"INNER JOIN [TB_squad] S ON P.id_squads = S.id " +
-                                                                   $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
+                                                                   $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                                    $"WHERE P.Id = {id}");
                 return obj;
             }
@@ -45,7 +45,7 @@ namespace Vicelulas.Dado
                                                                    $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                                    $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
                                                                    $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id " +
-                                                                   $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
+                                                                   $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                                    $"WHERE P.email = '{email}'");
                 return  obj;
             }
@@ -59,7 +59,7 @@ namespace Vicelulas.Dado
                                                                    $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                                    $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
                                                                    $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id "+
-                                                                   $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
+                                                                   $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                                    $"WHERE S.Id = {id}");
                 return  lista;
             }
@@ -73,7 +73,7 @@ namespace Vicelulas.Dado
                                                        $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                        $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
                                                        $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id " +
-                                                       $"INNER JOIN [TB_tribo] T ON S.id_tribo = T.id " +
+                                                       $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id " +
                                                        $"WHERE P.Nome LIKE '%{nome}%'");
 
                 return  lista;
@@ -95,7 +95,7 @@ namespace Vicelulas.Dado
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 return connection.QuerySingle<int>($"DECLARE @Id int;" +
-                                                   $"INSERT INTO [TB_pessoa] (Id_papel, Nome, Email, Ativo, Id_squads, Id_unidade, Permissao) " +
+                                                   $"INSERT INTO [TB_pessoa] (Id_papel, Nome, Email, password, ativo, Id_squads, Id_unidade, Permissao) " +
                                                    $"VALUES({entity.Id_papel}, " +
                                                    $"'{entity.Nome}', " +
                                                    $"'{entity.Email}', " +
@@ -117,7 +117,7 @@ namespace Vicelulas.Dado
                                       $"SET Id_papel = {entity.Id_papel},"+                          
                                       $"Nome = '{entity.Nome}'," +
                                       $"Email = '{entity.Email}'," +
-                                      $"Senha = '{entity.Senha}'," +
+                                      $"Password = '{entity.Senha}'," +
                                       $"Ativo = '{entity.Ativo}'," +
                                       $"Id_squads = {entity.Id_squad}," +
                                       $"Id_unidade = {entity.Id_unidade}," +

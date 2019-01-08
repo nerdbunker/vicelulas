@@ -3,6 +3,7 @@ using Vicelulas.Dominio.Exceções;
 using Vicelulas.Dado;
 using Vicelulas.Dominio;
 using Vicelulas.Dominio.Dto;
+using Vicelulas.Dominio.Seguranca;
 
 namespace Vicelulas.Negocio
 {
@@ -66,6 +67,8 @@ namespace Vicelulas.Negocio
             if (EmailExistente != null)
                 throw new ConflitoException($"Já existe uma Pessoa cadastrada com este Email {entity.Email}!");
 
+            entity.Senha = PasswordHash.Create(entity.Senha);
+
             return _pessoaRepositorio.Inserir(entity);
         }
 
@@ -91,6 +94,7 @@ namespace Vicelulas.Negocio
                 throw new ConflitoException($"Já esxiste uma pessoa cadastrada com este email {entity.Email}!");
 
             entity.Id = Id;
+            entity.Senha = PasswordHash.Create(entity.Senha);
             _pessoaRepositorio.Alterar(entity);
 
             return  _pessoaRepositorio.SelecionarPorId(Id);

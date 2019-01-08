@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Api.Controllers;
 using Vicelulas.Dominio.Exceções;
 using Vicelulas.Api.Model;
+using Moq;
+using Vicelulas.Negocio;
 
 namespace Vicelulas.Teste.APITeste
 {
@@ -12,6 +14,10 @@ namespace Vicelulas.Teste.APITeste
         //[Fact]
         //public void RetornaStatusOKGetAll()
         //{
+<<<<<<< HEAD
+=======
+           
+>>>>>>> 173964ed076d1b5621ba0084e9b9da3c6e06db45
 
         //    int valorEsperado = 200;
 

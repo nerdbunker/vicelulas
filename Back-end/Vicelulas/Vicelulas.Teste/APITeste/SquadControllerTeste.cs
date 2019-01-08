@@ -7,13 +7,16 @@ using Vicelulas.Negocio;
 using Moq;
 using Vicelulas.DBMock;
 using Vicelulas.Dominio.Dto;
+using Vicelulas.Dado;
+using System.Linq.Expressions;
+using System;
+using Vicelulas.Dominio;
+using System.Collections.Generic;
 
 namespace Vicelulas.Teste.APITeste
 {
-    public class SquadApiTeste
+    public class SquadControllerTeste
     {
-
-
         [Fact]
         public void RetornaStatusOKGetAll()
         {
@@ -22,7 +25,9 @@ namespace Vicelulas.Teste.APITeste
             int valorEsperado = 200;
 
             var repoMock = new Mock<ISquadNegocio>();
-            repoMock.Setup(m => m.Selecionar()).Returns(DbMock.Squad);
+
+            Expression<Func<ISquadNegocio, IEnumerable<SquadDto>>> call = x => x.Selecionar();
+            repoMock.Setup(call).Returns(DbMock.Squad);
             var _squadController = new SquadController(repoMock.Object);
 
             // Act
@@ -49,7 +54,8 @@ namespace Vicelulas.Teste.APITeste
                 Ativo = true
             };
             var repoMock = new Mock<ISquadNegocio>();
-            repoMock.Setup(m => m.SelecionarPorId(squad.Id)).Returns(squad);
+            Expression<Func<ISquadNegocio, SquadDto>> call = x => x.SelecionarPorId(squad.Id);
+            repoMock.Setup(call).Returns(squad).Verifiable("Metodo nao chamado");
             var _squadController = new SquadController(repoMock.Object);
 
 
@@ -59,7 +65,8 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
+      
+            repoMock.Verify(call, Times.Once);
         }
 
   
@@ -67,19 +74,28 @@ namespace Vicelulas.Teste.APITeste
         public void RetornaStatusOKGetName()
         {
             // Arrange
-            var nome = "NerdBunker";
+           
             int valorEsperado = 200;
 
+            var Nome = "NerdBunker";        
+
             var repoMock = new Mock<ISquadNegocio>();
-            repoMock.Setup(m => m.SelecionarPorNome(nome)).Returns(DbMock.Squad);
+            repoMock.Setup(x => x.SelecionarPorNome(Nome)).Returns(DbMock.Squad);
+
             var _squadController = new SquadController(repoMock.Object);
 
             // Act
-            var actionResult = _squadController.GetName(nome);
+            var actionResult = _squadController.GetName(Nome);
             var okObjectResult = (OkObjectResult)actionResult;
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+
+        }
+
+        [Fact]
+        public void MocaEventoAposAcao()
+        {
 
         }
 

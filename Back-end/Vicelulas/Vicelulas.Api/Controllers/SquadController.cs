@@ -61,6 +61,7 @@ namespace Vicelulas.Api.Controllers
         public IActionResult GetId(int id)
         {
             var obj = _squadNegocio.SelecionarPorId(id);
+         
 
             return Ok(obj);
         }

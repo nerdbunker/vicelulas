@@ -40,6 +40,7 @@ namespace Vicelulas.DBMock
                 new SquadDto { Id = NovoId, Id_Tribo = Tribo[5].Id , Nome = "Alpha Noob", NomeTribo = Tribo[5].Nome, Ativo = false },
 
             };
+
         }
     }
 }

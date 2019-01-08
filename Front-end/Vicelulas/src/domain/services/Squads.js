@@ -9,15 +9,15 @@ export default {
     return http.get('Squad/' + id)
   },
   obterSquadPorIdTribo: (id) => {
-    return http.get('Squad/tribo/' + id)
+    return http.get('Squad/Tribo/' + id)
   },
   // Altera as info da Squad
   alterarSquad: () => {
     return http.put('Squad')
   },
   // Inseri novas Squads
-  inserirSquad: () => {
-    return http.post('Squad')
+  inserirSquad: (Squad) => {
+    return http.post('Squad', Squad)
   },
   // Altera o status, ativando e desativando as Squads
   desativarSquad: () => {

@@ -9,15 +9,15 @@ export default {
     return http.get('Tribo/' + id)
   },
   // Altera as info da Tribo
-  alterarTribo: () => {
-    return http.put('Tribo')
+  alterarTribo: (id, tribo) => {
+    return http.put('Tribo/' + id, tribo)
   },
   // Inseri novas Tribos
-  inserirTribo: () => {
-    return http.post('Tribo')
+  inserirTribo: (Tribo) => {
+    return http.post('Tribo', Tribo)
   },
   // Altera o status, ativando e desativando as Tribos
-  desativarTribo: () => {
-    return http.patch('Tribo')
+  desativaTribo: (id) => {
+    return http.put('Tribo/MudarAtivo/' + id)
   }
 }

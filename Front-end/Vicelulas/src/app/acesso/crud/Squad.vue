@@ -22,9 +22,11 @@
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
-                          :items="items"
-                          v-model="editedItem.nomeTribo"
-                          label="Tribo"
+                          item-text="nome"
+                          item-value="id"
+                          :items="Tribos"
+                          v-model="editedItem.id_Tribo"
+                          label="Unidade"
                         ></v-select>
                       </v-flex>
                     </v-layout>
@@ -47,6 +49,7 @@
             <template slot="items" slot-scope="props">
               <td>{{ props.item.nome }}</td>
               <td>{{ props.item.nomeTribo }}</td>
+              <td>{{props.item.ativo?'Sim':'Não'}}</td>
               <td>
               <v-icon
                 small
@@ -75,6 +78,7 @@
 
 <script>
 import Squads from '../../../domain/services/Squads'
+import Tribo from '../../../domain/services/Tribos'
 
 export default {
   data: () => ({
@@ -88,11 +92,13 @@ export default {
         value: 'nome'
       },
       { text: 'Tribo', value: 'tribo' },
+      {text: 'Ativo?', value: 'ativo'},
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
     editedItem: {
       nome: '',
+      id_Tribo: '',
       nomeTribo: ''
     },
     defaultItem: {
@@ -147,6 +153,7 @@ export default {
       if (this.editedIndex > -1) {
         Object.assign(this.squads[this.editedIndex], this.editedItem)
       } else {
+        Squads.inserirSquad(this.editedItem)
         this.squads.push(this.editedItem)
       }
       this.close()
@@ -154,8 +161,10 @@ export default {
   },
   mounted () {
     Squads.obterSquad().then(respostaSquad => {
-      console.log(respostaSquad)
       this.squads = respostaSquad.data
+    })
+    Tribo.obterTribo().then(respostaTribo => {
+      this.Tribos = respostaTribo.data
     })
   }
 }

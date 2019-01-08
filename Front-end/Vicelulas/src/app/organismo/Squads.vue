@@ -51,7 +51,6 @@ export default {
   },
   mounted () {
     Squads.obterSquadPorIdTribo(this.$route.params.id).then(resposta => {
-      console.log(resposta)
       this.squads = resposta.data
     })
   }

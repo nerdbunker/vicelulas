@@ -21,10 +21,6 @@ namespace Vicelulas.Teste.APITeste
         [Fact]
         public void RetornaStatusOKGetAll()
         {
-
-
-
-
             // Arrange
             int valorEsperado = 200;
 
@@ -101,67 +97,6 @@ namespace Vicelulas.Teste.APITeste
         {
 
         }
-
-        //[Fact]
-        //public void RetornaStatusOKPost()
-        //{
-
-        //    int valorEsperado = 201;
-
-        //    var objSquad = new SquadInput()
-        //    {
-        //        Id_tribo = 5,
-        //        Nome = "Teste26",
-        //        Ativo = true
-        //    };
-
-        //    var actionResult = _squadController.Post(objSquad);
-
-        //    var okObjectResult = (CreatedAtRouteResult)actionResult;
-
-        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
-        //}
-
-        //[Fact]
-        //public void RetornaStatusOKPut()
-        //{
-        //    int valorEsperado = 202;
-
-        //    int Id = 1;
-
-        //    var objSquad = new SquadInput()
-        //    {
-        //        Id_tribo = 5,
-        //        Ativo = true,
-        //        Nome = "Testando"
-        //    };
-
-        //    var actionResult = _squadController.Put(Id, objSquad);
-
-        //    var okObjectResult = (AcceptedResult)actionResult;
-
-        //    Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
-        //}
-
-        //[Fact]
-        //public void RetornaStatusNotFoundGetId()
-        //{
-
-        //    Mock
-        //    var squad = new SquadDto();
-
-        //    var repoMock = new Mock<ISquadNegocio>();
-        //    repoMock.Setup(m => m.SelecionarPorId(0)).Returns(squad);
-        //    var _squadController = new SquadController(repoMock.Object);
-
-
-
-        //    Controller Action
-        //    Assert.Throws<NaoEncontradoException>(() => _squadController.GetId(0));
-        //}
-
 
     }
 }

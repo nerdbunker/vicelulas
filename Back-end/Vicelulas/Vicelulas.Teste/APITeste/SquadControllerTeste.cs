@@ -66,7 +66,6 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-      
             repoMock.Verify(call, Times.Once);
         }
 
@@ -89,7 +88,6 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
         }
 
         [Fact]
@@ -101,7 +99,6 @@ namespace Vicelulas.Teste.APITeste
             {
                 Id_tribo = 1,
                 Nome = "Teste"
-               
             };
 
             var repoMock = new Mock<ISquadNegocio>();
@@ -114,26 +111,6 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-        }
-
-        [Fact]
-        public void Retorna_Execao_Quando_Post_Nome_For_Vazio_Ou_Nulo()
-        {
-            // Arrange
-            var squad = new Squad
-            {
-                Id = 0,
-                Id_tribo = 0,
-                Nome = null,
-                Ativo = false
-            };
-
-            var repoMock = new Mock<ISquadRepositorio>();
-
-            var SquadNull = new SquadNegocio(repoMock.Object);
-
-            // Assert
-            Assert.Throws<ConflitoException>(() => SquadNull.Inserir(squad));
         }
 
         [Fact]

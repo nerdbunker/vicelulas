@@ -70,7 +70,6 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
             repoMock.Verify(call, Times.Once);
         }
 
@@ -94,10 +93,106 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
             repoMock.Verify(call, Times.Once);
         }
 
+        [Fact]
+        public void RetornaStatusOKGetName()
+        {
+            // Arrange
+            int valorEsperado = 200;
 
+            var Nome = "Pedro Aviador";
+
+            var repoMock = new Mock<IPessoaNegocio>();
+            Expression<Func<IPessoaNegocio, IEnumerable<PessoaDto>>> call = x => x.SelecionarPorNome(Nome);
+            repoMock.Setup(call).Returns(DbMock.Pessoa).Verifiable("Metodo nao chamado");
+            var _pessoaController = new PessoaController(repoMock.Object);
+
+            // Act
+            var actionResult = _pessoaController.GetName(Nome);
+            var okObjectResult = (OkObjectResult)actionResult;
+
+            // Assert
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+            repoMock.Verify(call, Times.Once);
+        }
+
+        [Fact]
+        public void RetornaStatusAcceptedPut()
+        {
+            // Arrange
+            int valorEsperado = 202;
+
+            var Id = 2;
+            var pessoa = new PessoaInput()
+            {
+                Nome = "Fernando",
+                Email = "fsilva@viceri.com",
+                Id_papel = 2,
+                Id_squads = 2,
+                Id_unidade = 1,
+                Permissao = 2,
+                Senha = "321"
+            };
+
+            var repoMock = new Mock<IPessoaNegocio>();
+
+            var _pessoaController = new PessoaController(repoMock.Object);
+
+            // Act
+            var actionResult = _pessoaController.Put(Id, pessoa);
+            var okObjectResult = (AcceptedResult)actionResult;
+
+            // Assert
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        }
+
+        [Fact]
+        public void RetornaStatusAcceptedPutDesativar()
+        {
+            // Arrange
+            int valorEsperado = 202;
+
+            var Id = 1;
+
+            var repoMock = new Mock<IPessoaNegocio>();
+
+            var _pessoaController = new PessoaController(repoMock.Object);
+
+            // Act
+            var actionResult = _pessoaController.PutDesativar(Id);
+            var okObjectResult = (AcceptedResult)actionResult;
+
+            // Assert
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        }
+
+        [Fact]
+        public void RetornaStatusCreatedPost()
+        {
+            int valorEsperado = 201;
+
+            var pessoa = new PessoaInput()
+            {
+                Nome = "Brito",
+                Email = "mbrito@viceri.com",
+                Id_papel = 1,
+                Id_squads = 1,
+                Id_unidade = 1,
+                Permissao = 1
+            };
+
+            var repoMock = new Mock<IPessoaNegocio>();
+
+            var _pessoaController = new PessoaController(repoMock.Object);
+
+            // Act
+            var actionResult = _pessoaController.Cadastrar(pessoa);
+            var okObjectResult = (CreatedAtRouteResult)actionResult;
+
+            // Assert
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        }
     }
 }

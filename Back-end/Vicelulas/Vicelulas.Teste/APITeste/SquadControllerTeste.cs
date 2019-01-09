@@ -106,7 +106,6 @@ namespace Vicelulas.Teste.APITeste
 
             var repoMock = new Mock<ISquadNegocio>();
 
-
             var _squadController = new SquadController(repoMock.Object);
 
             // Act

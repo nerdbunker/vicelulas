@@ -7,6 +7,7 @@ namespace Vicelulas.DBMock
     {
         public static List<TriboDto> Tribo { get; set; }
         public static List<SquadDto> Squad { get; set; }
+        public static List<PessoaDto> Pessoa { get; set; }
 
         private static int _NovoId { get; set; }
         public static int NovoId
@@ -41,6 +42,83 @@ namespace Vicelulas.DBMock
 
             };
 
+            Pessoa = new List<PessoaDto>
+            {
+                new PessoaDto {
+                    Id = NovoId,
+                    Id_Papel = 1,
+                    Nome = "Pedro Aviador",
+                    Email = "Pedro@viceri.com",
+                    Cargo = "Estagiario",
+                    Ativo = true,
+                    Id_Squads = Squad[0].Id,
+                    Id_Tribo = Tribo[0].Id,
+                    Id_Unidade = 1,
+                    Permissao = 1,
+                    SquadNome = Squad[0].Nome,
+                    TriboNome= Tribo[0].Nome,
+                    Unidade = "General Osorio" },
+
+                new PessoaDto {
+                    Id = NovoId,
+                    Id_Papel = 1,
+                    Nome = "Isac Patinete",
+                    Email = "Isac@viceri.com",
+                    Cargo = "Estagiario",
+                    Ativo = true,
+                    Id_Squads = Squad[0].Id,
+                    Id_Tribo = Tribo[0].Id,
+                    Id_Unidade = 1,
+                    Permissao = 1,
+                    SquadNome = Squad[0].Nome,
+                    TriboNome= Tribo[0].Nome,
+                    Unidade = "General Osorio" },
+
+                new PessoaDto {
+                    Id = NovoId,
+                    Id_Papel = 1,
+                    Nome = "Fernando Pleno",
+                    Email = "Fernando@viceri.com",
+                    Cargo = "Estagiario",
+                    Ativo = true,
+                    Id_Squads = Squad[0].Id,
+                    Id_Tribo = Tribo[0].Id,
+                    Id_Unidade = 1,
+                    Permissao = 1,
+                    SquadNome = Squad[0].Nome,
+                    TriboNome= Tribo[0].Nome,
+                    Unidade = "General Osorio" },
+
+                new PessoaDto {
+                    Id = NovoId,
+                    Id_Papel = 1,
+                    Nome = "Lucas Tumulo",
+                    Email = "Lucas@viceri.com",
+                    Cargo = "Estagiario",
+                    Ativo = true,
+                    Id_Squads = Squad[0].Id,
+                    Id_Tribo = Tribo[0].Id,
+                    Id_Unidade = 1,
+                    Permissao = 1,
+                    SquadNome = Squad[0].Nome,
+                    TriboNome= Tribo[0].Nome,
+                    Unidade = "General Osorio" },
+
+                new PessoaDto {
+                    Id = NovoId,
+                    Id_Papel = 1,
+                    Nome = "Britao",
+                    Email = "brito@viceri.com",
+                    Cargo = "Estagiario",
+                    Ativo = true,
+                    Id_Squads = Squad[0].Id,
+                    Id_Tribo = Tribo[0].Id,
+                    Id_Unidade = 1,
+                    Permissao = 1,
+                    SquadNome = Squad[0].Nome,
+                    TriboNome= Tribo[0].Nome,
+                    Unidade = "General Osorio" },
+            };
         }
     }
 }

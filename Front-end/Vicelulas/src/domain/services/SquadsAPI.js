@@ -11,6 +11,9 @@ export default {
   obterSquadPorIdTribo: (id) => {
     return http.get('Squad/Tribo/' + id)
   },
+  obterSquadSemTribo: () => {
+    return http.get('Squad/SemTribo/')
+  },
   // Altera as info da Squad
   alterarSquad: (id, squad) => {
     return http.put('Squad/' + id, squad)

@@ -84,6 +84,7 @@ namespace Vicelulas.Api.Controllers
             var objTribo = new Tribo()
             {
                 Nome = input.Nome,
+                Id_Mentor = input.Id_Mentor,
                 Ativo = true
 
             };
@@ -111,7 +112,8 @@ namespace Vicelulas.Api.Controllers
             var objTribo = new Tribo()
             {
                 Id = id,
-                Nome = input.Nome
+                Nome = input.Nome,
+                Id_Mentor = input.Id_Mentor
             };
 
             var retorno = _triboNegocio.Alterar(id, objTribo);

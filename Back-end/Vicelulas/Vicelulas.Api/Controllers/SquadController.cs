@@ -112,6 +112,7 @@ namespace Vicelulas.Api.Controllers
             var objSquad = new Squad()
             {
                 Nome = input.Nome,
+                Id_mentor = input.Id_mentor,
                 Id_tribo = input.Id_tribo,
                 Ativo = true
 
@@ -141,6 +142,7 @@ namespace Vicelulas.Api.Controllers
             {
                 Id = id,
                 Nome = input.Nome,
+                Id_mentor = input.Id_mentor,
                 Id_tribo = input.Id_tribo
             };
 

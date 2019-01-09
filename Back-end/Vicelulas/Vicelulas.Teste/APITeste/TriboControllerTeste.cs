@@ -90,8 +90,8 @@ namespace Vicelulas.Teste.APITeste
 
             var tribo = new TriboInput
             {
-                Nome = "Teste",
-                Ativo = true
+                Nome = "Teste"
+                
             };
 
             var repoMock = new Mock<ITriboNegocio>();
@@ -115,8 +115,8 @@ namespace Vicelulas.Teste.APITeste
             var Id = 2;
             var tribo = new TriboInput()
             {
-                Nome = "Atualiza",
-                Ativo = true
+                Nome = "Atualiza"
+
             };
 
             var repoMock = new Mock<ITriboNegocio>();

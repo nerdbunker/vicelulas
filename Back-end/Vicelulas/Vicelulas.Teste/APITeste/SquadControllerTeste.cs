@@ -74,7 +74,6 @@ namespace Vicelulas.Teste.APITeste
         public void RetornaStatusOKGetName()
         {
             // Arrange
-           
             int valorEsperado = 200;
 
             var Nome = "NerdBunker";        
@@ -94,10 +93,34 @@ namespace Vicelulas.Teste.APITeste
         }
 
         [Fact]
+        public void RetornaStatusCreatedPost()
+        {
+            int valorEsperado = 201;
+
+            var squad = new SquadInput
+            {
+                Id_tribo = 1,
+                Nome = "Teste",
+                Ativo = true
+            };
+
+            var repoMock = new Mock<ISquadNegocio>();
+
+
+            var _squadController = new SquadController(repoMock.Object);
+
+            // Act
+            var actionResult = _squadController.Post(squad);
+            var okObjectResult = (CreatedAtRouteResult)actionResult;
+
+            // Assert
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        }
+
+        [Fact]
         public void Retorna_Execao_Quando_Post_Nome_For_Vazio_Ou_Nulo()
         {
             // Arrange
-
             var squad = new Squad
             {
                 Id = 0,
@@ -112,6 +135,52 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Throws<ConflitoException>(() => SquadNull.Inserir(squad));
+        }
+
+        [Fact]
+        public void RetornaStatusAcceptedPut()
+        {
+            // Arrange
+            int valorEsperado = 202;
+
+            var Id = 2;
+            var squad = new SquadInput()
+            {
+                Id_tribo = 2,
+                Nome = "Atualiza",
+                Ativo = true
+            };
+
+            var repoMock = new Mock<ISquadNegocio>();
+
+             var _squadController = new SquadController(repoMock.Object);
+
+            // Act
+            var actionResult = _squadController.Put(Id, squad);
+            var okObjectResult = (AcceptedResult)actionResult;
+
+            // Assert
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
+        }
+
+        [Fact]
+        public void RetornaStatusAcceptedPutDesativar()
+        {
+            // Arrange
+            int valorEsperado = 202;
+
+            var Id = 2;
+
+            var repoMock = new Mock<ISquadNegocio>();
+
+            var _squadController = new SquadController(repoMock.Object);
+
+            // Act
+            var actionResult = _squadController.PutDesativar(Id);
+            var okObjectResult = (AcceptedResult)actionResult;
+
+            // Assert
+            Assert.Equal(valorEsperado, okObjectResult.StatusCode);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Api.Model;
 using Vicelulas.Dominio;
+using Vicelulas.Dominio.Dto;
 using Vicelulas.Negocio;
 
 namespace Vicelulas.Api.Controllers
@@ -152,10 +153,11 @@ namespace Vicelulas.Api.Controllers
 
             };
 
-            var id = _pessoaNegocio.Inserir(objPessoa);
+            var _id = _pessoaNegocio.Inserir(objPessoa);
+            
+            var objDto = _pessoaNegocio.SelecionarPorId(_id);
 
-            objPessoa.Id = id;
-            return CreatedAtRoute(routeName: "PessoaGetId", routeValues: new { id = objPessoa.Id }, value: objPessoa);
+            return CreatedAtRoute(routeName: "PessoaGetId", routeValues: new { id = objDto.Id }, value: objDto);
         }
 
 

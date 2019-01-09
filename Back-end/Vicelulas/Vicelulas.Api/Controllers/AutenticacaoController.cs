@@ -28,23 +28,23 @@ namespace Vicelulas.Api.Controllers
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        //[HttpPost]
-        //[Route("Entrar")]
-        //[ProducesResponseType(typeof(PessoaDto),(int)HttpStatusCode.OK)]
-        //[ProducesResponseType((int)HttpStatusCode.NotFound)]
-        //[ProducesResponseType((int)HttpStatusCode.Forbidden)]
-        //public IActionResult Entrar([FromBody]LoginInput input)
-        //{
-        //    var obj = _autenticacaoNegocio.Entrar(input.username, input.password);
+        [HttpPost]
+        [Route("Entrar")]
+        [ProducesResponseType(typeof(PessoaDto), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        public IActionResult Entrar([FromBody]PessoaInput input)
+        {
+            var obj = _autenticacaoNegocio.Entrar(input.Email, input.Senha);
 
-        //    return Ok(obj);
-        //}
-
-
-    
+            return Ok(obj);
+        }
 
 
 
-     
+
+
+
+
     }
 }

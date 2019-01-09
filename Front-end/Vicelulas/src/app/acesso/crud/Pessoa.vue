@@ -217,8 +217,6 @@ export default {
     save () {
       if (this.editedIndex > -1) {
         PessoasAPI.alterarPessoa(this.pessoaInput.id, this.pessoaInput).then(resposta => {
-          // this.retornaValores(resposta.data)
-          // Object.assign(this.listaPessoas[this.editedIndex], this.pessoaInput)+
           this.listarPessoas()
         })
       } else {

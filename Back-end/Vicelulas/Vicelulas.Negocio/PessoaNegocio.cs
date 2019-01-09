@@ -94,7 +94,6 @@ namespace Vicelulas.Negocio
                 throw new ConflitoException($"Já esxiste uma pessoa cadastrada com este email {entity.Email}!");
 
             entity.Id = Id;
-            //entity.Senha = PasswordHash.Create(entity.Senha);
             _pessoaRepositorio.Alterar(entity);
 
             return  _pessoaRepositorio.SelecionarPorId(Id);

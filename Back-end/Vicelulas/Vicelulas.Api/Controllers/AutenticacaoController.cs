@@ -33,7 +33,7 @@ namespace Vicelulas.Api.Controllers
         [ProducesResponseType(typeof(PessoaDto), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
-        public IActionResult Entrar([FromBody]PessoaInput input)
+        public IActionResult Entrar([FromBody]LoginInput input)
         {
             var obj = _autenticacaoNegocio.Entrar(input.Email, input.Senha);
 

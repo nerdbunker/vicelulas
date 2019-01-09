@@ -4,8 +4,6 @@
     {
         public int Id { get; set; }
 
-        public int Id_login { get; set; }
-
         public int Id_papel { get; set; }
 
         public string Nome { get; set; }

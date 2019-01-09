@@ -12,9 +12,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, P.permissao FROM [TB_pessoa] P " +
-                                                                   $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
-                                                                   $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
+                var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Nome, P.email, P.id_squads, P.Ativo, P.permissao FROM [TB_pessoa] P " +
                                                                    $"WHERE P.email = '{username}' AND P.password = '{password}' ");
                 return obj;
             }

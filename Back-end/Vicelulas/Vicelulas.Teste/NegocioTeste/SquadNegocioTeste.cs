@@ -9,6 +9,7 @@ using Vicelulas.Dado;
 using System.Linq;
 using System.Linq.Expressions;
 using System;
+using Vicelulas.Dominio;
 
 namespace Vicelulas.Teste.NegocioTeste
 {
@@ -92,6 +93,26 @@ namespace Vicelulas.Teste.NegocioTeste
             Assert.NotNull(objRetornado);
 
             
+        }
+
+        [Fact]
+        public void SquadPorNomeNulo()
+        {
+            // Arrange
+            var squad = new Squad
+            {
+                Id = 0,
+                Id_tribo = 0,
+                Nome = null,
+                Ativo = false
+            };
+
+            var repoMock = new Mock<ISquadRepositorio>();
+
+            var SquadNull = new SquadNegocio(repoMock.Object);
+
+            // Assert
+            Assert.Throws<ConflitoException>(() => SquadNull.Inserir(squad));
         }
 
         [Fact]

@@ -114,26 +114,6 @@ namespace Vicelulas.Teste.APITeste
         }
 
         [Fact]
-        public void Retorna_Execao_Quando_Post_Nome_For_Vazio_Ou_Nulo()
-        {
-            // Arrange
-            var squad = new Squad
-            {
-                Id = 0,
-                Id_tribo = 0,
-                Nome = null,
-                Ativo = false
-            };
-
-            var repoMock = new Mock<ISquadRepositorio>();
-
-            var SquadNull = new SquadNegocio(repoMock.Object);
-
-            // Assert
-            Assert.Throws<ConflitoException>(() => SquadNull.Inserir(squad));
-        }
-
-        [Fact]
         public void RetornaStatusAcceptedPut()
         {
             // Arrange

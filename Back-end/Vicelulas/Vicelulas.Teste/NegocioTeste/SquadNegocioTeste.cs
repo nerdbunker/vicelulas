@@ -10,6 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System;
 using Vicelulas.Dominio;
+using Vicelulas.Api.Model;
 
 namespace Vicelulas.Teste.NegocioTeste
 {
@@ -151,7 +152,6 @@ namespace Vicelulas.Teste.NegocioTeste
         [Fact]
         public void SquadPorIdTriboNotFound()
         {
-
             // Arrange
             var repoMock = new Mock<ISquadRepositorio>();
             repoMock.Setup(m => m.SelecionarPorIdTribo(0));
@@ -162,7 +162,44 @@ namespace Vicelulas.Teste.NegocioTeste
             Assert.Throws<NaoEncontradoException>(() => _squadNegocio.SelecionarPorIdTribo(0));
         }
 
-     
+        [Fact]
+        public void SquadSemTriboOk()
+        {
+            // Arrange
+            var repoMock = new Mock<ISquadRepositorio>();
+            repoMock.Setup(m => m.SelecionarSquadsSemTribo()).Returns(DbMock.Squad);
 
+            var _squadNegocio = new SquadNegocio(repoMock.Object);
+
+            // Act
+            var objRetornado = _squadNegocio.SelecionarSquadsSemTribo();
+
+            // Assert
+            Assert.Same(DbMock.Squad, objRetornado);
+        }
+
+        [Fact]
+        public void SquadInserirOk()
+        {
+            // Arrange
+            var squad = new Squad
+            {
+                Id = 1,
+                Id_tribo = 1,
+                Nome = "Teste",
+                Ativo = true
+            };
+
+            var repoMock = new Mock<ISquadRepositorio>();
+            repoMock.Setup(m => m.Inserir(squad)).Returns(squad.Id);
+
+            var _squadNegocio = new SquadNegocio(repoMock.Object);
+
+            //Act
+            var objRetornado = _squadNegocio.Inserir(squad);
+
+            // Assert
+            Assert.Equal(squad.Id, objRetornado);
+        }
     }
 }

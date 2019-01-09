@@ -68,6 +68,7 @@
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
+              <th>{{ props.item.id }}</th>
               <td>{{ props.item.nome }}</td>
               <td>{{ props.item.email }}</td>
               <td>{{ props.item.cargo }}</td>
@@ -85,7 +86,7 @@
               </v-icon>
               <v-icon
                 small
-                @click="deleteItem(props.item), location.reload(true)"
+                @click="deleteItem(props.item)"
               >
                 delete
               </v-icon>
@@ -113,11 +114,8 @@ export default {
     dialog: false,
     headers: [
       {
-        text: 'Nome',
-        align: 'left',
-        sortable: false,
-        value: 'nome'
-      },
+        text: 'ID', value: 'id' },
+      { text: 'Nome', value: 'nome' },
       { text: 'Email', value: 'email' },
       { text: 'Cargo', value: 'cargo' },
       { text: 'Unidade', value: 'unidade' },
@@ -132,6 +130,7 @@ export default {
     listaUnidades: [],
     listaSquads: [],
     pessoaInput: {
+      id: '',
       nome: '',
       email: '',
       cargo: '',
@@ -140,11 +139,12 @@ export default {
       triboNome: ''
     },
     defaultItem: {
+      id: '',
       nome: '',
       email: '',
       cargo: '',
       unidade: '',
-      squad: '',
+      squadNome: '',
       triboNome: ''
     }
   }),
@@ -166,6 +166,15 @@ export default {
   },
 
   methods: {
+    retornaValores (dados) {
+      this.pessoaInput.id = dados.id
+      this.pessoaInput.nome = dados.nome
+      this.pessoaInput.email = dados.email
+      this.pessoaInput.cargo = dados.cargo
+      this.pessoaInput.unidade = dados.unidade
+      this.pessoaInput.squadNome = dados.squadNome
+      this.pessoaInput.triboNome = dados.triboNome
+    },
     listarPessoas () {
       this.initialize()
       PessoasAPI.obterPessoa().then(respostaPessoa => {
@@ -192,14 +201,11 @@ export default {
       if (item.ativo === false) {
         msg = 'Tem certeza que deseja ativar esta Pessoa?'
       }
-      confirm(msg) &&
-      // Ativa/Desativa da API
-      PessoasAPI.mudarAtivoPessoa(item.id)
-      console.log('Listei')
-      this.listarPessoas()
-      // this.reloadPage()
-      // Remove da lista do Front
-      // this.pessoas.splice(index, 1)
+      if (confirm(msg)) {
+        PessoasAPI.mudarAtivoPessoa(item.id).then(() => {
+          item.ativo = !item.ativo
+        })
+      }
     },
     close () {
       this.dialog = false
@@ -210,16 +216,17 @@ export default {
     },
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.listaPessoas[this.editedIndex], this.pessoaInput)
-        this.listaPessoas.push(this.pessoaInput)
-        PessoasAPI.alterarPessoa(this.pessoaInput.id, this.pessoaInput)
+        PessoasAPI.alterarPessoa(this.pessoaInput.id, this.pessoaInput).then(resposta => {
+          this.retornaValores(resposta.data)
+          Object.assign(this.listaPessoas[this.editedIndex], this.pessoaInput)
+        })
       } else {
-        this.pessoaInput.cargo = this.listaPapeis.map((papel) => {
-          if (papel.id === this.pessoaInput.id_papel) return papel.nome
+        PessoasAPI.inserirPessoa(this.pessoaInput).then(resposta => {
+          console.log(resposta.data)
+          this.retornaValores(resposta.data)
         })
         console.log(this.pessoaInput)
         this.listaPessoas.push(this.pessoaInput)
-        PessoasAPI.inserirPessoa(this.pessoaInput)
       }
       this.close()
     }

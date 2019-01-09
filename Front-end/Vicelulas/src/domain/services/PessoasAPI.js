@@ -21,7 +21,6 @@ export default {
   },
   // Altera o status, ativando/desativando as Pessoas
   mudarAtivoPessoa: (id) => {
-    console.log('Fiz')
     return http.put('Pessoa/MudarAtivo/' + id)
   }
 }

@@ -8,6 +8,7 @@ namespace Vicelulas.DBMock
         public static List<TriboDto> Tribo { get; set; }
         public static List<SquadDto> Squad { get; set; }
         public static List<PessoaDto> Pessoa { get; set; }
+        public static List<PapelDto> Papel { get; set; }
 
         private static int _NovoId { get; set; }
         public static int NovoId
@@ -118,6 +119,16 @@ namespace Vicelulas.DBMock
                     SquadNome = Squad[0].Nome,
                     TriboNome= Tribo[0].Nome,
                     Unidade = "General Osorio" },
+            };
+
+            Papel = new List<PapelDto>
+            {
+                new PapelDto { Id = NovoId, Cargo = "Estagiario" },
+                new PapelDto { Id = NovoId, Cargo = "Desenvolvedor Junior" },
+                new PapelDto { Id = NovoId, Cargo = "Desenvolvedor Pleno" },
+                new PapelDto { Id = NovoId, Cargo = "Desenvolvedor Senior" },
+                new PapelDto { Id = NovoId, Cargo = "QA" },
+                new PapelDto { Id = NovoId, Cargo = "Analista" },
             };
         }
     }

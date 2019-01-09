@@ -59,7 +59,6 @@ namespace Vicelulas.Teste.APITeste
 
             // Assert
             Assert.Equal(valorEsperado, okObjectResult.StatusCode);
-
             repoMock.Verify(call, Times.Once);
         }
 

@@ -118,9 +118,10 @@ namespace Vicelulas.Api.Controllers
             };
 
             var idSquad = _squadNegocio.Inserir(objSquad);
-            objSquad.Id = idSquad;
 
-            return CreatedAtRoute(routeName: "SquadGetId", routeValues: new { id = objSquad.Id }, value: objSquad);
+            var objDto = _squadNegocio.SelecionarPorId(idSquad);
+
+            return CreatedAtRoute(routeName: "SquadGetId", routeValues: new { id = objDto.Id }, value: objDto);
         }
 
         /// <summary>

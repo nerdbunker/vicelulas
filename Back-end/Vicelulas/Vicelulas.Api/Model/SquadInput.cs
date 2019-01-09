@@ -4,6 +4,5 @@
     {
         public string Nome { get; set; }
         public int Id_tribo { get; set; }
-        public bool Ativo { get; set; }
     }
 }

@@ -18,14 +18,14 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="editedItem.nome" label="Nome da Squad"></v-text-field>
+                        <v-text-field v-model="squadInput.nome" label="Nome da Squad"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
                           item-text="nome"
                           item-value="id"
                           :items="listaTribos"
-                          v-model="editedItem.id_Tribo"
+                          v-model="squadInput.id_Tribo"
                           label="Tribo"
                         ></v-select>
                       </v-flex>
@@ -47,9 +47,10 @@
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
+              <th>{{ props.item.id }}</th>
               <td>{{ props.item.nome }}</td>
               <td>{{ props.item.nomeTribo }}</td>
-              <td>{{props.item.ativo?'Sim':'Não'}}</td>
+              <td>{{ props.item.ativo?'Sim':'Não' }}</td>
               <td>
               <v-icon
                 small
@@ -86,24 +87,28 @@ export default {
     listaSquads: [],
     listaTribos: [],
     headers: [
-      {
-        text: 'Nome',
-        align: 'left',
-        sortable: true,
-        value: 'nome'
-      },
+      { text: 'ID', value: 'id' },
+      { text: 'Nome', value: 'nome' },
       { text: 'Tribo', value: 'tribo' },
       { text: 'Ativo?', value: 'ativo' },
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
-    editedItem: {
+    squadInsert: {
+      id: '',
+      nome: '',
+      id_Tribo: ''
+    },
+    squadInput: {
+      id: '',
       nome: '',
       id_Tribo: '',
       nomeTribo: ''
     },
     defaultItem: {
+      id: '',
       nome: '',
+      id_Tribo: '',
       nomeTribo: ''
     }
   }),
@@ -125,6 +130,17 @@ export default {
   },
 
   methods: {
+    defineInsert (dados) {
+      this.squadInsert.id = dados.id
+      this.squadInsert.nome = dados.nome
+      this.squadInsert.id_Tribo = dados.id_Tribo
+    },
+    retornaValores (dados) {
+      this.squadInput.id = dados.id
+      this.squadInput.nome = dados.nome
+      this.squadInput.id_Tribo = dados.id_Tribo
+      this.squadInput.nomeTribo = dados.nomeTribo
+    },
     initialize () {
       this.listaSquads = []
     },
@@ -132,7 +148,7 @@ export default {
     editItem (item) {
       // Alterar aqui o this.pessoas
       this.editedIndex = this.listaSquads.indexOf(item)
-      this.editedItem = Object.assign({}, item)
+      this.squadInput = Object.assign({}, item)
       this.dialog = true
     },
 
@@ -145,17 +161,27 @@ export default {
     close () {
       this.dialog = false
       setTimeout(() => {
-        this.editedItem = Object.assign({}, this.defaultItem)
+        this.squadInput = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       }, 300)
     },
 
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.listaSquads[this.editedIndex], this.editedItem)
+        this.defineInsert(this.squadInput)
+        console.log(this.squadInsert)
+        SquadsAPI.alterarSquad(this.squadInsert.id, this.squadInsert).then(resposta => {
+          console.log(resposta)
+          this.retornaValores(resposta.data)
+          Object.assign(this.listaSquads[this.editedIndex], this.squadInput)
+        })
       } else {
-        SquadsAPI.inserirSquad(this.editedItem)
-        this.listaSquads.push(this.editedItem)
+        SquadsAPI.inserirSquad(this.squadInsert).then(resposta => {
+          console.log(resposta.data)
+          this.retornaValores(resposta.data)
+        })
+        console.log(this.squadInput)
+        this.listaSquads.push(this.squadInput)
       }
       this.close()
     }

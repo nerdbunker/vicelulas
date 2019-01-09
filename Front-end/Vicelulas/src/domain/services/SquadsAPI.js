@@ -12,8 +12,8 @@ export default {
     return http.get('Squad/Tribo/' + id)
   },
   // Altera as info da Squad
-  alterarSquad: () => {
-    return http.put('Squad')
+  alterarSquad: (id, squad) => {
+    return http.put('Squad/' + id, squad)
   },
   // Inseri novas Squads
   inserirSquad: (Squad) => {

@@ -203,7 +203,7 @@ export default {
       }
       if (confirm(msg)) {
         PessoasAPI.mudarAtivoPessoa(item.id).then(() => {
-          item.ativo = !item.ativo
+          this.listarPessoas()
         })
       }
     },
@@ -217,16 +217,14 @@ export default {
     save () {
       if (this.editedIndex > -1) {
         PessoasAPI.alterarPessoa(this.pessoaInput.id, this.pessoaInput).then(resposta => {
-          this.retornaValores(resposta.data)
-          Object.assign(this.listaPessoas[this.editedIndex], this.pessoaInput)
+          // this.retornaValores(resposta.data)
+          // Object.assign(this.listaPessoas[this.editedIndex], this.pessoaInput)+
+          this.listarPessoas()
         })
       } else {
         PessoasAPI.inserirPessoa(this.pessoaInput).then(resposta => {
-          console.log(resposta.data)
-          this.retornaValores(resposta.data)
+          this.listarPessoas()
         })
-        console.log(this.pessoaInput)
-        this.listaPessoas.push(this.pessoaInput)
       }
       this.close()
     }

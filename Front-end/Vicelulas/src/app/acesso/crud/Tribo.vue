@@ -18,7 +18,7 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="editedItem.nome" label="Nome da Tribo"></v-text-field>
+                        <v-text-field v-model="triboInput.nome" label="Nome da Tribo"></v-text-field>
                       </v-flex>
                     </v-layout>
                   </v-container>
@@ -38,6 +38,7 @@
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
+              <th>{{ props.item.id }}</th>
               <td>{{ props.item.nome }}</td>
               <td>{{ props.item.ativo?'Sim':'Não' }}</td>
               <td>
@@ -74,28 +75,23 @@ export default {
     dialog: false,
     listaTribos: [],
     headers: [
-      {
-        text: 'Nome',
-        align: 'left',
-        sortable: false,
-        value: 'nome'
-      },
-      {
-        text: 'Ativo?',
-        align: 'left',
-        sortable: true,
-        value: 'ativo'
-      },
+      { text: 'ID', value: 'id' },
+      { text: 'Nome', value: 'nome' },
+      { text: 'Ativo?', value: 'ativo' },
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
-    editedItem: {
+    triboInsert: {
+      id: '',
+      nome: ''
+    },
+    triboInput: {
       nome: '',
-      ativo: true
+      ativo: ''
     },
     defaultItem: {
-      nome: '',
-      ativo: true
+      id: '',
+      nome: ''
     }
   }),
 
@@ -116,6 +112,15 @@ export default {
   },
 
   methods: {
+    defineInsert (dados) {
+      this.triboInsert.id = dados.id
+      this.triboInsert.nome = dados.nome
+    },
+    retornaValores (dados) {
+      this.triboInput.id = dados.id
+      this.triboInput.nome = dados.nome
+      this.triboInput.ativo = dados.ativo
+    },
     initialize () {
       this.listaTribos = []
     },
@@ -123,31 +128,41 @@ export default {
     editItem (item) {
       // Alterar aqui o this.tribos
       this.editedIndex = this.listaTribos.indexOf(item)
-      this.editedItem = Object.assign({}, item)
+      this.triboInput = Object.assign({}, item)
       this.dialog = true
     },
 
     deleteItem (item) {
-      const index = this.listaTribos.indexOf(item)
-      confirm('Tem certeza que deseja desativar esta Pessoa?') &&
-        this.listaTribos.splice(index, 1)
+      let msg = 'Tem certeza que deseja desativar esta tribo?'
+      if (item.ativo === false) {
+        msg = 'Tem certeza que deseja ativar esta tribo?'
+      }
+      confirm(msg)
+      TribosAPI.mudarAtivoTribo(item.id).then(() => {
+        item.ativo = !item.ativo
+      })
     },
 
     close () {
       this.dialog = false
       setTimeout(() => {
-        this.editedItem = Object.assign({}, this.defaultItem)
+        this.triboInput = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       }, 300)
     },
 
     save () {
+      console.log(this.triboInput)
       if (this.editedIndex > -1) {
-        Object.assign(this.listaTribos[this.editedIndex], this.editedItem)
-        TribosAPI.alterarTribo(this.editedItem.id, this.editedItem)
+        this.defineInsert(this.triboInput)
+        Object.assign(this.listaTribos[this.editedIndex], this.triboInsert)
+        TribosAPI.alterarTribo(this.triboInput.id, this.triboInput)
       } else {
-        this.listaTribos.push(this.editedItem)
-        TribosAPI.inserirTribo(this.editedItem)
+        TribosAPI.inserirTribo(this.triboInput).then(resposta => {
+          this.retornaValores(resposta.data)
+        })
+        console.log(this.triboInput)
+        this.listaTribos.push(this.triboInput)
       }
       this.close()
     }

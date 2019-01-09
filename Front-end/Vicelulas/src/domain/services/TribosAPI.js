@@ -17,7 +17,7 @@ export default {
     return http.post('Tribo', Tribo)
   },
   // Altera o status, ativando e desativando as Tribos
-  desativaTribo: (id) => {
+  mudarAtivoTribo: (id) => {
     return http.put('Tribo/MudarAtivo/' + id)
   }
 }

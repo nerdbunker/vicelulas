@@ -7,10 +7,11 @@
             <v-avatar>
               <v-icon>bubble_chart</v-icon>
             </v-avatar>
-            {{ legenda }}
+            {{ avisoLegenda }}
           </v-chip>
         </v-flex>
         <v-flex pt-3 md8 xs12>
+          <!-- Icones das Tribos -->
           <v-flex
             v-for="tribo in listaTribos"
             :key="tribo.id"
@@ -33,34 +34,30 @@
               </svg>
             </router-link>
           </v-flex>
-        </v-flex>
-        <v-flex d-flex md8 xs12>
-        <v-flex md4 xs12 pa-3>
-          <v-chip color="teal" text-color="black">
-            <v-avatar>
-              <v-icon>bubble_chart</v-icon>
-            </v-avatar>
-              Tribos: {{ listaTribos.length }}
-            </v-chip>
+          <!-- Icones das Squads -->
+          <v-flex
+            v-for="squad in listaSquadSemTribo"
+            :key="squad.id + 150"
+            class="flex"
+          >
+            <router-link :to="{ name: 'Tribos', params: { id: squad.id }}">
+              <!-- SVG Dinamico, cria as imagens conforme a API fornece dados -->
+              <svg class="zoom" height="100px" width="100px" xmlns="http://www.w3.org/2000/svg">
+                <!-- Imagem de Fundo - Célula -->
+                <image :xlink:href="img" x="0" y="0" height="100%" width="100%"></image>
+                <!-- Titulo -->
+                <text
+                  x="50%" y="50%" class="fundo"
+                  fill="black"
+                  dominant-baseline="middle" text-anchor="middle"
+                  font-size="100%"
+                >
+                  {{ squad.nome }}
+                </text>
+              </svg>
+            </router-link>
           </v-flex>
-          <v-spacer></v-spacer>
-          <v-flex md4 xs12 pa-3>
-            <v-chip color="teal" text-color="black">
-              <v-avatar>
-                <v-icon>grain</v-icon>
-              </v-avatar>
-              Squads: {{ listaSquads.length }}
-            </v-chip>
-          </v-flex>
-          <v-spacer></v-spacer>
-          <v-flex md4 xs12 pa-3 pb-5>
-            <v-chip color="teal" text-color="black">
-              <v-avatar>
-                <v-icon>person</v-icon>
-              </v-avatar>
-              Pessoas: {{ listaPessoas.length }}
-            </v-chip>
-          </v-flex>
+          <Legenda />
         </v-flex>
       </v-layout>
     </v-container>
@@ -68,19 +65,23 @@
 </template>
 
 <script>
+import Legenda from '../componentes/Legenda'
 import PessoasAPI from '../../domain/services/PessoasAPI'
 import TribosAPI from '../../domain/services/TribosAPI'
 import SquadsAPI from '../../domain/services/SquadsAPI'
 
 export default {
   name: 'Home',
+  components: {
+    Legenda
+  },
   data () {
     return {
-      legenda: 'Tribos e Squads do Organismo Viceri',
+      avisoLegenda: 'Tribos e Squads do Organismo Viceri',
       img: require('../../../static/icones/cell.png'),
       listaPessoas: [],
       listaTribos: [],
-      listaSquads: []
+      listaSquadSemTribo: []
     }
   },
   // Requisições e Retornos da API para Pessoas, Tribos e Squads
@@ -94,6 +95,9 @@ export default {
     })
     SquadsAPI.obterSquad().then(respostaSquad => {
       this.listaSquads = respostaSquad.data
+    })
+    SquadsAPI.obterSquadSemTribo().then(respostaSquadSemTribo => {
+      this.listaSquadSemTribo = respostaSquadSemTribo.data
     })
   }
 }

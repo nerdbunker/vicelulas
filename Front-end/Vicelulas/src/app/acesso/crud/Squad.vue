@@ -198,7 +198,6 @@ export default {
           this.close()
         })
       }
-
     }
   },
   mounted () {

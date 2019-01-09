@@ -18,16 +18,16 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="pessoaInput.nome" label="Nome Completo"></v-text-field>
+                        <v-text-field v-model="pessoaInsert.nome" label="Nome Completo"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="pessoaInput.email" label="Email"></v-text-field>
+                        <v-text-field v-model="pessoaInsert.email" label="Email"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
                           item-text="cargo"
                           item-value="id"
-                          v-model="pessoaInput.id_papel"
+                          v-model="pessoaInsert.id_Papel"
                           label="Cargo"
                           :items="listaPapeis"
                         ></v-select>
@@ -37,7 +37,7 @@
                           item-text="nome"
                           item-value="id"
                           :items="listaUnidades"
-                          v-model="pessoaInput.id_unidade"
+                          v-model="pessoaInsert.id_Unidade"
                           label="Unidade"
                         ></v-select>
                       </v-flex>
@@ -46,7 +46,7 @@
                           item-text="nome"
                           item-value="id"
                           :items="listaSquads"
-                          v-model="pessoaInput.id_squads"
+                          v-model="pessoaInsert.id_Squads"
                           label="Squad"
                         ></v-select>
                       </v-flex>
@@ -57,7 +57,7 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-                  <v-btn color="blue darken-1" flat @click="save">Salvar</v-btn>
+                  <v-btn color="blue darken-1" v-show="pessoaInsert.nome && pessoaInsert.email && pessoaInsert.id_Papel && pessoaInsert.id_Unidade && pessoaInsert.id_Squads" flat @click="save">Salvar</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
@@ -129,6 +129,14 @@ export default {
     listaPapeis: [],
     listaUnidades: [],
     listaSquads: [],
+    pessoaInsert: {
+      id: '',
+      nome: '',
+      email: '',
+      id_Papel: '',
+      id_Unidade: '',
+      id_Squads: ''
+    },
     pessoaInput: {
       id: '',
       nome: '',
@@ -175,6 +183,22 @@ export default {
       this.pessoaInput.squadNome = dados.squadNome
       this.pessoaInput.triboNome = dados.triboNome
     },
+    defineInsert (dados) {
+      this.pessoaInsert.id = dados.id
+      this.pessoaInsert.nome = dados.nome
+      this.pessoaInsert.email = dados.email
+      this.pessoaInsert.id_Papel = dados.id_Papel
+      this.pessoaInsert.id_Unidade = dados.id_Unidade
+      this.pessoaInsert.id_Squads = dados.id_Squads
+    },
+    limparInsert () {
+      this.pessoaInsert.id = ''
+      this.pessoaInsert.nome = ''
+      this.pessoaInsert.email = ''
+      this.pessoaInsert.id_Papel = ''
+      this.pessoaInsert.id_Unidade = ''
+      this.pessoaInsert.id_Squads = ''
+    },
     listarPessoas () {
       this.initialize()
       PessoasAPI.obterPessoa().then(respostaPessoa => {
@@ -192,7 +216,7 @@ export default {
     editItem (item) {
       // Alterar aqui o this.pessoas
       this.editedIndex = this.listaPessoas.indexOf(item)
-      this.pessoaInput = Object.assign({}, item)
+      this.pessoaInsert = item
       this.dialog = true
     },
     deleteItem (item) {
@@ -208,6 +232,7 @@ export default {
       }
     },
     close () {
+      this.limparInsert()
       this.dialog = false
       setTimeout(() => {
         this.pessoaInput = Object.assign({}, this.defaultItem)
@@ -216,15 +241,16 @@ export default {
     },
     save () {
       if (this.editedIndex > -1) {
-        PessoasAPI.alterarPessoa(this.pessoaInput.id, this.pessoaInput).then(resposta => {
+        PessoasAPI.alterarPessoa(this.pessoaInsert.id, this.pessoaInsert).then(resposta => {
           this.listarPessoas()
+          this.close()
         })
       } else {
-        PessoasAPI.inserirPessoa(this.pessoaInput).then(resposta => {
+        PessoasAPI.inserirPessoa(this.pessoaInsert).then(resposta => {
           this.listarPessoas()
+          this.close()
         })
       }
-      this.close()
     }
   },
   mounted () {

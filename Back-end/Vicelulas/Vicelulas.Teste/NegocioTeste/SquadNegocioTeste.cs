@@ -23,12 +23,12 @@ namespace Vicelulas.Teste.NegocioTeste
             // Arrange
             var repoMock = new Mock<ISquadRepositorio>();
             repoMock.Setup(m => m.Selecionar()).Returns(DbMock.Squad);
-      
+
             var _squadNegocio = new SquadNegocio(repoMock.Object);
 
             // Act
             var objRetornado = _squadNegocio.Selecionar();
-    
+
             // Assert
             Assert.NotNull(objRetornado);
             Assert.Same(DbMock.Squad, objRetornado);
@@ -93,7 +93,7 @@ namespace Vicelulas.Teste.NegocioTeste
             // Assert
             Assert.NotNull(objRetornado);
 
-            
+
         }
 
         [Fact]
@@ -201,5 +201,64 @@ namespace Vicelulas.Teste.NegocioTeste
             // Assert
             Assert.Equal(squad.Id, objRetornado);
         }
+
+        [Fact]
+        public void SquadInserirNomeNullOrEmpty()
+        {
+            // Arrange
+            var squad = new Squad
+            {
+                Id = 1,
+                Id_tribo = 1,
+                Nome = "",
+                Ativo = true
+            };
+
+            var repoMock = new Mock<ISquadRepositorio>();
+            repoMock.Setup(m => m.Inserir(squad));
+
+            var _squadNegocio = new SquadNegocio(repoMock.Object);
+
+            //Assert
+            Assert.Throws<ConflitoException>(() => _squadNegocio.Inserir(squad));
+        }
+
+        /*[Fact]
+        public void SquadInserirNomeExistente()
+        {
+            // Arrange
+            var squad1 = new Squad
+            {
+                Id = 1,
+                Id_tribo = 1,
+                Nome = "Teste",
+                Ativo = true
+            };
+
+            var squad2 = new Squad
+            {
+                Id = 2,
+                Id_tribo = 2,
+                Nome = "Teste",
+                Ativo = true
+            };
+
+            var repoMock = new Mock<ISquadRepositorio>();
+            repoMock.Setup(m => m.Inserir(squad1));
+            repoMock.Setup(m => m.Inserir(squad2));
+
+            var _squadNegocio = new SquadNegocio(repoMock.Object);
+
+            //Act
+            var objRetornado1 = _squadNegocio.Inserir(squad1);
+            var objRetornado2 = _squadNegocio.Inserir(squad2);
+
+            //Assert
+            Assert.Throws<ConflitoException>(() => _squadNegocio.Inserir(squad2));
+
+
+        }*/
+
+
     }
 }

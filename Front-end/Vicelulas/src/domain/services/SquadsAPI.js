@@ -20,7 +20,7 @@ export default {
     return http.post('Squad', Squad)
   },
   // Altera o status, ativando e desativando as Squads
-  desativarSquad: () => {
-    return http.patch('Squad')
+  mudarAtivoSquad: (id) => {
+    return http.put('Squad/MudarAtivo/' + id)
   }
 }

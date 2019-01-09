@@ -25,7 +25,7 @@
                           item-text="nome"
                           item-value="id"
                           :items="listaTribos"
-                          v-model="squadInput.id_Tribo"
+                          v-model="squadInput.id_tribo"
                           label="Tribo"
                         ></v-select>
                       </v-flex>
@@ -95,20 +95,20 @@ export default {
     ],
     editedIndex: -1,
     squadInsert: {
-      id: '',
       nome: '',
-      id_Tribo: ''
+      id_tribo: ''
     },
     squadInput: {
       id: '',
       nome: '',
-      id_Tribo: '',
-      nomeTribo: ''
+      id_tribo: '',
+      nomeTribo: '',
+      ativo: ''
     },
     defaultItem: {
       id: '',
       nome: '',
-      id_Tribo: '',
+      id_tribo: '',
       nomeTribo: ''
     }
   }),
@@ -130,16 +130,22 @@ export default {
   },
 
   methods: {
+    listarSquads () {
+      this.initialize()
+      SquadsAPI.obterSquad().then(respostaSquads => {
+        this.listaSquads = respostaSquads.data
+      })
+    },
     defineInsert (dados) {
-      this.squadInsert.id = dados.id
       this.squadInsert.nome = dados.nome
-      this.squadInsert.id_Tribo = dados.id_Tribo
+      this.squadInsert.id_tribo = dados.id_tribo
     },
     retornaValores (dados) {
       this.squadInput.id = dados.id
       this.squadInput.nome = dados.nome
-      this.squadInput.id_Tribo = dados.id_Tribo
+      this.squadInput.id_tribo = dados.id_tribo
       this.squadInput.nomeTribo = dados.nomeTribo
+      this.squadInput.ativo = dados.ativo
     },
     initialize () {
       this.listaSquads = []
@@ -153,9 +159,14 @@ export default {
     },
 
     deleteItem (item) {
-      const index = this.pessoas.indexOf(item)
-      confirm('Tem certeza que deseja desativar esta Pessoa?') &&
-        this.pessoas.splice(index, 1)
+      let msg = 'Tem certeza que deseja desativar esta squad?'
+      if (item.ativo === false) {
+        msg = 'Tem certeza que deseja ativar esta squad?'
+      }
+      confirm(msg)
+      SquadsAPI.mudarAtivoSquad(item.id).then(() => {
+        this.listarSquads()
+      })
     },
 
     close () {
@@ -167,29 +178,23 @@ export default {
     },
 
     save () {
+      console.log(this.squadInput)
+      this.defineInsert(this.squadInput)
       if (this.editedIndex > -1) {
-        this.defineInsert(this.squadInput)
-        console.log(this.squadInsert)
-        SquadsAPI.alterarSquad(this.squadInsert.id, this.squadInsert).then(resposta => {
-          console.log(resposta)
-          this.retornaValores(resposta.data)
-          Object.assign(this.listaSquads[this.editedIndex], this.squadInput)
+        SquadsAPI.alterarSquad(this.squadInput.id, this.squadInsert).then(() => {
+          this.listarSquads()
         })
       } else {
-        SquadsAPI.inserirSquad(this.squadInsert).then(resposta => {
-          console.log(resposta.data)
-          this.retornaValores(resposta.data)
+        SquadsAPI.inserirSquad(this.squadInsert).then(() => {
+          this.listarSquads()
         })
-        console.log(this.squadInput)
         this.listaSquads.push(this.squadInput)
       }
       this.close()
     }
   },
   mounted () {
-    SquadsAPI.obterSquad().then(respostaSquad => {
-      this.listaSquads = respostaSquad.data
-    })
+    this.listarSquads()
     TribosAPI.obterTribo().then(respostaTribo => {
       this.listaTribos = respostaTribo.data
     })

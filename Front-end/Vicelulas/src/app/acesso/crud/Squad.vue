@@ -36,7 +36,7 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-                  <v-btn color="blue darken-1" flat @click="save">Salvar</v-btn>
+                  <v-btn color="blue darken-1" v-show="squadInput.nome && squadInput.id_tribo" flat @click="save">Salvar</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>

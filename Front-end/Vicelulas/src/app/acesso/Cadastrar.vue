@@ -117,13 +117,8 @@ export default {
   },
   mounted () {
     SquadsAPI.obterSquad().then(respostaSquad => {
-      console.log(respostaSquad)
       this.squads = respostaSquad.data
     })
-    // Papel.obterPapel().then(respostaPapel => {
-    //   console.log(respostaPapel)
-    //   this.squads = respostaPapel.data
-    // })
   }
 }
 </script>

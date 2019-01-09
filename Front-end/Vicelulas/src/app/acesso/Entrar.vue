@@ -11,8 +11,8 @@
               name="username"
               label="Usuário"
               type="text"
-              autofocus="true"
-              color="blue"
+              autofocus
+              color="red"
               ></v-text-field>
               <!--  -->
               <v-text-field
@@ -21,17 +21,24 @@
               name="senha"
               label="Senha"
               type="password"
-              color="blue"
+              color="red"
               ></v-text-field>
             </v-form>
           </v-card-text>
           <!--  -->
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn pa-2 to="/tribo" color="blue" flat>Entrar</v-btn>
+            <v-btn pa-2 to="/tribo" color="red" flat>Entrar</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
+
+
+<script>
+export default {
+  
+}
+</script>

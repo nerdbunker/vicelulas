@@ -77,8 +77,8 @@ export default {
     headers: [
       { text: 'ID', value: 'id' },
       { text: 'Nome', value: 'nome' },
-      { text: 'Ativo?', value: 'ativo' },
-      { text: 'Ações', value: 'nome' }
+      { text: 'Ativo?', value: 'ativo', sortable: false },
+      { text: 'Ações', value: 'nome', sortable: false},
     ],
     editedIndex: -1,
     triboInsert: {

@@ -89,9 +89,9 @@ export default {
     headers: [
       { text: 'ID', value: 'id' },
       { text: 'Nome', value: 'nome' },
-      { text: 'Tribo', value: 'tribo' },
-      { text: 'Ativo?', value: 'ativo' },
-      { text: 'Ações', value: 'nome' }
+      { text: 'Tribo', value: 'nomeTribo' },
+      { text: 'Ativo?', value: 'ativo', sortable: false },
+      { text: 'Ações', value: 'nome', sortable: false }
     ],
     editedIndex: -1,
     squadInsert: {
@@ -138,7 +138,6 @@ export default {
     listarSquads () {
       this.initialize()
       SquadsAPI.obterSquad().then(respostaSquads => {
-        console.log(respostaSquads)
         this.listaSquads = respostaSquads.data
       })
     },
@@ -161,9 +160,7 @@ export default {
     editItem (item) {
       // Alterar aqui o this.pessoas
       this.editedIndex = this.listaSquads.indexOf(item)
-      console.log(item)
       this.defineInsert(item)
-      console.log(this.squadInsert)
       this.dialog = true
     },
 

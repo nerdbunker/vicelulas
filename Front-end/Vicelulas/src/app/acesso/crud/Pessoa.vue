@@ -113,16 +113,15 @@ export default {
   data: () => ({
     dialog: false,
     headers: [
-      {
-        text: 'ID', value: 'id' },
+      { text: 'ID', value: 'id' },
       { text: 'Nome', value: 'nome' },
       { text: 'Email', value: 'email' },
       { text: 'Cargo', value: 'cargo' },
-      { text: 'Unidade', value: 'unidade' },
+      { text: 'Unidade', value: 'id_Unidade' },
       { text: 'Squad', value: 'id_Squads' },
       { text: 'Tribo', value: 'tribo' },
-      { text: 'Ativo?', value: 'ativo' },
-      { text: 'Ações', value: 'nome' }
+      { text: 'Ativo?', value: 'ativo', sortable: false },
+      { text: 'Ações', value: 'nome', sortable: false }
     ],
     editedIndex: -1,
     listaPessoas: [],

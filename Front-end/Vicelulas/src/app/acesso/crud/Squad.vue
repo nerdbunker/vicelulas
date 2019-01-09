@@ -24,9 +24,9 @@
                         <v-select
                           item-text="nome"
                           item-value="id"
-                          :items="Tribos"
+                          :items="listaTribos"
                           v-model="editedItem.id_Tribo"
-                          label="Unidade"
+                          label="Tribo"
                         ></v-select>
                       </v-flex>
                     </v-layout>
@@ -43,7 +43,7 @@
           </v-toolbar>
           <v-data-table
             :headers="headers"
-            :items="squads"
+            :items="listaSquads"
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
@@ -77,13 +77,14 @@
 </template>
 
 <script>
-import Squads from '../../../domain/services/Squads'
-import Tribo from '../../../domain/services/Tribos'
+import SquadsAPI from '../../../domain/services/SquadsAPI'
+import TribosAPI from '../../../domain/services/TribosAPI'
 
 export default {
   data: () => ({
     dialog: false,
-    squads: [],
+    listaSquads: [],
+    listaTribos: [],
     headers: [
       {
         text: 'Nome',
@@ -92,7 +93,7 @@ export default {
         value: 'nome'
       },
       { text: 'Tribo', value: 'tribo' },
-      {text: 'Ativo?', value: 'ativo'},
+      { text: 'Ativo?', value: 'ativo' },
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
@@ -125,12 +126,12 @@ export default {
 
   methods: {
     initialize () {
-      this.squads = []
+      this.listaSquads = []
     },
 
     editItem (item) {
       // Alterar aqui o this.pessoas
-      this.editedIndex = this.squads.indexOf(item)
+      this.editedIndex = this.listaSquads.indexOf(item)
       this.editedItem = Object.assign({}, item)
       this.dialog = true
     },
@@ -151,20 +152,20 @@ export default {
 
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.squads[this.editedIndex], this.editedItem)
+        Object.assign(this.listaSquads[this.editedIndex], this.editedItem)
       } else {
-        Squads.inserirSquad(this.editedItem)
-        this.squads.push(this.editedItem)
+        SquadsAPI.inserirSquad(this.editedItem)
+        this.listaSquads.push(this.editedItem)
       }
       this.close()
     }
   },
   mounted () {
-    Squads.obterSquad().then(respostaSquad => {
-      this.squads = respostaSquad.data
+    SquadsAPI.obterSquad().then(respostaSquad => {
+      this.listaSquads = respostaSquad.data
     })
-    Tribo.obterTribo().then(respostaTribo => {
-      this.Tribos = respostaTribo.data
+    TribosAPI.obterTribo().then(respostaTribo => {
+      this.listaTribos = respostaTribo.data
     })
   }
 }

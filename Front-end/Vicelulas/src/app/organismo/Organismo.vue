@@ -12,7 +12,7 @@
         </v-flex>
         <v-flex pt-3 md8 xs12>
           <v-flex
-            v-for="tribo in tribos"
+            v-for="tribo in listaTribos"
             :key="tribo.id"
             class="flex"
           >
@@ -40,7 +40,7 @@
             <v-avatar>
               <v-icon>bubble_chart</v-icon>
             </v-avatar>
-              Tribos: {{ tribos.length }}
+              Tribos: {{ listaTribos.length }}
             </v-chip>
           </v-flex>
           <v-spacer></v-spacer>
@@ -49,7 +49,7 @@
               <v-avatar>
                 <v-icon>grain</v-icon>
               </v-avatar>
-              Squads: {{ squads.length }}
+              Squads: {{ listaSquads.length }}
             </v-chip>
           </v-flex>
           <v-spacer></v-spacer>
@@ -58,7 +58,7 @@
               <v-avatar>
                 <v-icon>person</v-icon>
               </v-avatar>
-              Pessoas: {{ pessoas.length }}
+              Pessoas: {{ listaPessoas.length }}
             </v-chip>
           </v-flex>
         </v-flex>
@@ -68,9 +68,9 @@
 </template>
 
 <script>
-import Pessoas from '../../domain/services/Pessoas'
-import Tribos from '../../domain/services/Tribos'
-import Squads from '../../domain/services/Squads'
+import PessoasAPI from '../../domain/services/PessoasAPI'
+import TribosAPI from '../../domain/services/TribosAPI'
+import SquadsAPI from '../../domain/services/SquadsAPI'
 
 export default {
   name: 'Home',
@@ -78,22 +78,22 @@ export default {
     return {
       legenda: 'Tribos e Squads do Organismo Viceri',
       img: require('../../../static/icones/cell.png'),
-      pessoas: [],
-      tribos: [],
-      squads: []
+      listaPessoas: [],
+      listaTribos: [],
+      listaSquads: []
     }
   },
   // Requisições e Retornos da API para Pessoas, Tribos e Squads
   // Cada this. atribui a resposta da requisição há um array que ta dentro da função data acima
   mounted () {
-    Pessoas.obterPessoa().then(respostaPessoa => {
-      this.pessoas = respostaPessoa.data
+    PessoasAPI.obterPessoa().then(respostaPessoa => {
+      this.listaPessoas = respostaPessoa.data
     })
-    Tribos.obterTribo().then(respostaTribo => {
-      this.tribos = respostaTribo.data
+    TribosAPI.obterTribo().then(respostaTribo => {
+      this.listaTribos = respostaTribo.data
     })
-    Squads.obterSquad().then(respostaSquad => {
-      this.squads = respostaSquad.data
+    SquadsAPI.obterSquad().then(respostaSquad => {
+      this.listaSquads = respostaSquad.data
     })
   }
 }

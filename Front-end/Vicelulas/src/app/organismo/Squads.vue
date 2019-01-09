@@ -2,7 +2,7 @@
   <div id="squads">
     <v-layout row wrap pt-3 justify-center align-content-center>
       <v-flex
-        v-for="(squad, i) in squads"
+        v-for="(squad, i) in listaSquads"
         :key="i"
         xs12 md6
       >
@@ -39,19 +39,19 @@
 </template>
 
 <script>
-import Squads from '../../domain/services/Squads'
+import SquadsAPI from '../../domain/services/SquadsAPI'
 
 export default {
   name: 'Squads',
   data () {
     return {
       img: require('../../../static/icones/viceri.png'),
-      squads: []
+      listaSquads: []
     }
   },
   mounted () {
-    Squads.obterSquadPorIdTribo(this.$route.params.id).then(resposta => {
-      this.squads = resposta.data
+    SquadsAPI.obterSquadPorIdTribo(this.$route.params.id).then(resposta => {
+      this.listaSquads = resposta.data
     })
   }
 }

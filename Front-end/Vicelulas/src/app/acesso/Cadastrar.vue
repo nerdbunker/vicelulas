@@ -69,7 +69,7 @@
 
 <script>
 import { http } from '../../domain/api/config'
-import Squad from '../../domain/services/Squads'
+import SquadsAPI from '../../domain/services/SquadsAPI'
 
 export default {
   data: () => ({
@@ -116,7 +116,7 @@ export default {
     }
   },
   mounted () {
-    Squad.obterSquad().then(respostaSquad => {
+    SquadsAPI.obterSquad().then(respostaSquad => {
       console.log(respostaSquad)
       this.squads = respostaSquad.data
     })

@@ -29,14 +29,14 @@
                           item-value="id"
                           v-model="pessoaInput.id_papel"
                           label="Cargo"
-                          :items="Papel"
+                          :items="listaPapeis"
                         ></v-select>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
                           item-text="nome"
                           item-value="id"
-                          :items="Unidade"
+                          :items="listaUnidades"
                           v-model="pessoaInput.id_unidade"
                           label="Unidade"
                         ></v-select>
@@ -45,7 +45,7 @@
                         <v-select
                           item-text="nome"
                           item-value="id"
-                          :items="Squads"
+                          :items="listaSquads"
                           v-model="pessoaInput.id_squads"
                           label="Squad"
                         ></v-select>
@@ -64,7 +64,7 @@
           </v-toolbar>
           <v-data-table
             :headers="headers"
-            :items="pessoas"
+            :items="listaPessoas"
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
@@ -102,10 +102,10 @@
 </template>
 
 <script>
-import Pessoas from '../../../domain/services/Pessoas'
-import Papel from '../../../domain/services/Papel'
-import Unidade from '../../../domain/services/Unidade'
-import Squads from '../../../domain/services/Squads'
+import PessoasAPI from '../../../domain/services/PessoasAPI'
+import PapeisAPI from '../../../domain/services/PapeisAPI'
+import UnidadesAPI from '../../../domain/services/UnidadesAPI'
+import SquadsAPI from '../../../domain/services/SquadsAPI'
 // import { http } from '../../../domain/api/config'
 
 export default {
@@ -127,14 +127,17 @@ export default {
       { text: 'Ações', value: 'nome' }
     ],
     editedIndex: -1,
-    pessoas: [],
+    listaPessoas: [],
+    listaPapeis: [],
+    listaUnidades: [],
+    listaSquads: [],
     pessoaInput: {
       nome: '',
       email: '',
       cargo: '',
       unidade: '',
-      squad: '',
-      tribo: ''
+      squadNome: '',
+      triboNome: ''
     },
     defaultItem: {
       nome: '',
@@ -142,7 +145,7 @@ export default {
       cargo: '',
       unidade: '',
       squad: '',
-      tribo: ''
+      triboNome: ''
     }
   }),
 
@@ -165,12 +168,12 @@ export default {
   methods: {
     listarPessoas () {
       this.initialize()
-      Pessoas.obterPessoa().then(respostaPessoa => {
-        this.pessoas = respostaPessoa.data
+      PessoasAPI.obterPessoa().then(respostaPessoa => {
+        this.listaPessoas = respostaPessoa.data
       })
     },
     initialize () {
-      this.pessoas = []
+      this.listaPessoas = []
     },
     reloadPage () {
       setTimeout(function () {
@@ -179,7 +182,7 @@ export default {
     },
     editItem (item) {
       // Alterar aqui o this.pessoas
-      this.editedIndex = this.pessoas.indexOf(item)
+      this.editedIndex = this.listaPessoas.indexOf(item)
       this.pessoaInput = Object.assign({}, item)
       this.dialog = true
     },
@@ -191,8 +194,8 @@ export default {
       }
       confirm(msg) &&
       // Ativa/Desativa da API
-      Pessoas.mudarAtivoPessoa(item.id)
-      console.log('Listei');
+      PessoasAPI.mudarAtivoPessoa(item.id)
+      console.log('Listei')
       this.listarPessoas()
       // this.reloadPage()
       // Remove da lista do Front
@@ -207,30 +210,30 @@ export default {
     },
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.pessoas[this.editedIndex], this.pessoaInput)
-        this.pessoas.push(this.pessoaInput)
-        Pessoas.alterarPessoa(this.pessoaInput.id, this.pessoaInput)
+        Object.assign(this.listaPessoas[this.editedIndex], this.pessoaInput)
+        this.listaPessoas.push(this.pessoaInput)
+        PessoasAPI.alterarPessoa(this.pessoaInput.id, this.pessoaInput)
       } else {
+        this.pessoaInput.cargo = this.listaPapeis.map((papel) => {
+          if (papel.id === this.pessoaInput.id_papel) return papel.nome
+        })
         console.log(this.pessoaInput)
-        this.pessoas.push(this.pessoaInput)
-        console.log(this.pessoaInput)
-        Pessoas.inserirPessoa(this.pessoaInput)
+        this.listaPessoas.push(this.pessoaInput)
+        PessoasAPI.inserirPessoa(this.pessoaInput)
       }
       this.close()
     }
   },
   mounted () {
     this.listarPessoas()
-    Papel.obterPapel().then(respostaPapel => {
-      console.log(respostaPapel.data)
-      this.Papel = respostaPapel.data
-      console.log(Papel)
+    PapeisAPI.obterPapel().then(respostaPapel => {
+      this.listaPapeis = respostaPapel.data
     })
-    Unidade.unidades().then(respostaUnidade => {
-      this.Unidade = respostaUnidade.data
+    UnidadesAPI.unidades().then(respostaUnidade => {
+      this.listaUnidades = respostaUnidade.data
     })
-    Squads.obterSquad().then(respostaSquads => {
-      this.Squads = respostaSquads.data
+    SquadsAPI.obterSquad().then(respostaSquads => {
+      this.listaSquads = respostaSquads.data
     })
   }
 }

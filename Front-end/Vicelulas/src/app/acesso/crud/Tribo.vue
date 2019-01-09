@@ -34,7 +34,7 @@
           </v-toolbar>
           <v-data-table
             :headers="headers"
-            :items="tribos"
+            :items="listaTribos"
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">
@@ -67,12 +67,12 @@
 </template>
 
 <script>
-import Tribos from '../../../domain/services/Tribos'
+import TribosAPI from '../../../domain/services/TribosAPI'
 
 export default {
   data: () => ({
     dialog: false,
-    tribos: [],
+    listaTribos: [],
     headers: [
       {
         text: 'Nome',
@@ -117,20 +117,20 @@ export default {
 
   methods: {
     initialize () {
-      this.tribos = []
+      this.listaTribos = []
     },
 
     editItem (item) {
       // Alterar aqui o this.tribos
-      this.editedIndex = this.tribos.indexOf(item)
+      this.editedIndex = this.listaTribos.indexOf(item)
       this.editedItem = Object.assign({}, item)
       this.dialog = true
     },
 
     deleteItem (item) {
-      const index = this.tribos.indexOf(item)
+      const index = this.listaTribos.indexOf(item)
       confirm('Tem certeza que deseja desativar esta Pessoa?') &&
-        this.tribos.splice(index, 1)
+        this.listaTribos.splice(index, 1)
     },
 
     close () {
@@ -143,18 +143,18 @@ export default {
 
     save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.tribos[this.editedIndex], this.editedItem)
-        Tribos.alterarTribo(this.editedItem.id, this.editedItem)
+        Object.assign(this.listaTribos[this.editedIndex], this.editedItem)
+        TribosAPI.alterarTribo(this.editedItem.id, this.editedItem)
       } else {
-        this.tribos.push(this.editedItem)
-        Tribos.inserirTribo(this.editedItem)
+        this.listaTribos.push(this.editedItem)
+        TribosAPI.inserirTribo(this.editedItem)
       }
       this.close()
     }
   },
   mounted () {
-    Tribos.obterTribo().then(respostaTribo => {
-      this.tribos = respostaTribo.data
+    TribosAPI.obterTribo().then(respostaTribo => {
+      this.listaTribos = respostaTribo.data
     })
   }
 }

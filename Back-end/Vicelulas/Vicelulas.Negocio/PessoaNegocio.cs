@@ -10,10 +10,12 @@ namespace Vicelulas.Negocio
     public class PessoaNegocio : IPessoaNegocio
     {
         private readonly IPessoaRepositorio _pessoaRepositorio;
+        private readonly IMentorRepositorio _mentorRepositorio;
 
-        public PessoaNegocio(IPessoaRepositorio _pessoaRepositorio)
+        public PessoaNegocio(IPessoaRepositorio _pessoaRepositorio, IMentorRepositorio _mentorRepositorio)
         {
             this._pessoaRepositorio = _pessoaRepositorio;
+            this._mentorRepositorio = _mentorRepositorio;
         }
 
         public  IEnumerable<PessoaDto> Selecionar()
@@ -69,7 +71,11 @@ namespace Vicelulas.Negocio
 
             entity.Senha = PasswordHash.Create(entity.Senha);
 
-            return _pessoaRepositorio.Inserir(entity);
+            var IdPessoa = _pessoaRepositorio.Inserir(entity);
+
+            if (entity.Permissao == 2)
+                _mentorRepositorio.Inserir(IdPessoa);
+            return IdPessoa;
         }
 
         /// param name="Id, entity">/param>

@@ -13,7 +13,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<TriboDto>($"SELECT T.id, T.nome, T.ativo, M.id AS IdMentor, P.nome FROM [TB_tribo] T " +
+                var lista = connection.Query<TriboDto>($"SELECT T.id, T.nome AS NomeTribo, T.ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_tribo] T " +
                                                        $"LEFT JOIN TB_mentor M ON T.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON " +
                                                        $"M.id_pessoa = P.id");
@@ -25,7 +25,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<TriboDto>($"SELECT T.id, T.nome , T.ativo, M.id AS IdMentor, P.nome FROM [TB_tribo] T " +
+                var obj = connection.QueryFirstOrDefault<TriboDto>($"SELECT T.id, T.nome AS NomeTribo , T.ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_tribo] T " +
                                                                    $"LEFT JOIN TB_mentor M ON T.id_mentor = M.id " +
                                                                    $"LEFT JOIN TB_pessoa P ON " +
                                                                    $"M.id_pessoa = P.id WHERE T.Id = {id}");
@@ -37,7 +37,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<TriboDto>($"SELECT T.id, T.nome , T.ativo, M.id AS IdMentor, P.nome FROM [TB_tribo] T " +
+                var obj = connection.QueryFirstOrDefault<TriboDto>($"SELECT T.id, T.nome AS NomeTribo , T.ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_tribo] T " +
                                                                    $"LEFT JOIN TB_mentor M ON T.id_mentor = M.id " +
                                                                    $"LEFT JOIN TB_pessoa P ON " +
                                                                    $"M.id_pessoa = P.id WHERE T.Nome = '{nome}'");
@@ -49,7 +49,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<TriboDto>($"SELECT T.id, T.nome , T.ativo, M.id AS IdMentor, P.nome FROM [TB_tribo] T " +
+                var lista = connection.Query<TriboDto>($"SELECT T.id, T.nome AS NomeTribo , T.ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_tribo] T " +
                                                        $"LEFT JOIN TB_mentor M ON T.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON " +
                                                        $"M.id_pessoa = P.id WHERE T.Nome LIKE '%{nome}%'");

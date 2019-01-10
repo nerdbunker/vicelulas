@@ -15,6 +15,21 @@ namespace Vicelulas.Teste.NegocioTeste
 {
     public class PapelNegocioTeste
     {
+        [Fact]
+        public void ListaDePapelOK()
+        {
+            // Arrange
+            var repoMock = new Mock<IPapelRepositorio>();
+            repoMock.Setup(m => m.Selecionar()).Returns(DbMock.Papel);
 
+            var _papelNegocio = new PapelNegocio(repoMock.Object);
+
+            // Act
+            var objRetornado = _papelNegocio.Selecionar();
+
+            // Assert
+            Assert.NotNull(objRetornado);
+            Assert.Same(DbMock.Papel, objRetornado);
+        }
     }
 }

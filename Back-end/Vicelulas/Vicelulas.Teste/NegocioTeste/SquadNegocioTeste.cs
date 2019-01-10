@@ -256,7 +256,6 @@ namespace Vicelulas.Teste.NegocioTeste
             //Assert
             Assert.Throws<ConflitoException>(() => _squadNegocio.Inserir(squad2));
 
-
         }*/
 
 

@@ -34,7 +34,7 @@ export default {
     }
   },
   created () {
-    if (localStorage.getItem('estarLogado') != 'TokenGrupoViceri') {
+    if (localStorage.getItem('estarLogado') !== 'TokenGrupoViceri') {
       this.$router.push('/entrar')
     } else {
       this.$router.push('/tribo')

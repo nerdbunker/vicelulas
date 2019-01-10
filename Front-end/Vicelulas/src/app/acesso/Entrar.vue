@@ -69,7 +69,7 @@ export default {
     }
   },
   created () {
-    if(localStorage.getItem('estarLogado') === 'TokenGrupoViceri') {
+    if (localStorage.getItem('estarLogado') === 'TokenGrupoViceri') {
       this.$router.push('/tribo')
     }
   }

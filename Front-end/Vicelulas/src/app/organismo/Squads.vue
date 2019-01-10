@@ -20,16 +20,14 @@
               <v-spacer></v-spacer>
               <div class="squad-text">
                 <div class="headline">{{ squad.nome }}</div>
-                <!-- <div>Analista: {{ squad.analista }}</div>
-                <div>Qualidade: {{ squad.qualidade }}</div>
-                <div>Dev Team: {{ squad.time }}</div> -->
+                <div>Time: {{ squad.time }}</div>
               </div>
             </v-card-title>
           <v-divider light></v-divider>
           <v-card-actions class="pa-3">
             Tribo: {{ squad.nomeTribo }}
             <v-spacer></v-spacer>
-            <!-- Mentor: {{ squad.gestor }} -->
+            Mentor: {{ squad.nomeMentor }}
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -56,9 +54,3 @@ export default {
   }
 }
 </script>
-
-<style>
-/* .squad-text {
-  text-align: left;
-} */
-</style>

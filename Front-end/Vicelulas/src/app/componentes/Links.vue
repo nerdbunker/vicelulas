@@ -28,9 +28,9 @@ export default {
   name: 'Links',
   data: () => ({
     links: [
-      { title: 'Valores', to: '/valores' },
       { title: 'Fotos da Viceri', to: '/viceri' },
       { title: 'Dúvidas', to: '/duvidas' },
+      { title: 'Documentos', to: '/documentos' },
       { title: 'Suporte', to: '/suporte' },
       { title: 'Entrar', to: '/entrar' }
     ],

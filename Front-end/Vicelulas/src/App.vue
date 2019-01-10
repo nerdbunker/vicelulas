@@ -42,7 +42,10 @@
           {{ titulo }}
         </v-list-tile-title>
         <v-spacer></v-spacer>
-        <v-icon>mdi-exit-to-app</v-icon>
+        <v-btn @click="history.back()" color="cyan">
+          <v-icon>mdi-arrow-left</v-icon>
+           Voltar
+        </v-btn>
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>

@@ -71,7 +71,7 @@ namespace Vicelulas.Negocio
 
             if (entity.Id_squad == 0)
                 entity.Id_squad = null;
-            entity.Senha = PasswordHash.Create(entity.Senha);
+            entity.Senha = PasswordHash.Create(entity.Senha.ToString());
 
             var IdPessoa = _pessoaRepositorio.Inserir(entity);
 

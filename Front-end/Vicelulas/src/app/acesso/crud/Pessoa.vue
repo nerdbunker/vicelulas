@@ -52,12 +52,18 @@
                       </v-flex>
                     </v-layout>
                   </v-container>
+                    <v-container fluid px-0>
+                      <v-switch
+                        :label="`Mentor`"
+                        v-model="ehMentor"
+                      ></v-switch>
+                    </v-container>
                 </v-card-text>
 
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-                  <v-btn color="blue darken-1" v-show="pessoaInsert.nome && pessoaInsert.email && pessoaInsert.id_Papel && pessoaInsert.id_Unidade && pessoaInsert.id_Squads" flat @click="save">Salvar</v-btn>
+                  <v-btn color="blue darken-1" v-show="pessoaInsert.nome && pessoaInsert.email && pessoaInsert.id_Papel && pessoaInsert.id_Unidade && pessoaInsert.id_Squads"  flat @click="save">Salvar</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
@@ -74,7 +80,7 @@
               <td>{{ props.item.cargo }}</td>
               <td>{{ props.item.unidade }}</td>
               <td>{{ props.item.squadNome }}</td>
-              <td>{{ props.item.triboNome }}</td>
+              <td>{{ props.item.triboNome || 'Nenhuma' }}</td>
               <td>{{ props.item.ativo ? 'Sim':'Não'}}</td>
               <td>
               <v-icon
@@ -111,6 +117,7 @@ import SquadsAPI from '../../../domain/services/SquadsAPI'
 
 export default {
   data: () => ({
+    ehMentor: false,
     dialog: false,
     headers: [
       { text: 'ID', value: 'id' },
@@ -134,7 +141,8 @@ export default {
       email: '',
       id_Papel: '',
       id_Unidade: '',
-      id_Squads: ''
+      id_Squads: '',
+      permissao: 1
     },
     pessoaInput: {
       id: '',
@@ -173,6 +181,10 @@ export default {
   },
 
   methods: {
+    retornaPermissao (condicao) {
+      if (condicao) this.pessoaInsert.permissao = 2
+      else this.pessoaInsert.permissao = 1
+    },
     retornaValores (dados) {
       this.pessoaInput.id = dados.id
       this.pessoaInput.nome = dados.nome
@@ -233,6 +245,7 @@ export default {
       }, 300)
     },
     save () {
+      this.retornaPermissao(this.ehMentor)
       if (this.editedIndex > -1) {
         PessoasAPI.alterarPessoa(this.pessoaInsert.id, this.pessoaInsert).then(resposta => {
           this.listarPessoas()
@@ -242,7 +255,7 @@ export default {
         PessoasAPI.inserirPessoa(this.pessoaInsert).then(resposta => {
           this.listarPessoas()
           this.close()
-        })
+        }).catch(err => console.log(err))
       }
     }
   },
@@ -255,7 +268,6 @@ export default {
       this.listaUnidades = respostaUnidade.data
     })
     SquadsAPI.obterSquad().then(respostaSquads => {
-      console.log(respostaSquads)
       this.listaSquads = respostaSquads.data
     })
   }

@@ -9,23 +9,21 @@ namespace Vicelulas.Teste.DominioTeste
         public void RetornaOkComparacaoHash()
         {
              
-            var senha = "passw0rd";
+            var senha = "123Aa321";
             var hash = PasswordHash.Create(senha);
+            var hashTeste = "3a2a61c6a7c040dd9153b7de23018cda";
 
-            var match = PasswordHash.Validate(senha, hash);
-
-            Assert.True(match);
+            Assert.Equal(hash, hashTeste);
         }
 
         [Fact]
         public void RetornaFalseComparacaoHash()
         {
-            var senha = "passw0rd";
-            var hash =  "password";
+            var senha = "123Aa321";
+            var hash = PasswordHash.Create(senha);
+            var hashTeste = "3a2a61c6a7c01232132118cda";
 
-            var match = PasswordHash.Validate(senha, hash);
-
-            Assert.False(match);
+            Assert.NotEqual(hash, hashTeste);
         }
     }
 }

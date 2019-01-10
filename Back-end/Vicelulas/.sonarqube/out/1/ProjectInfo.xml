@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <ProjectName>Vicelulas.DBMock</ProjectName>
+  <ProjectName>Vicelulas.Dominio</ProjectName>
   <ProjectLanguage>C#</ProjectLanguage>
   <ProjectType>Product</ProjectType>
-  <ProjectGuid>5a11bd9e-722f-446b-9279-4eccccc882cc</ProjectGuid>
-  <FullPath>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\Vicelulas.DBMock.csproj</FullPath>
+  <ProjectGuid>831d7631-c64d-4fb8-b702-a3de8695495d</ProjectGuid>
+  <FullPath>C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Vicelulas.Dominio.csproj</FullPath>
   <IsExcluded>false</IsExcluded>
   <AnalysisResults>
-    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\out\1\FilesToAnalyze.txt" />
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\vicelulas\Back-end\Vicelulas\.sonarqube\out\1\FilesToAnalyze.txt" />
   </AnalysisResults>
   <AnalysisSettings>
-    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\bin\Debug\netcoreapp2.1\Vicelulas.DBMock.dll.RoslynCA.json|C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\bin\Debug\netcoreapp2.1\Vicelulas.DBMock.dll.RoslynCA.json</Property>
-    <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\out\1</Property>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\bin\Debug\netcoreapp2.1\Vicelulas.Dominio.dll.RoslynCA.json|C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\bin\Debug\netcoreapp2.1\Vicelulas.Dominio.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\vicelulas\Back-end\Vicelulas\.sonarqube\out\1</Property>
   </AnalysisSettings>
   <Configuration>Debug</Configuration>
   <Platform>AnyCPU</Platform>

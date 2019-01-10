@@ -133,7 +133,6 @@ namespace Vicelulas.Teste.APITeste
                 Id_squads = 2,
                 Id_unidade = 1,
                 Permissao = 2,
-                Senha = "321"
             };
 
             var repoMock = new Mock<IPessoaNegocio>();

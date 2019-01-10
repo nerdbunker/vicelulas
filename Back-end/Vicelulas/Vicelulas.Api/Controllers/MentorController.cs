@@ -7,7 +7,7 @@ using Vicelulas.Negocio;
 
 namespace Vicelulas.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/organismo/[controller]")]
     [ApiController]
     public class MentorController : ControllerBase
     {

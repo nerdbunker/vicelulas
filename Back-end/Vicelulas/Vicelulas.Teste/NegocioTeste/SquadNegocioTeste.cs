@@ -249,8 +249,8 @@ namespace Vicelulas.Teste.NegocioTeste
             var _squadNegocio = new SquadNegocio(repoMock.Object);
 
             //Act
-            var objRetornado1 = _squadNegocio.Inserir(squad1);
-            var objRetornado2 = _squadNegocio.Inserir(squad2);
+            _squadNegocio.Inserir(squad1);
+            _squadNegocio.Inserir(squad2);
 
             //Assert
             Assert.Throws<ConflitoException>(() => _squadNegocio.Inserir(squad2));
@@ -260,20 +260,13 @@ namespace Vicelulas.Teste.NegocioTeste
         public void SquadAlterarOK()
         {
             // Arrange
-            var valorEsperado = new Squad
-            {
-                Id = 1,
-                Id_tribo = 1,
-                Nome = "Teste",
-                Ativo = true
-            };
-
             var squad = new Squad
             {
                 Id = 1,
                 Id_tribo = 1,
                 Nome = "Teste",
-                Ativo = true
+                Ativo = true,
+                Id_Mentor = 1,
             };
 
             var repoMock = new Mock<ISquadRepositorio>();
@@ -286,7 +279,42 @@ namespace Vicelulas.Teste.NegocioTeste
 
             // Assert
             Assert.NotNull(objRetornado);
-            //Assert.Same(valorEsperado, objRetornado.squad);
+        }
+
+        [Fact]
+        public void SquadAtivarDesativarOk()
+        {
+            // Arrange
+            var squad = new Squad
+            {
+                Id = 1,
+                Ativo = true,
+            };
+
+            var repoMock = new Mock<ISquadRepositorio>();
+            var _squadNegocio = new SquadNegocio(repoMock.Object);
+            repoMock.Setup(mr => mr.AtivarDesativarSquad(squad.Id, !squad.Ativo)).Callback((int Id, bool Ativo) =>
+            {
+                var objRetornado = _squadNegocio.SelecionarPorId(squad.Id);
+            }).Verifiable();
+        }
+
+        [Fact]
+        public void SquadAtivarDesativarNotFound()
+        {
+            // Arrange
+            var squad = new Squad
+            {
+                Id = 0,
+                Ativo = true,
+            };
+
+            var repoMock = new Mock<ISquadRepositorio>();
+            var _squadNegocio = new SquadNegocio(repoMock.Object);
+            repoMock.Setup(mr => mr.AtivarDesativarSquad(squad.Id, !squad.Ativo));
+
+            // Assert
+            Assert.Throws<NaoEncontradoException>(() => _squadNegocio.AtivarDesativarSquad(squad.Id));
         }
     }
 }

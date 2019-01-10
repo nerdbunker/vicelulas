@@ -1,0 +1,15 @@
+\
+SC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\AutenticacaoController.csutf-8V
+MC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\MentorController.csutf-8U
+LC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\PapelController.csutf-8V
+MC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\PessoaController.csutf-8U
+LC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\SquadController.csutf-8U
+LC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\TriboController.csutf-8W
+NC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\UnidadeController.csutf-8L
+CC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Filtros\ErroFiltro.csutf-8J
+AC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Model\LoginInput.csutf-8K
+BC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Model\PessoaInput.csutf-8J
+AC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Model\SquadInput.csutf-8J
+AC:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Model\TriboInput.csutf-8A
+8C:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Program.csutf-8A
+8C:\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Startup.csutf-8

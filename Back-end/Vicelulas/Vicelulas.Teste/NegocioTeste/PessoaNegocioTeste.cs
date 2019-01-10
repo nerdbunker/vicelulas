@@ -231,7 +231,8 @@ namespace Vicelulas.Teste.NegocioTeste
             var _pessoaNegocio = new PessoaNegocio(repoMock.Object, repoMock2.Object);
             repoMock.Setup(mr => mr.AtivarDesativarPessoa(pessoa.Id, !pessoa.Ativo)).Callback((int Id, bool Ativo) =>
             {
-                var objRetornado = _pessoaNegocio.SelecionarPorId(pessoa.Id);
+                _pessoaNegocio.SelecionarPorId(pessoa.Id);
+
             }).Verifiable();
         }
 

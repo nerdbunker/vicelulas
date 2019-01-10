@@ -22,7 +22,6 @@ namespace Vicelulas.Teste.NegocioTeste
             // Arrange
             var username = "Pedro@viceri.com";
             var senha = "123Aa321";
-            var hash = PasswordHash.Create(senha);
 
             var repoMock = new Mock<IAutenticacaoRepositorio>();
             repoMock.Setup(m => m.Entrar(username, senha)).Returns(DbMock.Pessoa[0]);
@@ -81,7 +80,7 @@ namespace Vicelulas.Teste.NegocioTeste
             var _autenticacaoNegocio = new AutenticacaoNegocio(repoMock.Object);
 
             // Act
-            var objRetornado = _autenticacaoNegocio.Entrar(pessoa.Email, password);
+            _autenticacaoNegocio.Entrar(pessoa.Email, password);
 
             // Assert
             Assert.Throws<RecusadoException>(() => _autenticacaoNegocio.Entrar(pessoa.Email, password));

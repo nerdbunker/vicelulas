@@ -249,8 +249,8 @@ namespace Vicelulas.Teste.NegocioTeste
             var _squadNegocio = new SquadNegocio(repoMock.Object);
 
             //Act
-            var objRetornado1 = _squadNegocio.Inserir(squad1);
-            var objRetornado2 = _squadNegocio.Inserir(squad2);
+            _squadNegocio.Inserir(squad1);
+            _squadNegocio.Inserir(squad2);
 
             //Assert
             Assert.Throws<ConflitoException>(() => _squadNegocio.Inserir(squad2));
@@ -260,14 +260,6 @@ namespace Vicelulas.Teste.NegocioTeste
         public void SquadAlterarOK()
         {
             // Arrange
-            var valorEsperado = new Squad
-            {
-                Id = 1,
-                Id_tribo = 1,
-                Nome = "Teste",
-                Ativo = true
-            };
-
             var squad = new Squad
             {
                 Id = 1,
@@ -286,7 +278,6 @@ namespace Vicelulas.Teste.NegocioTeste
 
             // Assert
             Assert.NotNull(objRetornado);
-            //Assert.Same(valorEsperado, objRetornado.squad);
         }
     }
 }

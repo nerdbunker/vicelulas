@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  vicelulas.api:
+    image: ${DOCKER_REGISTRY-}vicelulasapi
+    build:
+      context: .
+      dockerfile: Vicelulas.Api/Dockerfile

@@ -1,12 +1,23 @@
-Ý
-kC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\TriboAPITeste.cs
+¸
+LC:\vicelulas\Back-end\Vicelulas\Vicelulas.IoC\Negocio\NegocioBootStrapper.cs
 
- 
+ &
 
-
+ *P
+> E
 
- 
- , /
-  &
- 1 =
- ( 6
+       À
+TC:\vicelulas\Back-end\Vicelulas\Vicelulas.IoC\Repositorio\RepositorioBootStrapper.cs
+
+ *
+
+ *P
+> E
+
+       ‚
+HC:\vicelulas\Back-end\Vicelulas\Vicelulas.IoC\RootServiceBootStrapper.cs
+
+ (
+
+		 (
+		< C; B? F

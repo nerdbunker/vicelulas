@@ -20,6 +20,15 @@
                       <v-flex xs12 sm12 md12>
                         <v-text-field v-model="triboInsert.nome" label="Nome da Tribo"></v-text-field>
                       </v-flex>
+                      <v-flex xs12 sm12 md12>
+                        <v-select
+                          item-text="nomePessoa"
+                          item-value="id"
+                          :items="listaMentores"
+                          v-model="triboInsert.id_Mentor"
+                          label="Mentor"
+                        ></v-select>
+                      </v-flex>
                     </v-layout>
                   </v-container>
                 </v-card-text>
@@ -69,12 +78,14 @@
 
 <script>
 import TribosAPI from '../../../domain/services/TribosAPI'
+import MentoresAPI from '../../../domain/services/MentoresAPI'
 
 export default {
   data: () => ({
     switch1: true,
     dialog: false,
     listaTribos: [],
+    listaMentores: [],
     headers: [
       { text: 'ID', value: 'id' },
       { text: 'Nome', value: 'nome' },
@@ -168,6 +179,9 @@ export default {
   },
   mounted () {
     this.listarTribos()
+    MentoresAPI.obterMentores().then(respostaMentores => {
+      this.listaMentores = respostaMentores.data
+    })
   }
 }
 </script>

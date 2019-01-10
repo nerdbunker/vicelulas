@@ -9,8 +9,8 @@
       >
         <v-list>
           <v-flex class="bg-white">
-            <router-link to="/">
-              <img src="../static/icones/logo.png" class="logo" alt="">
+            <router-link to="/" aria-label="logo">
+              <img src="../static/icones/logo.png" class="logo" alt="Grupo Viceri - Logo">
             </router-link>
           </v-flex>
           <v-divider></v-divider>

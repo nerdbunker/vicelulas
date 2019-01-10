@@ -40,7 +40,7 @@
             :key="squad.id + 150"
             class="flex"
           >
-            <router-link :to="{ name: 'Tribos', params: { id: squad.id }}">
+            <router-link :to="{ name: 'SquadsSemTribo', params: { id: squad.id }}">
               <!-- SVG Dinamico, cria as imagens conforme a API fornece dados -->
               <svg class="zoom" height="100px" width="100px" xmlns="http://www.w3.org/2000/svg">
                 <!-- Imagem de Fundo - Célula -->

@@ -1,0 +1,16 @@
+`
+WC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\AutenticacaoControllerTeste.csutf-8Z
+QC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\MentorControllerTeste.csutf-8Y
+PC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\PapelControllerTeste.csutf-8Z
+QC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\PessoaControllerTeste.csutf-8Y
+PC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\SquadControllerTeste.csutf-8Y
+PC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\TriboControllerTeste.csutf-8[
+RC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\APITeste\UnidadeControllerTeste.csutf-8Z
+QC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\DominioTeste\PasswordHashTeste.csutf-8a
+XC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\NegocioTeste\AutenticacaoNegocioTeste.csutf-8[
+RC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\NegocioTeste\MentorNegocioTeste.csutf-8Z
+QC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\NegocioTeste\PapelNegocioTeste.csutf-8[
+RC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\NegocioTeste\PessoaNegocioTeste.csutf-8Z
+QC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\NegocioTeste\SquadNegocioTeste.csutf-8Z
+QC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\NegocioTeste\TriboNegocioTeste.csutf-8\
+SC:\vicelulas\Back-end\Vicelulas\Vicelulas.Teste\NegocioTeste\UnidadeNegocioTeste.csutf-8

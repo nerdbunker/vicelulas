@@ -264,15 +264,6 @@ namespace Vicelulas.Teste.NegocioTeste
         public void SquadAlterarOK()
         {
             // Arrange
-            var valorEsperado = new Squad
-            {
-                Id = 1,
-                Id_tribo = 1,
-                Nome = "Teste",
-                Ativo = true,
-                Id_Mentor = 1,
-            };
-
             var squad = new Squad
             {
                 Id = 1,
@@ -292,7 +283,6 @@ namespace Vicelulas.Teste.NegocioTeste
 
             // Assert
             Assert.NotNull(objRetornado);
-            //Assert.Same(valorEsperado, objRetornado.squad);
         }
 
         [Fact]

@@ -1,65 +1,219 @@
-Š
-\C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\DbMock.cs
+q
+WC:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Configuracoes\VicelulasConfiguracao.cs
 
- (
-% * 7 <  7 <
-		% * 
- "  2
-  $ *$ *$ *  $ *
+ &
 
- ú
-tC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\Repositorios\RepositiorioSquad.cs
+ s
+AC:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\MentorDto.cs
 
-
- 
+ 
 
-		 (
-		0 4 ? C
-* +/ 0
- "++ "44 "
-' )3 5
-& '+ ,
+		 
 
- !
-& . #
-7 ;   
-D N!! &
-U Z"" 
- %% "&& 
+
+
+ 
 
-)) 
-))" $++# %
-))* 2,, %
-)); ?-- 
-))H R.. (
-))Y ^// 2
-++ ,, -- .. // 
+  f
+@C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\PapelDto.cs
 
-22 
-22  "44# %
-44 55  %
-sC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.DBMock\Repositorios\RepositorioTribo.cs
+ 
 
- !
+ 
 
-		 (
-		0 4 ? C
-* +/ 0
- "** "11 "
-' )3 5
-& '+ ,
+ ë
+AC:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\PessoaDto.cs
 
- !
-) - 
-4 9   
- ## "$$ 
+ 
 
-(( 
-((" $**# %
-((- 1++ 
-((8 =,, 
-** ++ ,, 
+ 
 
-// 
-//  "11# %
-11 22  %
+ 
+
+ 
+
+		 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ¢
+@C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\SquadDto.cs
+
+ 
+
+ 
+
+ 
+
+ 
+
+  
+
+		 
+
+
+
+ 
+
+ Š
+@C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\TriboDto.cs
+
+ 
+
+ 
+
+ 
+
+  
+
+ 
+
+		 È
+BC:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Dto\UnidadeDto.cs
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+		 
+
+
+
+ 
+
+  
+
+ !
+
+ 
+
+ #¢
+NC:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Excecoes\ConflitoException.cs
+
+ "
+
+  
+
+  
+
+% '
+
+  
+( /8 ?§
+SC:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Excecoes\NaoEncontradoException.cs
+
+ '
+
+ %
+
+ %
+
+* ,
+
+ %
+- 4= D¢
+NC:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Excecoes\RecusadoException.cs
+
+ "
+
+  
+
+  
+
+% '
+
+  
+( /8 ?`
+:C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Mentor.cs
+
+ 
+
+		 
+
+
+
+ ´
+:C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Pessoa.cs
+
+ 
+
+ 
+
+ 
+
+		 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ¼
+JC:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Seguranca\PasswordHash.cs
+
+ $
+
+
+
+ #
+
+
++ 0, 1
+ # *
+ ) "
+. 5 !
+> CE J
+   $  $
+ "  (
+  - .% &ƒ
+9C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Squad.cs
+
+ 
+
+ 
+
+ 
+
+		 
+
+ 
+
+ w
+9C:\vicelulas\Back-end\Vicelulas\Viceluas.Dominio\Tribo.cs
+
+ 
+
+ 
+
+ 
+
+		 
+
+ 

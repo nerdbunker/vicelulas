@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AnalysisConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <SonarConfigDir>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\conf</SonarConfigDir>
-  <SonarOutputDir>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\out</SonarOutputDir>
-  <SonarBinDir>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\bin</SonarBinDir>
-  <SonarScannerWorkingDirectory>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas</SonarScannerWorkingDirectory>
+  <SonarConfigDir>C:\vicelulas\Back-end\Vicelulas\.sonarqube\conf</SonarConfigDir>
+  <SonarOutputDir>C:\vicelulas\Back-end\Vicelulas\.sonarqube\out</SonarOutputDir>
+  <SonarBinDir>C:\vicelulas\Back-end\Vicelulas\.sonarqube\bin</SonarBinDir>
+  <SonarScannerWorkingDirectory>C:\vicelulas\Back-end\Vicelulas</SonarScannerWorkingDirectory>
   <HasBeginStepCommandLineCredentials>false</HasBeginStepCommandLineCredentials>
   <SonarQubeHostUrl>http://localhost:9000</SonarQubeHostUrl>
   <SonarQubeVersion>7.4.0.18908</SonarQubeVersion>
@@ -88,13 +88,16 @@
     <Property Name="sonar.java.collectAnalysisErrors">false</Property>
     <Property Name="sonar.updatecenter.url">https://update.sonarsource.org/update-center.properties</Property>
     <Property Name="sonar.core.id">BF41A1F2-AWeeI15yzT5FJVViYGXM</Property>
-    <Property Name="sonar.core.startTime">26/12/2018 10:19:52</Property>
+    <Property Name="sonar.core.startTime">10/01/2019 11:09:13</Property>
+    <Property Name="sonar.cs.opencover.it.reportsPaths">C:\OpenCover.xml</Property>
+    <Property Name="sonar.coverage.exclusions">**\*Teste.cs*</Property>
+    <Property Name="sonar.cpd.exclusions">**\DbMock.cs*</Property>
   </ServerSettings>
   <LocalSettings />
   <AnalyzersSettings>
     <AnalyzerSettings>
       <Language>cs</Language>
-      <RuleSetFilePath>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\conf\SonarQubeRoslyn-cs.ruleset</RuleSetFilePath>
+      <RuleSetFilePath>C:\vicelulas\Back-end\Vicelulas\.sonarqube\conf\SonarQubeRoslyn-cs.ruleset</RuleSetFilePath>
       <AnalyzerAssemblyPaths>
         <Path>C:\Users\lcontesini\AppData\Local\Temp\.sonarqube\resources\0\Google.Protobuf.dll</Path>
         <Path>C:\Users\lcontesini\AppData\Local\Temp\.sonarqube\resources\0\SonarAnalyzer.CSharp.dll</Path>
@@ -104,12 +107,12 @@
         <Path>C:\Users\lcontesini\AppData\Local\Temp\.sonarqube\resources\1\SonarAnalyzer.VisualBasic.dll</Path>
       </AnalyzerAssemblyPaths>
       <AdditionalFilePaths>
-        <Path>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\conf\cs\SonarLint.xml</Path>
+        <Path>C:\vicelulas\Back-end\Vicelulas\.sonarqube\conf\cs\SonarLint.xml</Path>
       </AdditionalFilePaths>
     </AnalyzerSettings>
     <AnalyzerSettings>
       <Language>vbnet</Language>
-      <RuleSetFilePath>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\conf\SonarQubeRoslyn-vbnet.ruleset</RuleSetFilePath>
+      <RuleSetFilePath>C:\vicelulas\Back-end\Vicelulas\.sonarqube\conf\SonarQubeRoslyn-vbnet.ruleset</RuleSetFilePath>
       <AnalyzerAssemblyPaths>
         <Path>C:\Users\lcontesini\AppData\Local\Temp\.sonarqube\resources\0\Google.Protobuf.dll</Path>
         <Path>C:\Users\lcontesini\AppData\Local\Temp\.sonarqube\resources\0\SonarAnalyzer.CSharp.dll</Path>
@@ -119,7 +122,7 @@
         <Path>C:\Users\lcontesini\AppData\Local\Temp\.sonarqube\resources\1\SonarAnalyzer.VisualBasic.dll</Path>
       </AnalyzerAssemblyPaths>
       <AdditionalFilePaths>
-        <Path>C:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\.sonarqube\conf\vbnet\SonarLint.xml</Path>
+        <Path>C:\vicelulas\Back-end\Vicelulas\.sonarqube\conf\vbnet\SonarLint.xml</Path>
       </AdditionalFilePaths>
     </AnalyzerSettings>
   </AnalyzersSettings>

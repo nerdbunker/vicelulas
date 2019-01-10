@@ -53,7 +53,10 @@ namespace Vicelulas.Negocio
             if (NomeExistente != null)
                 throw new ConflitoException($"Já existe uma Tribo cadastrada com este nome {entity.Nome}!");
 
-            return _triboRepositorio.Inserir(entity);
+            if (entity.Id_Mentor == 0)
+                return _triboRepositorio.InserirSemMentor(entity);
+            else
+                return _triboRepositorio.Inserir(entity);
         }
 
         public TriboDto Alterar(int Id, Tribo entity)

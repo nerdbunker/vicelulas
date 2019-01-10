@@ -50,7 +50,7 @@ namespace Vicelulas.Teste.APITeste
             {
                 Id = 1,
                 Id_Tribo = 1,
-                Nome = "NerdBunker",
+                NomeSquad = "NerdBunker",
                 NomeTribo = "Formacao",
                 Ativo = true
             };

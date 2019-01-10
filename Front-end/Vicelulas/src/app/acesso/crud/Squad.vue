@@ -18,7 +18,7 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="squadInsert.nomeSquad" label="Nome da Squad"></v-text-field>
+                        <v-text-field v-model="squadInsert.nome" label="Nome da Squad"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
@@ -36,7 +36,7 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-                  <v-btn color="blue darken-1" v-show="squadInsert.nomeSquad && squadInsert.id_Tribo" flat @click="save">Salvar</v-btn>
+                  <v-btn color="blue darken-1" v-show="squadInsert.nome && squadInsert.id_Tribo" flat @click="save">Salvar</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
@@ -48,7 +48,7 @@
           >
             <template slot="items" slot-scope="props">
               <th>{{ props.item.id }}</th>
-              <td>{{ props.item.nomeSquad }}</td>
+              <td>{{ props.item.nome }}</td>
               <td>{{ props.item.nomeTribo || 'Nenhuma' }}</td>
               <td>{{ props.item.ativo?'Sim':'Não' }}</td>
               <td>
@@ -96,19 +96,19 @@ export default {
     hasMentor: false,
     editedIndex: -1,
     squadInsert: {
-      nomeSquad: '',
+      nome: '',
       id_Tribo: ''
     },
     squadInput: {
       id: '',
-      nomeSquad: '',
+      nome: '',
       id_Tribo: '',
       nomeTribo: '',
       ativo: ''
     },
     defaultItem: {
       id: '',
-      nomeSquad: '',
+      nome: '',
       id_Tribo: '',
       nomeTribo: ''
     }
@@ -133,7 +133,7 @@ export default {
   methods: {
     limpaInsert () {
       this.squadInsert.id = ''
-      this.squadInsert.nomeSquad = ''
+      this.squadInsert.nome = ''
       this.squadInsert.id_Tribo = ''
     },
     listarSquads () {
@@ -144,12 +144,12 @@ export default {
     },
     defineInsert (dados) {
       this.squadInsert.id = dados.id
-      this.squadInsert.nomeSquad = dados.nomeSquad
+      this.squadInsert.nome = dados.nome
       this.squadInsert.id_Tribo = dados.id_Tribo
     },
     retornaValores (dados) {
       this.squadInput.id = dados.id
-      this.squadInput.nomeSquad = dados.nomeSquad
+      this.squadInput.nome = dados.nome
       this.squadInput.id_Tribo = dados.id_Tribo
       this.squadInput.nomeTribo = dados.nomeTribo
       this.squadInput.ativo = dados.ativo
@@ -161,6 +161,7 @@ export default {
     editItem (item) {
       // Alterar aqui o this.pessoas
       this.editedIndex = this.listaSquads.indexOf(item)
+      console.log(item)
       this.defineInsert(item)
       this.dialog = true
     },

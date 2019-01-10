@@ -13,7 +13,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome AS NomeSquad, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " + 
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " + 
                                                        $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id ");
@@ -25,7 +25,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome AS NomeSquad, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
                                                                    $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                                    $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                                    $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -41,7 +41,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome AS NomeSquad, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
                                                        $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -58,7 +58,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome AS NomeSquad, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
                                                                    $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                                    $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                                    $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -74,7 +74,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome AS NomeSquad, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
                                                        $"INNER JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -90,7 +90,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome AS NomeSquad, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
                                                        $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +

@@ -9,7 +9,7 @@ import store from './store'
 import './registerServiceWorker'
 // Fontes como Dependencia
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-
+import '@mdi/font/css/materialdesignicons.css'
 Vue.config.productionTip = false
 
 new Vue({

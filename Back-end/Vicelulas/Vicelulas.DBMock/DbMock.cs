@@ -35,12 +35,12 @@ namespace Vicelulas.DBMock
 
             Squad = new List<SquadDto>
             {
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[0].Id , Nome = "NerdBunker", NomeTribo = Tribo[0].Nome, Ativo = true },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[1].Id , Nome = "NerdBunker", NomeTribo = Tribo[1].Nome, Ativo = true },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[2].Id , Nome = "Bug Hunters", NomeTribo = Tribo[2].Nome, Ativo = true },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[3].Id , Nome = "Unibanco", NomeTribo = Tribo[3].Nome, Ativo = false },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[4].Id , Nome = "Lemoris", NomeTribo = Tribo[4].Nome, Ativo = false },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[5].Id , Nome = "Alpha Noob", NomeTribo = Tribo[5].Nome, Ativo = false },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[0].Id , NomeSquad = "NerdBunker", NomeTribo = Tribo[0].Nome, Ativo = true },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[1].Id , NomeSquad = "NerdBunker", NomeTribo = Tribo[1].Nome, Ativo = true },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[2].Id , NomeSquad = "Bug Hunters", NomeTribo = Tribo[2].Nome, Ativo = true },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[3].Id , NomeSquad = "Unibanco", NomeTribo = Tribo[3].Nome, Ativo = false },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[4].Id , NomeSquad = "Lemoris", NomeTribo = Tribo[4].Nome, Ativo = false },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[5].Id , NomeSquad = "Alpha Noob", NomeTribo = Tribo[5].Nome, Ativo = false },
 
             };
 
@@ -57,7 +57,7 @@ namespace Vicelulas.DBMock
                     Id_Tribo = Tribo[0].Id,
                     Id_Unidade = 1,
                     Permissao = 1,
-                    SquadNome = Squad[0].Nome,
+                    SquadNome = Squad[0].NomeSquad,
                     TriboNome= Tribo[0].Nome,
                     Unidade = "General Osorio" },
 
@@ -72,7 +72,7 @@ namespace Vicelulas.DBMock
                     Id_Tribo = Tribo[0].Id,
                     Id_Unidade = 1,
                     Permissao = 1,
-                    SquadNome = Squad[0].Nome,
+                    SquadNome = Squad[0].NomeSquad,
                     TriboNome= Tribo[0].Nome,
                     Unidade = "General Osorio" },
 
@@ -87,7 +87,7 @@ namespace Vicelulas.DBMock
                     Id_Tribo = Tribo[0].Id,
                     Id_Unidade = 1,
                     Permissao = 1,
-                    SquadNome = Squad[0].Nome,
+                    SquadNome = Squad[0].NomeSquad,
                     TriboNome= Tribo[0].Nome,
                     Unidade = "General Osorio" },
 
@@ -102,7 +102,7 @@ namespace Vicelulas.DBMock
                     Id_Tribo = Tribo[0].Id,
                     Id_Unidade = 1,
                     Permissao = 1,
-                    SquadNome = Squad[0].Nome,
+                    SquadNome = Squad[0].NomeSquad,
                     TriboNome= Tribo[0].Nome,
                     Unidade = "General Osorio" },
 
@@ -117,7 +117,7 @@ namespace Vicelulas.DBMock
                     Id_Tribo = Tribo[0].Id,
                     Id_Unidade = 1,
                     Permissao = 1,
-                    SquadNome = Squad[0].Nome,
+                    SquadNome = Squad[0].NomeSquad,
                     TriboNome= Tribo[0].Nome,
                     Unidade = "General Osorio" },
             };

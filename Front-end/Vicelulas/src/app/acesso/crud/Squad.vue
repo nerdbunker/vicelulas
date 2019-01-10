@@ -138,6 +138,7 @@ export default {
     listarSquads () {
       this.initialize()
       SquadsAPI.obterSquad().then(respostaSquads => {
+        console.log(respostaSquads.data)
         this.listaSquads = respostaSquads.data
       })
     },

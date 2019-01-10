@@ -13,6 +13,7 @@ namespace Vicelulas.IoC.Repositorio
             service.AddScoped<IPessoaRepositorio, PessoaRepositorio>();
             service.AddScoped<IPapelRepositorio, PapelRepositorio>();
             service.AddScoped<IAutenticacaoRepositorio, AutenticacaoRepositorio>();
+            service.AddScoped<IMentorRepositorio, MentorRepositorio>();
         }
     }
 }

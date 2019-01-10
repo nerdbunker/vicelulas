@@ -3,7 +3,7 @@
     public class TriboDto
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string NomeTribo { get; set; }
         public string NomeMentor { get; set; }
         public int IdMentor { get; set; }
         public bool Ativo { get; set; }

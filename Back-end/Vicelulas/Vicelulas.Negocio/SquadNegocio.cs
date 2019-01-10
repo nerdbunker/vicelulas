@@ -70,7 +70,14 @@ namespace Vicelulas.Negocio
             if (NomeExistente != null)
                 throw new ConflitoException($"Já existe uma Squad cadastrada com este nome {entity.Nome}!");
 
-            return _squadRepositorio.Inserir(entity);
+            if (entity.Id_tribo == 0 && entity.Id_mentor == 0)
+                return _squadRepositorio.InserirSemTriboEMentor(entity);
+            else if (entity.Id_tribo == 0)
+                return _squadRepositorio.InserirSemTribo(entity);
+            else if (entity.Id_mentor == 0)
+                return _squadRepositorio.InserirSemMentor(entity);
+            else
+                return _squadRepositorio.Inserir(entity);
         }
 
         /// <param name="Id, entity"></param>

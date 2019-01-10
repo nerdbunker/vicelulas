@@ -168,6 +168,40 @@ namespace Vicelulas.Teste.NegocioTeste
             Assert.Throws<ConflitoException>(() => _triboNegocio.Inserir(tribo));
         }
 
+        [Fact]
+        public void TriboAtivarDesativarOk()
+        {
+            // Arrange
+            var tribo = new Tribo
+            {
+                Id = 1,
+                Ativo = true,
+            };
 
+            var repoMock = new Mock<ITriboRepositorio>();
+            var _triboNegocio = new TriboNegocio(repoMock.Object);
+            repoMock.Setup(mr => mr.AtivarDesativarTribo(tribo.Id, !tribo.Ativo)).Callback((int Id, bool Ativo) =>
+            {
+                var objRetornado = _triboNegocio.SelecionarPorId(tribo.Id);
+            }).Verifiable();
+        }
+
+        [Fact]
+        public void TriboAtivarDesativarNotFound()
+        {
+            // Arrange
+            var tribo = new Tribo
+            {
+                Id = 0,
+                Ativo = true,
+            };
+
+            var repoMock = new Mock<ITriboRepositorio>();
+            var _triboNegocio = new TriboNegocio(repoMock.Object);
+            repoMock.Setup(mr => mr.AtivarDesativarTribo(tribo.Id, !tribo.Ativo));
+
+            // Assert
+            Assert.Throws<NaoEncontradoException>(() => _triboNegocio.AtivarDesativarTribo(tribo.Id));
+        }
     }
 }

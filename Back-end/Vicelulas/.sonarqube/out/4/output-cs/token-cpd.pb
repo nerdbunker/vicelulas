@@ -1,782 +1,678 @@
-ù%
-oC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\PessoaController.cs
+«
+KC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Abstracao\INegocioBase.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+. 
+Abstra√ß√£o %
+{ 
+public 
+
+	interface 
+INegocioBase !
+<! "
+T" #
+># $
+where% *
+T+ ,
+:- .
+class/ 4
+{ 
+IEnumerable 
+< 
+T 
+> 
+
+Selecionar !
+(! "
+)" #
+;# $
+T 	
+SelecionarPorId
+ 
+( 
+int 
+id  
+)  !
+;! "
+int		 
+Inserir		 
+(		 
+T		 
+entity		 
+)		 
+;		 
+T
+
+ 	
+Alterar
+
+
+ 
+(
+
+ 
+int
+
+ 
+id
+
+ 
+,
+
+ 
+T
+
+ 
+entity
+
+ "
+)
+
+" #
+;
+
+# $
+void 
+Deletar 
+( 
+int 
+id 
+) 
+; 
+} 
+} ô
+HC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\AutenticacaoNegocio.cs
+	namespace		 	
+	Vicelulas		
+ 
+.		 
+Negocio		 
+{
+
+ 
+public 
+
+class 
+AutenticacaoNegocio $
+:% & 
+IAutenticacaoNegocio' ;
+{ 
+private 
+readonly $
+IAutenticacaoRepositorio 1$
+_autenticacaoRepositorio2 J
+;J K
+public 
+AutenticacaoNegocio "
+(" #$
+IAutenticacaoRepositorio# ;$
+_autenticacaoRepositorio< T
+)T U
+{ 	
+this 
+. $
+_autenticacaoRepositorio )
+=* +$
+_autenticacaoRepositorio, D
+;D E
+} 	
+public 
+	PessoaDto 
+Entrar 
+(  
+string  &
+username' /
+,/ 0
+string1 7
+password8 @
+)@ A
+{ 	
+var 
+pwHash 
+= 
+PasswordHash %
+.% &
+Create& ,
+(, -
+password- 5
+)5 6
+;6 7
+var 
+obj 
+= $
+_autenticacaoRepositorio .
+.. /
+Entrar/ 5
+(5 6
+username6 >
+,> ?
+pwHash@ F
+)F G
+;G H
+if 
+( 
+obj 
+== 
+null 
+) 
+throw 
+new "
+NaoEncontradoException 0
+(0 1
+$str1 O
+)O P
+;P Q
+if   
+(   
+!   
+obj   
+.   
+Ativo   
+)   
+throw!! 
+new!! 
+RecusadoException!! +
+(!!+ ,
+$str!!, W
+)!!W X
+;!!X Y
+return## 
+obj## 
+;## 
+}$$ 	
+}&& 
+}'' Â
+SC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Interface\IAutenticacaoNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+{ 
+public 
+
+	interface  
+IAutenticacaoNegocio )
+{ 
+	PessoaDto		 
+Entrar		 
+(		 
+string		 
+username		  (
+,		( )
+string		* 0
+password		1 9
+)		9 :
+;		: ;
+}
+
+ 
+} ±
+MC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Interface\IMentorNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+{ 
+public 
+
+	interface 
+IMentorNegocio #
+{ 
+IEnumerable 
+< 
+	MentorDto 
+> 
+
+Selecionar )
+() *
+)* +
+;+ ,
+}		 
+}
+
+ Æ
+LC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Interface\IPapelNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+{ 
+public 
+
+	interface 
+IPapelNegocio "
+{ 
+IEnumerable 
+< 
+PapelDto 
+> 
+
+Selecionar (
+(( )
+)) *
+;* +
+}		 
+}
+
+ Ô
+
+MC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Interface\IPessoaNegocio.cs
 	namespace 	
 	Vicelulas
  
-. 
-Api 
-. 
-Controllers #
-{ 
-[ 
-Produces 
-( 
-$str  
-)  !
-]! "
-[ 
-Route 
-
-(
- 
-$str '
-)' (
-]( )
-[		 
-ApiController		 
-]		 
-public
+. 
+Negocio 
+{ 
+public 
+
+	interface 
+IPessoaNegocio #
+{ 
+	PessoaDto		 
+Alterar		 
+(		 
+int		 
+Id		  
+,		  !
+Pessoa		" (
+entity		) /
+)		/ 0
+;		0 1
+void
 
- 
-
-class
+ !
+AtivarDesativarPessoa
 
- 
-PessoaController
+ "
+(
 
- !
-:
+" #
+int
 
-" #
-ControllerBase
+# &
+id
 
-$ 2
-{ 
-private 
-readonly 
-PessoaNegocio &
-_pessoaNegocio' 5
-;5 6
-public 
-PessoaController 
-(  
-)  !
-{ 	
-_pessoaNegocio 
-= 
-new  
-PessoaNegocio! .
-(. /
-)/ 0
-;0 1
-} 	
-[ 	
-HttpGet	 
-] 
-[ 	 
-ProducesResponseType	 
-( 
-( 
-int "
-)" #
-HttpStatusCode# 1
-.1 2
-OK2 4
-)4 5
-]5 6
-[ 	 
-ProducesResponseType	 
-( 
-( 
-int "
-)" #
-HttpStatusCode# 1
-.1 2
-NotFound2 :
-): ;
-]; <
-public 
-IActionResult 
-Get  
-(  !
-)! "
-{ 	
-return   
-Ok   
-(   
-_pessoaNegocio   $
-.  $ %
+' )
+)
+
+) *
+;
+
+* +
+int 
+Inserir 
+( 
+Pessoa 
+entity !
+)! "
+;" #
+IEnumerable 
+< 
+	PessoaDto 
+> 
 
-Selecionar  % /
-(  / 0
-)  0 1
-)  1 2
-;  2 3
-}!! 	
-[(( 	
-HttpGet((	 
-](( 
-[)) 	
-Route))	 
-()) 
-$str)) 
-))) 
-])) 
-[** 	 
-ProducesResponseType**	 
-(** 
-(** 
-int** "
-)**" #
-HttpStatusCode**# 1
-.**1 2
-OK**2 4
-)**4 5
-]**5 6
-[++ 	 
-ProducesResponseType++	 
-(++ 
-(++ 
-int++ "
-)++" #
-HttpStatusCode++# 1
-.++1 2
-NotFound++2 :
-)++: ;
-]++; <
-public,, 
-IActionResult,, 
-GetId,, "
-(,," #
-int,,# &
-id,,' )
-),,) *
-{-- 	
-var.. 
-obj.. 
-=.. 
-_pessoaNegocio.. $
-...$ %
-SelecionarPorId..% 4
-(..4 5
-id..5 7
-)..7 8
-;..8 9
-return00 
-Ok00 
-(00 
-obj00 
-)00 
-;00 
-}11 	
-[88 	
-HttpGet88	 
-]88 
-[99 	
-Route99	 
-(99 
-$str99 
-)99 
-]99 
-[:: 	 
-ProducesResponseType::	 
-(:: 
-(:: 
-int:: "
-)::" #
-HttpStatusCode::# 1
-.::1 2
-OK::2 4
-)::4 5
-]::5 6
-[;; 	 
-ProducesResponseType;;	 
-(;; 
-(;; 
-int;; "
-);;" #
-HttpStatusCode;;# 1
-.;;1 2
-NotFound;;2 :
-);;: ;
-];;; <
-public<< 
-IActionResult<< 
+Selecionar )
+() *
+)* +
+;+ ,
+	PessoaDto 
+SelecionarPorId !
+(! "
+int" %
+id& (
+)( )
+;) *
+IEnumerable 
+< 
+	PessoaDto 
+>  
+SelecionarPorIdSquad 3
+(3 4
+int4 7
+?7 8
+id9 ;
+); <
+;< =
+IEnumerable 
+< 
+	PessoaDto 
+> 
+SelecionarPorNome 0
+(0 1
+string1 7
+nome8 <
+)< =
+;= >
+} 
+} ˆ
+LC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Interface\ISquadNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+{ 
+public 
+
+	interface 
+ISquadNegocio "
+{		 
+SquadDto
+
+ 
+Alterar
+
+ 
+(
+
+ 
+int
+
+ 
+Id
+
+ 
+,
+
+  
+Squad
+
+! &
+entity
+
+' -
+)
+
+- .
+;
+
+. /
+void  
+AtivarDesativarSquad !
+(! "
+int" %
+id& (
+)( )
+;) *
+int 
+Inserir 
+( 
+Squad 
+entity  
+)  !
+;! "
+IEnumerable 
+< 
+SquadDto 
+> 
 
-GetIdSquad<< '
-(<<' (
-int<<( +
-id<<, .
-)<<. /
-{== 	
-var>> 
-obj>> 
-=>> 
-_pessoaNegocio>> $
-.>>$ % 
-SelecionarPorIdSquad>>% 9
-(>>9 :
-id>>: <
-)>>< =
-;>>= >
-return@@ 
-Ok@@ 
-(@@ 
-obj@@ 
-)@@ 
-;@@ 
-}AA 	
-[HH 	
-HttpGetHH	 
-]HH 
-[II 	
-RouteII	 
-(II 
-$strII !
-)II! "
-]II" #
-[JJ 	 
-ProducesResponseTypeJJ	 
-(JJ 
-(JJ 
-intJJ "
-)JJ" #
-HttpStatusCodeJJ# 1
-.JJ1 2
-OKJJ2 4
-)JJ4 5
-]JJ5 6
-[KK 	 
-ProducesResponseTypeKK	 
-(KK 
-(KK 
-intKK "
-)KK" #
-HttpStatusCodeKK# 1
-.KK1 2
-NotFoundKK2 :
-)KK: ;
-]KK; <
-publicLL 
-IActionResultLL 
-GetNameLL $
-(LL$ %
-stringLL% +
-nomeLL, 0
-)LL0 1
-{MM 	
-varNN 
-objNN 
-=NN 
-_pessoaNegocioNN $
-.NN$ %
-SelecionarPorNomeNN% 6
-(NN6 7
-nomeNN7 ;
-)NN; <
-;NN< =
-returnPP 
-OkPP 
-(PP 
-objPP 
-)PP 
-;PP 
-}QQ 	
-}RR 
-}SS í%
-nC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\SquadController.cs
+Selecionar (
+(( )
+)) *
+;* +
+SquadDto 
+SelecionarPorId  
+(  !
+int! $
+id% '
+)' (
+;( )
+IEnumerable 
+< 
+SquadDto 
+>  
+SelecionarPorIdTribo 2
+(2 3
+int3 6
+id7 9
+)9 :
+;: ;
+IEnumerable 
+< 
+SquadDto 
+> 
+SelecionarPorNome /
+(/ 0
+string0 6
+nome7 ;
+); <
+;< =
+IEnumerable 
+< 
+SquadDto 
+> $
+SelecionarSquadsSemTribo 6
+(6 7
+)7 8
+;8 9
+} 
+} ô	
+LC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Interface\ITriboNegocio.cs
 	namespace 	
 	Vicelulas
  
-. 
-Api 
-. 
-Controllers #
-{ 
-[ 
-Produces 
-( 
-$str  
-)  !
-]! "
-[ 
-Route 
-
-(
- 
-$str '
-)' (
-]( )
-[		 
-ApiController		 
-]		 
-public
+. 
+Negocio 
+{ 
+public 
+
+	interface 
+ITriboNegocio "
+{ 
+TriboDto		 
+Alterar		 
+(		 
+int		 
+Id		 
+,		  
+Tribo		! &
+entity		' -
+)		- .
+;		. /
+void
 
- 
+  
+AtivarDesativarTribo
+
+ !
+(
+
+! "
+int
+
+" %
+id
+
+& (
+)
+
+( )
+;
+
+) *
+int 
+Inserir 
+( 
+Tribo 
+entity  
+)  !
+;! "
+IEnumerable 
+< 
+TriboDto 
+> 
+
+Selecionar (
+(( )
+)) *
+;* +
+TriboDto 
+SelecionarPorId  
+(  !
+int! $
+id% '
+)' (
+;( )
+IEnumerable 
+< 
+TriboDto 
+> 
+SelecionarPorNome /
+(/ 0
+string0 6
+nome7 ;
+); <
+;< =
+} 
+} ¥
+NC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\Interface\IUnidadeNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+{ 
+public 
+
+	interface 
+IUnidadeNegocio $
+{ 
+IEnumerable 
+< 
+
+UnidadeDto 
+> 
+
+Selecionar  *
+(* +
+)+ ,
+;, -
+}		 
+}
+
+ õ
+BC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\MentorNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+{ 
+public		 
 
-class
+class		 
+MentorNegocio		 
+:		  
+IMentorNegocio		! /
+{
 
- 
-SquadController
-
-  
-:
-
-! "
-ControllerBase
-
-# 1
-{ 
-private 
-readonly 
-SquadNegocio %
-_squadNegocio& 3
-;3 4
-public 
-SquadController 
-( 
-)  
-{ 	
-_squadNegocio 
-= 
-new 
-SquadNegocio  ,
-(, -
-)- .
-;. /
-} 	
-[ 	
-HttpGet	 
-] 
-[ 	 
-ProducesResponseType	 
-( 
-( 
-int "
-)" #
-HttpStatusCode# 1
-.1 2
-OK2 4
-)4 5
-]5 6
-[ 	 
-ProducesResponseType	 
-( 
-( 
-int "
-)" #
-HttpStatusCode# 1
-.1 2
-NotFound2 :
-): ;
-]; <
-public   
-IActionResult   
-Get    
-(    !
-)  ! "
-{!! 	
-return"" 
-Ok"" 
-("" 
-_squadNegocio"" #
-.""# $
+ 
+private 
+readonly 
+IMentorRepositorio +
+_mentorRepositorio, >
+;> ?
+public 
+MentorNegocio 
+( 
+IMentorRepositorio /
+_mentorRepositorio0 B
+)B C
+{ 	
+this 
+. 
+_mentorRepositorio #
+=$ %
+_mentorRepositorio& 8
+;8 9
+} 	
+public 
+IEnumerable 
+< 
+	MentorDto $
+>$ %
 
-Selecionar""$ .
-("". /
-)""/ 0
-)""0 1
-;""1 2
-}## 	
-[** 	
-HttpGet**	 
-]** 
-[++ 	
-Route++	 
-(++ 
-$str++ 
-)++ 
-]++ 
-[,, 	 
-ProducesResponseType,,	 
-(,, 
-(,, 
-int,, "
-),," #
-HttpStatusCode,,# 1
-.,,1 2
-OK,,2 4
-),,4 5
-],,5 6
-[-- 	 
-ProducesResponseType--	 
-(-- 
-(-- 
-int-- "
-)--" #
-HttpStatusCode--# 1
-.--1 2
-NotFound--2 :
-)--: ;
-]--; <
-public.. 
-IActionResult.. 
-GetId.. "
-(.." #
-int..# &
-id..' )
-)..) *
-{// 	
-var00 
-obj00 
-=00 
-_squadNegocio00 #
-.00# $
-SelecionarPorId00$ 3
-(003 4
-id004 6
-)006 7
-;007 8
-return22 
-Ok22 
-(22 
-obj22 
-)22 
-;22 
-}33 	
-[:: 	
-HttpGet::	 
-]:: 
-[;; 	
-Route;;	 
-(;; 
-$str;; 
-);; 
-];; 
-[<< 	 
-ProducesResponseType<<	 
-(<< 
-(<< 
-int<< "
-)<<" #
-HttpStatusCode<<# 1
-.<<1 2
-OK<<2 4
-)<<4 5
-]<<5 6
-[== 	 
-ProducesResponseType==	 
-(== 
-(== 
-int== "
-)==" #
-HttpStatusCode==# 1
-.==1 2
-NotFound==2 :
-)==: ;
-]==; <
-public>> 
-IActionResult>> 
+Selecionar& 0
+(0 1
+)1 2
+{ 	
+return 
+_mentorRepositorio %
+.% &
 
-GetIdTribo>> '
-(>>' (
-int>>( +
-id>>, .
-)>>. /
-{?? 	
-var@@ 
-obj@@ 
-=@@ 
-_squadNegocio@@ #
-.@@# $ 
-SelecionarPorIdTribo@@$ 8
-(@@8 9
-id@@9 ;
-)@@; <
-;@@< =
-returnBB 
-OkBB 
-(BB 
-objBB 
-)BB 
-;BB 
-}CC 	
-[JJ 	
-HttpGetJJ	 
-]JJ 
-[KK 	
-RouteKK	 
-(KK 
-$strKK !
-)KK! "
-]KK" #
-[LL 	 
-ProducesResponseTypeLL	 
-(LL 
-(LL 
-intLL "
-)LL" #
-HttpStatusCodeLL# 1
-.LL1 2
-OKLL2 4
-)LL4 5
-]LL5 6
-[MM 	 
-ProducesResponseTypeMM	 
-(MM 
-(MM 
-intMM "
-)MM" #
-HttpStatusCodeMM# 1
-.MM1 2
-NotFoundMM2 :
-)MM: ;
-]MM; <
-publicNN 
-IActionResultNN 
-GetNameNN $
-(NN$ %
-stringNN% +
-nomeNN, 0
-)NN0 1
-{OO 	
-varPP 
-objPP 
-=PP 
-_squadNegocioPP #
-.PP# $
-SelecionarPorNomePP$ 5
-(PP5 6
-nomePP6 :
-)PP: ;
-;PP; <
-returnRR 
-OkRR 
-(RR 
-objRR 
-)RR 
-;RR 
-}SS 	
-}VV 
-}WW ®
-nC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Controllers\TriboController.cs
+Selecionar& 0
+(0 1
+)1 2
+;2 3
+} 	
+} 
+} è
+AC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\PapelNegocio.cs
 	namespace 	
 	Vicelulas
  
-. 
-Api 
-. 
-Controllers #
-{ 
-[ 
-Produces 
-( 
-$str  
-)  !
-]! "
-[ 
-Route 
-
-(
- 
-$str '
-)' (
-]( )
-[		 
-ApiController		 
-]		 
-public
-
- 
+. 
+Negocio 
+{ 
+public 
 
-class
-
- 
-TriboController
-
-  
-:
-
-! "
-ControllerBase
-
-# 1
-{ 
-private 
-readonly 
-TriboNegocio %
-_triboNegocio& 3
-;3 4
-public 
-TriboController 
-( 
-)  
-{ 	
-_triboNegocio 
-= 
-new 
-TriboNegocio  ,
-(, -
-)- .
-;. /
-} 	
-[ 	
-HttpGet	 
-] 
-[ 	 
-ProducesResponseType	 
-( 
-( 
-int "
-)" #
-HttpStatusCode# 1
-.1 2
-OK2 4
-)4 5
-]5 6
-[ 	 
-ProducesResponseType	 
-( 
-( 
-int "
-)" #
-HttpStatusCode# 1
-.1 2
-NotFound2 :
-): ;
-]; <
-public   
-IActionResult   
-Get    
-(    !
-)  ! "
-{!! 	
-return"" 
-Ok"" 
-("" 
-_triboNegocio"" #
-.""# $
+class 
+PapelNegocio 
+: 
+IPapelNegocio  -
+{ 
+private 
+readonly 
+IPapelRepositorio *
+_papelRepositorio+ <
+;< =
+public 
+PapelNegocio 
+( 
+IPapelRepositorio -
+_papelRepositorio. ?
+)? @
+{ 	
+this 
+. 
+_papelRepositorio "
+=# $
+_papelRepositorio% 6
+;6 7
+} 	
+public 
+IEnumerable 
+< 
+PapelDto #
+># $
 
-Selecionar""$ .
-("". /
-)""/ 0
-)""0 1
-;""1 2
-}## 	
-[** 	
-HttpGet**	 
-]** 
-[++ 	
-Route++	 
-(++ 
-$str++ 
-)++ 
-]++ 
-[,, 	 
-ProducesResponseType,,	 
-(,, 
-(,, 
-int,, "
-),," #
-HttpStatusCode,,# 1
-.,,1 2
-OK,,2 4
-),,4 5
-],,5 6
-[-- 	 
-ProducesResponseType--	 
-(-- 
-(-- 
-int-- "
-)--" #
-HttpStatusCode--# 1
-.--1 2
-NotFound--2 :
-)--: ;
-]--; <
-public.. 
-IActionResult.. 
-GetId.. "
-(.." #
-int..# &
-id..' )
-)..) *
-{// 	
-var00 
-obj00 
-=00 
-_triboNegocio00 #
-.00# $
-SelecionarPorId00$ 3
-(003 4
-id004 6
-)006 7
-;007 8
-return22 
-Ok22 
-(22 
-obj22 
-)22 
-;22 
-}33 	
-[;; 	
-HttpGet;;	 
-];; 
-[<< 	
-Route<<	 
-(<< 
-$str<< !
-)<<! "
-]<<" #
-[== 	 
-ProducesResponseType==	 
-(== 
-(== 
-int== "
-)==" #
-HttpStatusCode==# 1
-.==1 2
-OK==2 4
-)==4 5
-]==5 6
-[>> 	 
-ProducesResponseType>>	 
-(>> 
-(>> 
-int>> "
-)>>" #
-HttpStatusCode>># 1
-.>>1 2
-NotFound>>2 :
-)>>: ;
-]>>; <
-public?? 
-IActionResult?? 
-GetName?? $
-(??$ %
-string??% +
-nome??, 0
-)??0 1
-{@@ 	
-varAA 
-objAA 
-=AA 
-_triboNegocioAA #
-.AA# $
-SelecionarPorNomeAA$ 5
-(AA5 6
-nomeAA6 :
-)AA: ;
-;AA; <
-returnCC 
-OkCC 
-(CC 
-objCC 
-)CC 
-;CC 
-}DD 	
-}GG 
-}HH ˆ
-eC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Filtros\ErroFiltro.cs
-	namespace 	
-Fatec
- 
-. 
-Clinica 
-. 
-Api 
-. 
-Filtros #
+Selecionar% /
+(/ 0
+)0 1
+{ 	
+return 
+_papelRepositorio $
+.$ %
+
+Selecionar% /
+(/ 0
+)0 1
+;1 2
+} 	
+} 
+} îO
+BC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\PessoaNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
 {		 
 public
 
@@ -784,546 +680,1421 @@ eC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api
 
 class
 
- 
-
-ErroFiltro
+ 
+PessoaNegocio
 
- 
+ 
+:
+
+  
+IPessoaNegocio
+
+! /
 { 
 private 
-readonly 
-RequestDelegate (
-next) -
-;- .
-public 
+readonly 
+IPessoaRepositorio +
+_pessoaRepositorio, >
+;> ?
+private 
+readonly 
+IMentorRepositorio +
+_mentorRepositorio, >
+;> ?
+public 
+PessoaNegocio 
+( 
+IPessoaRepositorio /
+_pessoaRepositorio0 B
+,B C
+IMentorRepositorioD V
+_mentorRepositorioW i
+)i j
+{ 	
+this 
+. 
+_pessoaRepositorio #
+=$ %
+_pessoaRepositorio& 8
+;8 9
+this 
+. 
+_mentorRepositorio #
+=$ %
+_mentorRepositorio& 8
+;8 9
+} 	
+public 
+IEnumerable 
+< 
+	PessoaDto %
+>% &
 
-ErroFiltro 
-( 
-RequestDelegate )
-next* .
-). /
-{ 	
-this 
-. 
-next 
-= 
-next 
-; 
-} 	
-public 
-async 
-Task 
-Invoke  
-(  !
-HttpContext! ,
-context- 4
-)4 5
-{ 	
-try 
-{ 
-await 
-next 
-( 
-context "
-)" #
-;# $
-} 
-catch 
-( 
-	Exception 
-ex 
-)  
-{ 
-await  
-HandleExceptionAsync *
-(* +
-context+ 2
-,2 3
-ex4 6
-)6 7
-;7 8
-} 
-} 	
-private   
-static   
-Task    
-HandleExceptionAsync   0
-(  0 1
-HttpContext  1 <
-context  = D
-,  D E
-	Exception  F O
-	exception  P Y
-)  Y Z
-{!! 	
-HttpStatusCode"" 
-code"" 
-;""  
-switch$$ 
-($$ 
-	exception$$ 
-)$$ 
-{%% 
-case&& "
-NaoEncontradoException&& +
-nfEx&&, 0
-:&&0 1
-code'' 
-='' 
-HttpStatusCode'' )
-.'') *
-NotFound''* 2
-;''2 3
-break(( 
-;(( 
-case)) 
-ConflitoException)) &
-nfEx))' +
-:))+ ,
-code** 
-=** 
-HttpStatusCode** )
-.**) *
-Conflict*** 2
-;**2 3
-break++ 
-;++ 
-case,, 
-RecusadoException,, &
-nfEx,,' +
-:,,+ ,
-code-- 
-=-- 
-HttpStatusCode-- )
-.--) *
-	Forbidden--* 3
-;--3 4
-break.. 
-;.. 
-default// 
-:// 
-code00 
-=00 
-HttpStatusCode00 )
-.00) *
-InternalServerError00* =
-;00= >
-break11 
-;11 
-}22 
-var44 
-result44 
-=44 
-JsonConvert44 $
-.44$ %
-SerializeObject44% 4
-(444 5
-new445 8
-{449 :
-error44; @
-=44A B
-	exception44C L
-.44L M
-Message44M T
-,44T U
-inner44V [
-=44\ ]
-	exception44^ g
-.44g h
-InnerException44h v
-}44w x
-)44x y
-;44y z
-context55 
-.55 
-Response55 
-.55 
-ContentType55 (
-=55) *
-$str55+ =
-;55= >
-context66 
-.66 
-Response66 
-.66 
+Selecionar' 1
+(1 2
+)2 3
+{ 	
+return 
+_pessoaRepositorio &
+.& '
 
-StatusCode66 '
-=66( )
-(66* +
-int66+ .
-)66. /
-code66/ 3
-;663 4
-return77 
-context77 
-.77 
-Response77 #
-.77# $
-
-WriteAsync77$ .
-(77. /
-result77/ 5
-)775 6
-;776 7
-}88 	
-}99 
-}:: ¯
-ZC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Program.cs
-	namespace 	
-	Vicelulas
+Selecionar' 1
+(1 2
+)2 3
+;3 4
+} 	
+public 
+	PessoaDto 
+SelecionarPorId (
+(( )
+int) ,
+id- /
+)/ 0
+{ 	
+var 
+obj 
+= 
+_pessoaRepositorio (
+.( )
+SelecionarPorId) 8
+(8 9
+id9 ;
+); <
+;< =
+if 
+( 
+obj 
+== 
+null 
+) 
+throw   
+new   "
+NaoEncontradoException   0
+(  0 1
+$str  1 J
+)  J K
+;  K L
+return"" 
+obj"" 
+;"" 
+}## 	
+public&& 
+IEnumerable&& 
+<&& 
+	PessoaDto&& %
+>&&% &
+SelecionarPorNome&&' 8
+(&&8 9
+string&&9 ?
+nome&&@ D
+)&&D E
+{'' 	
+var(( 
+lista(( 
+=(( 
+_pessoaRepositorio(( *
+.((* +
+SelecionarPorNome((+ <
+(((< =
+nome((= A
+)((A B
+;((B C
+if** 
+(** 
+lista** 
+==** 
+null** 
+)** 
+throw++ 
+new++ "
+NaoEncontradoException++ 0
+(++0 1
+$str++1 d
+)++d e
+;++e f
+return-- 
+lista-- 
+;-- 
+}.. 	
+public11 
+IEnumerable11 
+<11 
+	PessoaDto11 %
+>11% & 
+SelecionarPorIdSquad11' ;
+(11; <
+int11< ?
+?11? @
+id11A C
+)11C D
+{22 	
+var33 
+lista33 
+=33 
+_pessoaRepositorio33 *
+.33* + 
+SelecionarPorIdSquad33+ ?
+(33? @
+id33@ B
+)33B C
+;33C D
+if55 
+(55 
+lista55 
+==55 
+null55 
+)55 
+throw66 
+new66 "
+NaoEncontradoException66 0
+(660 1
+$str661 b
+)66b c
+;66c d
+return88 
+lista88 
+;88 
+}99 	
+public<< 
+int<< 
+Inserir<< 
+(<< 
+Pessoa<< !
+entity<<" (
+)<<( )
+{== 	
+var>> 
+NomeExistente>> 
+=>> 
+_pessoaRepositorio>>  2
+.>>2 3'
+SelecionarPorNomeEspecifico>>3 N
+(>>N O
+entity>>O U
+.>>U V
+Nome>>V Z
+)>>Z [
+;>>[ \
+if@@ 
+(@@ 
+string@@ 
+.@@ 
+IsNullOrEmpty@@ $
+(@@$ %
+entity@@% +
+.@@+ ,
+Nome@@, 0
+)@@0 1
+)@@1 2
+throwAA 
+newAA 
+ConflitoExceptionAA +
+(AA+ ,
+$strAA, Q
+)AAQ R
+;AAR S
+ifCC 
+(CC 
+NomeExistenteCC 
+!=CC  
+nullCC! %
+)CC% &
+throwDD 
+newDD 
+ConflitoExceptionDD +
+(DD+ ,
+$"DD, .;
+/J√° existe uma Pessoa cadastrada com este nome DD. \
+{DD\ ]
+entityDD] c
+.DDc d
+NomeDDd h
+}DDh i
+!DDi j
+"DDj k
+)DDk l
+;DDl m
+varFF 
+EmailExistenteFF 
+=FF  
+_pessoaRepositorioFF! 3
+.FF3 4
+SelecionarPorEmailFF4 F
+(FFF G
+entityFFG M
+.FFM N
+EmailFFN S
+)FFS T
+;FFT U
+ifHH 
+(HH 
+EmailExistenteHH 
+!=HH !
+nullHH" &
+)HH& '
+throwII 
+newII 
+ConflitoExceptionII +
+(II+ ,
+$"II, .<
+0J√° existe uma Pessoa cadastrada com este Email II. ]
+{II] ^
+entityII^ d
+.IId e
+EmailIIe j
+}IIj k
+!IIk l
+"IIl m
+)IIm n
+;IIn o
+ifKK 
+(KK 
+entityKK 
+.KK 
+Id_squadKK 
+==KK  "
+$numKK# $
+)KK$ %
+entityLL 
+.LL 
+Id_squadLL 
+=LL  !
+nullLL" &
+;LL& '
+entityMM 
+.MM 
+SenhaMM 
+=MM 
+PasswordHashMM '
+.MM' (
+CreateMM( .
+(MM. /
+entityMM/ 5
+.MM5 6
+SenhaMM6 ;
+.MM; <
+ToStringMM< D
+(MMD E
+)MME F
+)MMF G
+;MMG H
+varOO 
+IdPessoaOO 
+=OO 
+_pessoaRepositorioOO -
+.OO- .
+InserirOO. 5
+(OO5 6
+entityOO6 <
+)OO< =
+;OO= >
+ifQQ 
+(QQ 
+entityQQ 
+.QQ 
+	PermissaoQQ  
+==QQ! #
+$numQQ$ %
+)QQ% &
+_mentorRepositorioRR "
+.RR" #
+InserirRR# *
+(RR* +
+IdPessoaRR+ 3
+)RR3 4
+;RR4 5
+returnSS 
+IdPessoaSS 
+;SS 
+}TT 	
+publicWW 
+	PessoaDtoWW 
+AlterarWW  
+(WW  !
+intWW! $
+IdWW% '
+,WW' (
+PessoaWW) /
+entityWW0 6
+)WW6 7
+{XX 	
+varYY 
+idExistenteYY 
+=YY 
+_pessoaRepositorioYY 0
+.YY0 1
+SelecionarPorIdYY1 @
+(YY@ A
+IdYYA C
+)YYC D
+;YYD E
+if\\ 
+(\\ 
+idExistente\\ 
+==\\ 
+null\\ #
+)\\# $
+{]] 
+throw^^ 
+new^^ "
+NaoEncontradoException^^ 0
+(^^0 1
+$"^^1 3$
+N√£o existe esta Pessoa!^^3 J
+"^^J K
+)^^K L
+;^^L M
+}__ 
+varaa 
+NomeExistenteaa 
+=aa 
+_pessoaRepositorioaa  2
+.aa2 3'
+SelecionarPorNomeEspecificoaa3 N
+(aaN O
+entityaaO U
+.aaU V
+NomeaaV Z
+)aaZ [
+;aa[ \
+ifcc 
+(cc 
+NomeExistentecc 
+!=cc  
+nullcc! %
+&&cc& (
+idExistentecc) 4
+.cc4 5
+Idcc5 7
+!=cc8 :
+entitycc; A
+.ccA B
+IdccB D
+)ccD E
+throwdd 
+newdd 
+ConflitoExceptiondd +
+(dd+ ,
+$"dd, .;
+/J√° existe uma Pessoa cadastrada com este nome dd. \
+{dd\ ]
+entitydd] c
+.ddc d
+Nomeddd h
+}ddh i
+!ddi j
+"ddj k
+)ddk l
+;ddl m
+varff 
+EmailExistenteff 
+=ff  
+_pessoaRepositorioff! 3
+.ff3 4
+SelecionarPorEmailff4 F
+(ffF G
+entityffG M
+.ffM N
+EmailffN S
+)ffS T
+;ffT U
+ifhh 
+(hh 
+EmailExistentehh 
+!=hh !
+nullhh" &
+&&hh' )
+idExistentehh* 5
+.hh5 6
+Idhh6 8
+!=hh9 ;
+entityhh< B
+.hhB C
+IdhhC E
+)hhE F
+throwii 
+newii 
+ConflitoExceptionii +
+(ii+ ,
+$"ii, .=
+1J√° esxiste uma pessoa cadastrada com este email ii. ^
+{ii^ _
+entityii_ e
+.iie f
+Emailiif k
+}iik l
+!iil m
+"iim n
+)iin o
+;iio p
+ifkk 
+(kk 
+entitykk 
+.kk 
+Id_squadkk 
+==kk  "
+$numkk# $
+)kk$ %
+entityll 
+.ll 
+Id_squadll 
+=ll  !
+nullll" &
+;ll& '
+entitymm 
+.mm 
+Idmm 
+=mm 
+Idmm 
+;mm 
+_pessoaRepositorionn 
+.nn 
+Alterarnn &
+(nn& '
+entitynn' -
+)nn- .
+;nn. /
+returnpp 
+_pessoaRepositoriopp &
+.pp& '
+SelecionarPorIdpp' 6
+(pp6 7
+Idpp7 9
+)pp9 :
+;pp: ;
+}qq 	
+publictt 
+voidtt !
+AtivarDesativarPessoatt )
+(tt) *
+inttt* -
+idtt. 0
+)tt0 1
+{uu 	
+varvv 
+objvv 
+=vv 
+_pessoaRepositoriovv (
+.vv( )
+SelecionarPorIdvv) 8
+(vv8 9
+idvv9 ;
+)vv; <
+;vv< =
+ifxx 
+(xx 
+objxx 
+==xx 
+nullxx 
+)xx 
+throwyy 
+newyy "
+NaoEncontradoExceptionyy 0
+(yy0 1
+$"yy1 3,
+ N√£o existe uma Pessoa com o id yy3 R
+{yyR S
+idyyS U
+}yyU V
+"yyV W
+)yyW X
+;yyX Y
+_pessoaRepositorio{{ 
+.{{ !
+AtivarDesativarPessoa{{ 3
+({{3 4
+id{{4 6
+,{{6 7
+!{{8 9
+obj{{9 <
+.{{< =
+Ativo{{= B
+){{B C
+;{{C D
+}|| 	
+}~~ 
+} àB
+AC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\SquadNegocio.cs
+	namespace 	
+	Vicelulas
  
-. 
-Api 
-{ 
+. 
+Negocio 
+{ 
+public		 
+
+class		 
+SquadNegocio		 
+:		 
+ISquadNegocio		  -
+{
+
+ 
+private 
+readonly 
+ISquadRepositorio *
+_squadRepositorio+ <
+;< =
+public 
+SquadNegocio 
+( 
+ISquadRepositorio -
+_squadRepositorio. ?
+)? @
+{ 	
+this 
+. 
+_squadRepositorio "
+=# $
+_squadRepositorio% 6
+;6 7
+} 	
+public 
+IEnumerable 
+< 
+SquadDto $
+>$ %
+
+Selecionar& 0
+(0 1
+)1 2
+{ 	
+return 
+_squadRepositorio %
+.% &
+
+Selecionar& 0
+(0 1
+)1 2
+;2 3
+} 	
+public 
+SquadDto 
+SelecionarPorId '
+(' (
+int( +
+id, .
+). /
+{ 	
+var 
+obj 
+= 
+_squadRepositorio '
+.' (
+SelecionarPorId( 7
+(7 8
+id8 :
+): ;
+;; <
+if 
+( 
+obj 
+== 
+null 
+) 
+throw 
+new "
+NaoEncontradoException 0
+(0 1
+$str1 I
+)I J
+;J K
+return   
+obj   
+;   
+}!! 	
+public$$ 
+IEnumerable$$ 
+<$$ 
+SquadDto$$ $
+>$$$ %
+SelecionarPorNome$$& 7
+($$7 8
+string$$8 >
+nome$$? C
+)$$C D
+{%% 	
+var&& 
+lista&& 
+=&& 
+_squadRepositorio&& )
+.&&) *
+SelecionarPorNome&&* ;
+(&&; <
+nome&&< @
+)&&@ A
+;&&A B
+if(( 
+((( 
+lista(( 
+==(( 
+null(( 
+)(( 
+throw)) 
+new)) "
+NaoEncontradoException)) 0
+())0 1
+$str))1 c
+)))c d
+;))d e
+return++ 
+lista++ 
+;++ 
+},, 	
+public.. 
+IEnumerable.. 
+<.. 
+SquadDto.. $
+>..$ %$
+SelecionarSquadsSemTribo..& >
+(..> ?
+)..? @
+{// 	
+return00 
+_squadRepositorio00 #
+.00# $$
+SelecionarSquadsSemTribo00$ <
+(00< =
+)00= >
+;00> ?
+}11 	
+public44 
+IEnumerable44 
+<44 
+SquadDto44 $
+>44$ % 
+SelecionarPorIdTribo44& :
+(44: ;
+int44; >
+id44? A
+)44A B
+{55 	
+var66 
+lista66 
+=66 
+_squadRepositorio66 )
+.66) * 
+SelecionarPorIdTribo66* >
+(66> ?
+id66? A
+)66A B
+;66B C
+if88 
+(88 
+lista88 
+==88 
+null88 
+)88 
+throw99 
+new99 "
+NaoEncontradoException99 0
+(990 1
+$str991 a
+)99a b
+;99b c
+return;; 
+lista;; 
+;;; 
+}<< 	
+public?? 
+int?? 
+Inserir?? 
+(?? 
+Squad??  
+entity??! '
+)??' (
+{@@ 	
+varAA 
+NomeExistenteAA 
+=AA 
+_squadRepositorioAA  1
+.AA1 2'
+SelecionarPorNomeEspecificoAA2 M
+(AAM N
+entityAAN T
+.AAT U
+NomeAAU Y
+)AAY Z
+;AAZ [
+ifCC 
+(CC 
+stringCC 
+.CC 
+IsNullOrEmptyCC $
+(CC$ %
+entityCC% +
+.CC+ ,
+NomeCC, 0
+)CC0 1
+)CC1 2
+throwDD 
+newDD 
+ConflitoExceptionDD +
+(DD+ ,
+$strDD, L
+)DDL M
+;DDM N
+ifFF 
+(FF 
+NomeExistenteFF 
+!=FF  
+nullFF! %
+)FF% &
+throwGG 
+newGG 
+ConflitoExceptionGG +
+(GG+ ,
+$"GG, .:
+.J√° existe uma Squad cadastrada com este nome GG. [
+{GG[ \
+entityGG\ b
+.GGb c
+NomeGGc g
+}GGg h
+!GGh i
+"GGi j
+)GGj k
+;GGk l
+ifII 
+(II 
+entityII 
+.II 
+Id_triboII 
+==II  "
+$numII# $
+)II$ %
+entityJJ 
+.JJ 
+Id_triboJJ 
+=JJ  !
+nullJJ" &
+;JJ& '
+ifKK 
+(KK 
+entityKK 
+.KK 
+	Id_MentorKK  
+==KK! #
+$numKK$ %
+)KK% &
+entityLL 
+.LL 
+	Id_MentorLL  
+=LL! "
+nullLL# '
+;LL' (
+returnNN 
+_squadRepositorioNN $
+.NN$ %
+InserirNN% ,
+(NN, -
+entityNN- 3
+)NN3 4
+;NN4 5
+}OO 	
+publicRR 
+SquadDtoRR 
+AlterarRR  
+(RR  !
+intRR! $
+IdRR% '
+,RR' (
+SquadRR) .
+entityRR/ 5
+)RR5 6
+{SS 	
+varTT 
+idExistenteTT 
+=TT 
+_squadRepositorioTT /
+.TT/ 0
+SelecionarPorIdTT0 ?
+(TT? @
+IdTT@ B
+)TTB C
+;TTC D
+ifVV 
+(VV 
+idExistenteVV 
+==VV 
+nullVV #
+)VV# $
+throwWW 
+newWW "
+NaoEncontradoExceptionWW 0
+(WW0 1
+$"WW1 3#
+N√£o existe esta Squad!WW3 I
+"WWI J
+)WWJ K
+;WWK L
+varZZ 
+NomeExistenteZZ 
+=ZZ 
+_squadRepositorioZZ  1
+.ZZ1 2'
+SelecionarPorNomeEspecificoZZ2 M
+(ZZM N
+entityZZN T
+.ZZT U
+NomeZZU Y
+)ZZY Z
+;ZZZ [
+if\\ 
+(\\ 
+NomeExistente\\ 
+!=\\  
+null\\! %
+&&\\& (
+idExistente\\) 4
+.\\4 5
+Id\\5 7
+!=\\8 :
+entity\\; A
+.\\A B
+Id\\B D
+)\\D E
+throw]] 
+new]] 
+ConflitoException]] +
+(]]+ ,
+$"]], .:
+.J√° existe uma Squad cadastrada com este nome ]]. [
+{]][ \
+entity]]\ b
+.]]b c
+Nome]]c g
+}]]g h
+!]]h i
+"]]i j
+)]]j k
+;]]k l
+if__ 
+(__ 
+entity__ 
+.__ 
+Id_tribo__ 
+==__  "
+$num__# $
+)__$ %
+entity`` 
+.`` 
+Id_tribo`` 
+=``  !
+null``" &
+;``& '
+ifaa 
+(aa 
+entityaa 
+.aa 
+	Id_Mentoraa  
+==aa! #
+$numaa$ %
+)aa% &
+entitybb 
+.bb 
+	Id_Mentorbb  
+=bb! "
+nullbb# '
+;bb' (
+entitydd 
+.dd 
+Iddd 
+=dd 
+Iddd 
+;dd 
+_squadRepositorioee 
+.ee 
+Alteraree %
+(ee% &
+entityee& ,
+)ee, -
+;ee- .
+returngg 
+_squadRepositoriogg %
+.gg% &
+SelecionarPorIdgg& 5
+(gg5 6
+Idgg6 8
+)gg8 9
+;gg9 :
+}hh 	
+publickk 
+voidkk  
+AtivarDesativarSquadkk (
+(kk( )
+intkk) ,
+idkk- /
+)kk/ 0
+{ll 	
+varmm 
+objmm 
+=mm 
+_squadRepositoriomm '
+.mm' (
+SelecionarPorIdmm( 7
+(mm7 8
+idmm8 :
+)mm: ;
+;mm; <
+ifoo 
+(oo 
+objoo 
+==oo 
+nulloo 
+)oo 
+throwpp 
+newpp "
+NaoEncontradoExceptionpp 0
+(pp0 1
+$"pp1 3+
+N√£o existe uma Squad com o id pp3 Q
+{ppQ R
+idppR T
+}ppT U
+"ppU V
+)ppV W
+;ppW X
+_squadRepositoriorr 
+.rr  
+AtivarDesativarSquadrr 2
+(rr2 3
+idrr3 5
+,rr5 6
+!rr7 8
+objrr8 ;
+.rr; <
+Ativorr< A
+)rrA B
+;rrB C
+}ss 	
+}uu 
+}vv ê6
+AC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\TriboNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+{ 
+public		 
+
+class		 
+TriboNegocio		 
+:		 
+ITriboNegocio		  -
+{
+
+ 
+private 
+readonly 
+ITriboRepositorio *
+_triboRepositorio+ <
+;< =
+public 
+TriboNegocio 
+( 
+ITriboRepositorio -
+_triboRepositorio. ?
+)? @
+{ 	
+this 
+. 
+_triboRepositorio "
+=# $
+_triboRepositorio% 6
+;6 7
+} 	
+public 
+IEnumerable 
+< 
+TriboDto #
+># $
+
+Selecionar% /
+(/ 0
+)0 1
+{ 	
+return 
+_triboRepositorio $
+.$ %
+
+Selecionar% /
+(/ 0
+)0 1
+;1 2
+} 	
+public 
+TriboDto 
+SelecionarPorId '
+(' (
+int( +
+id, .
+). /
+{ 	
+var 
+obj 
+= 
+_triboRepositorio '
+.' (
+SelecionarPorId( 7
+(7 8
+id8 :
+): ;
+;; <
+if 
+( 
+obj 
+== 
+null 
+) 
+throw 
+new "
+NaoEncontradoException 0
+(0 1
+$str1 I
+)I J
+;J K
+return   
+obj   
+;   
+}!! 	
+public$$ 
+IEnumerable$$ 
+<$$ 
+TriboDto$$ #
+>$$# $
+SelecionarPorNome$$% 6
+($$6 7
+string$$7 =
+nome$$> B
+)$$B C
+{%% 	
+var&& 
+lista&& 
+=&& 
+_triboRepositorio&& )
+.&&) *
+SelecionarPorNome&&* ;
+(&&; <
+nome&&< @
+)&&@ A
+;&&A B
+if(( 
+((( 
+lista(( 
+==(( 
+null(( 
+)(( 
+throw)) 
+new)) "
+NaoEncontradoException)) 0
+())0 1
+$str))1 c
+)))c d
+;))d e
+return++ 
+lista++ 
+;++ 
+},, 	
+public.. 
+int.. 
+Inserir.. 
+(.. 
+Tribo..  
+entity..! '
+)..' (
+{// 	
+var00 
+NomeExistente00 
+=00 
+_triboRepositorio00  1
+.001 2'
+SelecionarPorNomeEspecifico002 M
+(00M N
+entity00N T
+.00T U
+Nome00U Y
+)00Y Z
+;00Z [
+if22 
+(22 
+string22 
+.22 
+IsNullOrEmpty22 $
+(22$ %
+entity22% +
+.22+ ,
+Nome22, 0
+)220 1
+)221 2
+throw33 
+new33 
+ConflitoException33 +
+(33+ ,
+$str33, L
+)33L M
+;33M N
+if55 
+(55 
+NomeExistente55 
+!=55  
+null55! %
+)55% &
+throw66 
+new66 
+ConflitoException66 +
+(66+ ,
+$"66, .:
+.J√° existe uma Tribo cadastrada com este nome 66. [
+{66[ \
+entity66\ b
+.66b c
+Nome66c g
+}66g h
+!66h i
+"66i j
+)66j k
+;66k l
+if88 
+(88 
+entity88 
+.88 
+	Id_Mentor88  
+==88! #
+$num88$ %
+)88% &
+entity99 
+.99 
+	Id_Mentor99  
+=99! "
+null99# '
+;99' (
+return;; 
+_triboRepositorio;; $
+.;;$ %
+Inserir;;% ,
+(;;, -
+entity;;- 3
+);;3 4
+;;;4 5
+}<< 	
+public>> 
+TriboDto>> 
+Alterar>> 
+(>>  
+int>>  #
+Id>>$ &
+,>>& '
+Tribo>>( -
+entity>>. 4
+)>>4 5
+{?? 	
+var@@ 
+idExistente@@ 
+=@@ 
+_triboRepositorio@@ /
+.@@/ 0
+SelecionarPorId@@0 ?
+(@@? @
+Id@@@ B
+)@@B C
+;@@C D
+ifBB 
+(BB 
+idExistenteBB 
+==BB 
+nullBB "
+)BB" #
+throwCC 
+newCC "
+NaoEncontradoExceptionCC 0
+(CC0 1
+$"CC1 3#
+N√£o existe esta tribo!CC3 I
+"CCI J
+)CCJ K
+;CCK L
+varFF 
+NomeExistenteFF 
+=FF 
+_triboRepositorioFF  1
+.FF1 2'
+SelecionarPorNomeEspecificoFF2 M
+(FFM N
+entityFFN T
+.FFT U
+NomeFFU Y
+)FFY Z
+;FFZ [
+ifHH 
+(HH 
+NomeExistenteHH 
+!=HH  
+nullHH! %
+&&HH& (
+idExistenteHH) 4
+.HH4 5
+IdHH5 7
+!=HH8 :
+entityHH; A
+.HHA B
+IdHHB D
+)HHD E
+throwII 
+newII 
+ConflitoExceptionII +
+(II+ ,
+$"II, .:
+.J√° existe uma Tribo cadastrada com este nome II. [
+{II[ \
+entityII\ b
+.IIb c
+NomeIIc g
+}IIg h
+!IIh i
+"IIi j
+)IIj k
+;IIk l
+ifKK 
+(KK 
+entityKK 
+.KK 
+	Id_MentorKK  
+==KK! #
+$numKK$ %
+)KK% &
+entityLL 
+.LL 
+	Id_MentorLL  
+=LL! "
+nullLL# '
+;LL' (
+entityNN 
+.NN 
+IdNN 
+=NN 
+IdNN 
+;NN 
+_triboRepositorioOO 
+.OO 
+AlterarNomeOO )
+(OO) *
+entityOO* 0
+)OO0 1
+;OO1 2
+returnQQ 
+_triboRepositorioQQ $
+.QQ$ %
+SelecionarPorIdQQ% 4
+(QQ4 5
+IdQQ5 7
+)QQ7 8
+;QQ8 9
+}RR 	
+publicUU 
+voidUU  
+AtivarDesativarTriboUU (
+(UU( )
+intUU) ,
+idUU- /
+)UU/ 0
+{VV 	
+varWW 
+objWW 
+=WW 
+_triboRepositorioWW '
+.WW' (
+SelecionarPorIdWW( 7
+(WW7 8
+idWW8 :
+)WW: ;
+;WW; <
+ifYY 
+(YY 
+objYY 
+==YY 
+nullYY 
+)YY 
+throwZZ 
+newZZ "
+NaoEncontradoExceptionZZ 0
+(ZZ0 1
+$"ZZ1 3+
+N√£o existe uma Tribo com o id ZZ3 Q
+{ZZQ R
+idZZR T
+}ZZT U
+"ZZU V
+)ZZV W
+;ZZW X
+_triboRepositorio\\ 
+.\\  
+AtivarDesativarTribo\\ 2
+(\\2 3
+id\\3 5
+,\\5 6
+!\\6 7
+obj\\7 :
+.\\: ;
+Ativo\\; @
+)\\@ A
+;\\A B
+}^^ 	
+}`` 
+}aa ß
+CC:\vicelulas\Back-end\Vicelulas\Vicelulas.Negocio\UnidadeNegocio.cs
+	namespace 	
+	Vicelulas
+ 
+. 
+Negocio 
+{ 
 public 
 
-class 
-Program 
-{ 
-public		 
-static		 
-void		 
-Main		 
-(		  
-string		  &
-[		& '
-]		' (
-args		) -
-)		- .
-=>		/ 1
-BuildWebHost
-
- 
-(
-
- 
-args
-
- 
-)
-
- 
-.
-
- 
-Run
-
- "
-(
-
-" #
-)
-
-# $
-;
-
-$ %
-public 
-static 
-IWebHost 
-BuildWebHost +
-(+ ,
-string, 2
-[2 3
-]3 4
-args5 9
-)9 :
-=>; =
-WebHost 
-.  
-CreateDefaultBuilder $
-($ %
-args% )
-)) *
-. 
+class 
+UnidadeNegocio 
+:  !
+IUnidadeNegocio" 1
+{ 
+private		 
+readonly		 
+IUnidadeRepositorio		 ,
+_UnidadeRepositorio		- @
+;		@ A
+public 
+UnidadeNegocio 
+( 
+IUnidadeRepositorio 1
+_UnidadeRepositorio2 E
+)E F
+{ 	
+this 
+. 
+_UnidadeRepositorio $
+=% &
+_UnidadeRepositorio' :
+;: ;
+} 	
+public 
+IEnumerable 
+< 
 
-UseStartup 
-< 
-Startup 
->  
-(  !
-)! "
-. 
-Build 
-( 
-) 
-; 
-} 
-} é&
-ZC:\Users\lcontesini\Documents\GitHub\vicelulas\Back-end\Vicelulas\Vicelulas.Api\Startup.cs
-	namespace 	
-	Vicelulas
- 
-. 
-Api 
-{ 
-public 
-
-class 
-Startup 
-{ 
-public 
-Startup 
-( 
-IConfiguration %
-configuration& 3
-)3 4
-{ 	
-Configuration 
-= 
-configuration )
-;) *
-} 	
-public 
-IConfiguration 
-Configuration +
-{, -
-get. 1
-;1 2
-}3 4
-public 
-void 
-ConfigureServices %
-(% &
-IServiceCollection& 8
-services9 A
-)A B
-{ 	
-services 
-. 
-AddMvc 
-( 
-) 
-. #
-SetCompatibilityVersion 5
-(5 6 
-CompatibilityVersion6 J
-.J K
-Version_2_1K V
-)V W
-;W X
-services 
-. 
-AddCors 
-( 
-) 
-; 
-services 
-. 
-AddSwaggerGen "
-(" #
-c# $
-=>% '
-{ 
-c   
-.   
+UnidadeDto %
+>% &
 
-SwaggerDoc   
-(   
-$str   !
-,  ! "
-new!! 
-Info!! 
-{"" 
-Title## 
-=## 
-$str##  +
-,##+ ,
-Version$$ 
-=$$  !
-$str$$" &
-,$$& '
-Description%% #
-=%%$ %
-$str%%& G
-,%%G H
-Contact&& 
-=&&  !
-new&&" %
-Contact&&& -
-{'' 
-Name((  
-=((! "
-$str((# +
-,((+ ,
-Url)) 
-=))  !
-$str))" <
-}** 
-}++ 
-)++ 
-;++ 
-var// 
-xmlFile// 
-=// 
-$"//  
-{//  !
-Assembly//! )
-.//) * 
-GetExecutingAssembly//* >
-(//> ?
-)//? @
-.//@ A
-GetName//A H
-(//H I
-)//I J
-.//J K
-Name//K O
-}//O P
-.xml//P T
-"//T U
-;//U V
-var00 
-xmlPath00 
-=00 
-Path00 "
-.00" #
-Combine00# *
-(00* +
+Selecionar' 1
+(1 2
+)2 3
+{ 	
+return 
+_UnidadeRepositorio &
+.& '
 
-AppContext00+ 5
-.005 6
-BaseDirectory006 C
-,00C D
-xmlFile00E L
-)00L M
-;00M N
-c11 
-.11 
-IncludeXmlComments11 $
-(11$ %
-xmlPath11% ,
-)11, -
-;11- .
-}33 
-)33 
-;33 
-services55 
-.55 
-	AddScoped55 
-<55 
-
-ErroFiltro55 )
->55) *
-(55* +
-)55+ ,
-;55, -
-}66 	
-public99 
-void99 
-	Configure99 
-(99 
-IApplicationBuilder99 1
-app992 5
-,995 6
-IHostingEnvironment997 J
-env99K N
-,99N O
-IServiceProvider99P `
-serviceFactory99a o
-)99o p
-{:: 	
-if;; 
-(;; 
-env;; 
-.;; 
-IsDevelopment;; !
-(;;! "
-);;" #
-);;# $
-{<< 
-app== 
-.== %
-UseDeveloperExceptionPage== -
-(==- .
-)==. /
-;==/ 0
-}>> 
-else?? 
-{@@ 
-appAA 
-.AA 
-UseHstsAA 
-(AA 
-)AA 
-;AA 
-}BB 
-appEE 
-.EE 
-UseHttpsRedirectionEE #
-(EE# $
-)EE$ %
-;EE% &
-appFF 
-.FF 
-UseMiddlewareFF 
-<FF 
-
-ErroFiltroFF (
->FF( )
-(FF) *
-)FF* +
-;FF+ ,
-appGG 
-.GG 
-UseMvcGG 
-(GG 
-)GG 
-;GG 
-appJJ 
-.JJ 
-
-UseSwaggerJJ 
-(JJ 
-)JJ 
-;JJ 
-appKK 
-.KK 
-UseSwaggerUIKK 
-(KK 
-cKK 
-=>KK !
-{LL 
-cMM 
-.MM 
-SwaggerEndpointMM !
-(MM! "
-$strMM" <
-,MM< =
-$strMM> P
-)MMP Q
-;MMQ R
-}NN 
-)NN 
-;NN 
-appSS 
-.SS 
-UseCorsSS 
-(SS 
-cSS 
-=>SS 
-{TT 
-cUU 
-.UU 
-AllowAnyHeaderUU  
-(UU  !
-)UU! "
-;UU" #
-cVV 
-.VV 
-AllowAnyMethodVV  
-(VV  !
-)VV! "
-;VV" #
-cWW 
-.WW 
-AllowAnyOriginWW  
-(WW  !
-)WW! "
-;WW" #
-}XX 
-)XX 
-;XX 
-}[[ 	
-}\\ 
-}]] 
+Selecionar' 1
+(1 2
+)2 3
+;3 4
+} 	
+} 
+} 

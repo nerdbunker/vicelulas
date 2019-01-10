@@ -2,5 +2,5 @@ projectKey=vicelulas
 serverUrl=http://localhost:9000
 serverVersion=7.4.0.18908
 dashboardUrl=http://localhost:9000/dashboard?id=vicelulas
-ceTaskId=AWfqhhrcWnL_NYzcTH0k
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWfqhhrcWnL_NYzcTH0k
+ceTaskId=AWg44Y-3rS5F1k9LfTH2
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWg44Y-3rS5F1k9LfTH2

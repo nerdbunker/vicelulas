@@ -226,12 +226,17 @@ namespace Vicelulas.Teste.NegocioTeste
         public void SquadInserirNomeExistente()
         {
             // Arrange
-            var squad1 = new Squad
+            var squad = new List<Squad>
             {
+                new Squad
+                {
                 Id = 1,
                 Id_tribo = 1,
-                Nome = "Teste",
-                Ativo = true
+                Nome = "NerdBunker",
+                Ativo = true,
+                Id_Mentor = 1
+                }
+               
             };
 
             var squad2 = new Squad
@@ -239,18 +244,17 @@ namespace Vicelulas.Teste.NegocioTeste
                 Id = 2,
                 Id_tribo = 2,
                 Nome = "Teste",
-                Ativo = true
+                Ativo = true,
+                Id_Mentor = 1
             };
 
             var repoMock = new Mock<ISquadRepositorio>();
-            repoMock.Setup(m => m.Inserir(squad1));
-            repoMock.Setup(m => m.Inserir(squad2));
+            repoMock.Setup(m => m.SelecionarPorNomeEspecifico(squad[0].Nome));
 
             var _squadNegocio = new SquadNegocio(repoMock.Object);
 
             //Act
-            var objRetornado1 = _squadNegocio.Inserir(squad1);
-            var objRetornado2 = _squadNegocio.Inserir(squad2);
+            var objRetornado = _squadNegocio.Inserir(squad2);
 
             //Assert
             Assert.Throws<ConflitoException>(() => _squadNegocio.Inserir(squad2));

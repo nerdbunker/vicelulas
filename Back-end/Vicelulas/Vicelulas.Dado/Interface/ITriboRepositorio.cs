@@ -10,6 +10,7 @@ namespace Vicelulas.Dado
         void AlterarStatus(Tribo entity);
         void AtivarDesativarTribo(int id, bool ativo);
         int Inserir(Tribo entity);
+        int InserirSemMentor(Tribo entity);
         IEnumerable<TriboDto> Selecionar();
         TriboDto SelecionarPorId(int id);
         IEnumerable<TriboDto> SelecionarPorNome(string nome);

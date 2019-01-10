@@ -13,7 +13,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<TriboDto>($"SELECT T.id, T.nome , T.ativo, M.id AS IdMentor, P.nome FROM [TB_tribo] T " +
+                var lista = connection.Query<TriboDto>($"SELECT T.id, T.nome, T.ativo, M.id AS IdMentor, P.nome FROM [TB_tribo] T " +
                                                        $"LEFT JOIN TB_mentor M ON T.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON " +
                                                        $"M.id_pessoa = P.id");
@@ -65,7 +65,20 @@ namespace Vicelulas.Dado
                 return connection.QuerySingle<int>($"DECLARE @Id int;" +
                                                    $"INSERT INTO [TB_tribo] (Nome, Id_mentor, Ativo) " +
                                                    $"VALUES('{entity.Nome}', " +
-                                                   $" {entity.Id_Mentor} " +
+                                                   $" {entity.Id_Mentor}, " +
+                                                   $"'{entity.Ativo}');" +
+                                                   $"SET @Id = SCOPE_IDENTITY();" +
+                                                   $"SELECT @Id");
+            }
+        }
+
+        public int InserirSemMentor(Tribo entity)
+        {
+            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
+            {
+                return connection.QuerySingle<int>($"DECLARE @Id int;" +
+                                                   $"INSERT INTO [TB_tribo] (Nome, Ativo) " +
+                                                   $"VALUES('{entity.Nome}', " +
                                                    $"'{entity.Ativo}');" +
                                                    $"SET @Id = SCOPE_IDENTITY();" +
                                                    $"SELECT @Id");
@@ -77,8 +90,7 @@ namespace Vicelulas.Dado
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 connection.Execute($"UPDATE [TB_tribo] " +
-                                      $"SET Nome = '{entity.Nome}', " +
-                                      $"id_mentor = {entity.Id_Mentor} " +
+                                      $"SET Nome = '{entity.Nome}' " +
                                       $"WHERE Id = {entity.Id}");
             }
         }

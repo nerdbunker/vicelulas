@@ -13,7 +13,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " + 
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome, S.Ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_squad] S " + 
                                                        $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id ");
@@ -25,7 +25,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome, S.Ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_squad] S " +
                                                                    $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                                    $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                                    $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -41,7 +41,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome, S.Ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_squad] S " +
                                                        $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -58,7 +58,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var obj = connection.QueryFirstOrDefault<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome, S.Ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_squad] S " +
                                                                    $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                                    $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                                    $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -74,7 +74,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome, S.Ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_squad] S " +
                                                        $"INNER JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -90,7 +90,7 @@ namespace Vicelulas.Dado
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
-                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS Nome, S.Nome AS Nome, S.Ativo, M.id AS IdMentor, P.nome FROM [TB_squad] S " +
+                var lista = connection.Query<SquadDto>($"SELECT S.Id, S.Id_Tribo, T.Nome AS NomeTribo, S.Nome, S.Ativo, M.id AS IdMentor, P.nome AS NomeMentor FROM [TB_squad] S " +
                                                        $"LEFT JOIN [TB_tribo] T ON S.Id_Tribo = T.Id " +
                                                        $"LEFT JOIN TB_mentor M ON S.id_mentor = M.id " +
                                                        $"LEFT JOIN TB_pessoa P ON M.id_pessoa = P.id " +
@@ -115,61 +115,6 @@ namespace Vicelulas.Dado
                                                        idTribo = entity.Id_tribo,
                                                        nome = entity.Nome,
                                                        IdMentor = entity.Id_Mentor,
-                                                       ativo = entity.Ativo
-                                                   });
-            }
-        }
-
-        public int InserirSemTribo(Squad entity)
-        {
-            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
-            {
-                return connection.QuerySingle<int>($"DECLARE @Id int;" +
-                                                   $"INSERT INTO [TB_squad] (Nome, Id_mentor, Ativo) " +
-                                                   $"VALUES(@nome," +
-                                                   $"@idMentor," +
-                                                   $"@ativo);" +
-                                                   $"SET @Id = SCOPE_IDENTITY();" +
-                                                   $"SELECT @Id", new
-                                                   {
-                                                       nome = entity.Nome,
-                                                       idMentor = entity.Id_Mentor,
-                                                       ativo = entity.Ativo
-                                                   });
-            }
-        }
-
-        public int InserirSemMentor(Squad entity)
-        {
-            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
-            {
-                return connection.QuerySingle<int>($"DECLARE @Id int;" +
-                                                   $"INSERT INTO [TB_squad] (Id_tribo, Nome, Ativo) " +
-                                                   $"VALUES(@idTribo," +
-                                                   $"@nome," +
-                                                   $"@ativo);" +
-                                                   $"SET @Id = SCOPE_IDENTITY();" +
-                                                   $"SELECT @Id" , new
-                                                   {
-                                                       idTribo = entity.Id_tribo,
-                                                       nome = entity.Nome,
-                                                       ativo = entity.Ativo
-                                                   });
-            }
-        }
-
-        public int InserirSemTriboEMentor(Squad entity)
-        {
-            using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
-            {
-                return connection.QuerySingle<int>($"DECLARE @Id int;" +
-                                                   $"INSERT INTO [TB_squad] (Nome, Ativo) " +
-                                                   $"VALUES(@nome," +
-                                                   $"@ativo);" +
-                                                   $"SET @Id = SCOPE_IDENTITY();" +
-                                                   $"SELECT @Id" , new
-                                                   {
-                                                       nome = entity.Nome,
                                                        ativo = entity.Ativo
                                                    });
             }

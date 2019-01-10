@@ -107,7 +107,6 @@ namespace Vicelulas.Negocio
 
             _triboRepositorio.AtivarDesativarTribo(id,!obj.Ativo);
             
-            
         }
 
     }

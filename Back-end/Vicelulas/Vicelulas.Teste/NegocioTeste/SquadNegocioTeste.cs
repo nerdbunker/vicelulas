@@ -92,8 +92,6 @@ namespace Vicelulas.Teste.NegocioTeste
 
             // Assert
             Assert.NotNull(objRetornado);
-
-
         }
 
         [Fact]
@@ -187,7 +185,8 @@ namespace Vicelulas.Teste.NegocioTeste
                 Id = 1,
                 Id_tribo = 1,
                 Nome = "Teste",
-                Ativo = true
+                Ativo = true,
+                Id_mentor = 1,
             };
 
             var repoMock = new Mock<ISquadRepositorio>();
@@ -210,7 +209,7 @@ namespace Vicelulas.Teste.NegocioTeste
             {
                 Id = 1,
                 Id_tribo = 1,
-                Nome = "",
+                Nome = null,
                 Ativo = true
             };
 
@@ -223,7 +222,7 @@ namespace Vicelulas.Teste.NegocioTeste
             Assert.Throws<ConflitoException>(() => _squadNegocio.Inserir(squad));
         }
 
-        /*[Fact]
+        [Fact]
         public void SquadInserirNomeExistente()
         {
             // Arrange
@@ -255,9 +254,39 @@ namespace Vicelulas.Teste.NegocioTeste
 
             //Assert
             Assert.Throws<ConflitoException>(() => _squadNegocio.Inserir(squad2));
+        }
 
-        }*/
+        [Fact]
+        public void SquadAlterarOK()
+        {
+            // Arrange
+            var valorEsperado = new Squad
+            {
+                Id = 1,
+                Id_tribo = 1,
+                Nome = "Teste",
+                Ativo = true
+            };
 
+            var squad = new Squad
+            {
+                Id = 1,
+                Id_tribo = 1,
+                Nome = "Teste",
+                Ativo = true
+            };
 
+            var repoMock = new Mock<ISquadRepositorio>();
+            repoMock.Setup(m => m.Alterar(squad));
+
+            var _squadNegocio = new SquadNegocio(repoMock.Object);
+
+            //Act
+            var objRetornado = _squadNegocio.Alterar(squad.Id, squad);
+
+            // Assert
+            Assert.NotNull(objRetornado);
+            //Assert.Same(valorEsperado, objRetornado.squad);
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace Vicelulas.Negocio
         }
 
         /// param name="id">/param>
-        public  IEnumerable<PessoaDto> SelecionarPorIdSquad(int id)
+        public  IEnumerable<PessoaDto> SelecionarPorIdSquad(int? id)
         {
             var lista = _pessoaRepositorio.SelecionarPorIdSquad(id);
 

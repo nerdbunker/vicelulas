@@ -11,7 +11,7 @@ namespace Vicelulas.Negocio
         int Inserir(Pessoa entity);
         IEnumerable<PessoaDto> Selecionar();
         PessoaDto SelecionarPorId(int id);
-        IEnumerable<PessoaDto> SelecionarPorIdSquad(int id);
+        IEnumerable<PessoaDto> SelecionarPorIdSquad(int? id);
         IEnumerable<PessoaDto> SelecionarPorNome(string nome);
     }
 }

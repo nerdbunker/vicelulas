@@ -57,7 +57,7 @@ namespace Vicelulas.Dado
             }
         }
 
-        public IEnumerable<PessoaDto> SelecionarPorIdSquad(int id)
+        public IEnumerable<PessoaDto> SelecionarPorIdSquad(int? id)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {

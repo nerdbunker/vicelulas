@@ -162,6 +162,7 @@ namespace Vicelulas.Teste.NegocioTeste
 
             var pessoaNull = new PessoaNegocio(repoMock.Object, repoMock2.Object);
 
+
             // Assert
             Assert.Throws<NaoEncontradoException>(() => pessoaNull.SelecionarPorIdSquad(pessoa.Id_Squads));
         }
@@ -232,9 +233,6 @@ namespace Vicelulas.Teste.NegocioTeste
             {
                 var objRetornado = _pessoaNegocio.SelecionarPorId(pessoa.Id);
             }).Verifiable();
-
-            // Assert
-            //repoMock.Verify(mr => mr.AtivarDesativarPessoa(It.IsAny<int>(), It.IsAny<bool>()), Times.Once());
         }
 
         [Fact]

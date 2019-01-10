@@ -8,7 +8,11 @@
         fixed app width="200"
       >
         <v-list>
-            <img src="../static/icones/logo.png" class="logo" alt="">
+          <v-flex class="bg-white">
+            <router-link to="/">
+              <img src="../static/icones/logo.png" class="logo" alt="">
+            </router-link>
+          </v-flex>
           <v-divider></v-divider>
           <v-list-tile
             value="true"
@@ -85,6 +89,9 @@ export default {
   background-attachment: fixed;
   background-size: cover;
 } */
+.bg-white {
+  background-color: azure;
+}
 #inspire {
   font-family: 'Play', sans-serif;
   background: none;

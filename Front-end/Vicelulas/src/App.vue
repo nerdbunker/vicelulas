@@ -41,6 +41,8 @@
         <v-list-tile-title text-xs-center class="titulo">
           {{ titulo }}
         </v-list-tile-title>
+        <v-spacer></v-spacer>
+        <v-icon>mdi-exit-to-app</v-icon>
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>
@@ -67,10 +69,9 @@ export default {
       titulo: 'VICELULAS',
       items: [
         { icon: 'home', title: 'Organismo', to: '/' },
-        { icon: 'loyalty', title: 'Valores', to: '/valores' },
+        // { icon: 'loyalty', title: 'Valores', to: '/valores' },
         { icon: 'photo', title: 'Fotos da Viceri', to: '/viceri' },
         { icon: 'folder', title: 'Documentos', to: '/documentos' },
-        // { icon: 'person', title: 'Pessoas', to: '/pessoas' },
         { icon: 'info', title: 'Dúvidas', to: '/duvidas' },
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
         { icon: 'fingerprint', title: 'Entrar', to: '/entrar' }
@@ -81,7 +82,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
 @import url('https://fonts.googleapis.com/css?family=Play');
 
 /* .bg {

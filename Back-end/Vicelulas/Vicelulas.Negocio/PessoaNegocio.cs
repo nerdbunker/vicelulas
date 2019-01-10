@@ -61,6 +61,9 @@ namespace Vicelulas.Negocio
         {
             var NomeExistente = _pessoaRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
 
+            if (string.IsNullOrEmpty(entity.Nome))
+                throw new ConflitoException("Não é permitido uma Pessoa sem nome");
+
             if (NomeExistente != null)
                 throw new ConflitoException($"Já existe uma Pessoa cadastrada com este nome {entity.Nome}!");
 

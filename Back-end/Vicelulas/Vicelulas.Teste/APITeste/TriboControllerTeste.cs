@@ -43,7 +43,7 @@ namespace Vicelulas.Teste.APITeste
             var tribo = new TriboDto
             {
                 Id = 1,
-                Nome = "Formacao",
+                NomeTribo = "Formacao",
                 Ativo = true
             };
 

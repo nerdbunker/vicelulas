@@ -10,7 +10,7 @@
             {{ avisoLegenda }}
           </v-chip>
         </v-flex>
-        <v-flex pt-3 md8 xs12>
+        <v-flex pt-3 md6 xs12>
           <!-- Icones das Tribos -->
           <v-flex
             v-for="tribo in listaTribos"
@@ -104,8 +104,6 @@ export default {
 </script>
 
 <style scoped>
-/* @import url('https://fonts.googleapis.com/css?family=Kalam:700'); */
-
 a {
   text-decoration: none;
   text-transform: uppercase;

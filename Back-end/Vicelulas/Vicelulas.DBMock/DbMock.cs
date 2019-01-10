@@ -25,22 +25,22 @@ namespace Vicelulas.DBMock
             _NovoId = 1;
             Tribo = new List<TriboDto>
             {
-                new TriboDto {Id = NovoId, Nome = "Formacao", Ativo = true},
-                new TriboDto { Id = NovoId, Nome = "BRINKS", Ativo = true},
-                new TriboDto { Id = NovoId, Nome = "Finamax", Ativo = true},
-                new TriboDto { Id = NovoId, Nome = "MAPFRE", Ativo = false},
-                new TriboDto { Id = NovoId, Nome = "Produtos", Ativo = false},
-                new TriboDto { Id = NovoId, Nome = "Consultoria", Ativo = false},
+                new TriboDto {Id = NovoId, NomeTribo = "Formacao", Ativo = true},
+                new TriboDto { Id = NovoId, NomeTribo = "BRINKS", Ativo = true},
+                new TriboDto { Id = NovoId, NomeTribo = "Finamax", Ativo = true},
+                new TriboDto { Id = NovoId, NomeTribo = "MAPFRE", Ativo = false},
+                new TriboDto { Id = NovoId, NomeTribo = "Produtos", Ativo = false},
+                new TriboDto { Id = NovoId, NomeTribo = "Consultoria", Ativo = false},
             };
 
             Squad = new List<SquadDto>
             {
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[0].Id , NomeSquad = "NerdBunker", NomeTribo = Tribo[0].Nome, Ativo = true },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[1].Id , NomeSquad = "NerdBunker", NomeTribo = Tribo[1].Nome, Ativo = true },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[2].Id , NomeSquad = "Bug Hunters", NomeTribo = Tribo[2].Nome, Ativo = true },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[3].Id , NomeSquad = "Unibanco", NomeTribo = Tribo[3].Nome, Ativo = false },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[4].Id , NomeSquad = "Lemoris", NomeTribo = Tribo[4].Nome, Ativo = false },
-                new SquadDto { Id = NovoId, Id_Tribo = Tribo[5].Id , NomeSquad = "Alpha Noob", NomeTribo = Tribo[5].Nome, Ativo = false },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[0].Id , NomeSquad = "NerdBunker", NomeTribo = Tribo[0].NomeTribo, Ativo = true },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[1].Id , NomeSquad = "NerdBunker", NomeTribo = Tribo[1].NomeTribo, Ativo = true },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[2].Id , NomeSquad = "Bug Hunters", NomeTribo = Tribo[2].NomeTribo, Ativo = true },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[3].Id , NomeSquad = "Unibanco", NomeTribo = Tribo[3].NomeTribo, Ativo = false },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[4].Id , NomeSquad = "Lemoris", NomeTribo = Tribo[4].NomeTribo, Ativo = false },
+                new SquadDto { Id = NovoId, Id_Tribo = Tribo[5].Id , NomeSquad = "Alpha Noob", NomeTribo = Tribo[5].NomeTribo, Ativo = false },
 
             };
 
@@ -58,7 +58,7 @@ namespace Vicelulas.DBMock
                     Id_Unidade = 1,
                     Permissao = 1,
                     SquadNome = Squad[0].NomeSquad,
-                    TriboNome= Tribo[0].Nome,
+                    TriboNome= Tribo[0].NomeTribo,
                     Unidade = "General Osorio" },
 
                 new PessoaDto {
@@ -73,7 +73,7 @@ namespace Vicelulas.DBMock
                     Id_Unidade = 1,
                     Permissao = 1,
                     SquadNome = Squad[0].NomeSquad,
-                    TriboNome= Tribo[0].Nome,
+                    TriboNome= Tribo[0].NomeTribo,
                     Unidade = "General Osorio" },
 
                 new PessoaDto {
@@ -88,7 +88,7 @@ namespace Vicelulas.DBMock
                     Id_Unidade = 1,
                     Permissao = 1,
                     SquadNome = Squad[0].NomeSquad,
-                    TriboNome= Tribo[0].Nome,
+                    TriboNome= Tribo[0].NomeTribo,
                     Unidade = "General Osorio" },
 
                 new PessoaDto {
@@ -103,7 +103,7 @@ namespace Vicelulas.DBMock
                     Id_Unidade = 1,
                     Permissao = 1,
                     SquadNome = Squad[0].NomeSquad,
-                    TriboNome= Tribo[0].Nome,
+                    TriboNome= Tribo[0].NomeTribo,
                     Unidade = "General Osorio" },
 
                 new PessoaDto {
@@ -118,7 +118,7 @@ namespace Vicelulas.DBMock
                     Id_Unidade = 1,
                     Permissao = 1,
                     SquadNome = Squad[0].NomeSquad,
-                    TriboNome= Tribo[0].Nome,
+                    TriboNome= Tribo[0].NomeTribo,
                     Unidade = "General Osorio" },
             };
 

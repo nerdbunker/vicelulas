@@ -13,6 +13,7 @@ namespace Vicelulas.IoC.Negocio
             service.AddScoped<IPessoaNegocio, PessoaNegocio>();
             service.AddScoped<IPapelNegocio, PapelNegocio>();
             service.AddScoped<IAutenticacaoNegocio, AutenticacaoNegocio>();
+            service.AddScoped<IMentorNegocio, MentorNegocio>();
         }
     }
 }

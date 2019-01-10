@@ -83,11 +83,11 @@ MERGE INTO TB_tribo AS Target USING (VALUES
 	(7, 'Consultoria',null, 1)
 	
 
-)AS SOURCE (id,nome,id_mentor, ativo)
+)AS SOURCE (id,nome,Id_Mentor, ativo)
 ON Target.id = Source.id
 WHEN NOT MATCHED BY TARGET THEN 
-INSERT (nome,id_mentor,ativo) 
-VALUES (nome,id_mentor,ativo);
+INSERT (nome,Id_Mentor,ativo) 
+VALUES (nome,Id_Mentor,ativo);
 
 
 
@@ -120,11 +120,11 @@ MERGE INTO TB_squad AS Target USING (VALUES
 (20, 6,	  'Efinance ',null, 1)
 	
 
-)AS SOURCE (id, id_tribo, nome,id_mentor, ativo)
+)AS SOURCE (id, id_tribo, nome,Id_Mentor, ativo)
 ON Target.id = Source.id
 WHEN NOT MATCHED BY TARGET THEN 
-INSERT (id_tribo, nome,id_mentor, ativo) 
-VALUES (id_tribo, nome,id_mentor, ativo);
+INSERT (id_tribo, nome,Id_Mentor, ativo) 
+VALUES (id_tribo, nome,Id_Mentor, ativo);
 
 
 

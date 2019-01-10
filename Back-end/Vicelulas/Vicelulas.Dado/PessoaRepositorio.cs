@@ -9,7 +9,7 @@ namespace Vicelulas.Dado
 {
     public class PessoaRepositorio : IPessoaRepositorio
     {
-        public  IEnumerable<PessoaDto> Selecionar()
+        public IEnumerable<PessoaDto> Selecionar()
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
@@ -18,7 +18,7 @@ namespace Vicelulas.Dado
                                                         $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
                                                         $"INNER JOIN [TB_squad] S ON P.id_squads = S.id " +
                                                         $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id");
-                return  lista;
+                return lista;
             }
         }
 
@@ -29,15 +29,18 @@ namespace Vicelulas.Dado
             {
                 var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, S.Nome As SquadNome, T.id As id_tribo, T.nome As TriboNome, P.id_unidade, U.nome As Unidade, P.permissao FROM [TB_pessoa] P " +
                                                                    $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
-                                                                   $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id "+
-                                                                   $"INNER JOIN [TB_squad] S ON P.id_squads = S.id " +
+                                                                   $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
+                                                                   $"LEFT JOIN [TB_squad] S ON P.id_squads = S.id " +
                                                                    $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id " +
-                                                                   $"WHERE P.Id = {id}");
+                                                                   $"WHERE P.Id = @Id", new
+                                                                   {
+                                                                       Id = id
+                                                                   });
                 return obj;
             }
         }
 
-        public  PessoaDto SelecionarPorEmail(string email)
+        public PessoaDto SelecionarPorEmail(string email)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
@@ -46,47 +49,59 @@ namespace Vicelulas.Dado
                                                                    $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
                                                                    $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id " +
                                                                    $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id " +
-                                                                   $"WHERE P.email = '{email}'");
-                return  obj;
+                                                                   $"WHERE P.email = @Email", new
+                                                                   {
+                                                                       Email = email
+                                                                   });
+                return obj;
             }
         }
 
-        public  IEnumerable<PessoaDto> SelecionarPorIdSquad(int id)
+        public IEnumerable<PessoaDto> SelecionarPorIdSquad(int id)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var lista = connection.Query<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, S.Nome As SquadNome, T.id As id_tribo, T.nome As TriboNome, P.id_unidade, U.nome As Unidade, P.permissao FROM [TB_pessoa] P  " +
                                                                    $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                                    $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
-                                                                   $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id "+
+                                                                   $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id " +
                                                                    $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id " +
-                                                                   $"WHERE S.Id = {id}");
-                return  lista;
+                                                                   $"WHERE S.Id = @Id", new
+                                                                   {
+                                                                       Id = id
+                                                                   });
+                return lista;
             }
         }
 
-        public  IEnumerable<PessoaDto> SelecionarPorNome(string nome)
+        public IEnumerable<PessoaDto> SelecionarPorNome(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var lista = connection.Query<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, C.Cargo, P.Ativo, P.id_squads, S.Nome As SquadNome, T.id As id_tribo, T.nome As TriboNome, P.id_unidade, U.nome As Unidade, P.permissao FROM [TB_pessoa] P   " +
                                                        $"INNER JOIN [TB_papel] C ON P.id_papel = C.Id " +
                                                        $"INNER JOIN [TB_unidade] U ON P.id_unidade = U.id " +
-                                                       $"INNER JOIN [TB_squad] S ON P.id_squads = S.Id " +
+                                                       $"LEFT JOIN [TB_squad] S ON P.id_squads = S.Id " +
                                                        $"LEFT JOIN [TB_tribo] T ON S.id_tribo = T.id " +
-                                                       $"WHERE P.Nome LIKE '%{nome}%'");
+                                                       $"WHERE P.Nome LIKE @Nome ", new
+                                                       {
+                                                           Nome = "%" + nome + "%"
+                                                       });
 
-                return  lista;
+                return lista;
             }
         }
 
-        public  PessoaDto SelecionarPorNomeEspecifico(string nome)
+        public PessoaDto SelecionarPorNomeEspecifico(string nome)
         {
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Id_Papel, P.Nome, P.email, P.Ativo, P.id_squads , P.id_unidade, P.permissao FROM [TB_pessoa] P " +
-                                                                    $"WHERE P.Nome = '{nome}'");
-                return  obj;
+                                                                    $"WHERE P.Nome = @Nome", new
+                                                                    {
+                                                                        Nome = nome
+                                                                    });
+                return obj;
             }
         }
 
@@ -96,16 +111,26 @@ namespace Vicelulas.Dado
             {
                 return connection.QuerySingle<int>($"DECLARE @Id int;" +
                                                    $"INSERT INTO [TB_pessoa] (Id_papel, Nome, Email, password, ativo, Id_squads, Id_unidade, Permissao) " +
-                                                   $"VALUES({entity.Id_papel}, " +
-                                                   $"'{entity.Nome}', " +
-                                                   $"'{entity.Email}', " +
-                                                   $"'{entity.Senha}', " +
-                                                   $"'{entity.Ativo}'," +
-                                                   $"{entity.Id_squad}," +
-                                                   $"{entity.Id_unidade}," +
-                                                   $"{entity.Permissao}); " +
+                                                   $"VALUES(@idPapel, " +
+                                                   $"@nome, " +
+                                                   $"@email, " +
+                                                   $"@senha, " +
+                                                   $"@ativo," +
+                                                   $"@idSquad," +
+                                                   $"@idUnidade," +
+                                                   $"@permissao); " +
                                                    $"SET @Id = SCOPE_IDENTITY();" +
-                                                   $"SELECT @Id");
+                                                   $"SELECT @Id", new
+                                                   {
+                                                       idPapel = entity.Id_papel,
+                                                       nome = entity.Nome,
+                                                       email = entity.Email,
+                                                       senha = entity.Senha,
+                                                       ativo = entity.Ativo,
+                                                       idSquad = entity.Id_squad,
+                                                       idUnidade = entity.Id_unidade,
+                                                       permissao = entity.Permissao
+                                                   });
             }
         }
 
@@ -114,14 +139,24 @@ namespace Vicelulas.Dado
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 connection.Execute($"UPDATE [TB_pessoa] " +
-                                      $"SET Id_papel = {entity.Id_papel},"+                          
-                                      $"Nome = '{entity.Nome}'," +
-                                      $"Email = '{entity.Email}'," +
-                                      $"Ativo = '{entity.Ativo}'," +
-                                      $"Id_squads = {entity.Id_squad}," +
-                                      $"Id_unidade = {entity.Id_unidade}," +
-                                      $"Permissao = {entity.Permissao}" +
-                                      $"WHERE Id = {entity.Id}");
+                               $"SET Id_papel = @idPapel," +
+                               $"Nome = @nome," +
+                               $"Email = @email," +
+                               $"Ativo = @ativo," +
+                               $"Id_squads = @idSquad," +
+                               $"Id_unidade = @idUnidade," +
+                               $"Permissao = @permissao " +
+                               $"WHERE Id = @id", new
+                               {
+                                   idPapel = entity.Id_papel,
+                                   nome = entity.Nome,
+                                   email = entity.Email,
+                                   ativo = entity.Ativo,
+                                   idSquad = entity.Id_squad,
+                                   idUnidade = entity.Id_unidade,
+                                   permissao = entity.Permissao,
+                                   id = entity.Id
+                               });
             }
         }
 
@@ -135,8 +170,12 @@ namespace Vicelulas.Dado
             {
 
                 connection.Execute($"UPDATE [TB_pessoa]" +
-                                   $"SET Ativo = '{ativo}' " +
-                                   $"WHERE Id = {id}");
+                                   $"SET Ativo = @Ativo " +
+                                   $"WHERE Id = @Id" , new
+                                   {
+                                       Ativo = ativo,
+                                       Id = id
+                                   });
             }
 
         }

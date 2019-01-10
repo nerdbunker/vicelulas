@@ -10,10 +10,12 @@ namespace Vicelulas.Negocio
     public class PessoaNegocio : IPessoaNegocio
     {
         private readonly IPessoaRepositorio _pessoaRepositorio;
+        private readonly IMentorRepositorio _mentorRepositorio;
 
-        public PessoaNegocio(IPessoaRepositorio _pessoaRepositorio)
+        public PessoaNegocio(IPessoaRepositorio _pessoaRepositorio, IMentorRepositorio _mentorRepositorio)
         {
             this._pessoaRepositorio = _pessoaRepositorio;
+            this._mentorRepositorio = _mentorRepositorio;
         }
 
         public  IEnumerable<PessoaDto> Selecionar()
@@ -67,9 +69,15 @@ namespace Vicelulas.Negocio
             if (EmailExistente != null)
                 throw new ConflitoException($"Já existe uma Pessoa cadastrada com este Email {entity.Email}!");
 
+            if (entity.Id_squad == 0)
+                entity.Id_squad = null;
             entity.Senha = PasswordHash.Create(entity.Senha);
 
-            return _pessoaRepositorio.Inserir(entity);
+            var IdPessoa = _pessoaRepositorio.Inserir(entity);
+
+            if (entity.Permissao == 2)
+                _mentorRepositorio.Inserir(IdPessoa);
+            return IdPessoa;
         }
 
         /// param name="Id, entity">/param>
@@ -93,6 +101,8 @@ namespace Vicelulas.Negocio
             if (EmailExistente != null && idExistente.Id != entity.Id)
                 throw new ConflitoException($"Já esxiste uma pessoa cadastrada com este email {entity.Email}!");
 
+            if (entity.Id_squad == 0)
+                entity.Id_squad = null;
             entity.Id = Id;
             _pessoaRepositorio.Alterar(entity);
 

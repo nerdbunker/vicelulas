@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Vicelulas.Api.Model;
 using Vicelulas.Dominio;
-using Vicelulas.Dominio.Dto;
 using Vicelulas.Negocio;
 
 namespace Vicelulas.Api.Controllers

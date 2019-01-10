@@ -4,6 +4,6 @@
     {
         public string Nome { get; set; }
         public int Id_tribo { get; set; }
-        public int Id_mentor { get; set; }
+        public int Id_Mentor { get; set; }
     }
 }

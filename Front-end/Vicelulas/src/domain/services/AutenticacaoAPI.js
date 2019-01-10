@@ -3,11 +3,7 @@
 import { http } from '../api/config'
 
 export default {
-  entrar: () => {
-    return http.post('Entrar', {
-      id: this.id,
-      email: this.email,
-      senha: this.senha
-    })
+  entrar: (login) => {
+    return http.post('Entrar', login)
   }
 }

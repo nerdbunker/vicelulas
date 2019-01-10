@@ -82,22 +82,11 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Play');
-
-/* .bg {
-  background-image: url('../static/backgrounds/bg.png');
-  background-attachment: fixed;
-  background-size: cover;
-} */
-/* .bg-white {
-  background-color: azure;
-} */
 #inspire {
   font-family: 'Play', sans-serif;
   background: none;
 }
 .titulo {
-  font-family: 'Play', sans-serif;
   font-size: 25px;
 }
 .logo {

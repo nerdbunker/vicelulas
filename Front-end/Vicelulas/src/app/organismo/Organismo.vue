@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Kalam:700');
+/* @import url('https://fonts.googleapis.com/css?family=Kalam:700'); */
 
 a {
   text-decoration: none;

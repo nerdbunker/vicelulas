@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Kalam:700');
+/* @import url('https://fonts.googleapis.com/css?family=Kalam:700'); */
 
 .legenda {
   font-family: 'Kalam', coursive;

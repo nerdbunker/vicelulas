@@ -12,7 +12,7 @@ namespace Vicelulas.Dado
         IEnumerable<PessoaDto> Selecionar();
         PessoaDto SelecionarPorEmail(string email);
         PessoaDto SelecionarPorId(int id);
-        IEnumerable<PessoaDto> SelecionarPorIdSquad(int id);
+        IEnumerable<PessoaDto> SelecionarPorIdSquad(int? id);
         IEnumerable<PessoaDto> SelecionarPorNome(string nome);
         PessoaDto SelecionarPorNomeEspecifico(string nome);
     }

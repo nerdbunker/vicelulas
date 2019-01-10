@@ -1,26 +1,32 @@
 ﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System;
 using System.Text;
+using System.Security.Cryptography;
 
 namespace Vicelulas.Dominio.Seguranca
 {
-    public class PasswordHash
+    public static class PasswordHash
     {
-        public static string Create(string value)
+        public static string Create(string Senha)
         {
-            var valueBytes = KeyDerivation.Pbkdf2(
-                                password: value,
-                                salt: Encoding.UTF8.GetBytes("Vicelulas"),
-                                prf: KeyDerivationPrf.HMACSHA512,
-                                iterationCount: 10000,
-                                numBytesRequested: 256 / 8);
-           
-
-            return Convert.ToBase64String(valueBytes);
+            using (MD5 md5Hash = MD5.Create())
+            {
+                return RetonarHash(md5Hash, Senha);
+            }
         }
 
+        private static string RetonarHash(MD5 md5Hash, string input)
+        {
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
 
-        public static bool Validate(string value, string hash)
-            => Create(value) == hash;
+            StringBuilder sBuilder = new StringBuilder();
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            return sBuilder.ToString();
+        }
     }
 }

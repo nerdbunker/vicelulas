@@ -35,7 +35,7 @@ namespace Vicelulas.Teste.NegocioTeste
             var tribo = new TriboDto
             {
                 Id = 1,
-                NomeTribo = "Formacao",
+                Nome = "Formacao",
                 NomeMentor = "Anderson",
                 IdMentor = 1,
                 Ativo = true

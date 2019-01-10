@@ -90,7 +90,7 @@ export default {
                   { name: 'WTW Viewpoints QA Human Capital Framework Part 2', file: 'pdf', to: '' },
                   { name: 'WTW Viewpoints QA Human Capital Framework Part 3', file: 'pdf', to: '' },
                   { name: 'WTW Viewpoints QA Human Capital Framework Part 4', file: 'pdf', to: '' },
-                  { name: 'WTW Viewpoints QA Performance Management', file: 'pdf', to: '' },
+                  { name: 'WTW Viewpoints QA Performance Management', file: 'pdf', to: '' }
                 ]
               },
               {
@@ -145,7 +145,7 @@ export default {
               { name: 'Estágio de RH', file: 'xls' },
               { name: 'Gerente TI', file: 'xls' },
               { name: 'Programador', file: 'xls' },
-              { name: 'Web Designer', file: 'xls' },
+              { name: 'Web Designer', file: 'xls' }
             ]
           },
           {

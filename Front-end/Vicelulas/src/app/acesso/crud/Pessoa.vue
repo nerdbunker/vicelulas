@@ -1,5 +1,6 @@
 <template>
   <div id="pessoa">
+    <aviso :ativo="aviso.ativo" :mensagem="aviso.mensagem" />
     <v-container grid-list-xs>
       <v-layout row wrap>
         <v-flex md10 xs12>
@@ -113,10 +114,18 @@ import PessoasAPI from '../../../domain/services/PessoasAPI'
 import PapeisAPI from '../../../domain/services/PapeisAPI'
 import UnidadesAPI from '../../../domain/services/UnidadesAPI'
 import SquadsAPI from '../../../domain/services/SquadsAPI'
+import Aviso from '../../componentes/Aviso'
 // import { http } from '../../../domain/api/config'
 
 export default {
+  components: {
+    'aviso': Aviso
+  },
   data: () => ({
+    aviso: {
+      ativo: false,
+      mensagem: ''
+    },
     ehMentor: false,
     dialog: false,
     headers: [
@@ -181,6 +190,12 @@ export default {
   },
 
   methods: {
+    chamarErro (mensagem) {
+      this.aviso.ativo = true,
+      this.aviso.mensagem = mensagem
+      this.limpaInsert()
+      this.close()
+    },
     retornaPermissao (condicao) {
       if (condicao) this.pessoaInsert.permissao = 2
       else this.pessoaInsert.permissao = 1
@@ -250,12 +265,17 @@ export default {
         PessoasAPI.alterarPessoa(this.pessoaInsert.id, this.pessoaInsert).then(resposta => {
           this.listarPessoas()
           this.close()
+        }).catch(err => {
+          this.chamarErro('Ocorreu um erro ao executar a operação.')
         })
       } else {
         PessoasAPI.inserirPessoa(this.pessoaInsert).then(resposta => {
           this.listarPessoas()
           this.close()
-        }).catch(err => console.log(err))
+        }).catch(err => {
+          this.chamarErro('Ocorreu um erro ao executar a operação.')
+        })
+        this.close()
       }
     }
   },

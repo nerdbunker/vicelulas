@@ -29,6 +29,7 @@
           <v-card-actions class="pa-3">
             <v-spacer></v-spacer>
             <!-- Mentor: {{ squad.gestor }} -->
+            Squad Sem Tribo
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -49,8 +50,8 @@ export default {
     }
   },
   mounted () {
-    SquadsAPI.obterSquadPorId(this.$route.params.id).then(resposta => {
-      this.listaSquads = resposta.data
+    SquadsAPI.obterSquadSemTribo().then(respostaSquadSemTribo => {
+      this.listaSquads = respostaSquadSemTribo.data
     })
   }
 }

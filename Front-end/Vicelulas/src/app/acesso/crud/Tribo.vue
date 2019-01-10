@@ -1,5 +1,6 @@
 <template>
   <div id="pessoa">
+    <aviso :ativo="aviso.ativo" :mensagem="aviso.mensagem" />
     <v-container grid-list-xs>
       <v-layout row wrap>
         <v-flex md10 xs12>
@@ -79,9 +80,17 @@
 <script>
 import TribosAPI from '../../../domain/services/TribosAPI'
 import MentoresAPI from '../../../domain/services/MentoresAPI'
+import Aviso from '../../componentes/Aviso'
 
 export default {
+  components: {
+    'aviso': Aviso
+  },
   data: () => ({
+    aviso: {
+      ativo: false,
+      mensagem: ''
+    },
     switch1: true,
     dialog: false,
     listaTribos: [],
@@ -124,6 +133,12 @@ export default {
   },
 
   methods: {
+    chamarErro (mensagem) {
+      this.aviso.ativo = true,
+      this.aviso.mensagem = mensagem
+      this.limpaInsert()
+      this.close()
+    },
     listarTribos () {
       TribosAPI.obterTribo().then(respostaTribo => {
         this.listaTribos = respostaTribo.data
@@ -168,10 +183,14 @@ export default {
       if (this.editedIndex > -1) {
         TribosAPI.alterarTribo(this.triboInsert.id, this.triboInsert).then(() => {
           this.listarTribos()
+        }).catch(err => {
+          this.chamarErro('Ocorreu um erro ao executar a operação')
         })
       } else {
         TribosAPI.inserirTribo(this.triboInsert).then(() => {
           this.listarTribos()
+        }).catch(err => {
+          this.chamarErro('Ocorreu um erro ao executar a operação')
         })
       }
       this.close()

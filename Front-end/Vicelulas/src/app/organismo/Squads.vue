@@ -38,6 +38,8 @@
 
 <script>
 import SquadsAPI from '../../domain/services/SquadsAPI'
+import MentoresAPI from '../../domain/services/MentoresAPI';
+import PessoasAPI from '../../domain/services/PessoasAPI'
 
 export default {
   name: 'Squads',
@@ -51,6 +53,10 @@ export default {
     SquadsAPI.obterSquadPorIdTribo(this.$route.params.id).then(resposta => {
       this.listaSquads = resposta.data
     })
+    MentoresAPI.obterMentores().then(resposta => {
+      this.listaMentores = resposta.data
+    })
+    Pessoas
   }
 }
 </script>

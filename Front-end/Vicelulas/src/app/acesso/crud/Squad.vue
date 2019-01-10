@@ -1,5 +1,7 @@
 <template>
+  
   <div id="pessoa">
+    <aviso :ativo="aviso.ativo" :mensagem="aviso.mensagem" />
     <v-container grid-list-xs>
       <v-layout row wrap>
         <v-flex md10 xs12>
@@ -80,9 +82,17 @@
 <script>
 import SquadsAPI from '../../../domain/services/SquadsAPI'
 import TribosAPI from '../../../domain/services/TribosAPI'
+import Aviso from '../../componentes/Aviso'
 
 export default {
+  components: {
+    'aviso': Aviso
+  },
   data: () => ({
+    aviso: {
+      ativo: false,
+      mensagem: ''
+    },
     dialog: false,
     listaSquads: [],
     listaTribos: [],
@@ -131,6 +141,12 @@ export default {
   },
 
   methods: {
+    chamarErro (mensagem) {
+      this.aviso.ativo = true,
+      this.aviso.mensagem = mensagem
+      this.limpaInsert()
+      this.close()
+    },
     limpaInsert () {
       this.squadInsert.id = ''
       this.squadInsert.nome = ''
@@ -189,11 +205,16 @@ export default {
         SquadsAPI.alterarSquad(this.squadInsert.id, this.squadInsert).then(() => {
           this.listarSquads()
           this.close()
+        }).catch(err => {
+          this.chamarErro('Ocorreu um erro ao executar a operação.')
         })
+        this.close()
       } else {
         SquadsAPI.inserirSquad(this.squadInsert).then(() => {
           this.listarSquads()
           this.close()
+        }).catch(err => {
+          this.chamarErro('Ocorreu um erro ao executar a operação')
         })
       }
     }

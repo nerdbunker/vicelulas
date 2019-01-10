@@ -42,7 +42,7 @@
           {{ titulo }}
         </v-list-tile-title>
         <v-spacer></v-spacer>
-        <v-btn onclick="history.back()" color="cyan">
+        <v-btn onclick="history.back()" dark>
           <v-icon>mdi-arrow-left</v-icon>
            Voltar
         </v-btn>

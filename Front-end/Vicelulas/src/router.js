@@ -47,10 +47,10 @@ export default new Router({
       name: 'Gerenciar',
       component: Gerenciar,
       children: [
-        { path: '/historico', component: Historico },
-        { path: '/pessoa', component: Pessoa },
-        { path: '/tribo', component: Tribo },
-        { path: '/squad', component: Squad }
+        { path: '/historico', component: Historico, name: 'HistoricoCRUD' },
+        { path: '/pessoa', component: Pessoa, name: 'PessoaCRUD' },
+        { path: '/tribo', component: Tribo, name: 'TriboCRUD' },
+        { path: '/squad', component: Squad, name: 'SquadCRUD' }
       ]
     }
   ]

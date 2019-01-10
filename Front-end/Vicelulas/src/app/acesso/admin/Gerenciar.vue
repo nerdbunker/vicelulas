@@ -32,6 +32,13 @@ export default {
         { titulo: 'Histórico', to: '/historico' }
       ]
     }
+  },
+  created () {
+    if (localStorage.getItem('estarLogado') != 'TokenGrupoViceri') {
+      this.$router.push('/entrar')
+    } else {
+      this.$router.push('/tribo')
+    }
   }
 }
 </script>

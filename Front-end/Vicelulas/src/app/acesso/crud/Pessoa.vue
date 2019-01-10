@@ -93,7 +93,7 @@
             </td>
             </template>
             <template slot="no-data">
-              <v-btn color="primary" @click="initialize">Reset</v-btn>
+              Sem Itens
             </template>
           </v-data-table>
         </v-flex>
@@ -182,14 +182,6 @@ export default {
       this.pessoaInput.squadNome = dados.squadNome
       this.pessoaInput.triboNome = dados.triboNome
     },
-    defineInsert (dados) {
-      this.pessoaInsert.id = dados.id
-      this.pessoaInsert.nome = dados.nome
-      this.pessoaInsert.email = dados.email
-      this.pessoaInsert.id_Papel = dados.id_Papel
-      this.pessoaInsert.id_Unidade = dados.id_Unidade
-      this.pessoaInsert.id_Squads = dados.id_Squads
-    },
     limparInsert () {
       this.pessoaInsert.id = ''
       this.pessoaInsert.nome = ''
@@ -215,6 +207,7 @@ export default {
     editItem (item) {
       // Alterar aqui o this.pessoas
       this.editedIndex = this.listaPessoas.indexOf(item)
+      this.triboInsert = Object.assign({}, item)
       this.pessoaInsert = item
       this.dialog = true
     },
@@ -232,6 +225,7 @@ export default {
     },
     close () {
       this.limparInsert()
+      this.listarPessoas()
       this.dialog = false
       setTimeout(() => {
         this.pessoaInput = Object.assign({}, this.defaultItem)
@@ -261,6 +255,7 @@ export default {
       this.listaUnidades = respostaUnidade.data
     })
     SquadsAPI.obterSquad().then(respostaSquads => {
+      console.log(respostaSquads)
       this.listaSquads = respostaSquads.data
     })
   }

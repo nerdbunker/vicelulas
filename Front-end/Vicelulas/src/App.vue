@@ -41,6 +41,8 @@
         <v-list-tile-title text-xs-center class="titulo">
           {{ titulo }}
         </v-list-tile-title>
+        <v-spacer></v-spacer>
+        <v-icon>mdi-exit-to-app</v-icon>
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>

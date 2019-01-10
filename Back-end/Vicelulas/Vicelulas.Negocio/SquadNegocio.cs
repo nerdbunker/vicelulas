@@ -70,14 +70,12 @@ namespace Vicelulas.Negocio
             if (NomeExistente != null)
                 throw new ConflitoException($"Já existe uma Squad cadastrada com este nome {entity.Nome}!");
 
-            if (entity.Id_tribo == 0 && entity.Id_mentor == 0)
-                return _squadRepositorio.InserirSemTriboEMentor(entity);
-            else if (entity.Id_tribo == 0)
-                return _squadRepositorio.InserirSemTribo(entity);
-            else if (entity.Id_mentor == 0)
-                return _squadRepositorio.InserirSemMentor(entity);
-            else
-                return _squadRepositorio.Inserir(entity);
+            if (entity.Id_tribo == 0)
+                entity.Id_tribo = null;
+            if (entity.Id_Mentor == 0)
+                entity.Id_Mentor = null;
+
+            return _squadRepositorio.Inserir(entity);
         }
 
         /// <param name="Id, entity"></param>
@@ -94,28 +92,13 @@ namespace Vicelulas.Negocio
             if (NomeExistente != null && idExistente.Id != entity.Id)
                 throw new ConflitoException($"Já existe uma Squad cadastrada com este nome {entity.Nome}!");
 
+            if (entity.Id_tribo == 0)
+                entity.Id_tribo = null;
+            if (entity.Id_Mentor == 0)
+                entity.Id_Mentor = null;
+
             entity.Id = Id;
             _squadRepositorio.Alterar(entity);
-
-            return  _squadRepositorio.SelecionarPorId(Id);
-        }
-
-        /// <param name="Id, entity"></param>
-        public SquadDto Desativar(int Id, Squad entity)
-        {
-            var idExistente = _squadRepositorio.SelecionarPorId(Id);
-
-            if (idExistente == null)
-                throw new NaoEncontradoException($"Não existe esta Squad!");
-            
-
-            var NomeExistente = _squadRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
-
-            if (NomeExistente == null)
-                throw new NaoEncontradoException($"Não existe uma Squad cadastrada com este nome {entity.Nome}!");
-
-            entity.Id = Id;
-            _squadRepositorio.AlterarStatus(entity);
 
             return  _squadRepositorio.SelecionarPorId(Id);
         }

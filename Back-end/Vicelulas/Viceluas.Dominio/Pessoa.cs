@@ -14,7 +14,7 @@
 
         public bool Ativo { get; set; }
 
-        public int Id_squad { get; set; }
+        public int? Id_squad { get; set; }
 
         public int Id_unidade { get; set; }
 

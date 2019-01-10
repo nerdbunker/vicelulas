@@ -18,7 +18,7 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="squadInsert.nome" label="Nome da Squad"></v-text-field>
+                        <v-text-field v-model="squadInsert.nomeSquad" label="Nome da Squad"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm12 md12>
                         <v-select
@@ -36,7 +36,7 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-                  <v-btn color="blue darken-1" v-show="squadInsert.nome && squadInsert.id_Tribo" flat @click="save">Salvar</v-btn>
+                  <v-btn color="blue darken-1" v-show="squadInsert.nomeSquad && squadInsert.id_Tribo" flat @click="save">Salvar</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
@@ -48,8 +48,8 @@
           >
             <template slot="items" slot-scope="props">
               <th>{{ props.item.id }}</th>
-              <td>{{ props.item.nome }}</td>
-              <td>{{ props.item.nomeTribo }}</td>
+              <td>{{ props.item.nomeSquad }}</td>
+              <td>{{ props.item.nomeTribo || 'Nenhuma' }}</td>
               <td>{{ props.item.ativo?'Sim':'Não' }}</td>
               <td>
               <v-icon
@@ -68,7 +68,7 @@
             </td>
             </template>
             <template slot="no-data">
-              <v-btn color="primary" @click="initialize">Reset</v-btn>
+              Sem Itens
             </template>
           </v-data-table>
         </v-flex>
@@ -93,21 +93,22 @@ export default {
       { text: 'Ativo?', value: 'ativo', sortable: false },
       { text: 'Ações', value: 'nome', sortable: false }
     ],
+    hasMentor: false,
     editedIndex: -1,
     squadInsert: {
-      nome: '',
+      nomeSquad: '',
       id_Tribo: ''
     },
     squadInput: {
       id: '',
-      nome: '',
+      nomeSquad: '',
       id_Tribo: '',
       nomeTribo: '',
       ativo: ''
     },
     defaultItem: {
       id: '',
-      nome: '',
+      nomeSquad: '',
       id_Tribo: '',
       nomeTribo: ''
     }
@@ -132,24 +133,23 @@ export default {
   methods: {
     limpaInsert () {
       this.squadInsert.id = ''
-      this.squadInsert.nome = ''
+      this.squadInsert.nomeSquad = ''
       this.squadInsert.id_Tribo = ''
     },
     listarSquads () {
       this.initialize()
       SquadsAPI.obterSquad().then(respostaSquads => {
-        console.log(respostaSquads.data)
         this.listaSquads = respostaSquads.data
       })
     },
     defineInsert (dados) {
       this.squadInsert.id = dados.id
-      this.squadInsert.nome = dados.nome
+      this.squadInsert.nomeSquad = dados.nomeSquad
       this.squadInsert.id_Tribo = dados.id_Tribo
     },
     retornaValores (dados) {
       this.squadInput.id = dados.id
-      this.squadInput.nome = dados.nome
+      this.squadInput.nomeSquad = dados.nomeSquad
       this.squadInput.id_Tribo = dados.id_Tribo
       this.squadInput.nomeTribo = dados.nomeTribo
       this.squadInput.ativo = dados.ativo
@@ -177,7 +177,6 @@ export default {
       }
     },
     close () {
-      this.limpaInsert()
       this.dialog = false
       setTimeout(() => {
         this.squadInput = Object.assign({}, this.defaultItem)

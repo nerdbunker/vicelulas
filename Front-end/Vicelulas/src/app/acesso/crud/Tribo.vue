@@ -18,7 +18,7 @@
                   <v-container grid-list-md>
                     <v-layout wrap>
                       <v-flex xs12 sm12 md12>
-                        <v-text-field v-model="triboInput.nome" label="Nome da Tribo"></v-text-field>
+                        <v-text-field v-model="triboInsert.nome" label="Nome da Tribo"></v-text-field>
                       </v-flex>
                     </v-layout>
                   </v-container>
@@ -27,7 +27,7 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" flat @click="close">Cancelar</v-btn>
-                  <v-btn color="blue darken-1" v-show="triboInput.nome" flat @click="save">Salvar</v-btn>
+                  <v-btn color="blue darken-1" v-show="triboInsert.nome" flat @click="save">Salvar</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
@@ -39,7 +39,7 @@
           >
             <template slot="items" slot-scope="props">
               <th>{{ props.item.id }}</th>
-              <td>{{ props.item.nome }}</td>
+              <td>{{ props.item.nomeTribo }}</td>
               <td>{{ props.item.ativo?'Sim':'Não' }}</td>
               <td>
               <v-icon
@@ -58,7 +58,7 @@
             </td>
             </template>
             <template slot="no-data">
-              <v-btn color="primary" @click="initialize">Reiniciar</v-btn>
+              Sem Itens
             </template>
           </v-data-table>
         </v-flex>
@@ -78,7 +78,7 @@ export default {
       { text: 'ID', value: 'id' },
       { text: 'Nome', value: 'nome' },
       { text: 'Ativo?', value: 'ativo', sortable: false },
-      { text: 'Ações', value: 'nome', sortable: false }
+      { text: 'Ações', value: 'acoes', sortable: false }
     ],
     editedIndex: -1,
     triboInsert: {
@@ -86,12 +86,12 @@ export default {
       nome: ''
     },
     triboInput: {
-      nome: '',
+      nomeTribo: '',
       ativo: ''
     },
     defaultItem: {
       id: '',
-      nome: ''
+      nomeTribo: ''
     }
   }),
 
@@ -112,13 +112,14 @@ export default {
   },
 
   methods: {
-    defineInsert (dados) {
-      this.triboInsert.id = dados.id
-      this.triboInsert.nome = dados.nome
+    listarTribos () {
+      TribosAPI.obterTribo().then(respostaTribo => {
+        this.listaTribos = respostaTribo.data
+      })
     },
     retornaValores (dados) {
       this.triboInput.id = dados.id
-      this.triboInput.nome = dados.nome
+      this.triboInput.nomeTribo = dados.nomeTribo
       this.triboInput.ativo = dados.ativo
     },
     initialize () {
@@ -128,7 +129,8 @@ export default {
     editItem (item) {
       // Alterar aqui o this.tribos
       this.editedIndex = this.listaTribos.indexOf(item)
-      this.triboInput = Object.assign({}, item)
+      this.triboInsert = Object.assign({}, item)
+      this.triboInsert.nome = item.nomeTribo
       this.dialog = true
     },
 
@@ -139,36 +141,33 @@ export default {
       }
       confirm(msg)
       TribosAPI.mudarAtivoTribo(item.id).then(() => {
-        item.ativo = !item.ativo
+        this.listarTribos()
       })
     },
 
     close () {
       this.dialog = false
       setTimeout(() => {
-        this.triboInput = Object.assign({}, this.defaultItem)
+        this.triboInsert = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       }, 300)
     },
 
     save () {
       if (this.editedIndex > -1) {
-        this.defineInsert(this.triboInput)
-        Object.assign(this.listaTribos[this.editedIndex], this.triboInsert)
-        TribosAPI.alterarTribo(this.triboInput.id, this.triboInput)
+        TribosAPI.alterarTribo(this.triboInsert.id, this.triboInsert).then(() => {
+          this.listarTribos()
+        })
       } else {
-        TribosAPI.inserirTribo(this.triboInput).then(resposta => {
-          this.retornaValores(resposta.data)
-          this.listaTribos.push(this.triboInput)
+        TribosAPI.inserirTribo(this.triboInsert).then(() => {
+          this.listarTribos()
         })
       }
       this.close()
     }
   },
   mounted () {
-    TribosAPI.obterTribo().then(respostaTribo => {
-      this.listaTribos = respostaTribo.data
-    })
+    this.listarTribos()
   }
 }
 </script>

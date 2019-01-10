@@ -43,8 +43,8 @@ namespace Vicelulas.Teste.NegocioTeste
             {
                 Id = 1,
                 Id_Tribo = 1,
-                NomeSquad = "NerdBunker",
-                NomeTribo = "Formacao",
+                Nome = "NerdBunker",
+                Nome = "Formacao",
                 Ativo = true
             };
             var repoMock = new Mock<ISquadRepositorio>();

@@ -72,6 +72,8 @@ namespace Vicelulas.Negocio
             if (EmailExistente != null)
                 throw new ConflitoException($"Já existe uma Pessoa cadastrada com este Email {entity.Email}!");
 
+            if (entity.Id_squad == 0)
+                entity.Id_squad = null;
             entity.Senha = PasswordHash.Create(entity.Senha);
 
             var IdPessoa = _pessoaRepositorio.Inserir(entity);
@@ -102,6 +104,8 @@ namespace Vicelulas.Negocio
             if (EmailExistente != null && idExistente.Id != entity.Id)
                 throw new ConflitoException($"Já esxiste uma pessoa cadastrada com este email {entity.Email}!");
 
+            if (entity.Id_squad == 0)
+                entity.Id_squad = null;
             entity.Id = Id;
             _pessoaRepositorio.Alterar(entity);
 

@@ -69,7 +69,7 @@ export default {
         { icon: 'home', title: 'Organismo', to: '/' },
         { icon: 'loyalty', title: 'Valores', to: '/valores' },
         { icon: 'photo', title: 'Fotos da Viceri', to: '/viceri' },
-        // { icon: 'folder', title: 'Documentos', to: '/documentos' },
+        { icon: 'folder', title: 'Documentos', to: '/documentos' },
         // { icon: 'person', title: 'Pessoas', to: '/pessoas' },
         { icon: 'info', title: 'Dúvidas', to: '/duvidas' },
         { icon: 'developer_mode', title: 'Suporte', to: '/suporte' },
@@ -89,9 +89,9 @@ export default {
   background-attachment: fixed;
   background-size: cover;
 } */
-.bg-white {
+/* .bg-white {
   background-color: azure;
-}
+} */
 #inspire {
   font-family: 'Play', sans-serif;
   background: none;

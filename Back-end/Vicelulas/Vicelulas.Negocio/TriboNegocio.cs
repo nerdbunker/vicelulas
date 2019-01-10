@@ -54,9 +54,9 @@ namespace Vicelulas.Negocio
                 throw new ConflitoException($"Já existe uma Tribo cadastrada com este nome {entity.Nome}!");
 
             if (entity.Id_Mentor == 0)
-                return _triboRepositorio.InserirSemMentor(entity);
-            else
-                return _triboRepositorio.Inserir(entity);
+                entity.Id_Mentor = null;
+
+            return _triboRepositorio.Inserir(entity);
         }
 
         public TriboDto Alterar(int Id, Tribo entity)
@@ -72,27 +72,11 @@ namespace Vicelulas.Negocio
             if (NomeExistente != null && idExistente.Id != entity.Id)
                 throw new ConflitoException($"Já existe uma Tribo cadastrada com este nome {entity.Nome}!");
 
+            if (entity.Id_Mentor == 0)
+                entity.Id_Mentor = null;
+
             entity.Id = Id;
             _triboRepositorio.AlterarNome(entity);
-
-            return _triboRepositorio.SelecionarPorId(Id);
-        }
-
-        public TriboDto Desativar(int Id, Tribo entity)
-        {
-            var idExistente = _triboRepositorio.SelecionarPorId(Id);
-
-            if (idExistente == null)
-                throw new NaoEncontradoException($"Não existe esta tribo!");
-            
-
-            var NomeExistente = _triboRepositorio.SelecionarPorNomeEspecifico(entity.Nome);
-
-            if (NomeExistente == null)
-                throw new NaoEncontradoException($"Não existe uma Tribo cadastrada com este nome {entity.Nome}!");
-
-            entity.Id = Id;
-            _triboRepositorio.AlterarStatus(entity);
 
             return _triboRepositorio.SelecionarPorId(Id);
         }

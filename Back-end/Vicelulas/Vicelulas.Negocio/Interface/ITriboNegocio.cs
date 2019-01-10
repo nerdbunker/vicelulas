@@ -8,7 +8,6 @@ namespace Vicelulas.Negocio
     {
         TriboDto Alterar(int Id, Tribo entity);
         void AtivarDesativarTribo(int id);
-        TriboDto Desativar(int Id, Tribo entity);
         int Inserir(Tribo entity);
         IEnumerable<TriboDto> Selecionar();
         TriboDto SelecionarPorId(int id);

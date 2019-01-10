@@ -13,7 +13,11 @@ namespace Vicelulas.Dado
             using (var connection = new SqlConnection(DbConnectionFactory.SQLConnectionString))
             {
                 var obj = connection.QueryFirstOrDefault<PessoaDto>($"SELECT P.Id, P.Nome, P.email, P.id_squads, P.Ativo, P.permissao FROM [TB_pessoa] P " +
-                                                                   $"WHERE P.email = '{username}' AND P.password = '{password}' ");
+                                                                   $"WHERE P.email = @Email AND P.password = @Senha ", new
+                                                                   {
+                                                                       Email = username,
+                                                                       Senha = password
+                                                                   });
                 return obj;
             }
         }

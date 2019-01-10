@@ -11,7 +11,7 @@
 
         public bool Ativo { get; set; }
 
-        public int Id_Squads { get; set; }
+        public int? Id_Squads { get; set; }
         public string SquadNome { get; set; }
 
         public int Id_Tribo { get; set; }

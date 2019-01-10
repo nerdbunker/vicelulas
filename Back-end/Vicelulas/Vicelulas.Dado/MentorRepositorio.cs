@@ -25,9 +25,12 @@ namespace Vicelulas.Dado
             {
                 return connection.QuerySingle<int>($"DECLARE @Id int; " +
                                                    $"INSERT INTO [TB_mentor] (Id_Pessoa) " +
-                                                   $"VALUES({entity}) " +
+                                                   $"VALUES(@idPessoa) " +
                                                    $"SET @Id = SCOPE_IDENTITY(); " +
-                                                   $"SELECT @Id");
+                                                   $"SELECT @Id", new
+                                                   {
+                                                       idPessoa = entity
+                                                   });
             }
         }
         

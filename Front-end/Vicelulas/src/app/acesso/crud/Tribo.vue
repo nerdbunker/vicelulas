@@ -22,6 +22,26 @@
                       </v-flex>
                     </v-layout>
                   </v-container>
+                  <template>
+                    <v-container fluid px-0>
+                      <v-checkbox
+                        :label="`Checkbox 1: ${checkbox.toString()}`"
+                        v-model="checkbox"
+                      ></v-checkbox>
+                      <v-radio-group v-model="radioGroup">
+                        <v-radio
+                          v-for="n in 3"
+                          :key="n"
+                          :label="`Radio ${n}`"
+                          :value="n"
+                        ></v-radio>
+                      </v-radio-group>
+                      <v-switch
+                        :label="`Switch 1: ${switch1.toString()}`"
+                        v-model="switch1"
+                      ></v-switch>
+                    </v-container>
+                  </template>
                 </v-card-text>
 
                 <v-card-actions>
@@ -39,7 +59,7 @@
           >
             <template slot="items" slot-scope="props">
               <th>{{ props.item.id }}</th>
-              <td>{{ props.item.nomeTribo }}</td>
+              <td>{{ props.item.nome }}</td>
               <td>{{ props.item.ativo?'Sim':'Não' }}</td>
               <td>
               <v-icon
@@ -86,12 +106,12 @@ export default {
       nome: ''
     },
     triboInput: {
-      nomeTribo: '',
+      nome: '',
       ativo: ''
     },
     defaultItem: {
       id: '',
-      nomeTribo: ''
+      nome: ''
     }
   }),
 
@@ -119,7 +139,7 @@ export default {
     },
     retornaValores (dados) {
       this.triboInput.id = dados.id
-      this.triboInput.nomeTribo = dados.nomeTribo
+      this.triboInput.nome = dados.nome
       this.triboInput.ativo = dados.ativo
     },
     initialize () {
@@ -130,7 +150,6 @@ export default {
       // Alterar aqui o this.tribos
       this.editedIndex = this.listaTribos.indexOf(item)
       this.triboInsert = Object.assign({}, item)
-      this.triboInsert.nome = item.nomeTribo
       this.dialog = true
     },
 

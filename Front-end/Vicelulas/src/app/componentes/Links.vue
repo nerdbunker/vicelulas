@@ -33,7 +33,8 @@ export default {
       { title: 'Dúvidas', to: '/duvidas' },
       { title: 'Suporte', to: '/suporte' },
       { title: 'Entrar', to: '/entrar' }
-    ]
+    ],
+    logado: localStorage.getItem('estarLogado')
   })
 }
 </script>

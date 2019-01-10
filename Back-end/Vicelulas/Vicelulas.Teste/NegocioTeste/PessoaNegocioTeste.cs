@@ -10,5 +10,6 @@ namespace Vicelulas.Teste.NegocioTeste
 {
     public class PessoaNegocioTeste
     {
+
     }
 }

@@ -8,5 +8,6 @@ namespace Vicelulas.Teste.NegocioTeste
 {
     public class TriboNegocioTeste
     {
+
     }
 }

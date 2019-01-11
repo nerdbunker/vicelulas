@@ -20,14 +20,14 @@
               <v-spacer></v-spacer>
               <div class="squad-text">
                 <div class="headline">{{ squad.nome }}</div>
-                <div>Time: {{ squad.time }}</div>
+                <div>Time: {{ time }}</div>
               </div>
             </v-card-title>
           <v-divider light></v-divider>
           <v-card-actions class="pa-3">
             Tribo: {{ squad.nomeTribo }}
             <v-spacer></v-spacer>
-            Mentor: {{ squad.nomeMentor }}
+            <!-- Mentor: {{ squad.nomeMentor }} -->
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -38,15 +38,16 @@
 
 <script>
 import SquadsAPI from '../../domain/services/SquadsAPI'
-import MentoresAPI from '../../domain/services/MentoresAPI';
+import MentoresAPI from '../../domain/services/MentoresAPI'
 import PessoasAPI from '../../domain/services/PessoasAPI'
 
 export default {
   name: 'Squads',
   data () {
     return {
-      img: require('../../../static/icones/viceri.png'),
-      listaSquads: []
+      img: require('../../../static/icones/team.png'),
+      listaSquads: [],
+      time: []
     }
   },
   mounted () {
@@ -56,7 +57,10 @@ export default {
     MentoresAPI.obterMentores().then(resposta => {
       this.listaMentores = resposta.data
     })
-    Pessoas
+    PessoasAPI.obterPessoaPorIdSquad(this.$route.params.id_Squad).then(respostaTime => {
+      console.log(respostaTime)
+      this.time = respostaTime.data
+    })
   }
 }
 </script>

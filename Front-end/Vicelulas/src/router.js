@@ -38,7 +38,6 @@ export default new Router({
     // App - Organismo
     { path: '/organismo', name: 'Organismo', component: Organismo },
     { path: '/tribos/:id', name: 'Tribos', component: Tribos },
-    { path: '/tribos/:id', name: 'Tribos', component: Tribos },
     // App - Autenticacao
     { path: '/entrar', name: 'Entrar', component: Entrar },
     { path: '/cadastrar', name: 'Cadastrar', component: Cadastrar },

@@ -42,11 +42,6 @@
           {{ titulo }}
         </v-list-tile-title>
         <v-spacer></v-spacer>
-        <v-flex v-show="$vuetify.breakpoint.lg">
-          <v-btn onclick="history.back()" dark>
-            <v-icon>mdi-arrow-left</v-icon>
-          </v-btn>
-        </v-flex>
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>
@@ -54,6 +49,14 @@
       </v-content>
       <!-- Menu Inferior [apenas no mobile] -->
       <Menu />
+      <v-flex v-show="$vuetify.breakpoint.lg">
+        <v-btn
+          onclick="history.back()"
+          fab dark fixed right bottom
+         >
+          <v-icon>mdi-arrow-left</v-icon>
+        </v-btn>
+      </v-flex>
     </v-app>
   </div>
 </template>

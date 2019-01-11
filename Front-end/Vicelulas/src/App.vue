@@ -42,10 +42,11 @@
           {{ titulo }}
         </v-list-tile-title>
         <v-spacer></v-spacer>
-        <v-btn onclick="history.back()" dark>
-          <v-icon>mdi-arrow-left</v-icon>
-           Voltar
-        </v-btn>
+        <v-flex v-show="$vuetify.breakpoint.lg">
+          <v-btn onclick="history.back()" dark>
+            <v-icon>mdi-arrow-left</v-icon>
+          </v-btn>
+        </v-flex>
       </v-toolbar>
       <!-- Conteúdo -->
       <v-content>
